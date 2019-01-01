@@ -17,6 +17,7 @@ d3.json("/data/genealogy-data.json", function(data) {
 
     //var j = d3.scaleTime().domain(d3.extent(stringDates, function(d){ return parseDate(d); })).range([0,chartWidth]);
 
+
     var svgHeight = 2000;
     var svgWidth = 2000;
     // Determines how far the scroll bar should be from the top
@@ -322,6 +323,7 @@ d3.json("/data/genealogy-data.json", function(data) {
     }
 
     function touchend(d, i){
+        d3.selectAll("path").classed("sel", false);
         d3.select(this).classed("selected", false);
         d3.select(this).classed("sel", true);
         

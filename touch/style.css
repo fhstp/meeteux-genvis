@@ -4,11 +4,11 @@ body{
 }
 
 #info{
-    height: 300px;
+    height: 350px;
 }
 
 #chart{
-    height: 300px;
+    height: 730px;
     overflow: scroll;
 }
 
@@ -20,20 +20,12 @@ path.woman{
     stroke:red;
 }
 
-path.man.selected{
+path.man.selected, path.man.sel{
     stroke: lightblue;
 }
 
-path.woman.selected{
+path.woman.selected, path.woman.sel{
     stroke:pink;
-}
-
-path.man.sel{
-    stroke: gray;
-}
-
-path.woman.sel{
-    stroke:gray;
 }
 
 #info{
