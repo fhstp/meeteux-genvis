@@ -1,4 +1,4 @@
-var persons = [{
+[{
     "name": "Leopold III. (13)",
     "died": 1136,
     "born": 1073,
@@ -11,7 +11,7 @@ var persons = [{
             "died": 1100,
             "born": 1073,
             "marriage": 1085,
-            "id" : 2,
+            "id" : 2
         },
         "children": [{
             "name": "Adalbert (14)",
@@ -27,7 +27,7 @@ var persons = [{
                     "born": 1100,
                     "died": 1125,
                     "marriage": 1120,
-                    "id" : 4,
+                    "id" : 4
                 }
             },{
                 "spouse": {
@@ -36,7 +36,7 @@ var persons = [{
                     "born": 1110,
                     "died": 1145,
                     "marriage": 1131,
-                    "id" : 5,
+                    "id" : 5
                 }
             }]
         }]
@@ -47,7 +47,7 @@ var persons = [{
             "died": 1177,
             "born": 1107,
             "marriage": 1120,
-            "id" : 6,
+            "id" : 6
         },
         "children": [{
             "name": "Heinrich II. (19)",
@@ -63,7 +63,7 @@ var persons = [{
                     "died": 1150,
                     "gender": "woman",
                     "marriage": 1140,
-                    "id" : 8,
+                    "id" : 8
                 },
                 "children": [{
                     "name": "Richardis (N)",
@@ -71,7 +71,7 @@ var persons = [{
                     "died": 1185,
                     "gender": "woman",
                     "father" : 7,
-                    "id" : 9,
+                    "id" : 9
                 }]
             },{
                 "spouse": {
@@ -80,7 +80,7 @@ var persons = [{
                     "died": 1183,
                     "gender": "woman",
                     "marriage": 1160,
-                    "id" : 10,
+                    "id" : 10
                 },
                 "children": [{
                     "name": "Agnes (58)",
@@ -88,7 +88,7 @@ var persons = [{
                     "died": 1184,
                     "gender": "woman",
                     "id" : 11,
-                    "father" : 7,
+                    "father" : 7
                 },{
                     "name": "Leopold V. (20)",
                     "died": 1194,
@@ -103,7 +103,7 @@ var persons = [{
                             "born" : 1150,
                             "died" : 1200,
                             "marriage": 1180,
-                            "id" : 13,
+                            "id" : 13
                         },
                         "children": [{
                             "name": "Friedrich I. (23)",
@@ -111,7 +111,7 @@ var persons = [{
                             "born": 1180,
                             "gender": "man",
                             "id" : 14,
-                            "father" : 12,
+                            "father" : 12
                         },{
                             "name": "Leopold IV. (24)",
                             "died": 1230,
@@ -126,7 +126,7 @@ var persons = [{
                                     "died": 1246,
                                     "gender": "woman",
                                     "marriage": 1210,
-                                    "id" : 16,
+                                    "id" : 16
                                 },
                                 "children": [{
                                     "name": "Margarethe (64)",
@@ -134,21 +134,21 @@ var persons = [{
                                     "died": 1266,
                                     "gender": "woman",
                                     "id" : 17,
-                                    "father" : 15,
+                                    "father" : 15
                                 },{
                                     "name": "Agnes (65)",
                                     "born": 1215,
                                     "died": 1226,
                                     "gender": "woman",
                                     "id" : 18,
-                                    "father" : 15,
+                                    "father" : 15
                                 },{
                                     "name": "Leopold (25)",
                                     "born": 1215,
                                     "died": 1230,
                                     "gender": "man",
                                     "id" : 19,
-                                    "father" : 15,
+                                    "father" : 15
                                 },{
                                     "name": "Heinrich (26)",
                                     "born": 1215,
@@ -163,7 +163,7 @@ var persons = [{
                                             "born" : 1200,
                                             "died" : 1250,
                                             "marriage": 1220,
-                                            "id" : 21,
+                                            "id" : 21
                                         },
                                         "children" : [{
                                             "name" : "Gertrud (69)",
@@ -171,7 +171,7 @@ var persons = [{
                                             "born" : 1230,
                                             "died" : 1250,
                                             "id" : 22,
-                                            "father" : 20,
+                                            "father" : 20
                                         }]
                                     }]
                                 },{
@@ -188,7 +188,7 @@ var persons = [{
                                             "born" : 1200,
                                             "died" : 1230,
                                             "marriage": 1220,
-                                            "id" : 24,
+                                            "id" : 24
                                         }
                                     },{
                                         "spouse" : {
@@ -197,7 +197,7 @@ var persons = [{
                                             "born": 1200,
                                             "died" : 1270,
                                             "marriage": 1235,
-                                            "id" : 25,
+                                            "id" : 25
                                         }
                                     }]
                                 },{
@@ -206,14 +206,14 @@ var persons = [{
                                     "died": 1243,
                                     "gender": "woman",
                                     "id" : 26,
-                                    "father" : 15,
+                                    "father" : 15
                                 },{
                                     "name": "Gertrud (67)",
                                     "born" : 1215,
                                     "died": 1241,
                                     "gender": "woman",
                                     "id" : 27,
-                                    "father" : 15,
+                                    "father" : 15
                                 }]
                             }]
                         },{
@@ -222,7 +222,7 @@ var persons = [{
                             "born": 1180,
                             "died": 1200,
                             "id" : 28,
-                            "father" : 12,
+                            "father" : 12
                         }]
                     }]
                 },{
@@ -239,7 +239,7 @@ var persons = [{
                             "died": 1182,
                             "gender": "woman",
                             "marriage": 1155,
-                            "id" : 30,
+                            "id" : 30
                         },
                         "children": [{
                             "name": "Heinrich d.J. (22)",
@@ -247,7 +247,7 @@ var persons = [{
                             "died": 1236,
                             "gender": "man",
                             "id" : 31,
-                            "father" : 29,
+                            "father" : 29
                         }]
                     }]
                 }]
@@ -266,7 +266,7 @@ var persons = [{
                     "died": 1141,
                     "born": 1108,
                     "marriage": 1120,
-                    "id" : 33,
+                    "id" : 33
                 }
             }]
         },{
@@ -275,49 +275,49 @@ var persons = [{
             "died": 1150,
             "gender": "woman",
             "father" : 1, 
-            "id" : 34,
+            "id" : 34
         },{
             "name": "Agnes (46)",
             "born": 1100,
             "died": 1157,
             "gender": "woman",
             "father" : 1, 
-            "id" : 35,
+            "id" : 35
         },{
             "name": "Otto (16)",
             "died": 1158,
             "born": 1112,
             "gender": "man",
             "father" : 1, 
-            "id" : 36,
+            "id" : 36
         },{
             "name": "Konrad (17)",
             "died": 1168,
             "born": 1115,
             "gender": "man",
             "id" : 37,
-            "father" : 1,
+            "father" : 1
         },{
             "name": "Elisabeth (48)",
             "born": 1100,
             "died": 1143,
             "gender": "woman",
             "father" : 1, 
-            "id" : 38,
+            "id" : 38
         },{
             "name": "Gertrud (47)",
             "born": 1100,
             "died": 1151,
             "gender": "woman",
             "father" : 1, 
-            "id" : 39,
+            "id" : 39
         },{
             "name": "Judith (49)",
             "born": 1100,
             "died": 1191,
             "gender": "woman",
             "father" : 1, 
-            "id" : 40,
+            "id" : 40
         }]
     }]
-}];
+}]
