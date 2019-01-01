@@ -20,7 +20,7 @@ d3.json("/data/genealogy-data.json", function(data) {
     var svgHeight = 2000;
     var svgWidth = 2000;
     // Determines how far the scroll bar should be from the top
-    var scrollOffset = 15;
+    var scrollOffset = 0;
 
     var x = d3.scaleTime()
     .domain(d3.extent(stringDates, function(d){return parseDate(d)}))
@@ -290,9 +290,11 @@ d3.json("/data/genealogy-data.json", function(data) {
      * https://bl.ocks.org/d3noob/1ea51d03775b9650e8dfd03474e202fe
      * Or try play around with duration and delay.
      */
-    window.addEventListener('scroll', function(event) {
+    var elementToScroll = document.getElementById("chart");
+
+    elementToScroll.addEventListener('scroll', function(event) {
         // First covers all browsers and tablets except ones with IE. Second is fallback option for IE.
-        const scrollPos = window.scrollY || document.documentElement.scrollTop;
+        const scrollPos = elementToScroll.scrollY || elementToScroll.scrollTop;
 
         // If we are not at the top of the screen we add the offset
         if (scrollPos > 5) {
@@ -308,7 +310,7 @@ d3.json("/data/genealogy-data.json", function(data) {
         }
     });
 
-
+//id="chart"
 
 
 
