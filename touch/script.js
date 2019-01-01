@@ -9,7 +9,7 @@ d3.json("/data/genealogy-data.json", function(data) {
     dataArray[2] = [{x:30, y:45}, {x:100, y:45}];
 
     var interpolateTypes = [d3.curveLinear, d3.curveNatural, d3.curveStep, d3.curveBasis, d3.curveBundle, d3.curveCardinal];
-    var stringDates = ['1000', '1300'];
+    var stringDates = ['1060', '1280'];
     var parseDate = d3.timeParse("%Y");
 
     //var minDate = d3.min(data, function(d){ return d.month; });
@@ -17,8 +17,17 @@ d3.json("/data/genealogy-data.json", function(data) {
 
     //var j = d3.scaleTime().domain(d3.extent(stringDates, function(d){ return parseDate(d); })).range([0,chartWidth]);
 
+    var screenHeight = screen.height;
+    console.log(screenHeight);
 
-    var svgHeight = 2000;
+    var div1Height = screenHeight/100*32;
+    var div2Height = screenHeight - div1Height;
+    console.log(div1Height + " + " + div2Height);
+
+    d3.select("#info").attr("style", "height: " + div1Height+"px");
+    d3.select("#chart").attr("style", "height: " + div2Height+"px");
+
+    var svgHeight = 3300;
     var svgWidth = 2000;
     // Determines how far the scroll bar should be from the top
     var scrollOffset = 0;
@@ -30,7 +39,7 @@ d3.json("/data/genealogy-data.json", function(data) {
 
     // get the x-coordinates depending on year
     var whichX = d3.scaleLinear()
-        .domain([1000, 1300]) // min and max year of data set
+        .domain([1060, 1280]) // min and max year of data set
         .range([0, svgWidth]); // min and max of svg
 
     var personArray = [];
@@ -124,6 +133,8 @@ d3.json("/data/genealogy-data.json", function(data) {
                     name: person.name, 
                     gender: person.gender, 
                     desc: person.desc,
+                    img: person.img,
+                    id: person.id,
                     x: whichX(person.born), 
                     y: startY, id:person.id};
 
@@ -150,6 +161,8 @@ d3.json("/data/genealogy-data.json", function(data) {
                     name: person.name, 
                     gender: person.gender, 
                     desc: person.desc,
+                    img: person.img,
+                    id: person.id,
                     x: whichX(person.born), 
                     y: startY};
                 
@@ -176,6 +189,8 @@ d3.json("/data/genealogy-data.json", function(data) {
                     name: person.name, 
                     gender: person.gender, 
                     desc: person.desc,
+                    img: person.img,
+                    id: person.id,
                     x: whichX(person.born), 
                     y: startY};
                 startY += yDiff;
@@ -257,10 +272,13 @@ d3.json("/data/genealogy-data.json", function(data) {
                 return "woman";
             }
         })
+        .attr("id", function(d){return "person"+d[0].id;})
         .attr("stroke-width", strokeWidth)
         .attr("d", function(d){ return line(d); })
+        .on("click", touchend) // comment when running on touch display
         .on("touchstart", touchstart)
         .on("touchend", touchend);
+
     
     var thirdGroup = chartGroup.selectAll("g.third")
         .data(showChildArray)
@@ -281,7 +299,10 @@ d3.json("/data/genealogy-data.json", function(data) {
                 .text(function(d) { return d.name; })
                 .attr("x", function(d) {return d.x;})
                 .attr("y", function(d) {return d.y;})
-                .attr("fill", "white");
+                .attr("fill", "white")
+                .on("click", touchend) // comment when running on touch display
+                .on("touchstart", touchstart)
+                .on("touchend", touchend);
 
     var axisGroup = svg.append('g')
         .attr('class', 'x axis')
@@ -323,11 +344,15 @@ d3.json("/data/genealogy-data.json", function(data) {
     }
 
     function touchend(d, i){
+
+        var touched = personInfoArray[i];
+
         d3.selectAll("path").classed("sel", false);
-        d3.select(this).classed("selected", false);
-        d3.select(this).classed("sel", true);
+
+        d3.select("#person"+touched.id).classed("selected", false);
+        d3.select("#person"+touched.id).classed("sel", true);
         
-        showInformation(personInfoArray[i]);
+        showInformation(touched);
     }
 
     var infoImage = d3.select("#image");
@@ -337,10 +362,14 @@ d3.json("/data/genealogy-data.json", function(data) {
     function showInformation(person){
         console.log("showInformation");
         console.log(person);
+
         infoDesc.select('h1').remove();
         infoDesc.select('p').remove();
         infoDesc.append('h1').text(person.name);
         infoDesc.append('p').text(person.desc);
+
+        infoImage.select('img').remove();
+        infoImage.append('img').attr("src", "img/"+person.img+".png");
     }
 
 });
