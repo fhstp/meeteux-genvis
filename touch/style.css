@@ -11,3 +11,45 @@ body{
     height: 300px;
     overflow: scroll;
 }
+
+path.man{
+    stroke: blue;
+}
+
+path.woman{
+    stroke:red;
+}
+
+path.man.selected{
+    stroke: lightblue;
+}
+
+path.woman.selected{
+    stroke:pink;
+}
+
+path.man.sel{
+    stroke: gray;
+}
+
+path.woman.sel{
+    stroke:gray;
+}
+
+#info{
+    display: table;
+    width: 100%;
+}
+
+.col{
+    display: table-cell;
+    vertical-align: top;
+}
+
+.col:nth-child(1) { width: 20%; }
+.col:nth-child(2) { width: 40%; }
+.col:nth-child(3) { width: 40%; }
+
+.col:nth-child(1) { background: pink; }
+.col:nth-child(2) { background: lavender; }
+.col:nth-child(3) { background: ivory; }

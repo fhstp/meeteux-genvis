@@ -35,12 +35,14 @@ d3.json("/data/genealogy-data.json", function(data) {
     var personArray = [];
     var personInfoArray = [];
     var itterator = 0;
-    var startY = 20;
-    var marriageXDiff = 5;
-    var marriageYDiff = 10;
-    var yDiff = 50;
     var marriageCount = 1;
 
+    var strokeWidth = 40;
+    var startY = strokeWidth;
+    var marriageXDiff = strokeWidth/5;
+    var marriageYDiff = strokeWidth/3;
+    var yDiff = 2*strokeWidth;
+    
     var childArray = [];
     var showChildArray = [];
     var isChild = false;
@@ -114,10 +116,15 @@ d3.json("/data/genealogy-data.json", function(data) {
             case "child":
                 console.log("child");
                 personArray[itterator] = [
-                    {x: whichX(person.born), y: startY, gender: person.gender}, 
+                    {x: whichX(person.born), y: startY, gender: person.gender, id:person.id}, 
                     {x: whichX(person.died), y: startY},
                 ];
-                personInfoArray[itterator] = {name: person.name, gender: person.gender, x: whichX(person.born), y: startY};
+                personInfoArray[itterator] = {
+                    name: person.name, 
+                    gender: person.gender, 
+                    desc: person.desc,
+                    x: whichX(person.born), 
+                    y: startY, id:person.id};
 
                 console.log("in nicht verheiratet");
                 console.log(person.name);
@@ -133,12 +140,17 @@ d3.json("/data/genealogy-data.json", function(data) {
                 var marriageY = startY - marriageYDiff - yDiff*(marriageCount-1);
                 
                 personArray[itterator] = [
-                    {x: whichX(person.born), y: startY, gender: person.gender}, // born
+                    {x: whichX(person.born), y: startY, gender: person.gender, id:person.id}, // born
                     {x: marriageX1, y: startY}, // marriage 1
                     {x: marriageX2, y: marriageY}, // marriage 2
                     {x: whichX(person.died), y: marriageY}
                 ];
-                personInfoArray[itterator] = {name: person.name, gender: person.gender, x: whichX(person.born), y: startY};
+                personInfoArray[itterator] = {
+                    name: person.name, 
+                    gender: person.gender, 
+                    desc: person.desc,
+                    x: whichX(person.born), 
+                    y: startY};
                 
                 startY += yDiff;
                 itterator++;
@@ -154,12 +166,17 @@ d3.json("/data/genealogy-data.json", function(data) {
                 fatherArray.push({y: marriageY, id: person.id});
 
                 personArray[itterator] = [
-                    {x: whichX(person.born), y: startY, gender: person.gender}, 
+                    {x: whichX(person.born), y: startY, gender: person.gender, id:person.id}, 
                     {x: marriageX1, y: startY}, // marriage 1
                     {x: marriageX2, y: marriageY}, // marriage 2
                     {x: whichX(person.died), y: marriageY},
                 ];
-                personInfoArray[itterator] = {name: person.name, gender: person.gender, x: whichX(person.born), y: startY};
+                personInfoArray[itterator] = {
+                    name: person.name, 
+                    gender: person.gender, 
+                    desc: person.desc,
+                    x: whichX(person.born), 
+                    y: startY};
                 startY += yDiff;
                 itterator++;
                 break;
@@ -232,15 +249,17 @@ d3.json("/data/genealogy-data.json", function(data) {
 
     var secondGroups = firstGroups.append("path")
         .attr("fill", "none")
-        .attr("stroke", function(d) {
+        .attr("class", function(d) {
             if(d[0].gender == "man"){
-                return "blue";
+                return "man";
             }else{
-                return "red";
+                return "woman";
             }
         })
-        .attr("stroke-width", "25")
-        .attr("d", function(d){ return line(d); });
+        .attr("stroke-width", strokeWidth)
+        .attr("d", function(d){ return line(d); })
+        .on("touchstart", touchstart)
+        .on("touchend", touchend);
     
     var thirdGroup = chartGroup.selectAll("g.third")
         .data(showChildArray)
@@ -262,20 +281,6 @@ d3.json("/data/genealogy-data.json", function(data) {
                 .attr("x", function(d) {return d.x;})
                 .attr("y", function(d) {return d.y;})
                 .attr("fill", "white");
-
-    /*
-    for(var i=0; i < personArray.length; i++){
-        firstGroups.selectAll("circle.grp")
-            .data(personArray[i])
-            .enter()
-            .append("circle")
-                .attr("class", function(d, j){ return "grp"+j; })
-                .attr("cx", function(d){ return d.x; })
-                .attr("cy", function(d){ return d.y; })
-                .attr("r", "5")
-                .attr("fill", "yellow");
-    }*/
-
 
     var axisGroup = svg.append('g')
         .attr('class', 'x axis')
@@ -310,11 +315,31 @@ d3.json("/data/genealogy-data.json", function(data) {
         }
     });
 
-//id="chart"
 
+    function touchstart(d, i){
+        d3.select(this).classed("selected", true);
+        d3.select(this).classed("sel", false);
+    }
 
+    function touchend(d, i){
+        d3.select(this).classed("selected", false);
+        d3.select(this).classed("sel", true);
+        
+        showInformation(personInfoArray[i]);
+    }
 
+    var infoImage = d3.select("#image");
+    var infoDesc = d3.select("#description");
+    var infoCode = d3.select("#codeofarms");
 
+    function showInformation(person){
+        console.log("showInformation");
+        console.log(person);
+        infoDesc.select('h1').remove();
+        infoDesc.select('p').remove();
+        infoDesc.append('h1').text(person.name);
+        infoDesc.append('p').text(person.desc);
+    }
 
 });
 
