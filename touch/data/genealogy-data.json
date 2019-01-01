@@ -1,28 +1,30 @@
 [{
     "name": "Leopold III. (13)",
-    "died": 1136,
-    "born": 1073,
-    "gender": "man",
     "id" : 1,
-    "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset",
+    "born": 1095,
+    "died": 1136,
+    "gender": "man",
+    "desc" : "Leopold III. heiratete Agnes, die Tochter Kaiser Heinrichs IV.. Er gründete die Stifte Klosterneuburg und Heiligenkreuz und wurde im Jahr 1485 heilig gesprochen. Anlässlich der Heiligsprechung gab das Stift Klosterneuburg den Babenbergerstammbaum in Auftrag. Heute ist Leopold außerdem der Landespatron von Wien, Niederösterreich und Oberösterreich.",
+    "img" : "KNB_BST-13",
     "marriages": [{
         "spouse": {
             "name": "? v. Perg (N)",
             "gender": "woman",
-            "died": 1100,
+            "died": 1105,
             "born": 1073,
-            "marriage": 1085,
+            "marriage": 1100,
             "id" : 2,
             "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
         },
         "children": [{
             "name": "Adalbert (14)",
-            "born": 1090,
+            "born": 1103,
             "died": 1138,
             "gender": "man",
             "father" : 1, 
             "id" : 3,
-            "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset",
+            "desc" : "Adalbert war der Sohn Leopolds III. aus erster Ehe und Klostervogt der Stifte Klosterneuburg, Göttweig und Melk, woraus man eine besondere persönliche Frömmigkeit ableitet. Dies ist vermutlich auch der Grund für seinen Beinamen „der Andächtige“.",
+            "img" : "KNB_BST-14",
             "marriages": [{
                 "spouse": {
                     "name": "Adelheid (N)",
@@ -41,7 +43,8 @@
                     "died": 1145,
                     "marriage": 1131,
                     "id" : 5,
-                    "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+                    "desc" : "Sophies Name ist Sunthaym nicht bekannt. Sie ist die zweite Gattin Adalberts des Andächtigen und war eine Schwester König Belas von Ungarn. Deswegen führt sie das ungarische Wappen.",
+                    "img" : "KNB_BST-F-55"
                 }
             }]
         }]
@@ -53,16 +56,18 @@
             "born": 1107,
             "marriage": 1120,
             "id" : 6,
-            "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+            "desc" : "Agnes ist die Gattin Markgraf Leopolds III. Sie trägt als einzige Frau auf dem Gemälde ein Kirchenmodell in Händen, da sie als Mitstifterin von Klosterneuburg gilt. Bei dem Modell handelt es sich um eine spiegelverkehrte Version der Kirche von Klosterneuburg.",
+            "img" : "KNB_BST-F-44"
         },
         "children": [{
             "name": "Heinrich II. (19)",
+            "born": 1141,
             "died": 1177,
-            "born": 1130,
             "gender": "man",
             "father" : 1,
             "id" : 7,
-            "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset",
+            "desc" : "Heinrich II. wurde nach dem Tod seines Bruders Leopold IV. im Jahre 1141 Herzog von Bayern und Markgraf von Österreich. Streitigkeiten zwischen den Staufern und Welfen ermöglichten, dass die Babenberger zuvor das Herzogtum Bayern erlangten. Nach der Versöhnung der Geschlechter mussten die Babenberger das Herzogtum Bayern zurück geben. Als Entschädigung dafür wurde 1156 die Markgrafschaft Österreich zum Herzogtum erhoben und Heinrich wurde der erste Herzog von Österreich.",
+            "img": "KNB_BST-19",
             "marriages": [{
                 "spouse": {
                     "name": "Gertrud (56)",
@@ -71,7 +76,8 @@
                     "gender": "woman",
                     "marriage": 1140,
                     "id" : 8,
-                    "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+                    "desc" : "Gertraud war die erste Gattin Heinrich Jasomirgotts. Gertraud war eine Tochter Kaiser Lothars. Neben dem Fünf-Adler Schild und den bayrischen Rauten sieht man in Gertrauds Fall den kaiserlichen Doppeladler und die Löwen der Welfen.",
+                    "img" : "KNB_BST-F-56+57"
                 },
                 "children": [{
                     "name": "Richardis (N)",
@@ -90,7 +96,8 @@
                     "gender": "woman",
                     "marriage": 1160,
                     "id" : 10,
-                    "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+                    "desc" : "Theodora war die zweite Gattin Heinrich Jasomirgotts. Theodora war die Tochter des byzantinischen Kaisers Manuel Komnenos. Neben dem Fünf-Adler Schild und den bayrischen Rauten sieht man bei Theodora Adler und Greif als Symbole des byzantinischen Kaisertums.",
+                    "img" : "KNB_BST-F-56+57"
                 },
                 "children": [{
                     "name": "Agnes (58)",
@@ -99,15 +106,17 @@
                     "gender": "woman",
                     "id" : 11,
                     "father" : 7,
-                    "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+                    "desc" : "Agnes war in erster Ehe mit König Stephan III. von Ungarn vermählt, in zweiter (dies erwähnt wird allerdings nicht erwähnt) mit dem kärntnerischen Herzog Hermann. Sie ist eine Tochter Heinrich Jasomirgotts und trägt das Wappen Ungarns und den Fünf-Adler-Schild.",
+                    "img" : "KNB_BST-F-58"
                 },{
                     "name": "Leopold V. (20)",
+                    "born": 1177,
                     "died": 1194,
-                    "born": 1165,
                     "gender": "man",
                     "id" : 12,
                     "father" : 7,
-                    "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset",
+                    "desc" : "Mit Leopold V. begann eine Blütezeit der österreichischen Geschichte. Unter ihm fiel das Herzogtum Steiermark im Jahre 1192 an die Babenberger. Nach der Teilnahme an einem Kreuzzug ließ er den englischen König Richard Löwenherz gefangen nehmen und verlangte enorm hohes Lösegeld für die Freilassung. Bekannt ist vor allem die Legende dass Leopold aufgrund seines blutgetränkten Gewands das rot-weiß-rote Bindenschild als neues österreichisches Wappen verliehen wurde.",
+                    "img": "KNB_BST-20",
                     "marriages": [{
                         "spouse": {
                             "name": "Helene (60)",
@@ -116,24 +125,27 @@
                             "died" : 1200,
                             "marriage": 1180,
                             "id" : 13,
-                            "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+                            "desc" : "Bei Helena handelt es sich um die Tochter König Geisas II. von Ungarn. Ihr sind drei Wappen zugeteilt: der Schild von Ungarn, der österreichische Bindenschild, den angeblich ihr Gemahl verliehen bekam, und das dritte Wappen, zusammengesetzt aus dem Fünf-Adler-Schild und dem steirischen Panther.",
+                            "img" : "KNB_BST-F-60A"
                         },
                         "children": [{
                             "name": "Friedrich I. (23)",
+                            "born": 1195,
                             "died": 1198,
-                            "born": 1180,
                             "gender": "man",
                             "id" : 14,
                             "father" : 12,
-                            "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+                            "desc" : "Friedrich I. erhielt als älterer der beiden Söhne das Herzogtum Österreich, während seinem Bruder die Steiermark verliehen wurde. Friedrich bemühte sich dem Willen seines Vaters zu entsprechen und sandte die englischen Geiseln in ihre Heimat. Das verbliebene Lösegeld für Richard Löwenherz stellte er ebenso zurück. Friedrich starb auf einem Kreuzzug, seine Gebeine wurden aber wieder in die Heimat gebracht.",
+                            "img": "KNB_BST-23"
                         },{
-                            "name": "Leopold IV. (24)",
+                            "name": "Leopold VI. (24)",
+                            "born": 1198,
                             "died": 1230,
-                            "born": 1180,
                             "gender": "man",
                             "id" : 15,
                             "father" : 12,
-                            "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset",
+                            "desc" : "Nach dem Tode seines Vaters Leopold V. wurde Leopold VI. 1195 Herzog von Steiermark, und erlangte 1198 nach dem Tod seines Bruders auch das Herzogtum Österreich. Seine Regierungszeit gehört zu den Höhepunkten der österreichischen Geschichte. Er förderte die aufblühenden Städte, machte reiche Schenkungen an die Kirche und gründete das Stift Lilienfeld. Seinen Sitz hatte er in Klosterneuburg.",
+                            "img": "KNB_BST-24",
                             "marriages": [{
                                 "spouse": {
                                     "name": "Theodora (63)",
@@ -142,7 +154,8 @@
                                     "gender": "woman",
                                     "marriage": 1210,
                                     "id" : 16,
-                                    "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+                                    "desc" : "Theodora ist die Enkelin des byzantinischen Kaisers Isaak Angelos II. und trägt als Familienwappen den kaiserlichen Doppeladler, welcher ursprünglich aus Byzanz stammt. Im Unterschied zum Wappen des  abendländischen Kaisertums ist er golden auf rotem Feld. Außerdem sind die Schilde von Österreich und der Steiermark zu sehen.",
+                                    "img" : "KNB_BST-F-63"
                                 },
                                 "children": [{
                                     "name": "Margarethe (64)",
@@ -151,7 +164,8 @@
                                     "gender": "woman",
                                     "id" : 17,
                                     "father" : 15,
-                                    "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+                                    "desc" : "Margarete, die älteste Tochter Herzog Leopolds VI., wurde zunächst mit König Heinrich VII. verheiratet, nach dessen Tode mit König Ottokar Przemsyl von Böhmen, der dadurch seine Herrschaft über Österreich legitimieren wollte. Sie ist hier als alte Frau dargestellt und ihr Wappen besteht aus dem schwarzen Adler in Gold des Heiligen Römischen Reichs, dem böhmischen Löwen und dem österreichischen Bindenschild.",
+                                    "img" : "KNB_BST-F-59"
                                 },{
                                     "name": "Agnes (65)",
                                     "born": 1215,
@@ -159,23 +173,26 @@
                                     "gender": "woman",
                                     "id" : 18,
                                     "father" : 15,
-                                    "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+                                    "desc" : "Agnes heiratete Herzog Albrecht von Sachsen und führt daher neben dem Bindenschild auch das sächsische Wappen, den grünen Rautenkranz über mehrfach von gold und schwarz geteiltem Feld.",
+                                    "img" : "KNB_BST-F-65"
                                 },{
                                     "name": "Leopold (25)",
-                                    "born": 1215,
-                                    "died": 1230,
+                                    "born": 1207,
+                                    "died": 1216,
                                     "gender": "man",
                                     "id" : 19,
                                     "father" : 15,
-                                    "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+                                    "desc" : "Leopold das Kind wurde in Klosterneuburg geboren und auch im Chorherrenstift unterrichtet. Im Alter von neun Jahren kletterte er in einem unbeaufsichtigten Augenblick, auf einen Baum, stürzte herab und starb. Angeblich soll dieser schwere Verlust Leopold VI. dazu veranlasst haben, seinen Sitz wieder nach Wien zu verlegen.",
+                                    "img": "KNB_BST-25"
                                 },{
                                     "name": "Heinrich (26)",
                                     "born": 1215,
-                                    "died": 1250,
+                                    "died": 1227,
                                     "gender": "man",
                                     "id" : 20,
                                     "father" : 15,
-                                    "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset",
+                                    "desc" : "Während Leopold VI. zu Kaiser Heinrich VII. in die Lombardei reiste, erhob sich Heinrich gegen seinen Vater. Er eroberte Hainburg und vertrieb seine eigene Mutter Theodora. Nach seiner Rückkehr konnte sein Vater Hainburg allerdings mühelos wieder einnehmen.",
+                                    "img": "KNB_BST-26",
                                     "marriages": [{
                                         "spouse": {
                                             "name": "Agnes (68V)",
@@ -198,12 +215,13 @@
                                     }]
                                 },{
                                     "name": "Friedrich II. (27)",
+                                    "born": 1230,
                                     "died": 1246,
-                                    "born": 1215,
                                     "gender": "man",
                                     "id" : 23,
                                     "father" : 15,
-                                    "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset",
+                                    "desc" : "Friedrich II. war der dritte Sohn Leopolds VI. und folgte seinem Vater in der Regierung, da seine Brüder schon früher verstorben waren. Er musste oft Niederlagen gegen die Bayern, Böhmen und Ungarn hinnehmen. Friedrich plante, Österreich zum Königreich erheben zu lassen, fiel aber vor der Verwirklichung dieses Vorhabens in der Schlacht an der Leitha gegen die Ungarn als letzter Babenberger.",
+                                    "img": "KNB_BST-27",
                                     "marriages" : [{
                                         "spouse" : {
                                             "name" : "Sophie (73V)",
@@ -232,7 +250,8 @@
                                     "gender": "woman",
                                     "id" : 26,
                                     "father" : 15,
-                                    "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+                                    "desc" : "Constantia war mit dem mächtigen Markgrafen Heinrich dem Erlauchten von Meißen verheiratet. Das entsprechende Wappen, der schwarze Löwe im goldenen Schild, stammt jedoch aus dem Wappen der Stadt Meißen. Die Markgrafschaft führte einen Turm im Wappen, der hier nicht zu sehen ist.",
+                                    "img" : "KNB_BST-F-66"
                                 },{
                                     "name": "Gertrud (67)",
                                     "born" : 1215,
@@ -240,7 +259,8 @@
                                     "gender": "woman",
                                     "id" : 27,
                                     "father" : 15,
-                                    "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+                                    "desc" : "Gertrud war die Gemahlin des Landgrafen Heinrich Raspe von Thüringen und führt neben dem Bindenschild das alte Wappen der Thüringer Landgrafen, das später von Hessen übernommen wurde: den von rot und silber schräg gebänderten Löwen im blauen Schild.",
+                                    "img" : "KNB_BST-F-67"
                                 }]
                             }]
                         },{
@@ -255,12 +275,13 @@
                     }]
                 },{
                     "name": "Heinrich d.Ä. (21)",
-                    "born": 1150,
+                    "born": 1158,
                     "died": 1223,
                     "gender": "man",
                     "id" : 29,
                     "father" : 7,
-                    "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset",
+                    "desc" : "Heinrich der Ältere hatte von seinem Bruder Leopold die Herrschaft Mödling erhalten, wo er auch seinen Sitz hatte. Mödling erlebte unter Heinrich einen großen Aufschwung und Heinrich förderte auch berühmte Zeitgenossen, wie etwa den Minnesänger Walter von der Vogelweide.",
+                    "img": "KNB_BST-21",
                     "marriages": [{
                         "spouse": {
                             "name": "Richza (62)",
@@ -269,28 +290,31 @@
                             "gender": "woman",
                             "marriage": 1155,
                             "id" : 30,
-                            "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+                            "desc" : "Richza, oder Raitza, war eine Tochter König Wladislaws II. von Böhmen. Ihr sind drei Schilde beigegeben: das böhmische Löwenwappen, der Bindeschild und der Fünf-Adler-Schild, der bei Heinrich von Mödling und seinen Angehörigen zum letzten Mal verwendet wird.",
+                            "img" : "KNB_BST-F-62"
                         },
                         "children": [{
                             "name": "Heinrich d.J. (22)",
-                            "born": 1160,
+                            "born": 1223,
                             "died": 1236,
                             "gender": "man",
                             "id" : 31,
                             "father" : 29,
-                            "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+                            "desc" : "Mit Heinrich dem Jüngeren erlosch die Mödlinger Linie der Babenberger. Seine Besitzungen fielen nach seinem Tod an Herzog Friedrich II. Heinrich ist keine berühmte Persönlichkeit, seine Hofhaltung zog aber wirtschaftliche und kulturelle Kräfte an und er wird als ausgezeichneter Jäger beschrieben.",
+                            "img": "KNB_BST-22"
                         }]
                     }]
                 }]
             }]
         },{
             "name": "Leopold IV. (15)",
+            "born": 1136,
             "died": 1141,
-            "born": 1108,
             "gender": "man",
             "father" : 1,
             "id" : 32,
-            "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset",
+            "desc" : "Leopold IV. folgte als dritter Sohn seinem Vater in der Regierung, wohl weil er die besten Herrscherqualitäten besaß. Ältere Quelle erzählen, dass Leopold von seinem Vater mehr geliebt wurde als seine Brüder. Ihm wurde vom Kaiser das Herzogtum Bayern übertragen. Sein Beiname wird vermutlich nur von seinem Vater abgeleitet, denn fromme Stiftungen machte Leopold wenig.",
+            "img" : "KNB_BST-15",
             "marriages": [{
                 "spouse": {
                     "name": "Maria (59)",
@@ -299,7 +323,8 @@
                     "born": 1108,
                     "marriage": 1120,
                     "id" : 33,
-                    "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+                    "desc" : "Maria war eine Tochter Herzog Sobieslaws von Böhmen. Ihre Wappen sind der kombinierte Schild von Österreich und Bayern und der böhmische Löwe.",
+                    "img" : "KNB_BST-F-59"
                 }
             }]
         },{
@@ -317,23 +342,26 @@
             "gender": "woman",
             "father" : 1, 
             "id" : 35,
-            "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+            "desc" : "Agnes, Tochter Leopolds III., heiratete Herzog Wladislaw II. von Polen. Bei der Teilung Polens erhielt Wladislaw II. Krakau und Schlesien, wurde aber von seinen Brüdern aus Polen vertreiben und lebte am Hofe König Konrads III. Als Wappen ist Agnes der polnische Schild ebenso wie das Fünf-Adler-Wappen zugeteilt.",
+            "img" : "KNB_BST-F-46"
         },{
             "name": "Otto (16)",
+            "born": 1138,
             "died": 1158,
-            "born": 1112,
             "gender": "man",
             "father" : 1, 
             "id" : 36,
-            "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+            "desc" : "Otto von Freising trat 1133 in das Zisterzienserkloster Morimond ein – ein strenges Reformkloster – und wurde 1138 als Bischof nach Freising berufen. Er gilt als der bedeutendste Geschichtsschreiber und Geschichtsphilosoph des Mittelalters. Seine beiden Hauptwerke sind eine Weltchronik und die Geschichte Kaiser Friedrichs I.",
+            "img" : "KNB_BST-16"
         },{
             "name": "Konrad (17)",
+            "born": 1164,
             "died": 1168,
-            "born": 1115,
             "gender": "man",
             "id" : 37,
             "father" : 1,
-            "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+            "desc" : "Auch Conrad war Geistlicher und wirkte zunächst als Bischof von Passau. Im Schisma Friedrichs I. stand er zunächst auf der Seite des Kaisers – seines Neffen – wechselte dann aber auf die Seite des Papstes. Im Jahr 1164 wurde er Erzbischof von Salzburg und obwohl der Kaiser die Reichsacht über ihn verhängte konnte er sich in Kärnten und der Steiermark behaupten.",
+            "img" : "KNB_BST-17"
         },{
             "name": "Elisabeth (48)",
             "born": 1100,
@@ -341,7 +369,8 @@
             "gender": "woman",
             "father" : 1, 
             "id" : 38,
-            "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+            "desc" : "Elisabeth, eine Tochter Leopolds III. heiratete  – das sagt uns das Schriftband – den Grafen Hermann den Reichen von Sachsen. Das Schriftband ist jedoch ungenau. Tatsächlich war ihr Gatte Graf Hermann von Winzenburg aus einem bedeutenden niedersächsischen Geschlecht.",
+            "img" : "KNB_BST-F-48"
         },{
             "name": "Gertrud (47)",
             "born": 1100,
@@ -349,7 +378,8 @@
             "gender": "woman",
             "father" : 1, 
             "id" : 39,
-            "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+            "desc" : "Gertrud, eine Tochter Markgraf Leopolds III. war mit Herzog Wladislaw II. von Böhmen vermählt. Dieser gründete das Stift Strahov. Der aus der Ehe hervorgegangene Sohn Adalbert wurde Erzbischof von Salzburg und damit Nachfolger seines Onkels Konrad. Gertrud führt neben dem Fünf-Adler-Wappen auch das Wappen Böhmens, den Löwen mit gedoppeltem Schweif.",
+            "img" : "KNB_BST-F-47"
         },{
             "name": "Judith (49)",
             "born": 1100,
@@ -357,7 +387,8 @@
             "gender": "woman",
             "father" : 1, 
             "id" : 40,
-            "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset"
+            "desc" : "Jeith oder auch Judith war eine Tochter Leopolds III. und vermählt mit Markgraf Wilhelm von Montferrat, der auf dem Stammbaum als „Regenger“ bezeichnet wird. Sie führt neben dem Fünf-Adler-Schild das Stammwappen von Montferrat, ein rotes Schildhaupt über Silber.",
+            "img" : "KNB_BST-F-49"
         }]
     }]
 }]
