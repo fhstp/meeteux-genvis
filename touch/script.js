@@ -16,9 +16,11 @@ var parseDate = d3.timeParse("%Y");
 
 var svgHeight = 2000;
 var svgWidth = 2000;
+// Determines how far the scroll bar should be from the top
+var scrollOffset = 15;
 
 var x = d3.scaleTime()
-.domain(d3.extent(stringDates, function(d){console.log(parseDate(d)); return parseDate(d)}))
+.domain(d3.extent(stringDates, function(d){return parseDate(d)}))
 .range([0, svgWidth]);
 
 
@@ -208,9 +210,9 @@ function getFatherY(fatherSample){
 
 var xAxis = d3.axisBottom(x);
 
-var svg = d3.select("body").append("svg")
-    .attr("height", svgHeight)
-    .attr("width", svgWidth);
+var svg = d3.select("#chart").append("svg")
+    .attr("height", svgHeight + 'px')
+    .attr("width", svgWidth + 'px');
 
 var line = d3.line()
     .x(function(d, i){ return d.x; })
@@ -273,9 +275,33 @@ for(var i=0; i < personArray.length; i++){
 }*/
 
 
-var axisGroup = svg.append("svg")
-//d3.select("body").append("svg").attr("height", "100").attr("width", svgWidth)
-//    chartGroup.append("g")
-    .attr("class", "x axis").attr("transform", "translate(0,0)").style("position", "fixed").style("top", "0").style("left", "0")
-    .call(xAxis);
+var axisGroup = svg.append('g')
+    .attr('class', 'x axis')
+    .attr('transform', 'translate(0,0)')
+    .call(d3.axisBottom(x).tickFormat(d3.timeFormat("%Y")));
 
+// This is just to show you that the parseDate funciton returns a very long stirng. What firefox and chrome took was only the last 3 digits which resolve to :00
+console.log('stringdates: ', parseDate(stringDates[0]), d3.extent(stringDates, function (d) { return parseDate(d) }));
+
+/**
+ * This is where the transition of the axis takes place. You can take various ease funcitons to make it smoother.
+ * https://bl.ocks.org/d3noob/1ea51d03775b9650e8dfd03474e202fe
+ * Or try play around with duration and delay.
+ */
+window.addEventListener('scroll', function(event) {
+     // First covers all browsers and tablets except ones with IE. Second is fallback option for IE.
+    const scrollPos = window.scrollY || document.documentElement.scrollTop;
+
+    // If we are not at the top of the screen we add the offset
+    if (scrollPos > 5) {
+        axisGroup
+        .transition()
+        .ease(d3.easeElastic)
+        .attr('transform', `translate(0, ${scrollPos + scrollOffset})`);
+    } else { // Otherwise we need no offset
+        axisGroup
+        .transition()
+        .ease(d3.easeElastic)
+        .attr('transform', `translate(0, ${scrollPos})`);
+    }
+});
