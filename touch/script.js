@@ -17,12 +17,10 @@ d3.json("/data/genealogy-data.json", function(data) {
 
     //var j = d3.scaleTime().domain(d3.extent(stringDates, function(d){ return parseDate(d); })).range([0,chartWidth]);
 
+    // set dynamic height of divs
     var screenHeight = screen.height;
-    console.log(screenHeight);
-
     var div1Height = screenHeight/100*32;
     var div2Height = screenHeight - div1Height;
-    console.log(div1Height + " + " + div2Height);
 
     d3.select("#info").attr("style", "height: " + div1Height+"px");
     d3.select("#chart").attr("style", "height: " + div2Height+"px");
