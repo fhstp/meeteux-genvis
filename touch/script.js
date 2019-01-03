@@ -1,7 +1,9 @@
+// Load Genealogy Data
 d3.json("/data/genealogy-data.json", function(data) {
     
     var persons = data;
 
+    // load Coat of Arms Data
     d3.json("/data/coat-of-arms.json", function(data) {
         var coatOfArms = data;
         console.log(coatOfArms);
@@ -382,9 +384,22 @@ d3.json("/data/genealogy-data.json", function(data) {
                     }
                 });
 
-                var div = infoCoat.append('div').attr("class", "coa");
-                div.append("img").attr("src", "img/"+coatOfArmsItem.img+".png")
+                var div = infoCoat.append('div');
+                div.append("img").attr("src", "img/coatofarms/"+coatOfArmsItem.img+".png")
                 div.append("h2").text(coatOfArmsItem.name);
+
+                switch (person.coa.length) {
+                    case 1:
+                    div.attr("class", "coa single");
+                        break;
+                
+                    case 2:
+                        div.attr("class", "coa double");
+                        break;
+                    default:
+                        div.attr("class", "coa triple");
+                        break;
+                }
             });
         }
     });

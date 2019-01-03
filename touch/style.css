@@ -46,5 +46,24 @@ path.woman.selected, path.woman.sel{
 .col:nth-child(2) { background: lavender; }
 .col:nth-child(3) { background: ivory; }
 #image img{
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
+}
+
+.coa{
+    width: 45%;
+    margin-left: 2.5%;
+}
+
+.coa img{
+    width: 40px;
+    margin-left: 35%;
+}
+
+.coa.single{
+    margin: auto;
+} 
+
+.coa.double, .coa.triple{
+    float: left;
 }
