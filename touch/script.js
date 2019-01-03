@@ -371,7 +371,8 @@ d3.json("/data/genealogy-data.json", function(data) {
             infoImage.select('img').remove();
             infoImage.append('img').attr("src", "img/"+person.img+".png");
 
-            infoCode.select('.coa').remove();
+            infoCode.selectAll('div.coa').remove();
+
             // Code of Arms
             person.coa.forEach(coaItem => {
                 var codeOfArmsItem; 
