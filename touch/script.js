@@ -2,9 +2,9 @@ d3.json("/data/genealogy-data.json", function(data) {
     
     var persons = data;
 
-    d3.json("/data/code-of-arms.json", function(data) {
-        var codeOfArms = data;
-        console.log(codeOfArms);
+    d3.json("/data/coat-of-arms.json", function(data) {
+        var coatOfArms = data;
+        console.log(coatOfArms);
 
         //var interpolateTypes = [d3.curveLinear, d3.curveNatural, d3.curveStep, d3.curveBasis, d3.curveBundle, d3.curveCardinal];
         var stringDates = ['1060', '1280'];
@@ -356,35 +356,35 @@ d3.json("/data/genealogy-data.json", function(data) {
 
         var infoImage = d3.select("#image");
         var infoDesc = d3.select("#description");
-        var infoCode = d3.select("#codeofarms");
+        var infoCoat = d3.select("#codeofarms");
 
         function showInformation(person){
             console.log("showInformation");
             console.log(person);
 
-
+            // shows text information
             infoDesc.select('h1').remove();
             infoDesc.select('p').remove();
             infoDesc.append('h1').text(person.name);
             infoDesc.append('p').text(person.desc);
 
+            // Shows cirular image
             infoImage.select('img').remove();
             infoImage.append('img').attr("src", "img/"+person.img+".png");
 
-            infoCode.selectAll('div.coa').remove();
-
-            // Code of Arms
+            // Shows coat of arms
+            infoCoat.selectAll('div.coa').remove();
             person.coa.forEach(coaItem => {
-                var codeOfArmsItem; 
-                codeOfArms.forEach(coa => {
+                var coatOfArmsItem; 
+                coatOfArms.forEach(coa => {
                     if(coa.id == coaItem){
-                        codeOfArmsItem = coa;
+                        coatOfArmsItem = coa;
                     }
                 });
 
-                var div = infoCode.append('div').attr("class", "coa");
-                div.append("img").attr("src", "img/"+codeOfArmsItem.img+".png")
-                div.append("h2").text(codeOfArmsItem.name);
+                var div = infoCoat.append('div').attr("class", "coa");
+                div.append("img").attr("src", "img/"+coatOfArmsItem.img+".png")
+                div.append("h2").text(coatOfArmsItem.name);
             });
         }
     });
