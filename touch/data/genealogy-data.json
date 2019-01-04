@@ -1,5 +1,6 @@
 [{
     "name": "Leopold III. (13)",
+    "title" : "der Heilige",
     "id" : 1,
     "born": 1095,
     "died": 1136,
@@ -10,6 +11,7 @@
     "marriages": [{
         "spouse": {
             "name": "? v. Perg (N)",
+            "title" : "ich bin ein Titel",
             "gender": "woman",
             "died": 1105,
             "born": 1073,
@@ -20,6 +22,7 @@
         },
         "children": [{
             "name": "Adalbert (14)",
+            "title" : "ich bin ein Titel",
             "born": 1103,
             "died": 1138,
             "gender": "man",
@@ -31,6 +34,7 @@
             "marriages": [{
                 "spouse": {
                     "name": "Adelheid (N)",
+                    "title" : "ich bin ein Titel",
                     "gender": "woman",
                     "born": 1100,
                     "died": 1125,
@@ -42,6 +46,7 @@
             },{
                 "spouse": {
                     "name": "Sophie (55)",
+                    "title" : "ich bin ein Titel",
                     "gender": "woman",
                     "born": 1110,
                     "died": 1145,
@@ -56,6 +61,7 @@
     },{
         "spouse": {
             "name": "Agnes (44)",
+            "title" : "ich bin ein Titel",
             "gender": "woman",
             "died": 1177,
             "born": 1107,
@@ -67,6 +73,7 @@
         },
         "children": [{
             "name": "Heinrich II. (19)",
+            "title" : "ich bin ein Titel",
             "born": 1141,
             "died": 1177,
             "gender": "man",
@@ -78,6 +85,7 @@
             "marriages": [{
                 "spouse": {
                     "name": "Gertrud (56)",
+                    "title" : "ich bin ein Titel",
                     "born": 1120,
                     "died": 1150,
                     "gender": "woman",
@@ -89,6 +97,7 @@
                 },
                 "children": [{
                     "name": "Richardis (N)",
+                    "title" : "ich bin ein Titel",
                     "born": 1145,
                     "died": 1185,
                     "gender": "woman",
@@ -100,6 +109,7 @@
             },{
                 "spouse": {
                     "name": "Theodora (57)",
+                    "title" : "ich bin ein Titel",
                     "born": 1130,
                     "died": 1183,
                     "gender": "woman",
@@ -111,6 +121,7 @@
                 },
                 "children": [{
                     "name": "Agnes (58)",
+                    "title" : "ich bin ein Titel",
                     "born": 1165,
                     "died": 1184,
                     "gender": "woman",
@@ -121,6 +132,7 @@
                     "coa" : [1, 2]
                 },{
                     "name": "Leopold V. (20)",
+                    "title" : "ich bin ein Titel",
                     "born": 1177,
                     "died": 1194,
                     "gender": "man",
@@ -132,6 +144,7 @@
                     "marriages": [{
                         "spouse": {
                             "name": "Helene (60)",
+                            "title" : "ich bin ein Titel",
                             "gender": "woman",
                             "born" : 1150,
                             "died" : 1200,
@@ -143,6 +156,7 @@
                         },
                         "children": [{
                             "name": "Friedrich I. (23)",
+                            "title" : "ich bin ein Titel",
                             "born": 1195,
                             "died": 1198,
                             "gender": "man",
@@ -153,6 +167,7 @@
                             "coa" : [1, 2]
                         },{
                             "name": "Leopold VI. (24)",
+                            "title" : "ich bin ein Titel",
                             "born": 1198,
                             "died": 1230,
                             "gender": "man",
@@ -164,6 +179,7 @@
                             "marriages": [{
                                 "spouse": {
                                     "name": "Theodora (63)",
+                                    "title" : "ich bin ein Titel",
                                     "born": 1200,
                                     "died": 1246,
                                     "gender": "woman",
@@ -175,6 +191,7 @@
                                 },
                                 "children": [{
                                     "name": "Margarethe (64)",
+                                    "title" : "ich bin ein Titel",
                                     "born": 1215,
                                     "died": 1266,
                                     "gender": "woman",
@@ -184,7 +201,7 @@
                                     "img" : "KNB_BST-F-59",
                                     "coa" : [1, 2]
                                 },{
-                                    "name": "Agnes (65)",
+                                    "name": "Agnes (65)","title" : "ich bin ein Titel",
                                     "born": 1215,
                                     "died": 1226,
                                     "gender": "woman",
@@ -195,6 +212,7 @@
                                     "coa" : [1, 2]
                                 },{
                                     "name": "Leopold (25)",
+                                    "title" : "ich bin ein Titel",
                                     "born": 1207,
                                     "died": 1216,
                                     "gender": "man",
@@ -205,6 +223,7 @@
                                     "coa" : [1, 2]
                                 },{
                                     "name": "Heinrich (26)",
+                                    "title" : "ich bin ein Titel",
                                     "born": 1215,
                                     "died": 1227,
                                     "gender": "man",
@@ -216,6 +235,7 @@
                                     "marriages": [{
                                         "spouse": {
                                             "name": "Agnes (68V)",
+                                            "title" : "ich bin ein Titel",
                                             "gender": "woman",
                                             "born" : 1200,
                                             "died" : 1250,
@@ -226,6 +246,7 @@
                                         },
                                         "children" : [{
                                             "name" : "Gertrud (69)",
+                                            "title" : "ich bin ein Titel",
                                             "gender" : "woman",
                                             "born" : 1230,
                                             "died" : 1250,
@@ -237,6 +258,7 @@
                                     }]
                                 },{
                                     "name": "Friedrich II. (27)",
+                                    "title" : "ich bin ein Titel",
                                     "born": 1230,
                                     "died": 1246,
                                     "gender": "man",
@@ -248,6 +270,7 @@
                                     "marriages" : [{
                                         "spouse" : {
                                             "name" : "Sophie (73V)",
+                                            "title" : "ich bin ein Titel",
                                             "gender" : "woman",
                                             "born" : 1200,
                                             "died" : 1230,
@@ -259,6 +282,7 @@
                                     },{
                                         "spouse" : {
                                             "name" : "Agnes v. Meranien (72)",
+                                            "title" : "ich bin ein Titel",
                                             "gender" : "woman",
                                             "born": 1200,
                                             "died" : 1270,
@@ -270,6 +294,7 @@
                                     }]
                                 },{
                                     "name": "Konstanze (66)",
+                                    "title" : "ich bin ein Titel",
                                     "born": 1215,
                                     "died": 1243,
                                     "gender": "woman",
@@ -280,6 +305,7 @@
                                     "coa" : [1, 2]
                                 },{
                                     "name": "Gertrud (67)",
+                                    "title" : "ich bin ein Titel",
                                     "born" : 1215,
                                     "died": 1241,
                                     "gender": "woman",
@@ -292,6 +318,7 @@
                             }]
                         },{
                             "name": "Agnes (61V)",
+                            "title" : "ich bin ein Titel",
                             "gender": "woman",
                             "born": 1180,
                             "died": 1200,
@@ -303,6 +330,7 @@
                     }]
                 },{
                     "name": "Heinrich d.Ä. (21)",
+                    "title" : "ich bin ein Titel",
                     "born": 1158,
                     "died": 1223,
                     "gender": "man",
@@ -314,6 +342,7 @@
                     "marriages": [{
                         "spouse": {
                             "name": "Richza (62)",
+                            "title" : "ich bin ein Titel",
                             "born": 1100,
                             "died": 1182,
                             "gender": "woman",
@@ -325,6 +354,7 @@
                         },
                         "children": [{
                             "name": "Heinrich d.J. (22)",
+                            "title" : "ich bin ein Titel",
                             "born": 1223,
                             "died": 1236,
                             "gender": "man",
@@ -339,6 +369,7 @@
             }]
         },{
             "name": "Leopold IV. (15)",
+            "title" : "ich bin ein Titel",
             "born": 1136,
             "died": 1141,
             "gender": "man",
@@ -350,6 +381,7 @@
             "marriages": [{
                 "spouse": {
                     "name": "Maria (59)",
+                    "title" : "ich bin ein Titel",
                     "gender": "woman",
                     "died": 1141,
                     "born": 1108,
@@ -362,6 +394,7 @@
             }]
         },{
             "name": "Berta (45)",
+            "title" : "ich bin ein Titel",
             "born": 1100,
             "died": 1150,
             "gender": "woman",
@@ -371,6 +404,7 @@
             "coa" : [1, 2]
         },{
             "name": "Agnes (46)",
+            "title" : "ich bin ein Titel",
             "born": 1100,
             "died": 1157,
             "gender": "woman",
@@ -381,6 +415,7 @@
             "coa" : [1, 2]
         },{
             "name": "Otto (16)",
+            "title" : "ich bin ein Titel",
             "born": 1138,
             "died": 1158,
             "gender": "man",
@@ -391,6 +426,7 @@
             "coa" : [1, 2]
         },{
             "name": "Konrad (17)",
+            "title" : "ich bin ein Titel",
             "born": 1164,
             "died": 1168,
             "gender": "man",
@@ -401,6 +437,7 @@
             "coa" : [1, 2]
         },{
             "name": "Elisabeth (48)",
+            "title" : "ich bin ein Titel",
             "born": 1100,
             "died": 1143,
             "gender": "woman",
@@ -411,6 +448,7 @@
             "coa" : [1, 2]
         },{
             "name": "Gertrud (47)",
+            "title" : "ich bin ein Titel",
             "born": 1100,
             "died": 1151,
             "gender": "woman",
@@ -421,6 +459,7 @@
             "coa" : [1, 2]
         },{
             "name": "Judith (49)",
+            "title" : "ich bin ein Titel",
             "born": 1100,
             "died": 1191,
             "gender": "woman",
