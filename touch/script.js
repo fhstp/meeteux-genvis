@@ -241,7 +241,8 @@ d3.json("/data/genealogy-data.json", function(data) {
                 id: person.id,
                 x: whichX(person.born), 
                 y: startY,
-                coa: person.coa
+                coa: person.coa,
+                title: person.title
             };
         }
         var xAxis = d3.axisBottom(x);
@@ -366,8 +367,10 @@ d3.json("/data/genealogy-data.json", function(data) {
 
             // shows text information
             infoDesc.select('h1').remove();
+            infoDesc.select('h2').remove();
             infoDesc.select('p').remove();
             infoDesc.append('h1').text(person.name);
+            infoDesc.append('h2').text(person.title);
             infoDesc.append('p').text(person.desc);
 
             // Shows cirular image
