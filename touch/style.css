@@ -46,8 +46,7 @@ path.woman.selected, path.woman.sel{
 .col:nth-child(2) { background: lavender; }
 .col:nth-child(3) { background: ivory; }
 #image img{
-    width: 90%;
-    margin-left: 5%;
+    width: 80%;
 }
 
 .coa{
@@ -56,12 +55,11 @@ path.woman.selected, path.woman.sel{
 }
 
 .coa img{
-    width: 40px;
-    margin-left: 35%;
+    width: 70px;
 }
 
 .coa.single{
-    margin: auto;
+    /*margin: auto;*/
 } 
 
 .coa.double, .coa.triple{
