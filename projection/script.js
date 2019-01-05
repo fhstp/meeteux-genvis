@@ -26,7 +26,10 @@ d3.json("data/genealogy-data.json", function(data){
         var info = myDiv.append("div").attr("class", "info");
         var children = myDiv.append("div").attr("class", "children");
 
-        info.append("h1").text(myPerson.name);
+        var infoDiv = info.append("div").attr("class", "banner");
+        infoDiv.append("h1").text(myPerson.name);
+        infoDiv.append("p").text(getTimeString(myPerson));
+        info.append("img").attr("src", "/img/"+myPerson.img+".png");
     }
 
     var myPerson;
@@ -62,6 +65,24 @@ d3.json("data/genealogy-data.json", function(data){
                 }
             });
         }
+    }
+
+    function getTimeString(myPerson){
+        var timeString = "";
+        
+        if(myPerson.bornGuessed){
+            timeString += "um ";
+        }
+
+        timeString += myPerson.born + " - ";
+
+        if(myPerson.diedGuessed){
+            timeString += " um ";
+        }
+        
+        timeString += myPerson.died;
+
+        return timeString;
     }
 });
 

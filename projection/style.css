@@ -21,7 +21,6 @@ body{
 
 .col:nth-child(1) {
     width: 730px;
-    background: pink;
 }
 .col:nth-child(2) {
     width: 463px;
@@ -29,19 +28,36 @@ body{
 }
 .col:nth-child(3) {
     width: 727px;
-    background: pink;
 }
 
 .map{
-    height: 360px;
+    height: 385px;
     background: ivory;
 }
 
 .info{
-    height: 360px;
+    height: 250px;
+    margin: 30px 60px;
+}
+.banner{
+    border: 2px solid black;
+    height: 150px;
+    float: left;
+    width: 400px;
+    margin-top: 50px;
+}
+
+.banner h1, .banner p{
+    padding-left: 20px;
+}
+
+.info img{
+    width: 250px;
+    float: left;
+    margin-left: -50px;
 }
 
 .children{
-    height: 360px;
+    height: 385px;
     background: ivory;
 }
