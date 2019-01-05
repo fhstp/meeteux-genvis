@@ -1,0 +1,26 @@
+body{
+
+}
+
+#box{
+    display: table;
+    width: 100%;
+}
+
+.col{
+    display: table-cell;
+    vertical-align: top;
+}
+
+.col:nth-child(1) {
+    width: 20%;
+    background: pink;
+}
+.col:nth-child(2) {
+    width: 30%;
+    background: lavender;
+}
+.col:nth-child(3) {
+    width: 20%;
+    background: ivory;
+}
