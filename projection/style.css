@@ -29,5 +29,19 @@ body{
 }
 .col:nth-child(3) {
     width: 727px;
+    background: pink;
+}
+
+.map{
+    height: 360px;
+    background: ivory;
+}
+
+.info{
+    height: 360px;
+}
+
+.children{
+    height: 360px;
     background: ivory;
 }
