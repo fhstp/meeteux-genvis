@@ -1,17 +1,19 @@
 body{
-    background: url("img/reprodcution-v0-4-1080.png");
+    background: url("img/reprodcution-v0-4-1080.png") black;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
     height: 1080px;
     width: 1920px;
     margin: 0;
+    box-sizing: border-box;
 }
 
 #box{
     display: table;
-    width: 100%;
+    width: 1292px;
     height: 100%;
+    margin: 0 314px;
 }
 
 .col{
@@ -20,44 +22,63 @@ body{
 }
 
 .col:nth-child(1) {
-    width: 730px;
+    width: 34%;
 }
 .col:nth-child(2) {
-    width: 463px;
+    width: 32%;
     background: transparent;
 }
 .col:nth-child(3) {
-    width: 727px;
+    width: 34%;
 }
 
 .map{
     height: 385px;
-    background: ivory;
+    background: grey;
 }
 
 .info{
-    height: 250px;
-    margin: 30px 60px;
+    height: 150px;
+    margin: 50px 20px;
 }
 .banner{
     border: 2px solid black;
-    height: 150px;
+    height: 100px;
     float: left;
-    width: 400px;
-    margin-top: 50px;
+    width: 250px;
+    margin-top: 30px;
 }
 
-.banner h1, .banner p{
-    padding-left: 20px;
+.left .banner h1, .left .banner p{
+    padding-left:20px;
+}
+
+.right .banner h1, .right .banner p{
+    padding-left: 30px;
+}
+
+.right .banner{
+    margin-left: 150px;
+}
+
+.info h1{
+    font-size: 20px;
 }
 
 .info img{
-    width: 250px;
+    width: 170px;
     float: left;
+}
+
+.left img{
     margin-left: -50px;
+}
+
+.right img{
+    margin-left: -400px;
 }
 
 .children{
     height: 385px;
-    background: ivory;
+    background: grey;
 }

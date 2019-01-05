@@ -23,13 +23,15 @@ d3.json("data/genealogy-data.json", function(data){
         }
 
         var map = myDiv.append("div").attr("class", "map");
-        var info = myDiv.append("div").attr("class", "info");
+        var info = myDiv.append("div").attr("class", "info "+ whichSide);
         var children = myDiv.append("div").attr("class", "children");
 
         var infoDiv = info.append("div").attr("class", "banner");
         infoDiv.append("h1").text(myPerson.name);
         infoDiv.append("p").text(getTimeString(myPerson));
+
         info.append("img").attr("src", "/img/"+myPerson.img+".png");
+
     }
 
     var myPerson;
