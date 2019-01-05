@@ -12,11 +12,6 @@ d3.json("/data/genealogy-data.json", function(data) {
         var stringDates = ['1060', '1280'];
         var parseDate = d3.timeParse("%Y");
 
-        //var minDate = d3.min(data, function(d){ return d.month; });
-        //var maxDate = d3.max(data, function(d){ return d.month; });
-
-        //var j = d3.scaleTime().domain(d3.extent(stringDates, function(d){ return parseDate(d); })).range([0,chartWidth]);
-
         // set dynamic height of divs
         var screenHeight = screen.height;
         var div1Height = screenHeight/100*32;
