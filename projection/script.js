@@ -1,91 +1,126 @@
 d3.json("data/genealogy-data.json", function(data){
     var genData = data;
-    // waiting for websocket call from client with side and personid
-    var side = "left";
-    var personId = 1;
 
-    showData(side, personId);
-    showData("right", 40);
+    d3.json("data/printed-persons.json", function(data2){
+        var printedPersons = data2;
 
-    function showData(whichSide, whichPersonId){
-        getPersonById(whichPersonId);
+        // waiting for websocket call from client with side and personid
+        var side = "left";
+        var personId = 40;
 
-        console.log(whichSide);
-        var myDiv;
-        switch (whichSide) {
-            case "left":
-                myDiv = d3.select("#userLeft");
-                break;
-        
-            default:
-                myDiv = d3.select("#userRight");
-                break;
-        }
+        showData(side, personId);
+        showData("right", 1);
 
-        var map = myDiv.append("div").attr("class", "map");
-        var info = myDiv.append("div").attr("class", "info "+ whichSide);
-        var children = myDiv.append("div").attr("class", "children");
+        function showData(whichSide, whichPersonId){
+            getPersonById(whichPersonId);
 
-        var infoDiv = info.append("div").attr("class", "banner");
-        infoDiv.append("h1").text(myPerson.name);
-        infoDiv.append("p").text(getTimeString(myPerson));
+            var printedRelative;
 
-        info.append("img").attr("src", "/img/"+myPerson.img+".png");
-
-    }
-
-    var myPerson;
-    var myId;
-
-    function getPersonById(myPersonId){
-        myId = myPersonId;
-        genData.forEach(person => {
-            getPersonByIdRecursive(person);
-        });
-    }
-
-    function getPersonByIdRecursive(person){
-        if(person.id == myId){
-            myPerson = person;
-        }
-        if(typeof person.marriages != "undefined"){
-            person.marriages.forEach(marriage => {
-                if(typeof marriage.spouse !== "undefined"){
-                    if(marriage.spouse.id == myId){
-                        myPerson = marriage.spouse;
-                    }
+            printedPersons.some(person => {
+                // check if father in printedPerson
+                if(person.id == myPerson.father){ 
+                    printedRelative = person;
+                    printedRelative.relation = "father";
+                    console.log("father found");
+                    console.log(myPerson);
+                    console.log(printedRelative);
                 }
 
-                if(typeof marriage.children !== "undefined"){
-                    marriage.children.forEach(child => {
-                        if(child.id == myId){
-                            myPerson = child;
-                        }else{
-                            getPersonByIdRecursive(child);
-                        }
-                    });
+                // check if husband in printedPerson
+                if(person.id == myPerson.husband){
+                    printedRelative = person;
+                    console.log("husband found");
+                    console.log(myPerson);
+                    console.log(printedRelative);
+                    printedRelative.relation = "husband";
+                }
+                
+                //check if same person
+                if(person.id == myPerson.id){
+                    printedRelative = person;
+                    console.log("same person");
+                    console.log(myPerson);
+                    console.log(printedRelative);
+                    printedRelative.relation = "same";
                 }
             });
+
+            var myDiv;
+            switch (whichSide) {
+                case "left":
+                    myDiv = d3.select("#userLeft");
+                    break;
+            
+                default:
+                    myDiv = d3.select("#userRight");
+                    break;
+            }
+
+            var map = myDiv.append("div").attr("class", "map");
+            var info = myDiv.append("div").attr("class", "info "+ whichSide);
+            var children = myDiv.append("div").attr("class", "children");
+
+            var infoDiv = info.append("div").attr("class", "banner");
+            infoDiv.append("h1").text(myPerson.name);
+            infoDiv.append("p").text(getTimeString(myPerson));
+
+            info.append("img").attr("src", "/img/"+myPerson.img+".png");
+
         }
-    }
 
-    function getTimeString(myPerson){
-        var timeString = "";
-        
-        if(myPerson.bornGuessed){
-            timeString += "um ";
+        var myPerson;
+        var myId;
+
+        function getPersonById(myPersonId){
+            myId = myPersonId;
+            genData.forEach(person => {
+                getPersonByIdRecursive(person);
+            });
         }
 
-        timeString += myPerson.born + " - ";
+        function getPersonByIdRecursive(person){
+            if(person.id == myId){
+                myPerson = person;
+            }
+            if(typeof person.marriages != "undefined"){
+                person.marriages.forEach(marriage => {
+                    if(typeof marriage.spouse !== "undefined"){
+                        if(marriage.spouse.id == myId){
+                            myPerson = marriage.spouse;
+                        }
+                    }
 
-        if(myPerson.diedGuessed){
-            timeString += " um ";
+                    if(typeof marriage.children !== "undefined"){
+                        marriage.children.forEach(child => {
+                            if(child.id == myId){
+                                myPerson = child;
+                            }else{
+                                getPersonByIdRecursive(child);
+                            }
+                        });
+                    }
+                });
+            }
         }
-        
-        timeString += myPerson.died;
 
-        return timeString;
-    }
+        function getTimeString(myPerson){
+            var timeString = "";
+            
+            if(myPerson.bornGuessed){
+                timeString += "um ";
+            }
+
+            timeString += myPerson.born + " - ";
+
+            if(myPerson.diedGuessed){
+                timeString += " um ";
+            }
+            
+            timeString += myPerson.died;
+
+            return timeString;
+        }
+    });
 });
 
 

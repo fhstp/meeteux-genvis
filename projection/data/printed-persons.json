@@ -1,0 +1,51 @@
+[
+    {
+        "id" : 1,
+        "side" : "left",
+        "position" : 1
+    },{
+        "id" : 7,
+        "side" : "left",
+        "position" : 2
+    },{
+        "id" : 12,
+        "side" : "left",
+        "position" : 3
+    },{
+        "id" : 15,
+        "side" : "left",
+        "position" : 4
+    },{
+        "id" : 23,
+        "side" : "left",
+        "position" : 5
+    },{
+        "id" : 6,
+        "side" : "right",
+        "position" : 1
+    },{
+        "id" : 8,
+        "side" : "right",
+        "position" : 2
+    },{
+        "id" : 10,
+        "side" : "right",
+        "position" : 2
+    },{
+        "id" : 13,
+        "side" : "right",
+        "position" : 3
+    },{
+        "id" : 16,
+        "side" : "right",
+        "position" : 4
+    },{
+        "id" : 24,
+        "side" : "right",
+        "position" : 5
+    },{
+        "id" : 25,
+        "side" : "right",
+        "position" : 5
+    }
+]
