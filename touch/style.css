@@ -42,9 +42,7 @@ path.woman.selected, path.woman.sel{
 .col:nth-child(2) { width: 40%; }
 .col:nth-child(3) { width: 40%; }
 
-.col:nth-child(1) { background: pink; }
-.col:nth-child(2) { background: lavender; }
-.col:nth-child(3) { background: ivory; }
+
 #image img{
     width: 80%;
 }
