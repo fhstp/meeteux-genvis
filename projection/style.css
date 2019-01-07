@@ -22,24 +22,23 @@ body{
 }
 
 .col:nth-child(1) {
-    width: 34%;
+    width: 445px;
 }
 .col:nth-child(2) {
-    width: 32%;
+    width: 395px;
     background: transparent;
 }
 .col:nth-child(3) {
-    width: 34%;
+    width: 452px;
 }
 
 .map{
     height: 385px;
-    background: grey;
 }
 
 .info{
     height: 150px;
-    margin: 50px 20px;
+    margin: 50px 10px;
 }
 .banner{
     border: 2px solid black;
@@ -54,11 +53,11 @@ body{
 }
 
 .right .banner h1, .right .banner p{
-    padding-left: 30px;
+    padding-left: 70px;
 }
 
 .right .banner{
-    margin-left: 150px;
+    margin-left: 180px;
 }
 
 .info h1{
@@ -71,14 +70,21 @@ body{
 }
 
 .left img{
-    margin-left: -50px;
+    margin-left: -70px;
 }
 
 .right img{
-    margin-left: -400px;
+    margin-left: -358px;
 }
 
 .children{
     height: 385px;
-    background: grey;
+}
+
+#relativeLeft img, #relativeRight img{
+    position: absolute;
+}
+
+.corner{
+    width: 48px;
 }
