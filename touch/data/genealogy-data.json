@@ -23,7 +23,8 @@
             "id" : 2,
             "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset",
             "img" : "nn-woman",
-            "coa" : [1]
+            "coa" : [1],
+            "husband" : 1
         },
         "children": [{
             "name": "Adalbert (14)",
@@ -37,37 +38,7 @@
             "id" : 3,
             "desc" : "Adalbert war der Sohn Leopolds III. aus erster Ehe und Klostervogt der Stifte Klosterneuburg, Göttweig und Melk, woraus man eine besondere persönliche Frömmigkeit ableitet. Dies ist vermutlich auch der Grund für seinen Beinamen „der Andächtige“.",
             "img" : "KNB_BST-14",
-            "coa" : [1],
-            "marriages": [{
-                "spouse": {
-                    "name": "Adelheid (N)",
-                    "title" : "ich bin ein Titel",
-                    "gender": "woman",
-                    "born": 1105,
-                    "bornGuessed" : true,
-                    "died": 1125,
-                    "diedGuessed" : true,
-                    "marriage": 1120,
-                    "id" : 4,
-                    "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset",
-                    "coa" : [1]
-                }
-            },{
-                "spouse": {
-                    "name": "Sophie (55)",
-                    "title" : "ich bin ein Titel",
-                    "gender": "woman",
-                    "born": 1110,
-                    "bornGuessed" : true,
-                    "died": 1145,
-                    "diedGuessed" : true,
-                    "marriage": 1131,
-                    "id" : 5,
-                    "desc" : "Sophies Name ist Sunthaym nicht bekannt. Sie ist die zweite Gattin Adalberts des Andächtigen und war eine Schwester König Belas von Ungarn. Deswegen führt sie das ungarische Wappen.",
-                    "img" : "KNB_BST-F-55",
-                    "coa" : [1, 2]
-                }
-            }]
+            "coa" : [1]
         }]
     },{
         "spouse": {
@@ -82,7 +53,8 @@
             "id" : 6,
             "desc" : "Agnes ist die Gattin Markgraf Leopolds III. Sie trägt als einzige Frau auf dem Gemälde ein Kirchenmodell in Händen, da sie als Mitstifterin von Klosterneuburg gilt. Bei dem Modell handelt es sich um eine spiegelverkehrte Version der Kirche von Klosterneuburg.",
             "img" : "KNB_BST-F-44",
-            "coa" : [1, 3, 4, 5]
+            "coa" : [1, 3, 4, 5],
+            "husband" : 1
         },
         "children": [{
             "name": "Heinrich II. (19)",
@@ -110,7 +82,8 @@
                     "id" : 8,
                     "desc" : "Gertraud war die erste Gattin Heinrich Jasomirgotts. Gertraud war eine Tochter Kaiser Lothars. Neben dem Fünf-Adler Schild und den bayrischen Rauten sieht man in Gertrauds Fall den kaiserlichen Doppeladler und die Löwen der Welfen.",
                     "img" : "KNB_BST-F-56+57",
-                    "coa" : [7]
+                    "coa" : [7],
+                    "husband" : 7
                 },
                 "children": [{
                     "name": "Richardis (N)",
@@ -138,7 +111,8 @@
                     "id" : 10,
                     "desc" : "Theodora war die zweite Gattin Heinrich Jasomirgotts. Theodora war die Tochter des byzantinischen Kaisers Manuel Komnenos. Neben dem Fünf-Adler Schild und den bayrischen Rauten sieht man bei Theodora Adler und Greif als Symbole des byzantinischen Kaisertums.",
                     "img" : "KNB_BST-F-56+57",
-                    "coa" : [8]
+                    "coa" : [8],
+                    "husband" : 7
                 },
                 "children": [{
                     "name": "Agnes (58)",
@@ -179,7 +153,8 @@
                             "id" : 13,
                             "desc" : "Bei Helena handelt es sich um die Tochter König Geisas II. von Ungarn. Ihr sind drei Wappen zugeteilt: der Schild von Ungarn, der österreichische Bindenschild, den angeblich ihr Gemahl verliehen bekam, und das dritte Wappen, zusammengesetzt aus dem Fünf-Adler-Schild und dem steirischen Panther.",
                             "img" : "KNB_BST-F-60",
-                            "coa" : [2, 11, 12]
+                            "coa" : [2, 11, 12],
+                            "husband" : 12
                         },
                         "children": [{
                             "name": "Friedrich I. (23)",
@@ -220,7 +195,8 @@
                                     "id" : 16,
                                     "desc" : "Theodora ist die Enkelin des byzantinischen Kaisers Isaak Angelos II. und trägt als Familienwappen den kaiserlichen Doppeladler, welcher ursprünglich aus Byzanz stammt. Im Unterschied zum Wappen des  abendländischen Kaisertums ist er golden auf rotem Feld. Außerdem sind die Schilde von Österreich und der Steiermark zu sehen.",
                                     "img" : "KNB_BST-F-63",
-                                    "coa" : [11, 14, 16]
+                                    "coa" : [11, 14, 16],
+                                    "husband" : 15
                                 },
                                 "children": [{
                                     "name": "Margarete (64)",
@@ -273,37 +249,7 @@
                                     "father" : 15,
                                     "desc" : "Während Leopold VI. zu Kaiser Heinrich VII. in die Lombardei reiste, erhob sich Heinrich gegen seinen Vater. Er eroberte Hainburg und vertrieb seine eigene Mutter Theodora. Nach seiner Rückkehr konnte sein Vater Hainburg allerdings mühelos wieder einnehmen.",
                                     "img": "KNB_BST-26",
-                                    "coa" : [11],
-                                    "marriages": [{
-                                        "spouse": {
-                                            "name": "Agnes (68V)",
-                                            "title" : "ich bin ein Titel",
-                                            "gender": "woman",
-                                            "born" : 1200,
-                                            "bornGuessed" : true,
-                                            "died" : 1250,
-                                            "diedGuessed" : true,
-                                            "marriage": 1225,
-                                            "id" : 21,
-                                            "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset",
-                                            "img": "KNB_BST-F-68",
-                                            "coa" : [22]
-                                        },
-                                        "children" : [{
-                                            "name" : "Gertrud (69)",
-                                            "title" : "ich bin ein Titel",
-                                            "gender" : "woman",
-                                            "born" : 1230,
-                                            "bornGuessed" : true,
-                                            "died" : 1288,
-                                            "diedGuessed" : false,
-                                            "id" : 22,
-                                            "father" : 20,
-                                            "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset",
-                                            "img": "KNB_BST-F-69",
-                                            "coa" : [23, 24]
-                                        }]
-                                    }]
+                                    "coa" : [11]
                                 },{
                                     "name": "Friedrich II. (27)",
                                     "title" : "Der Streitbare",
@@ -330,7 +276,8 @@
                                             "id" : 24,
                                             "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset",
                                             "img": "KNB_BST-F-73+72",
-                                            "coa" : [26]
+                                            "coa" : [26],
+                                            "husband" : 23
                                         }
                                     },{
                                         "spouse" : {
@@ -345,7 +292,8 @@
                                             "id" : 25,
                                             "desc" : "Er hörte leise Schritte hinter sich. Das bedeutete nichts Gutes. Wer würde ihm schon folgen, spät in der Nacht und dazu noch in dieser engen Gasse mitten im übel beleumundeten Hafenviertel? Gerade jetzt, wo er das Ding seines Lebens gedreht hatte und mit der Beute verschwinden wollte! Hatte einer seiner zahllosen Kollegen dieselbe Idee gehabt, ihn beobachtet und abgewartet, um ihn nun um die Früchte seiner Arbeit zu erleichtern? Oder gehörten die Schritte hinter ihm zu einem der unzähligen Geset",
                                             "img": "KNB_BST-F-73+72",
-                                            "coa" : [25]
+                                            "coa" : [25],
+                                            "husband" : 23
                                         }
                                     }]
                                 },{
@@ -403,37 +351,7 @@
                     "father" : 7,
                     "desc" : "Heinrich der Ältere hatte von seinem Bruder Leopold die Herrschaft Mödling erhalten, wo er auch seinen Sitz hatte. Mödling erlebte unter Heinrich einen großen Aufschwung und Heinrich förderte auch berühmte Zeitgenossen, wie etwa den Minnesänger Walter von der Vogelweide.",
                     "img": "KNB_BST-21",
-                    "coa" : [10],
-                    "marriages": [{
-                        "spouse": {
-                            "name": "Richza (62)",
-                            "title" : "Gattin von Heinrich des Älteren",
-                            "born": 1100,
-                            "bornGuessed" : true,
-                            "died": 1182,
-                            "diedGuessed" : true,
-                            "gender": "woman",
-                            "marriage": 1155,
-                            "id" : 30,
-                            "desc" : "Richza, oder Raitza, war eine Tochter König Wladislaws II. von Böhmen. Ihr sind drei Schilde beigegeben: das böhmische Löwenwappen, der Bindeschild und der Fünf-Adler-Schild, der bei Heinrich von Mödling und seinen Angehörigen zum letzten Mal verwendet wird.",
-                            "img" : "KNB_BST-F-62",
-                            "coa" : [1, 15]
-                        },
-                        "children": [{
-                            "name": "Heinrich d.J. (22)",
-                            "title" : "Der Jüngere von Mödling",
-                            "born": 1223,
-                            "bornGuessed" : true,
-                            "died": 1236,
-                            "diedGuessed" : false,
-                            "gender": "man",
-                            "id" : 31,
-                            "father" : 29,
-                            "desc" : "Mit Heinrich dem Jüngeren erlosch die Mödlinger Linie der Babenberger. Seine Besitzungen fielen nach seinem Tod an Herzog Friedrich II. Heinrich ist keine berühmte Persönlichkeit, seine Hofhaltung zog aber wirtschaftliche und kulturelle Kräfte an und er wird als ausgezeichneter Jäger beschrieben.",
-                            "img": "KNB_BST-22",
-                            "coa" : [11]
-                        }]
-                    }]
+                    "coa" : [10]
                 }]
             }]
         },{
@@ -448,23 +366,7 @@
             "id" : 32,
             "desc" : "Leopold IV. folgte als dritter Sohn seinem Vater in der Regierung, wohl weil er die besten Herrscherqualitäten besaß. Ältere Quelle erzählen, dass Leopold von seinem Vater mehr geliebt wurde als seine Brüder. Ihm wurde vom Kaiser das Herzogtum Bayern übertragen. Sein Beiname wird vermutlich nur von seinem Vater abgeleitet, denn fromme Stiftungen machte Leopold wenig.",
             "img" : "KNB_BST-15",
-            "coa" : [27],
-            "marriages": [{
-                "spouse": {
-                    "name": "Maria (59)",
-                    "title" : "ich bin ein Titel",
-                    "gender": "woman",
-                    "born": 1108,
-                    "bornGuessed" : true,
-                    "died": 1141,
-                    "diedGuessed" : true,
-                    "marriage": 1120,
-                    "id" : 33,
-                    "desc" : "Maria war eine Tochter Herzog Sobieslaws von Böhmen. Ihre Wappen sind der kombinierte Schild von Österreich und Bayern und der böhmische Löwe.",
-                    "img" : "KNB_BST-F-59",
-                    "coa" : [27, 28]
-                }
-            }]
+            "coa" : [27]
         },{
             "name": "Bertha (45)",
             "title" : "ich bin ein Titel",
