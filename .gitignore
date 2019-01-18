@@ -1,2 +1,5 @@
 
 touch/package-lock\.json
+node_modules
+package-lock.json
+.vscode/settings.json
