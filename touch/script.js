@@ -1,6 +1,7 @@
+"use strict";
+
 // Load Genealogy Data
 d3.json("/data/genealogy-data.json", function(data) {
-    
     var persons = data;
 
     // load Coat of Arms Data
@@ -26,7 +27,7 @@ d3.json("/data/genealogy-data.json", function(data) {
         var scrollOffset = 0;
 
         var x = d3.scaleTime()
-        .domain(d3.extent(stringDates, function(d){return parseDate(d)}))
+        .domain(d3.extent(stringDates, function(d){ return parseDate(d); }))
         .range([0, svgWidth]);
 
 
@@ -45,7 +46,7 @@ d3.json("/data/genealogy-data.json", function(data) {
         var marriageXDiff = strokeWidth/5;
         var marriageYDiff = strokeWidth/3;
         var yDiff = 2*strokeWidth;
-        
+
         var childArray = [];
         var showChildArray = [];
         var isChild = false;
@@ -69,7 +70,7 @@ d3.json("/data/genealogy-data.json", function(data) {
 
                 marriageCount = 1;
                 pushInArray(person, "married");
-                
+
                 person.marriages.forEach(marriage => {
                     //console.log("verheiratet mit");
                     //console.log(marriage.spouse.name);
@@ -83,7 +84,7 @@ d3.json("/data/genealogy-data.json", function(data) {
                         //console.log("keine Kinder");
                     }
                 });
-                
+
                 childArray.forEach(spouse => {
                     childArray = [];
                     //console.log("childArray is cleared");
@@ -111,7 +112,7 @@ d3.json("/data/genealogy-data.json", function(data) {
                 isChild = false;
                 getFatherById(person.father);
                 var fatherY = getFatherY(father);
-                showChildArray.push([{x: whichX(person.born), y: fatherY + 15}, 
+                showChildArray.push([{x: whichX(person.born), y: fatherY + 15},
                     {x: whichX(person.born), y: startY}]);
             }
 
@@ -119,7 +120,7 @@ d3.json("/data/genealogy-data.json", function(data) {
                 case "child":
                     //console.log("child");
                     personArray[itterator] = [
-                        {x: whichX(person.born), y: startY, gender: person.gender, id:person.id}, 
+                        {x: whichX(person.born), y: startY, gender: person.gender, id:person.id},
                         {x: whichX(person.died), y: startY},
                     ];
                     setPersonInfoArray(itterator, person, startY);
@@ -129,14 +130,14 @@ d3.json("/data/genealogy-data.json", function(data) {
                     startY += yDiff;
                     itterator++;
                     break;
-                
+
                 case "spouse":
                     //console.log("spouse");
-                    
+
                     var marriageX1 = whichX(person.marriage) - marriageXDiff;
                     var marriageX2 = whichX(person.marriage) + marriageXDiff;
                     var marriageY = startY - marriageYDiff - yDiff*(marriageCount-1);
-                    
+
                     personArray[itterator] = [
                         {x: whichX(person.born), y: startY, gender: person.gender, id:person.id}, // born
                         {x: marriageX1, y: startY}, // marriage 1
@@ -145,12 +146,12 @@ d3.json("/data/genealogy-data.json", function(data) {
                     ];
 
                     setPersonInfoArray(itterator, person, startY);
-                    
+
                     startY += yDiff;
                     itterator++;
                     marriageCount++;
                     break;
-            
+
                 default:
                     //console.log("default");
                     var marriageX1 = whichX(person.marriages[marriageCount-1].spouse.marriage) - marriageXDiff;
@@ -160,7 +161,7 @@ d3.json("/data/genealogy-data.json", function(data) {
                     fatherArray.push({y: marriageY, id: person.id});
 
                     personArray[itterator] = [
-                        {x: whichX(person.born), y: startY, gender: person.gender, id:person.id}, 
+                        {x: whichX(person.born), y: startY, gender: person.gender, id:person.id},
                         {x: marriageX1, y: startY}, // marriage 1
                         {x: marriageX2, y: marriageY}, // marriage 2
                         {x: whichX(person.died), y: marriageY},
@@ -168,12 +169,12 @@ d3.json("/data/genealogy-data.json", function(data) {
 
                     setPersonInfoArray(itterator, person, startY);
                     /*personInfoArray[itterator] = {
-                        name: person.name, 
-                        gender: person.gender, 
+                        name: person.name,
+                        gender: person.gender,
                         desc: person.desc,
                         img: person.img,
                         id: person.id,
-                        x: whichX(person.born), 
+                        x: whichX(person.born),
                         y: startY,
                         coa: person.coa
                     };*/
@@ -229,12 +230,12 @@ d3.json("/data/genealogy-data.json", function(data) {
 
         function setPersonInfoArray(itterartor, person, startY){
             personInfoArray[itterator] = {
-                name: person.name, 
-                gender: person.gender, 
+                name: person.name,
+                gender: person.gender,
                 desc: person.desc,
                 img: person.img,
                 id: person.id,
-                x: whichX(person.born), 
+                x: whichX(person.born),
                 y: startY,
                 coa: person.coa,
                 title: person.title
@@ -276,7 +277,6 @@ d3.json("/data/genealogy-data.json", function(data) {
             .on("touchstart", touchstart)
             .on("touchend", touchend);
 
-        
         var thirdGroup = chartGroup.selectAll("g.third")
             .data(showChildArray)
             .enter().append("g")
@@ -288,7 +288,7 @@ d3.json("/data/genealogy-data.json", function(data) {
             .attr("stroke-dasharray", "10,10")
             .attr("d", function(d){ return line(d); });
 
-        // Adds names to 
+        // Adds names to
             chartGroup.selectAll("text")
                 .data(personInfoArray)
                 .enter()
@@ -348,7 +348,7 @@ d3.json("/data/genealogy-data.json", function(data) {
 
             d3.select("#person"+touched.id).classed("selected", false);
             d3.select("#person"+touched.id).classed("sel", true);
-            
+
             showInformation(touched);
         }
 
@@ -375,7 +375,7 @@ d3.json("/data/genealogy-data.json", function(data) {
             // Shows coat of arms
             infoCoat.selectAll('div.coa').remove();
             person.coa.forEach(coaItem => {
-                var coatOfArmsItem; 
+                var coatOfArmsItem;
                 coatOfArms.forEach(coa => {
                     if(coa.id == coaItem){
                         coatOfArmsItem = coa;
@@ -390,7 +390,6 @@ d3.json("/data/genealogy-data.json", function(data) {
                     case 1:
                     div.attr("class", "coa single");
                         break;
-                
                     case 2:
                         div.attr("class", "coa double");
                         break;

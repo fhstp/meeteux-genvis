@@ -13,19 +13,19 @@ body{
 }
 
 path.man{
-    stroke: blue;
-}
-
-path.woman{
-    stroke:red;
-}
-
-path.man.selected, path.man.sel{
     stroke: lightblue;
 }
 
-path.woman.selected, path.woman.sel{
+path.woman{
     stroke:pink;
+}
+
+path.man.selected, path.man.sel{
+    stroke: blue;
+}
+
+path.woman.selected, path.woman.sel{
+    stroke:red;
 }
 
 #info{
@@ -55,10 +55,10 @@ path.woman.selected, path.woman.sel{
 .coa img{
     width: 70px;
 }
-
+/*
 .coa.single{
-    /*margin: auto;*/
-} 
+    margin: auto;
+}*/
 
 .coa.double, .coa.triple{
     float: left;
