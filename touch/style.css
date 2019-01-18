@@ -63,3 +63,11 @@ path.woman.selected, path.woman.sel{
 .coa.double, .coa.triple{
     float: left;
 }
+
+.third path{
+    stroke: grey;
+}
+
+.third circle{
+    fill: grey;
+}

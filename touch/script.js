@@ -23,7 +23,8 @@ d3.json('/data/genealogy-data.json', function (data) {
     d3.select('#info').attr('style', 'height: ' + div1Height + 'px')
     d3.select('#chart').attr('style', 'height: ' + div2Height + 'px')
 
-    var svgHeight = 3300
+    // set svg size
+    var svgHeight = 2800
     var svgWidth = 2000
     // Determines how far the scroll bar should be from the top
     var scrollOffset = 0
@@ -44,7 +45,7 @@ d3.json('/data/genealogy-data.json', function (data) {
 
     var strokeWidth = 40
     var startY = strokeWidth
-    var marriageXDiff = strokeWidth / 5
+    var marriageXDiff = strokeWidth / 2
     var marriageYDiff = strokeWidth / 3
     var yDiff = 2 * strokeWidth
 
@@ -113,7 +114,7 @@ d3.json('/data/genealogy-data.json', function (data) {
         isChild = false
         getFatherById(person.father)
         var fatherY = getFatherY(father)
-        showChildArray.push([{ x: whichX(person.born), y: fatherY + 15 },
+        showChildArray.push([{ x: whichX(person.born), y: fatherY + 26 },
           { x: whichX(person.born), y: startY }])
       }
 
@@ -273,9 +274,13 @@ d3.json('/data/genealogy-data.json', function (data) {
       .enter().append('g')
       .attr('class', 'third')
 
+    thirdGroup.append('circle')
+      .attr('cx', function (d) { return d[0].x })
+      .attr('cy', function (d) { return d[0].y })
+      .attr('r', 5)
+
     thirdGroup.append('path')
       .attr('fill', 'none')
-      .attr('stroke', 'green')
       .attr('stroke-width', '1')
       .attr('stroke-dasharray', '10,10')
       .attr('d', function (d) { return line(d) })
@@ -389,5 +394,9 @@ d3.json('/data/genealogy-data.json', function (data) {
         }
       })
     }
+
+    // first time setup
+    // show Leopold
+    touchend(persons[0], 0)
   })
 })
