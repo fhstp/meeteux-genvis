@@ -2,7 +2,7 @@
     "name": "Leopold III. (13)",
     "title" : "Der Heilige",
     "id" : 1,
-    "born": 1095,
+    "born": 1075,
     "bornGuessed" : true,
     "died": 1136,
     "diedGuessed" : false,
@@ -227,7 +227,7 @@
                                 },{
                                     "name": "Leopold (25)",
                                     "title" : "Das Kind",
-                                    "born": 1207,
+                                    "born": 1212,
                                     "bornGuessed" : false,
                                     "died": 1216,
                                     "diedGuessed" : false,
@@ -240,7 +240,7 @@
                                 },{
                                     "name": "Heinrich (26)",
                                     "title" : "Der Grausame",
-                                    "born": 1215,
+                                    "born": 1220,
                                     "bornGuessed" : true,
                                     "died": 1227,
                                     "diedGuessed" : false,
@@ -253,7 +253,7 @@
                                 },{
                                     "name": "Friedrich II. (27)",
                                     "title" : "Der Streitbare",
-                                    "born": 1220,
+                                    "born": 1210,
                                     "bornGuessed" : true,
                                     "died": 1246,
                                     "diedGuessed" : false,
@@ -299,7 +299,7 @@
                                 },{
                                     "name": "Konstanze (66)",
                                     "title" : "Tochter Leopold VI.",
-                                    "born": 1215,
+                                    "born": 1222,
                                     "bornGuessed" : true,
                                     "died": 1243,
                                     "diedGuessed" : false,
@@ -312,7 +312,7 @@
                                 },{
                                     "name": "Gertrud (67)",
                                     "title" : "Tochter Leopold VI.",
-                                    "born" : 1215,
+                                    "born" : 1225,
                                     "bornGuessed" : true,
                                     "died": 1241,
                                     "diedGuessed" : false,
@@ -357,7 +357,7 @@
         },{
             "name": "Leopold IV. (15)",
             "title" : "Der Milde",
-            "born": 1136,
+            "born": 1120,
             "bornGuessed" : true,
             "died": 1141,
             "diedGuessed" : false,
@@ -383,7 +383,7 @@
         },{
             "name": "Agnes (46)",
             "title" : "ich bin ein Titel",
-            "born": 1100,
+            "born": 1112,
             "bornGuessed" : true,
             "died": 1157,
             "diedGuessed" : false,
@@ -409,7 +409,7 @@
         },{
             "name": "Konrad (17)",
             "title" : "ich bin ein Titel",
-            "born": 1150,
+            "born": 1120,
             "bornGuessed" : true,
             "died": 1168,
             "diedGuessed" : false,
@@ -422,7 +422,7 @@
         },{
             "name": "Elisabeth (48)",
             "title" : "ich bin ein Titel",
-            "born": 1100,
+            "born": 1122,
             "bornGuessed" : true,
             "died": 1143,
             "diedGuessed" : false,
@@ -435,7 +435,7 @@
         },{
             "name": "Gertrud (47)",
             "title" : "ich bin ein Titel",
-            "born": 1100,
+            "born": 1125,
             "bornGuessed" : true,
             "died": 1151,
             "diedGuessed" : false,
@@ -448,7 +448,7 @@
         },{
             "name": "Judith (49)",
             "title" : "ich bin ein Titel",
-            "born": 1100,
+            "born": 1130,
             "bornGuessed" : true,
             "died": 1191,
             "diedGuessed" : false,
