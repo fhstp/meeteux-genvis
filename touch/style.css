@@ -13,19 +13,19 @@ body{
 }
 
 path.man{
-    stroke: lightblue;
+    stroke: rgb(98, 171, 196);
 }
 
 path.woman{
-    stroke:pink;
+    stroke:rgb(216, 117, 134);
 }
 
 path.man.selected, path.man.sel{
-    stroke: blue;
+    stroke: rgb(0, 121, 162);
 }
 
 path.woman.selected, path.woman.sel{
-    stroke:red;
+    stroke:rgb(216, 0, 36);
 }
 
 #info{
