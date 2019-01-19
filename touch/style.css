@@ -36,6 +36,8 @@ path.woman.selected, path.woman.sel{
 .col{
     display: table-cell;
     vertical-align: top;
+    padding-top: 20px;
+    padding-left: 20px;
 }
 
 .col:nth-child(1) { width: 20%; }
@@ -62,6 +64,10 @@ path.woman.selected, path.woman.sel{
 
 .coa.double, .coa.triple{
     float: left;
+}
+
+.coa.triple{
+    height: 150px;
 }
 
 .third path{
