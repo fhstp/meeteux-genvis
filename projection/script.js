@@ -26,7 +26,7 @@ var printedPosLeftOther = [
   { 'x': 765, 'y': 883 }
 ]
 
-var printedPosRightxx = [
+var printedPosRightOther = [
   { 'x': 518, 'y': 198 },
   { 'x': 518, 'y': 410 },
   { 'x': 518, 'y': 622 },
@@ -35,10 +35,10 @@ var printedPosRightxx = [
 ]
 
 var printedPosFather = [
-  { 'fatherX': 566, 'fatherY': 216 },
-  { 'fatherX': 566, 'fatherY': 425 },
-  { 'fatherX': 566, 'fatherY': 643 },
-  { 'fatherX': 566, 'fatherY': 856 }
+  { 'x': 566, 'y': 216 },
+  { 'x': 566, 'y': 425 },
+  { 'x': 566, 'y': 643 },
+  { 'x': 566, 'y': 856 }
 ]
 
 var marginLeft = 314
@@ -51,10 +51,10 @@ d3.json('data/genealogy-data.json', function (data) {
 
     // waiting for websocket call from client with side and personid
     var side = 'left'
-    var personId = 1
+    var personId = 27
 
     showData(side, personId)
-    showData('right', 6)
+    showData('right', 27)
 
     function showData (whichSide, whichPersonId) {
       getPersonById(whichPersonId)
@@ -95,6 +95,7 @@ d3.json('data/genealogy-data.json', function (data) {
           myConnection = d3.select('#relativeLeft')
           break
         default:
+          console.log('right')
           myDiv = d3.select('#userRight')
           myConnection = d3.select('#relativeRight')
           break
@@ -104,10 +105,206 @@ d3.json('data/genealogy-data.json', function (data) {
         case 'father':
           if (printedRelative.side === whichSide) {
             // same side
+            console.log('same side')
+            switch (printedRelative.position) {
+              case 1:
+                myPositions = printedPosFather[printedRelative.position - 1]
 
+                myConnection.append('img')
+                  .attr('src', '/img/connection/horizontal.png')
+                  .attr('class', 'vertical')
+                  .style('top', myPositions.y - 20 + 'px')
+                  .style('left', myPositions.x + marginLeft - 200 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/corner-lt.png')
+                  .attr('class', 'corner')
+                  .style('top', myPositions.y + 'px')
+                  .style('left', myPositions.x + marginLeft - 170 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/vertical.png')
+                  .attr('class', 'vertical')
+                  .style('top', myPositions.y + 0 + 'px')
+                  .style('left', myPositions.x + marginLeft - 185 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/corner-rb.png')
+                  .attr('class', 'corner')
+                  .style('top', myPositions.y + 260 + 'px')
+                  .style('left', myPositions.x + marginLeft - 205 + 'px')
+                break
+              case 2:
+                myPositions = printedPosFather[printedRelative.position - 1]
+
+                myConnection.append('img')
+                  .attr('src', '/img/connection/horizontal.png')
+                  .attr('class', 'vertical')
+                  .style('top', myPositions.y - 20 + 'px')
+                  .style('left', myPositions.x + marginLeft - 200 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/corner-lt.png')
+                  .attr('class', 'corner')
+                  .style('top', myPositions.y + 'px')
+                  .style('left', myPositions.x + marginLeft - 170 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/vertical.png')
+                  .attr('class', 'vertical')
+                  .style('top', myPositions.y + 0 + 'px')
+                  .style('left', myPositions.x + marginLeft - 185 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/corner-rb.png')
+                  .attr('class', 'corner')
+                  .style('top', myPositions.y + 50 + 'px')
+                  .style('left', myPositions.x + marginLeft - 205 + 'px')
+                break
+              case 3:
+                myPositions = printedPosFather[printedRelative.position - 1]
+
+                myConnection.append('img')
+                  .attr('src', '/img/connection/horizontal.png')
+                  .attr('class', 'vertical')
+                  .style('top', myPositions.y - 20 + 'px')
+                  .style('left', myPositions.x + marginLeft - 200 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/corner-lb.png')
+                  .attr('class', 'corner')
+                  .style('top', myPositions.y - 32 + 'px')
+                  .style('left', myPositions.x + marginLeft - 170 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/vertical.png')
+                  .attr('class', 'vertical')
+                  .style('top', myPositions.y - 150 + 'px')
+                  .style('left', myPositions.x + marginLeft - 185 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/corner-rt.png')
+                  .attr('class', 'corner')
+                  .style('top', myPositions.y - 120 + 'px')
+                  .style('left', myPositions.x + marginLeft - 205 + 'px')
+                break
+              case 4:
+                myPositions = printedPosFather[printedRelative.position - 1]
+
+                myConnection.append('img')
+                  .attr('src', '/img/connection/horizontal.png')
+                  .attr('class', 'vertical')
+                  .style('top', myPositions.y - 20 + 'px')
+                  .style('left', myPositions.x + marginLeft - 200 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/corner-lb.png')
+                  .attr('class', 'corner')
+                  .style('top', myPositions.y - 32 + 'px')
+                  .style('left', myPositions.x + marginLeft - 170 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/vertical.png')
+                  .attr('class', 'vertical')
+                  .style('top', myPositions.y - 350 + 'px')
+                  .style('left', myPositions.x + marginLeft - 185 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/corner-rt.png')
+                  .attr('class', 'corner')
+                  .style('top', myPositions.y - 340 + 'px')
+                  .style('left', myPositions.x + marginLeft - 205 + 'px')
+                break
+            }
           } else {
             // other side
+            console.log('other side')
+            switch (printedRelative.position) {
+              case 1:
+                myPositions = printedPosFather[printedRelative.position - 1]
 
+                myConnection.append('img')
+                  .attr('src', '/img/connection/horizontal.png')
+                  .attr('class', 'vertical')
+                  .style('top', myPositions.y - 20 + 'px')
+                  .style('left', myPositions.x + marginLeft - 100 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/corner-rt.png')
+                  .attr('class', 'corner')
+                  .style('top', myPositions.y + 'px')
+                  .style('left', myPositions.x + marginLeft + 275 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/vertical.png')
+                  .attr('class', 'vertical')
+                  .style('top', myPositions.y + 0 + 'px')
+                  .style('left', myPositions.x + marginLeft + 295 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/corner-lb.png')
+                  .attr('class', 'corner')
+                  .style('top', myPositions.y + 260 + 'px')
+                  .style('left', myPositions.x + marginLeft + 310 + 'px')
+                break
+              case 2:
+                myPositions = printedPosFather[printedRelative.position - 1]
+
+                myConnection.append('img')
+                  .attr('src', '/img/connection/horizontal.png')
+                  .attr('class', 'vertical')
+                  .style('top', myPositions.y - 20 + 'px')
+                  .style('left', myPositions.x + marginLeft - 100 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/corner-rt.png')
+                  .attr('class', 'corner')
+                  .style('top', myPositions.y + 'px')
+                  .style('left', myPositions.x + marginLeft + 275 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/vertical.png')
+                  .attr('class', 'vertical')
+                  .style('top', myPositions.y + 0 + 'px')
+                  .style('left', myPositions.x + marginLeft + 295 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/corner-lb.png')
+                  .attr('class', 'corner')
+                  .style('top', myPositions.y + 50 + 'px')
+                  .style('left', myPositions.x + marginLeft + 310 + 'px')
+                break
+              case 3:
+                myPositions = printedPosFather[printedRelative.position - 1]
+
+                myConnection.append('img')
+                  .attr('src', '/img/connection/horizontal.png')
+                  .attr('class', 'vertical')
+                  .style('top', myPositions.y - 20 + 'px')
+                  .style('left', myPositions.x + marginLeft - 100 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/corner-rb.png')
+                  .attr('class', 'corner')
+                  .style('top', myPositions.y - 37 + 'px')
+                  .style('left', myPositions.x + marginLeft + 275 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/vertical.png')
+                  .attr('class', 'vertical')
+                  .style('top', myPositions.y - 150 + 'px')
+                  .style('left', myPositions.x + marginLeft + 295 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/corner-lt.png')
+                  .attr('class', 'corner')
+                  .style('top', myPositions.y - 120 + 'px')
+                  .style('left', myPositions.x + marginLeft + 310 + 'px')
+                break
+              case 4:
+                myPositions = printedPosFather[printedRelative.position - 1]
+
+                myConnection.append('img')
+                  .attr('src', '/img/connection/horizontal.png')
+                  .attr('class', 'vertical')
+                  .style('top', myPositions.y - 20 + 'px')
+                  .style('left', myPositions.x + marginLeft - 100 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/corner-rb.png')
+                  .attr('class', 'corner')
+                  .style('top', myPositions.y - 37 + 'px')
+                  .style('left', myPositions.x + marginLeft + 275 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/vertical.png')
+                  .attr('class', 'vertical')
+                  .style('top', myPositions.y - 350 + 'px')
+                  .style('left', myPositions.x + marginLeft + 295 + 'px')
+                myConnection.append('img')
+                  .attr('src', '/img/connection/corner-lt.png')
+                  .attr('class', 'corner')
+                  .style('top', myPositions.y - 340 + 'px')
+                  .style('left', myPositions.x + marginLeft + 310 + 'px')
+                break
+            }
           }
 
           break
@@ -115,54 +312,499 @@ d3.json('data/genealogy-data.json', function (data) {
         default:
           if (printedRelative.side === whichSide) {
             // same side
+            console.log('same side')
             switch (whichSide) {
               case 'left':
-                myPositions = printedPosLeft[printedRelative.position - 1]
+                console.log('show connection on left side')
+                switch (printedRelative.position) {
+                  case 1:
+                    myPositions = printedPosLeft[printedRelative.position - 1]
 
-                myConnection.append('img')
-                  .attr('src', '/img/connection/vertical.png')
-                  .attr('class', 'vertical')
-                  .style('top', myPositions.y + 20 + 'px')
-                  .style('left', myPositions.x + marginLeft - 63 + 'px')
-                myConnection.append('img')
-                  .attr('src', '/img/connection/corner-lt.png')
-                  .attr('class', 'corner')
-                  .style('top', myPositions.y + 'px')
-                  .style('left', myPositions.x + marginLeft - 48 + 'px')
-                myConnection.append('img')
-                  .attr('src', '/img/connection/corner-rb.png')
-                  .attr('class', 'corner')
-                  .style('top', myPositions.y + 365 + 'px')
-                  .style('left', myPositions.x + marginLeft - 81 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/vertical.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y + 20 + 'px')
+                      .style('left', myPositions.x + marginLeft - 63 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y + 'px')
+                      .style('left', myPositions.x + marginLeft - 48 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y + 365 + 'px')
+                      .style('left', myPositions.x + marginLeft - 81 + 'px')
+                    break
+                  case 2:
+                    myPositions = printedPosLeft[printedRelative.position - 1]
+
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/vertical.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y + 20 + 'px')
+                      .style('left', myPositions.x + marginLeft - 63 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y + 'px')
+                      .style('left', myPositions.x + marginLeft - 48 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y + 150 + 'px')
+                      .style('left', myPositions.x + marginLeft - 81 + 'px')
+                    break
+                  case 3:
+                    myPositions = printedPosLeft[printedRelative.position - 1]
+
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/horizontal.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y - 20 + 'px')
+                      .style('left', myPositions.x + marginLeft - 100 + 'px')
+                    break
+                  case 4:
+                    myPositions = printedPosLeft[printedRelative.position - 1]
+
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 30 + 'px')
+                      .style('left', myPositions.x + marginLeft - 48 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/vertical.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y - 250 + 'px')
+                      .style('left', myPositions.x + marginLeft - 63 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 240 + 'px')
+                      .style('left', myPositions.x + marginLeft - 81 + 'px')
+                    break
+                  case 5:
+                    myPositions = printedPosLeft[printedRelative.position - 1]
+
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 30 + 'px')
+                      .style('left', myPositions.x + marginLeft - 48 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/vertical.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y - 400 + 'px')
+                      .style('left', myPositions.x + marginLeft - 63 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 440 + 'px')
+                      .style('left', myPositions.x + marginLeft - 81 + 'px')
+                    break
+                }
+
                 break
               default:
-                myPositions = printedPosRight[printedRelative.position - 1]
+                console.log('show connection default')
+                switch (printedRelative.position) {
+                  case 1:
+                    myPositions = printedPosRight[printedRelative.position - 1]
 
-                myConnection.append('img')
-                  .attr('src', '/img/connection/vertical.png')
-                  .attr('class', 'vertical')
-                  .style('top', myPositions.y + 20 + 'px')
-                  .style('left', myPositions.x + marginLeft + 19 + 'px')
-                myConnection.append('img')
-                  .attr('src', '/img/connection/corner-rt.png')
-                  .attr('class', 'corner')
-                  .style('top', myPositions.y + 'px')
-                  .style('left', myPositions.x + marginLeft + 'px')
-                myConnection.append('img')
-                  .attr('src', '/img/connection/corner-lb.png')
-                  .attr('class', 'corner')
-                  .style('top', myPositions.y + 365 + 'px')
-                  .style('left', myPositions.x + marginLeft + 35 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/vertical.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y + 20 + 'px')
+                      .style('left', myPositions.x + marginLeft + 19 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y + 'px')
+                      .style('left', myPositions.x + marginLeft + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y + 365 + 'px')
+                      .style('left', myPositions.x + marginLeft + 35 + 'px')
+                    break
+                  case 2:
+                    myPositions = printedPosRight[printedRelative.position - 1]
 
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/vertical.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y + 20 + 'px')
+                      .style('left', myPositions.x + marginLeft + 19 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y + 'px')
+                      .style('left', myPositions.x + marginLeft + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y + 150 + 'px')
+                      .style('left', myPositions.x + marginLeft + 35 + 'px')
+                    break
+                  case 3:
+                    myPositions = printedPosRight[printedRelative.position - 1]
+
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/horizontal.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y - 20 + 'px')
+                      .style('left', myPositions.x + marginLeft - 20 + 'px')
+                    break
+                  case 4:
+                    myPositions = printedPosRight[printedRelative.position - 1]
+
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 40 + 'px')
+                      .style('left', myPositions.x + marginLeft - 5 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/vertical.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y - 250 + 'px')
+                      .style('left', myPositions.x + marginLeft + 14 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 240 + 'px')
+                      .style('left', myPositions.x + marginLeft + 31 + 'px')
+                    break
+                  case 5:
+                    myPositions = printedPosRight[printedRelative.position - 1]
+
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 40 + 'px')
+                      .style('left', myPositions.x + marginLeft - 5 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/vertical.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y - 420 + 'px')
+                      .style('left', myPositions.x + marginLeft + 14 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 440 + 'px')
+                      .style('left', myPositions.x + marginLeft + 31 + 'px')
+                    break
+                }
                 break
             }
-            console.log(myPositions)
           } else {
             // other side
+            console.log('other side')
+            switch (whichSide) {
+              case 'left':
+                console.log('show connection on left side')
+                switch (printedRelative.position) {
+                  case 1:
+                    myPositions = printedPosLeftOther[printedRelative.position - 1]
 
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 5 + 'px')
+                      .style('left', myPositions.x + marginLeft - 40 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/horizontal.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y + 13 + 'px')
+                      .style('left', myPositions.x + marginLeft - 430 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y + 32 + 'px')
+                      .style('left', myPositions.x + marginLeft - 370 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/vertical.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y + 40 + 'px')
+                      .style('left', myPositions.x + marginLeft - 386 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y + 280 + 'px')
+                      .style('left', myPositions.x + marginLeft - 403 + 'px')
+                    break
+                  case 2:
+                    myPositions = printedPosLeftOther[printedRelative.position - 1]
+
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 5 + 'px')
+                      .style('left', myPositions.x + marginLeft - 40 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/horizontal.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y + 13 + 'px')
+                      .style('left', myPositions.x + marginLeft - 430 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y + 32 + 'px')
+                      .style('left', myPositions.x + marginLeft - 370 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/vertical.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y + 40 + 'px')
+                      .style('left', myPositions.x + marginLeft - 386 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y + 70 + 'px')
+                      .style('left', myPositions.x + marginLeft - 403 + 'px')
+                    break
+                  case 3:
+                    myPositions = printedPosLeftOther[printedRelative.position - 1]
+
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 9 + 'px')
+                      .style('left', myPositions.x + marginLeft - 40 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/horizontal.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y + 9 + 'px')
+                      .style('left', myPositions.x + marginLeft - 430 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 3 + 'px')
+                      .style('left', myPositions.x + marginLeft - 370 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/vertical.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y - 100 + 'px')
+                      .style('left', myPositions.x + marginLeft - 386 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 100 + 'px')
+                      .style('left', myPositions.x + marginLeft - 403 + 'px')
+                    break
+                  case 4:
+                    myPositions = printedPosLeftOther[printedRelative.position - 1]
+
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 9 + 'px')
+                      .style('left', myPositions.x + marginLeft - 40 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/horizontal.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y + 9 + 'px')
+                      .style('left', myPositions.x + marginLeft - 430 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 3 + 'px')
+                      .style('left', myPositions.x + marginLeft - 370 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/vertical.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y - 320 + 'px')
+                      .style('left', myPositions.x + marginLeft - 386 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 320 + 'px')
+                      .style('left', myPositions.x + marginLeft - 403 + 'px')
+                    break
+                  case 5:
+                    myPositions = printedPosLeftOther[printedRelative.position - 1]
+
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 15 + 'px')
+                      .style('left', myPositions.x + marginLeft - 40 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/horizontal.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y - 33 + 'px')
+                      .style('left', myPositions.x + marginLeft - 430 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 45 + 'px')
+                      .style('left', myPositions.x + marginLeft - 370 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/vertical.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y - 420 + 'px')
+                      .style('left', myPositions.x + marginLeft - 386 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 360 + 'px')
+                      .style('left', myPositions.x + marginLeft - 403 + 'px')
+                    break
+                }
+                break
+              default:
+                console.log('show connection default')
+                switch (printedRelative.position) {
+                  case 1:
+                    myPositions = printedPosRightOther[printedRelative.position - 1]
+
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 25 + 'px')
+                      .style('left', myPositions.x + marginLeft + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/horizontal.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y - 12 + 'px')
+                      .style('left', myPositions.x + marginLeft - 0 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y + 6 + 'px')
+                      .style('left', myPositions.x + marginLeft + 330 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/vertical.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y + 20 + 'px')
+                      .style('left', myPositions.x + marginLeft + 348 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y + 280 + 'px')
+                      .style('left', myPositions.x + marginLeft + 364 + 'px')
+                    break
+                  case 2:
+                    myPositions = printedPosRightOther[printedRelative.position - 1]
+
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 25 + 'px')
+                      .style('left', myPositions.x + marginLeft + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/horizontal.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y - 12 + 'px')
+                      .style('left', myPositions.x + marginLeft - 0 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y + 6 + 'px')
+                      .style('left', myPositions.x + marginLeft + 330 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/vertical.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y + 20 + 'px')
+                      .style('left', myPositions.x + marginLeft + 348 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y + 70 + 'px')
+                      .style('left', myPositions.x + marginLeft + 364 + 'px')
+                    break
+                  case 3:
+                    myPositions = printedPosRightOther[printedRelative.position - 1]
+
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 25 + 'px')
+                      .style('left', myPositions.x + marginLeft + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/horizontal.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y - 12 + 'px')
+                      .style('left', myPositions.x + marginLeft - 0 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 30 + 'px')
+                      .style('left', myPositions.x + marginLeft + 330 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/vertical.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y - 100 + 'px')
+                      .style('left', myPositions.x + marginLeft + 348 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 100 + 'px')
+                      .style('left', myPositions.x + marginLeft + 364 + 'px')
+                    break
+                  case 4:
+                    myPositions = printedPosRightOther[printedRelative.position - 1]
+
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 25 + 'px')
+                      .style('left', myPositions.x + marginLeft + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/horizontal.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y - 12 + 'px')
+                      .style('left', myPositions.x + marginLeft - 0 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 30 + 'px')
+                      .style('left', myPositions.x + marginLeft + 330 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/vertical.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y - 320 + 'px')
+                      .style('left', myPositions.x + marginLeft + 348 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 320 + 'px')
+                      .style('left', myPositions.x + marginLeft + 364 + 'px')
+                    break
+                  case 5:
+                    myPositions = printedPosRightOther[printedRelative.position - 1]
+
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 40 + 'px')
+                      .style('left', myPositions.x + marginLeft + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/horizontal.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y - 59 + 'px')
+                      .style('left', myPositions.x + marginLeft - 0 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-rb.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 76 + 'px')
+                      .style('left', myPositions.x + marginLeft + 330 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/vertical.png')
+                      .attr('class', 'vertical')
+                      .style('top', myPositions.y - 380 + 'px')
+                      .style('left', myPositions.x + marginLeft + 348 + 'px')
+                    myConnection.append('img')
+                      .attr('src', '/img/connection/corner-lt.png')
+                      .attr('class', 'corner')
+                      .style('top', myPositions.y - 360 + 'px')
+                      .style('left', myPositions.x + marginLeft + 364 + 'px')
+                    break
+                }
+                break
+            }
           }
           break
       }
+      console.log(myPositions)
 
       var map = myDiv.append('div').attr('class', 'map')
       var info = myDiv.append('div').attr('class', 'info ' + whichSide)
