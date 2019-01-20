@@ -513,8 +513,13 @@ d3.json('/data/genealogy-data.json', function (data) {
     })
 
     function touchstart (d, i) {
-      d3.select(this).classed('selected', true)
-      d3.select(this).classed('sel', false)
+      try {
+        d3.select('#person' + d.id).classed('selected', true)
+        d3.select('#person' + d.id).classed('sel', false)
+      } catch (error) {
+        d3.select(this).classed('selected', true)
+        d3.select(this).classed('sel', false)
+      }
     }
 
     function touchend (d, i, myInfo) {
