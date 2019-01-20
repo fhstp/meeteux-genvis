@@ -66,11 +66,11 @@ path.woman{
     stroke:rgb(216, 117, 134);
 }
 
-path.man.selected, .sel .man {
+.selected .man, .sel .man {
     stroke: rgb(0, 121, 162);
 }
 
-path.woman.selected, .sel .woman{
+.selected .woman, .sel .woman{
     stroke:rgb(216, 0, 36);
 }
 
