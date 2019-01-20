@@ -11,6 +11,52 @@ body{
     height: 730px;
     overflow: scroll;
 }
+/*
+.stop-left {
+    stop-color: white;
+}
+*/
+.filled{
+    stroke: url(#mainGradient);
+    stroke-width: 10;
+    fill: none;
+}
+
+#bornGuessed .stop-left, #bornGuessedWoman .stop-left, #diedGuessed .stop-right, #diedGuessedWoman .stop-right {
+    stop-color: white;
+}
+
+#bornGuessedWoman .stop-right, #diedGuessedWoman .stop-left{
+    stop-color: rgb(216, 117, 134);
+}
+
+#bornGuessed .stop-right, #diedGuessed .stop-left{
+    stop-color: rgb(98, 171, 196);
+}
+
+
+/*
+#diedGuessed .stop-left{
+    stop-color: rgb(216, 117, 134);
+}
+*/
+
+.bornGuessGradient{
+    stroke: url(#bornGuessed) !important;
+}
+
+.bornGuessWomanGradient{
+    stroke: url(#bornGuessedWoman) !important;
+}
+
+
+.diedGuessGradient{
+    stroke: url(#diedGuessed);
+}
+
+.diedGuessWomanGradient{
+    stroke: url(#diedGuessedWoman) !important;
+}
 
 path.man{
     stroke: rgb(98, 171, 196);
@@ -20,11 +66,11 @@ path.woman{
     stroke:rgb(216, 117, 134);
 }
 
-path.man.selected, path.man.sel{
+path.man.selected, .sel .man {
     stroke: rgb(0, 121, 162);
 }
 
-path.woman.selected, path.woman.sel{
+path.woman.selected, .sel .woman{
     stroke:rgb(216, 0, 36);
 }
 

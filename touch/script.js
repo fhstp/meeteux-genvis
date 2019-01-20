@@ -9,7 +9,6 @@ d3.json('/data/genealogy-data.json', function (data) {
   // load Coat of Arms Data
   d3.json('/data/coat-of-arms.json', function (data) {
     var coatOfArms = data
-    console.log(coatOfArms)
 
     // var interpolateTypes = [d3.curveLinear, d3.curveNatural, d3.curveStep, d3.curveBasis, d3.curveBundle, d3.curveCardinal];
     var stringDates = ['1060', '1280']
@@ -122,8 +121,8 @@ d3.json('/data/genealogy-data.json', function (data) {
         case 'child':
           // console.log('child')
           personArray[itterator] = [
-            { x: whichX(person.born), y: startY, gender: person.gender, id: person.id },
-            { x: whichX(person.died), y: startY }
+            { x: whichX(person.born), y: startY, gender: person.gender, id: person.id, bornGuessed: person.bornGuessed },
+            { x: whichX(person.died), y: startY, diedGuessed: person.diedGuessed }
           ]
           setPersonInfoArray(itterator, person, startY)
 
@@ -141,10 +140,10 @@ d3.json('/data/genealogy-data.json', function (data) {
           var marriageY = startY - marriageYDiff - yDiff * (marriageCount - 1)
 
           personArray[itterator] = [
-            { x: whichX(person.born), y: startY, gender: person.gender, id: person.id }, // born
+            { x: whichX(person.born), y: startY, gender: person.gender, id: person.id, bornGuessed: person.bornGuessed }, // born
             { x: marriageX1, y: startY }, // marriage 1
             { x: marriageX2, y: marriageY }, // marriage 2
-            { x: whichX(person.died), y: marriageY }
+            { x: whichX(person.died), y: marriageY, diedGuessed: person.diedGuessed }
           ]
 
           setPersonInfoArray(itterator, person, startY)
@@ -163,10 +162,10 @@ d3.json('/data/genealogy-data.json', function (data) {
           fatherArray.push({ y: marriageY, id: person.id })
 
           personArray[itterator] = [
-            { x: whichX(person.born), y: startY, gender: person.gender, id: person.id },
+            { x: whichX(person.born), y: startY, gender: person.gender, id: person.id, bornGuessed: person.bornGuessed },
             { x: marriageX1, y: startY }, // marriage 1
             { x: marriageX2, y: marriageY }, // marriage 2
-            { x: whichX(person.died), y: marriageY }
+            { x: whichX(person.died), y: marriageY, diedGuessed: person.diedGuessed }
           ]
 
           setPersonInfoArray(itterator, person, startY)
@@ -233,14 +232,65 @@ d3.json('/data/genealogy-data.json', function (data) {
         title: person.title
       }
     }
-    // var xAxis = d3.axisBottom(x)
 
     var svg = d3.select('#chart').append('svg')
       .attr('height', svgHeight + 'px')
       .attr('width', svgWidth + 'px')
 
+    // Define linear gradients for guessed data
+    var svgDefs = svg.append('defs')
+
+    var bornGuessedGradient = svgDefs.append('linearGradient')
+      .attr('id', 'bornGuessed')
+    bornGuessedGradient.append('stop')
+      .attr('class', 'stop-left')
+      .attr('offset', '0')
+    bornGuessedGradient.append('stop')
+      .attr('class', 'stop-right')
+      .attr('offset', '0.8')
+    var bornGuessedWomanGradient = svgDefs.append('linearGradient')
+      .attr('id', 'bornGuessedWoman')
+    bornGuessedWomanGradient.append('stop')
+      .attr('class', 'stop-left')
+      .attr('offset', '0')
+    bornGuessedWomanGradient.append('stop')
+      .attr('class', 'stop-right')
+      .attr('offset', '0.8')
+
+    var diedGuessedGradient = svgDefs.append('linearGradient')
+      .attr('id', 'diedGuessed')
+    diedGuessedGradient.append('stop')
+      .attr('class', 'stop-left')
+      .attr('offset', '0')
+    diedGuessedGradient.append('stop')
+      .attr('class', 'stop-right')
+      .attr('offset', '1')
+
+    var diedGuessedWomanGradient = svgDefs.append('linearGradient')
+      .attr('id', 'diedGuessedWoman')
+    diedGuessedWomanGradient.append('stop')
+      .attr('class', 'stop-left')
+      .attr('offset', '0')
+    diedGuessedWomanGradient.append('stop')
+      .attr('class', 'stop-right')
+      .attr('offset', '1')
+
+    var marriageGuessedGradient = svgDefs.append('linearGradient')
+      .attr('id', 'marriageGuessed')
+    marriageGuessedGradient.append('stop')
+      .attr('class', 'stop-left')
+      .attr('offset', '0')
+    marriageGuessedGradient.append('stop')
+      .attr('class', 'stop-middle')
+      .attr('offset', '0.5')
+    marriageGuessedGradient.append('stop')
+      .attr('class', 'stop-right')
+      .attr('offset', '1')
+
     var line = d3.line()
-      .x(function (d, i) { return d.x })
+      .x(function (d, i) {
+        return d.x
+      })
       .y(function (d, i) { return d.y })
       .curve(d3.curveLinear) // generates a path element which is a line
 
@@ -248,26 +298,154 @@ d3.json('/data/genealogy-data.json', function (data) {
       .attr('class', 'group')
       .attr('transform', 'translate(0,0)')
 
-    var firstGroups = chartGroup.selectAll('g')
-      .data(personArray)
-      .enter().append('g')
-      .attr('class', function (d, i) { return 'firstLevelGroup' + i })
+    // prepare personArray for drawing
+    // go through personArray and split path information
+    var personArrayToDraw = []
+    var guessedDiff = 20
 
-    firstGroups.append('path')
-      .attr('fill', 'none')
-      .attr('class', function (d) {
-        if (d[0].gender === 'man') {
-          return 'man'
+    personArray.forEach((personItem) => {
+      var myPersonToDraw = []
+      var isMarried = false
+      if (personItem.length === 4) {
+        isMarried = true
+      }
+
+      myPersonToDraw.push({
+        id: personItem[0].id,
+        gender: personItem[0].gender
+      })
+      personItem.forEach((item, index) => {
+        // console.log(item)
+        var myPathToDraw = []
+
+        if (isMarried && index === 1) {
+          myPathToDraw.push({
+            x: personItem[index - 1].x,
+            y: personItem[index - 1].y
+          })
+          myPathToDraw.push({
+            x: item.x,
+            y: item.y
+          })
+          myPersonToDraw.push(myPathToDraw)
+          myPathToDraw = []
+
+          myPathToDraw.push({
+            x: item.x - 10,
+            y: item.y
+          })
+          myPathToDraw.push({
+            x: item.x,
+            y: item.y
+          })
+          myPathToDraw.push({
+            x: personItem[index + 1].x,
+            y: personItem[index + 1].y
+          })
+          myPathToDraw.push({
+            x: personItem[index + 1].x + 10,
+            y: personItem[index + 1].y
+          })
+          myPersonToDraw.push(myPathToDraw)
+          myPathToDraw = []
+        } else if (isMarried && index === 2) {
+          // do nothing
+        } else if (item.bornGuessed === true) {
+          myPathToDraw.push({
+            x: item.x - guessedDiff,
+            y: item.y + 0.001,
+            bornGuessed: true
+          })
+          myPathToDraw.push({
+            x: item.x + 1,
+            y: item.y
+          })
+          myPersonToDraw.push(myPathToDraw)
+          myPersonToDraw[0].bornGuessed = true
+          myPathToDraw = []
+        } else if (item.bornGuessed === false) {
+          // do nothing
+        } else if (item.diedGuessed === true) {
+          myPathToDraw.push({
+            x: personItem[index - 1].x,
+            y: personItem[index - 1].y
+          })
+          myPathToDraw.push({
+            x: item.x,
+            y: item.y
+          })
+          myPersonToDraw.push(myPathToDraw)
+          myPathToDraw = []
+
+          myPathToDraw.push({
+            x: item.x - 1,
+            y: item.y,
+            diedGuessed: true
+          })
+          myPathToDraw.push({
+            x: item.x + guessedDiff,
+            y: item.y + 0.001
+          })
+          myPersonToDraw.push(myPathToDraw)
+          myPersonToDraw[0].diedGuessed = true
+          myPathToDraw = []
         } else {
-          return 'woman'
+          myPathToDraw.push({
+            x: personItem[index - 1].x,
+            y: personItem[index - 1].y
+          })
+          myPathToDraw.push({
+            x: item.x,
+            y: item.y
+          })
+          myPersonToDraw.push(myPathToDraw)
+          myPathToDraw = []
         }
       })
-      .attr('id', function (d) { return 'person' + d[0].id })
-      .attr('stroke-width', strokeWidth)
-      .attr('d', function (d) { return line(d) })
-      .on('click', touchend) // comment when running on touch display
-      .on('touchstart', touchstart)
-      .on('touchend', touchend)
+      personArrayToDraw.push(myPersonToDraw)
+    })
+
+    personArrayToDraw.forEach((personPath, index) => {
+      var firstGroups = chartGroup.append('g')
+        .attr('class', function (d, i) { return 'firstLevelGroup' + i })
+        .attr('id', function (d, i) { return 'person' + personPath[0].id })
+        .on('click', touchend) // comment when running on touch display
+        .on('touchstart', touchstart)
+        .on('touchend', touchend)
+
+      for (let index = 1; index < personPath.length; index++) {
+        const path = personPath[index]
+        firstGroups.append('path')
+          .attr('fill', 'none')
+          .attr('class', function () {
+            var myClass
+            if (personPath[0].gender === 'man') {
+              myClass = 'person' + personPath[0].id + ' man'
+            } else {
+              myClass = 'person' + personPath[0].id + ' woman'
+            }
+
+            if (path[0].bornGuessed && personPath[0].gender === 'man') {
+              myClass += ' bornGuessGradient'
+            } else if (path[0].bornGuessed && personPath[0].gender === 'woman') {
+              myClass += ' bornGuessWomanGradient'
+            }
+
+            if (path[0].diedGuessed && personPath[0].gender === 'man') {
+              myClass += ' diedGuessGradient'
+            } else if (path[0].diedGuessed && personPath[0].gender === 'woman') {
+              myClass += ' diedGuessWomanGradient'
+            }
+
+            return myClass
+          })
+          // .attr('id', function () { return 'person' + personPath[0].id })
+          .attr('stroke-width', strokeWidth)
+          .attr('d', function () {
+            return line(path)
+          })
+      }
+    })
 
     var thirdGroup = chartGroup.selectAll('g.third')
       .data(showChildArray)
@@ -283,7 +461,10 @@ d3.json('/data/genealogy-data.json', function (data) {
       .attr('fill', 'none')
       .attr('stroke-width', '1')
       .attr('stroke-dasharray', '10,10')
-      .attr('d', function (d) { return line(d) })
+      .attr('d', function (d) {
+        // console.log(d)
+        return line(d)
+      })
 
     // Adds names to
     chartGroup.selectAll('text')
@@ -336,15 +517,32 @@ d3.json('/data/genealogy-data.json', function (data) {
       d3.select(this).classed('sel', false)
     }
 
-    function touchend (d, i) {
-      var touched = personInfoArray[i]
+    function touchend (d, i, myInfo) {
+      var touchedElement = d3.select(this)
+      var idTouched
 
-      d3.selectAll('path').classed('sel', false)
+      try {
+        idTouched = touchedElement.attr('id')
+        var res = idTouched.split('person')
+        idTouched = parseInt(res[1])
+      } catch (error) {
+        if (myInfo === 1) {
+          idTouched = 1
+        } else {
+          idTouched = d.id
+        }
+      }
 
-      d3.select('#person' + touched.id).classed('selected', false)
-      d3.select('#person' + touched.id).classed('sel', true)
+      personInfoArray.forEach(person => {
+        if (person.id === idTouched) {
+          d3.selectAll('g').classed('sel', false)
 
-      showInformation(touched)
+          d3.select('#person' + person.id).classed('selected', false)
+          d3.select('#person' + person.id).classed('sel', true)
+
+          showInformation(person)
+        }
+      })
     }
 
     var infoImage = d3.select('#image')
@@ -397,6 +595,6 @@ d3.json('/data/genealogy-data.json', function (data) {
 
     // first time setup
     // show Leopold
-    touchend(persons[0], 0)
+    touchend(persons[0], 0, 1)
   })
 })
