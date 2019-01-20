@@ -293,7 +293,7 @@ d3.json('/data/genealogy-data.json', function (data) {
       .attr('offset', '1')
 
     var diedGuessedWomanGradient = svgDefs.append('linearGradient')
-      .attr('id', 'diedGuessedWomanHighlight')
+      .attr('id', 'diedGuessedWoman')
     diedGuessedWomanGradient.append('stop')
       .attr('class', 'stop-left')
       .attr('offset', '0')
