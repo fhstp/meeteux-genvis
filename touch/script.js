@@ -141,7 +141,7 @@ d3.json('/data/genealogy-data.json', function (data) {
 
           personArray[itterator] = [
             { x: whichX(person.born), y: startY, gender: person.gender, id: person.id, bornGuessed: person.bornGuessed }, // born
-            { x: marriageX1, y: startY }, // marriage 1
+            { x: marriageX1, y: startY, marriageGuessed: person.marriageGuessed }, // marriage 1
             { x: marriageX2, y: marriageY }, // marriage 2
             { x: whichX(person.died), y: marriageY, diedGuessed: person.diedGuessed }
           ]
@@ -163,7 +163,7 @@ d3.json('/data/genealogy-data.json', function (data) {
 
           personArray[itterator] = [
             { x: whichX(person.born), y: startY, gender: person.gender, id: person.id, bornGuessed: person.bornGuessed },
-            { x: marriageX1, y: startY }, // marriage 1
+            { x: marriageX1, y: startY, marriageGuessed: person.marriageGuessed }, // marriage 1
             { x: marriageX2, y: marriageY }, // marriage 2
             { x: whichX(person.died), y: marriageY, diedGuessed: person.diedGuessed }
           ]
@@ -248,12 +248,29 @@ d3.json('/data/genealogy-data.json', function (data) {
     bornGuessedGradient.append('stop')
       .attr('class', 'stop-right')
       .attr('offset', '0.8')
+    var bornGuessedHighlightGradient = svgDefs.append('linearGradient')
+      .attr('id', 'bornGuessedHighlight')
+    bornGuessedHighlightGradient.append('stop')
+      .attr('class', 'stop-left')
+      .attr('offset', '0')
+    bornGuessedHighlightGradient.append('stop')
+      .attr('class', 'stop-right')
+      .attr('offset', '0.8')
+
     var bornGuessedWomanGradient = svgDefs.append('linearGradient')
       .attr('id', 'bornGuessedWoman')
     bornGuessedWomanGradient.append('stop')
       .attr('class', 'stop-left')
       .attr('offset', '0')
     bornGuessedWomanGradient.append('stop')
+      .attr('class', 'stop-right')
+      .attr('offset', '0.8')
+    var bornGuessedWomanHighlightGradient = svgDefs.append('linearGradient')
+      .attr('id', 'bornGuessedWomanHighlight')
+    bornGuessedWomanHighlightGradient.append('stop')
+      .attr('class', 'stop-left')
+      .attr('offset', '0')
+    bornGuessedWomanHighlightGradient.append('stop')
       .attr('class', 'stop-right')
       .attr('offset', '0.8')
 
@@ -266,8 +283,17 @@ d3.json('/data/genealogy-data.json', function (data) {
       .attr('class', 'stop-right')
       .attr('offset', '1')
 
+    var diedGuessedHighlightGradient = svgDefs.append('linearGradient')
+      .attr('id', 'diedGuessedHighlight')
+    diedGuessedHighlightGradient.append('stop')
+      .attr('class', 'stop-left')
+      .attr('offset', '0')
+    diedGuessedHighlightGradient.append('stop')
+      .attr('class', 'stop-right')
+      .attr('offset', '1')
+
     var diedGuessedWomanGradient = svgDefs.append('linearGradient')
-      .attr('id', 'diedGuessedWoman')
+      .attr('id', 'diedGuessedWomanHighlight')
     diedGuessedWomanGradient.append('stop')
       .attr('class', 'stop-left')
       .attr('offset', '0')
@@ -275,17 +301,62 @@ d3.json('/data/genealogy-data.json', function (data) {
       .attr('class', 'stop-right')
       .attr('offset', '1')
 
+    var diedGuessedWomanHighlightGradient = svgDefs.append('linearGradient')
+      .attr('id', 'diedGuessedWomanHighlight')
+    diedGuessedWomanHighlightGradient.append('stop')
+      .attr('class', 'stop-left')
+      .attr('offset', '0')
+    diedGuessedWomanHighlightGradient.append('stop')
+      .attr('class', 'stop-right')
+      .attr('offset', '1')
+
     var marriageGuessedGradient = svgDefs.append('linearGradient')
       .attr('id', 'marriageGuessed')
     marriageGuessedGradient.append('stop')
       .attr('class', 'stop-left')
-      .attr('offset', '0')
+      .attr('offset', '0.1')
     marriageGuessedGradient.append('stop')
       .attr('class', 'stop-middle')
       .attr('offset', '0.5')
     marriageGuessedGradient.append('stop')
       .attr('class', 'stop-right')
-      .attr('offset', '1')
+      .attr('offset', '0.9')
+
+    var marriageGuessedHighlightGradient = svgDefs.append('linearGradient')
+      .attr('id', 'marriageHighlightGuessed')
+    marriageGuessedHighlightGradient.append('stop')
+      .attr('class', 'stop-left')
+      .attr('offset', '0.1')
+    marriageGuessedHighlightGradient.append('stop')
+      .attr('class', 'stop-middle')
+      .attr('offset', '0.5')
+    marriageGuessedHighlightGradient.append('stop')
+      .attr('class', 'stop-right')
+      .attr('offset', '0.9')
+
+    var marriageWomanGuessedGradient = svgDefs.append('linearGradient')
+      .attr('id', 'marriageWomanGuessed')
+    marriageWomanGuessedGradient.append('stop')
+      .attr('class', 'stop-left')
+      .attr('offset', '0.1')
+    marriageWomanGuessedGradient.append('stop')
+      .attr('class', 'stop-middle')
+      .attr('offset', '0.5')
+    marriageWomanGuessedGradient.append('stop')
+      .attr('class', 'stop-right')
+      .attr('offset', '0.9')
+
+    var marriageWomanGuessedHighlightGradient = svgDefs.append('linearGradient')
+      .attr('id', 'marriageWomanHighlightGuessed')
+    marriageWomanGuessedHighlightGradient.append('stop')
+      .attr('class', 'stop-left')
+      .attr('offset', '0.1')
+    marriageWomanGuessedHighlightGradient.append('stop')
+      .attr('class', 'stop-middle')
+      .attr('offset', '0.5')
+    marriageWomanGuessedHighlightGradient.append('stop')
+      .attr('class', 'stop-right')
+      .attr('offset', '0.9')
 
     var line = d3.line()
       .x(function (d, i) {
@@ -319,6 +390,7 @@ d3.json('/data/genealogy-data.json', function (data) {
         var myPathToDraw = []
 
         if (isMarried && index === 1) {
+          myPersonToDraw[0].marriageGuessed = item.marriageGuessed
           myPathToDraw.push({
             x: personItem[index - 1].x,
             y: personItem[index - 1].y
@@ -332,7 +404,8 @@ d3.json('/data/genealogy-data.json', function (data) {
 
           myPathToDraw.push({
             x: item.x - 10,
-            y: item.y
+            y: item.y,
+            marriageGuessed: item.marriageGuessed
           })
           myPathToDraw.push({
             x: item.x,
@@ -402,6 +475,7 @@ d3.json('/data/genealogy-data.json', function (data) {
           myPathToDraw = []
         }
       })
+      console.log(myPersonToDraw)
       personArrayToDraw.push(myPersonToDraw)
     })
 
@@ -419,24 +493,33 @@ d3.json('/data/genealogy-data.json', function (data) {
           .attr('fill', 'none')
           .attr('class', function () {
             var myClass
-            if (personPath[0].gender === 'man') {
-              myClass = 'person' + personPath[0].id + ' man'
-            } else {
-              myClass = 'person' + personPath[0].id + ' woman'
-            }
+            switch (personPath[0].gender) {
+              case 'man':
+                myClass = 'person' + personPath[0].id + ' man'
+                if (path[0].bornGuessed) {
+                  myClass += ' bornGuessGradient'
+                }
+                if (path[0].diedGuessed) {
+                  myClass += ' diedGuessGradient'
+                }
+                if (path[0].marriageGuessed) {
+                  myClass += ' marriageGuessGradient'
+                }
+                break
 
-            if (path[0].bornGuessed && personPath[0].gender === 'man') {
-              myClass += ' bornGuessGradient'
-            } else if (path[0].bornGuessed && personPath[0].gender === 'woman') {
-              myClass += ' bornGuessWomanGradient'
+              default:
+                myClass = 'person' + personPath[0].id + ' woman'
+                if (path[0].bornGuessed) {
+                  myClass += ' bornGuessWomanGradient'
+                }
+                if (path[0].diedGuessed) {
+                  myClass += ' diedGuessWomanGradient'
+                }
+                if (path[0].marriageGuessed) {
+                  myClass += ' marriageGuessWomanGradient'
+                }
+                break
             }
-
-            if (path[0].diedGuessed && personPath[0].gender === 'man') {
-              myClass += ' diedGuessGradient'
-            } else if (path[0].diedGuessed && personPath[0].gender === 'woman') {
-              myClass += ' diedGuessWomanGradient'
-            }
-
             return myClass
           })
           // .attr('id', function () { return 'person' + personPath[0].id })

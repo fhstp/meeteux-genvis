@@ -22,7 +22,7 @@ body{
     fill: none;
 }
 
-#bornGuessed .stop-left, #bornGuessedWoman .stop-left, #diedGuessed .stop-right, #diedGuessedWoman .stop-right {
+#bornGuessed .stop-left, #bornGuessedHighlight .stop-left, #bornGuessedWoman .stop-left, #bornGuessedWomanHighlight .stop-left, #diedGuessed .stop-right, #diedGuessedHighlight .stop-right, #diedGuessedWoman .stop-right, #diedGuessedWomanHighlight .stop-right {
     stop-color: white;
 }
 
@@ -32,6 +32,30 @@ body{
 
 #bornGuessed .stop-right, #diedGuessed .stop-left{
     stop-color: rgb(98, 171, 196);
+}
+
+#marriageWomanGuessed .stop-left, #marriageWomanGuessed .stop-right{
+    stop-color: rgb(216, 117, 134);
+}
+
+#marriageWomanGuessed .stop-middle, #marriageWomanHighlightGuessed .stop-middle{
+    stop-color: rgb(252, 186, 197);
+}
+
+#marriageGuessed .stop-left, #marriageGuessed .stop-right{
+    stop-color: rgb(98, 171, 196);
+}
+
+#marriageGuessed .stop-middle, #marriageHighlightGuessed .stop-middle{
+    stop-color: rgb(164, 221, 240);
+}
+
+#bornGuessedWomanHighlight .stop-right, #diedGuessedWomanHighlight .stop-left, #marriageWomanHighlightGuessed .stop-left, #marriageWomanHighlightGuessed .stop-right{
+    stop-color: rgb(216, 0, 36);
+}
+
+#bornGuessedHighlight .stop-right, #diedGuessedHighlight .stop-left, #marriageHighlightGuessed .stop-left, #marriageHighlightGuessed .stop-right{
+    stop-color: rgb(0, 121, 162);
 }
 
 
@@ -44,18 +68,44 @@ body{
 .bornGuessGradient{
     stroke: url(#bornGuessed) !important;
 }
+.sel .bornGuessGradient{
+    stroke: url(#bornGuessedHighlight) !important;
+}
 
 .bornGuessWomanGradient{
     stroke: url(#bornGuessedWoman) !important;
 }
+.sel .bornGuessWomanGradient{
+    stroke: url(#bornGuessedWomanHighlight) !important;
+}
 
 
 .diedGuessGradient{
-    stroke: url(#diedGuessed);
+    stroke: url(#diedGuessed) !important;
+}
+.sel .diedGuessGradient{
+    stroke: url(#diedGuessedHighlight) !important;
 }
 
 .diedGuessWomanGradient{
     stroke: url(#diedGuessedWoman) !important;
+}
+.sel .diedGuessWomanGradient{
+    stroke: url(#diedGuessedWomanHighlight) !important;
+}
+
+.marriageGuessGradient{
+    stroke: url(#marriageGuessed) !important;
+}
+.sel .marriageGuessGradient{
+    stroke: url(#marriageHighlightGuessed) !important;
+}
+
+.marriageGuessWomanGradient{
+    stroke: url(#marriageWomanGuessed) !important;
+}
+.sel .marriageGuessWomanGradient{
+    stroke: url(#marriageWomanHighlightGuessed) !important;
 }
 
 path.man{
