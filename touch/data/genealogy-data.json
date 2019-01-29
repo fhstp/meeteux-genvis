@@ -121,19 +121,6 @@
                     "husband" : 7
                 },
                 "children": [{
-                    "name": "Agnes (58)",
-                    "title" : "Tochter von Heinrich Jasomirgott",
-                    "born": 1165,
-                    "bornGuessed" : true,
-                    "died": 1184,
-                    "diedGuessed" : true,
-                    "gender": "woman",
-                    "id" : 11,
-                    "father" : 7,
-                    "desc" : "Agnes war in erster Ehe mit König Stephan III. von Ungarn vermählt, in zweiter (dies erwähnt wird allerdings nicht erwähnt) mit dem kärntnerischen Herzog Hermann. Sie ist eine Tochter Heinrich Jasomirgotts und trägt das Wappen Ungarns und den Fünf-Adler-Schild.",
-                    "img" : "KNB_BST-F-58",
-                    "coa" : [1, 2]
-                },{
                     "name": "Leopold V. (20)",
                     "title" : "Dem Tugendreichen",
                     "born": 1150,
@@ -209,58 +196,6 @@
                                     "husband" : 15
                                 },
                                 "children": [{
-                                    "name": "Margarete (64)",
-                                    "title" : "Älteste Tochter von Leopold VI.",
-                                    "born": 1215,
-                                    "bornGuessed" : true,
-                                    "died": 1266,
-                                    "diedGuessed" : false,
-                                    "gender": "woman",
-                                    "id" : 17,
-                                    "father" : 15,
-                                    "desc" : "Margarete, die älteste Tochter Herzog Leopolds VI., wurde zunächst mit König Heinrich VII. verheiratet, nach dessen Tode mit König Ottokar Przemsyl von Böhmen, der dadurch seine Herrschaft über Österreich legitimieren wollte. Sie ist hier als alte Frau dargestellt und ihr Wappen besteht aus dem schwarzen Adler in Gold des Heiligen Römischen Reichs, dem böhmischen Löwen und dem österreichischen Bindenschild.",
-                                    "img" : "KNB_BST-F-64",
-                                    "coa" : [17]
-                                },{
-                                    "name": "Agnes (65)",
-                                    "title" : "Tochter Leopold VI.",
-                                    "born": 1215,
-                                    "bornGuessed" : true,
-                                    "died": 1260,
-                                    "diedGuessed" : false,
-                                    "gender": "woman",
-                                    "id" : 18,
-                                    "father" : 15,
-                                    "desc" : "Agnes heiratete Herzog Albrecht von Sachsen und führt daher neben dem Bindenschild auch das sächsische Wappen, den grünen Rautenkranz über mehrfach von gold und schwarz geteiltem Feld.",
-                                    "img" : "KNB_BST-F-65",
-                                    "coa" : [11, 18]
-                                },{
-                                    "name": "Leopold (25)",
-                                    "title" : "Das Kind",
-                                    "born": 1212,
-                                    "bornGuessed" : false,
-                                    "died": 1216,
-                                    "diedGuessed" : false,
-                                    "gender": "man",
-                                    "id" : 19,
-                                    "father" : 15,
-                                    "desc" : "Leopold das Kind wurde in Klosterneuburg geboren und auch im Chorherrenstift unterrichtet. Im Alter von neun Jahren kletterte er in einem unbeaufsichtigten Augenblick, auf einen Baum, stürzte herab und starb. Angeblich soll dieser schwere Verlust Leopold VI. dazu veranlasst haben, seinen Sitz wieder nach Wien zu verlegen.",
-                                    "img": "KNB_BST-25",
-                                    "coa" : [11]
-                                },{
-                                    "name": "Heinrich (26)",
-                                    "title" : "Der Grausame",
-                                    "born": 1220,
-                                    "bornGuessed" : true,
-                                    "died": 1227,
-                                    "diedGuessed" : false,
-                                    "gender": "man",
-                                    "id" : 20,
-                                    "father" : 15,
-                                    "desc" : "Während Leopold VI. zu Kaiser Heinrich VII. in die Lombardei reiste, erhob sich Heinrich gegen seinen Vater. Er eroberte Hainburg und vertrieb seine eigene Mutter Theodora. Nach seiner Rückkehr konnte sein Vater Hainburg allerdings mühelos wieder einnehmen.",
-                                    "img": "KNB_BST-26",
-                                    "coa" : [11]
-                                },{
                                     "name": "Friedrich II. (27)",
                                     "title" : "Der Streitbare",
                                     "born": 1210,
@@ -309,6 +244,58 @@
                                             "husband" : 23
                                         }
                                     }]
+                                },{
+                                    "name": "Leopold (25)",
+                                    "title" : "Das Kind",
+                                    "born": 1212,
+                                    "bornGuessed" : false,
+                                    "died": 1216,
+                                    "diedGuessed" : false,
+                                    "gender": "man",
+                                    "id" : 19,
+                                    "father" : 15,
+                                    "desc" : "Leopold das Kind wurde in Klosterneuburg geboren und auch im Chorherrenstift unterrichtet. Im Alter von neun Jahren kletterte er in einem unbeaufsichtigten Augenblick, auf einen Baum, stürzte herab und starb. Angeblich soll dieser schwere Verlust Leopold VI. dazu veranlasst haben, seinen Sitz wieder nach Wien zu verlegen.",
+                                    "img": "KNB_BST-25",
+                                    "coa" : [11]
+                                },{
+                                    "name": "Margarete (64)",
+                                    "title" : "Älteste Tochter von Leopold VI.",
+                                    "born": 1215,
+                                    "bornGuessed" : true,
+                                    "died": 1266,
+                                    "diedGuessed" : false,
+                                    "gender": "woman",
+                                    "id" : 17,
+                                    "father" : 15,
+                                    "desc" : "Margarete, die älteste Tochter Herzog Leopolds VI., wurde zunächst mit König Heinrich VII. verheiratet, nach dessen Tode mit König Ottokar Przemsyl von Böhmen, der dadurch seine Herrschaft über Österreich legitimieren wollte. Sie ist hier als alte Frau dargestellt und ihr Wappen besteht aus dem schwarzen Adler in Gold des Heiligen Römischen Reichs, dem böhmischen Löwen und dem österreichischen Bindenschild.",
+                                    "img" : "KNB_BST-F-64",
+                                    "coa" : [17]
+                                },{
+                                    "name": "Agnes (65)",
+                                    "title" : "Tochter Leopold VI.",
+                                    "born": 1217,
+                                    "bornGuessed" : true,
+                                    "died": 1260,
+                                    "diedGuessed" : false,
+                                    "gender": "woman",
+                                    "id" : 18,
+                                    "father" : 15,
+                                    "desc" : "Agnes heiratete Herzog Albrecht von Sachsen und führt daher neben dem Bindenschild auch das sächsische Wappen, den grünen Rautenkranz über mehrfach von gold und schwarz geteiltem Feld.",
+                                    "img" : "KNB_BST-F-65",
+                                    "coa" : [11, 18]
+                                },{
+                                    "name": "Heinrich (26)",
+                                    "title" : "Der Grausame",
+                                    "born": 1220,
+                                    "bornGuessed" : true,
+                                    "died": 1227,
+                                    "diedGuessed" : false,
+                                    "gender": "man",
+                                    "id" : 20,
+                                    "father" : 15,
+                                    "desc" : "Während Leopold VI. zu Kaiser Heinrich VII. in die Lombardei reiste, erhob sich Heinrich gegen seinen Vater. Er eroberte Hainburg und vertrieb seine eigene Mutter Theodora. Nach seiner Rückkehr konnte sein Vater Hainburg allerdings mühelos wieder einnehmen.",
+                                    "img": "KNB_BST-26",
+                                    "coa" : [11]
                                 },{
                                     "name": "Konstanze (66)",
                                     "title" : "Tochter Leopold VI.",
@@ -365,25 +352,25 @@
                     "desc" : "Heinrich der Ältere hatte von seinem Bruder Leopold die Herrschaft Mödling erhalten, wo er auch seinen Sitz hatte. Mödling erlebte unter Heinrich einen großen Aufschwung und Heinrich förderte auch berühmte Zeitgenossen, wie etwa den Minnesänger Walter von der Vogelweide.",
                     "img": "KNB_BST-21",
                     "coa" : [10]
+                },{
+                    "name": "Agnes (58)",
+                    "title" : "Tochter von Heinrich Jasomirgott",
+                    "born": 1165,
+                    "bornGuessed" : true,
+                    "died": 1184,
+                    "diedGuessed" : true,
+                    "gender": "woman",
+                    "id" : 11,
+                    "father" : 7,
+                    "desc" : "Agnes war in erster Ehe mit König Stephan III. von Ungarn vermählt, in zweiter (dies erwähnt wird allerdings nicht erwähnt) mit dem kärntnerischen Herzog Hermann. Sie ist eine Tochter Heinrich Jasomirgotts und trägt das Wappen Ungarns und den Fünf-Adler-Schild.",
+                    "img" : "KNB_BST-F-58",
+                    "coa" : [1, 2]
                 }]
             }]
         },{
-            "name": "Leopold IV. (15)",
-            "title" : "Der Milde",
-            "born": 1120,
-            "bornGuessed" : true,
-            "died": 1141,
-            "diedGuessed" : false,
-            "gender": "man",
-            "father" : 1,
-            "id" : 32,
-            "desc" : "Leopold IV. folgte als dritter Sohn seinem Vater in der Regierung, wohl weil er die besten Herrscherqualitäten besaß. Ältere Quelle erzählen, dass Leopold von seinem Vater mehr geliebt wurde als seine Brüder. Ihm wurde vom Kaiser das Herzogtum Bayern übertragen. Sein Beiname wird vermutlich nur von seinem Vater abgeleitet, denn fromme Stiftungen machte Leopold wenig.",
-            "img" : "KNB_BST-15",
-            "coa" : [27]
-        },{
             "name": "Bertha (45)",
             "title" : "ich bin ein Titel",
-            "born": 1100,
+            "born": 1110,
             "bornGuessed" : true,
             "died": 1150,
             "diedGuessed" : false,
@@ -420,9 +407,22 @@
             "img" : "KNB_BST-16",
             "coa" : [31]
         },{
+            "name": "Leopold IV. (15)",
+            "title" : "Der Milde",
+            "born": 1120,
+            "bornGuessed" : true,
+            "died": 1141,
+            "diedGuessed" : false,
+            "gender": "man",
+            "father" : 1,
+            "id" : 32,
+            "desc" : "Leopold IV. folgte als dritter Sohn seinem Vater in der Regierung, wohl weil er die besten Herrscherqualitäten besaß. Ältere Quelle erzählen, dass Leopold von seinem Vater mehr geliebt wurde als seine Brüder. Ihm wurde vom Kaiser das Herzogtum Bayern übertragen. Sein Beiname wird vermutlich nur von seinem Vater abgeleitet, denn fromme Stiftungen machte Leopold wenig.",
+            "img" : "KNB_BST-15",
+            "coa" : [27]
+        },{
             "name": "Konrad (17)",
             "title" : "ich bin ein Titel",
-            "born": 1120,
+            "born": 1122,
             "bornGuessed" : true,
             "died": 1168,
             "diedGuessed" : false,
@@ -435,7 +435,7 @@
         },{
             "name": "Elisabeth (48)",
             "title" : "ich bin ein Titel",
-            "born": 1122,
+            "born": 1124,
             "bornGuessed" : true,
             "died": 1143,
             "diedGuessed" : false,
