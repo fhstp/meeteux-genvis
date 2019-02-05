@@ -1,6 +1,15 @@
 'use strict'
 
-var d3
+var d3, io
+
+var socket = io('http://192.168.178.28:8100/')
+
+socket.emit('connectTouch', { device: 'left' })
+
+socket.on('connectTouchResult', function (data) {
+  console.log(data)
+  socket.emit('sendDataToProjection', { data: 'some thing' })
+})
 
 // Load Genealogy Data
 d3.json('/data/genealogy-data.json', function (data) {
