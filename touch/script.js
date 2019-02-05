@@ -1,9 +1,10 @@
 'use strict'
 
-var d3, io
+var d3, io, localStorage
 
 var socket = io('http://192.168.178.28:8100/')
 var whichside = 'left' // 'right'
+// localStorage.setItem('language', 'DE')
 
 // socket.emit('connectTouch', { device: whichside })
 
@@ -43,6 +44,9 @@ var whichside = 'left' // 'right'
       var whichX = d3.scaleLinear()
         .domain([1060, 1280]) // min and max year of data set
         .range([0, svgWidth]) // min and max of svg
+
+      var whichLanguage = localStorage.getItem('language')
+      var whichperson //= JSON.parse(localStorage.getItem('person'))
 
       var personArray = []
       var personInfoArray = []
@@ -231,6 +235,7 @@ var whichside = 'left' // 'right'
           name: person.name,
           gender: person.gender,
           desc: person.desc,
+          descen: person.descen,
           img: person.img,
           id: person.id,
           x: whichX(person.born),
@@ -490,7 +495,7 @@ var whichside = 'left' // 'right'
         var firstGroups = chartGroup.append('g')
           .attr('class', function (d, i) { return 'firstLevelGroup' + i })
           .attr('id', function (d, i) { return 'person' + personPath[0].id })
-          .on('click', touchend) // comment when running on touch display
+          // .on('click', touchend) // comment when running on touch display
           .on('touchstart', touchstart)
           .on('touchend', touchend)
 
@@ -635,6 +640,7 @@ var whichside = 'left' // 'right'
             d3.select('#person' + person.id).classed('selected', false)
             d3.select('#person' + person.id).classed('sel', true)
 
+            localStorage.setItem('person', JSON.stringify(person))
             showInformation(person)
           }
         })
@@ -657,7 +663,19 @@ var whichside = 'left' // 'right'
         infoDesc.select('p').remove()
         infoDesc.append('h1').text(person.name)
         infoDesc.append('h2').text(person.title)
-        infoDesc.append('p').text(person.desc)
+
+        var desc
+
+        switch (whichLanguage) {
+          case 'DE':
+            desc = person.desc
+            break;
+        
+          default:
+            desc = person.descen
+            break;
+        }
+        infoDesc.append('p').text(desc)
 
         // Shows cirular image
         infoImage.select('img').remove()
@@ -691,9 +709,65 @@ var whichside = 'left' // 'right'
         })
       }
 
+      
+      // switch language
+      var languagediv = d3.select('#language')
+        //.addEventListener('click', languageToggle)
+        // .on('click', languageToggle) // comment when running on touch display
+        .on('touchstart', languageToggleStart)
+        .on('touchend', languageToggle)
+
+      function languageToggle(){
+        switch (whichLanguage) {
+          case 'DE':
+            whichLanguage = 'EN'
+            break;
+        
+          default:
+            whichLanguage = 'DE'
+            break;
+        }
+        localStorage.setItem('language', whichLanguage)
+
+        setLanguage(whichLanguage)
+      }
+
+      function languageToggleStart(){
+        // todo highlight languagediv
+        
+      }
+
+      function setLanguage(language){
+        // reload Person
+        var personToShow = JSON.parse(localStorage.getItem('person'))
+        showInformation(personToShow)
+
+        var welcome = d3.select('#welcome')
+        welcome.selectAll('*').remove()
+
+        var languageDiv = d3.select('#language')
+        languageDiv.selectAll('*').remove()
+        
+        switch (language) {
+          case 'DE':
+            welcome.text('Willkommen')
+            languageDiv.append('p').text('DE')
+            break;
+        
+          default:
+            welcome.text('Welcome')
+            languageDiv.append('p').text('EN')
+            break;
+        }
+      }
+
+
+
       // first time setup
       // show Leopold
       touchend(persons[0], 0, 1)
+      // set language to German
+      
     })
   })
 //})
