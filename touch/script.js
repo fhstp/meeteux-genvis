@@ -5,12 +5,11 @@ var d3, io
 var socket = io('http://192.168.178.28:8100/')
 var whichside = 'left' // 'right'
 
-socket.emit('connectTouch', { device: whichside })
+// socket.emit('connectTouch', { device: whichside })
 
-socket.on('connectTouchResult', function (data) {
-  console.log(data)
+// socket.on('connectTouchResult', function (data) {
 
-  // Load Genealogy Data
+  // Load Genealogy Datass
   d3.json('/data/genealogy-data.json', function (data) {
     var persons = data
 
@@ -491,7 +490,7 @@ socket.on('connectTouchResult', function (data) {
         var firstGroups = chartGroup.append('g')
           .attr('class', function (d, i) { return 'firstLevelGroup' + i })
           .attr('id', function (d, i) { return 'person' + personPath[0].id })
-          // .on('click', touchend) // comment when running on touch display
+          .on('click', touchend) // comment when running on touch display
           .on('touchstart', touchstart)
           .on('touchend', touchend)
 
@@ -697,4 +696,4 @@ socket.on('connectTouchResult', function (data) {
       touchend(persons[0], 0, 1)
     })
   })
-})
+//})

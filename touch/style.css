@@ -11,6 +11,39 @@ body{
     height: 730px;
     overflow: scroll;
 }
+
+#navigation{
+    height: 200px;
+    width: 250px;
+    background: white;
+    border: 1px solid grey;
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+}
+
+.col2{
+    display: table-cell;
+    vertical-align: top;
+}
+
+#help{
+    background: url('img/icon/help.svg');
+    width: 24px;
+    height: 24px;
+}
+
+#language{
+    background: url('img/icon/help.svg');
+    width: 24px;
+    height: 24px;
+}
+
+#reset{
+    background: url('img/icon/refresh.svg');
+    width: 24px;
+    height: 24px;
+}
 /*
 .stop-left {
     stop-color: white;
@@ -68,14 +101,14 @@ body{
 .bornGuessGradient{
     stroke: url(#bornGuessed) !important;
 }
-.sel .bornGuessGradient{
+.sel .bornGuessGradient, .selected .bornGuessGradient{
     stroke: url(#bornGuessedHighlight) !important;
 }
 
 .bornGuessWomanGradient{
     stroke: url(#bornGuessedWoman) !important;
 }
-.sel .bornGuessWomanGradient{
+.sel .bornGuessWomanGradient, .selected .bornGuessWomanGradient{
     stroke: url(#bornGuessedWomanHighlight) !important;
 }
 
@@ -83,28 +116,28 @@ body{
 .diedGuessGradient{
     stroke: url(#diedGuessed) !important;
 }
-.sel .diedGuessGradient{
+.sel .diedGuessGradient, .selected .diedGuessGradient{
     stroke: url(#diedGuessedHighlight) !important;
 }
 
 .diedGuessWomanGradient{
     stroke: url(#diedGuessedWoman) !important;
 }
-.sel .diedGuessWomanGradient{
+.sel .diedGuessWomanGradient, .selected .diedGuessWomanGradient{
     stroke: url(#diedGuessedWomanHighlight) !important;
 }
 
 .marriageGuessGradient{
     stroke: url(#marriageGuessed) !important;
 }
-.sel .marriageGuessGradient{
+.sel .marriageGuessGradient, .selected .marriageGuessGradient{
     stroke: url(#marriageHighlightGuessed) !important;
 }
 
 .marriageGuessWomanGradient{
     stroke: url(#marriageWomanGuessed) !important;
 }
-.sel .marriageGuessWomanGradient{
+.sel .marriageGuessWomanGradient, .selected .marriageGuessWomanGradient{
     stroke: url(#marriageWomanHighlightGuessed) !important;
 }
 
