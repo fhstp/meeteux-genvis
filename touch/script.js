@@ -491,7 +491,7 @@ socket.on('connectTouchResult', function (data) {
         var firstGroups = chartGroup.append('g')
           .attr('class', function (d, i) { return 'firstLevelGroup' + i })
           .attr('id', function (d, i) { return 'person' + personPath[0].id })
-          .on('click', touchend) // comment when running on touch display
+          // .on('click', touchend) // comment when running on touch display
           .on('touchstart', touchstart)
           .on('touchend', touchend)
 
@@ -566,7 +566,7 @@ socket.on('connectTouchResult', function (data) {
         .attr('x', function (d) { return d.x })
         .attr('y', function (d) { return d.y })
         .attr('fill', 'white')
-        .on('click', touchend) // comment when running on touch display
+        // .on('click', touchend) // comment when running on touch display
         .on('touchstart', touchstart)
         .on('touchend', touchend)
 
