@@ -27,22 +27,29 @@ body{
     vertical-align: top;
 }
 
+.icon{
+    width: 50px;
+    height: 50px;
+}
+
 #help{
-    background: url('img/icon/help.svg');
-    width: 24px;
-    height: 24px;
+    background: url('img/icon/help.svg') no-repeat;
+    background-size: 100% 100%;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 #language{
-    background: url('img/icon/help.svg');
-    width: 24px;
-    height: 24px;
+    background: url('img/icon/deen.png') no-repeat center;
+    background-size: 65px 40px;
+    width: 81px;
 }
 
 #reset{
-    background: url('img/icon/refresh.svg');
-    width: 24px;
-    height: 24px;
+    background: url('img/icon/refresh.svg') no-repeat;
+    background-size: 100% 100%;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 /*
 .stop-left {
