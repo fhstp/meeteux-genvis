@@ -780,12 +780,13 @@ socket.on('connectTouchResult', function (data) {
       var helpOverlay = d3.select('#helpOverlay')
         .on('click', function () { if (clickTrue) toggleHelp() }) // comment when running on touch display
         .on('touchend', toggleHelp)
-      d3.select('#help')
+      var helpButton = d3.select('#help')
         .on('click', function () { if (clickTrue) toggleHelp() }) // comment when running on touch display
         .on('touchstart', toggleHelpStart)
         .on('touchend', toggleHelp)
 
       function toggleHelp () {
+        helpButton.style('opacity', 0)
         if (isHelpOn) {
           helpOverlay.style('display', 'none')
           isHelpOn = false
@@ -796,7 +797,7 @@ socket.on('connectTouchResult', function (data) {
       }
 
       function toggleHelpStart () {
-
+        helpButton.style('opacity', 0.5)
       }
 
       // first time setup
