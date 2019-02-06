@@ -786,7 +786,7 @@ socket.on('connectTouchResult', function (data) {
         .on('touchend', toggleHelp)
 
       function toggleHelp () {
-        helpButton.style('opacity', 0)
+        helpButton.style('opacity', 1)
         if (isHelpOn) {
           helpOverlay.style('display', 'none')
           isHelpOn = false
