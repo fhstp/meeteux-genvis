@@ -762,17 +762,18 @@ socket.on('connectTouchResult', function (data) {
       }
 
       // resetView
-      d3.select('#reset')
+      var resetButton = d3.select('#reset')
         .on('click', function () { if (clickTrue) resetView() }) // comment when running on touch display
         .on('touchstart', resetViewStart)
         .on('touchend', resetView)
 
       function resetView () {
+        resetButton.style('opacity', 1)
         touchend(persons[0], 0, 1)
       }
 
       function resetViewStart () {
-        // Todo Highlight
+        resetButton.style('opacity', 0.5)
       }
 
       var isHelpOn = true
