@@ -494,8 +494,10 @@ socket.on('connectTouchResult', function (data) {
           .attr('class', function (d, i) { return 'firstLevelGroup' + i })
           .attr('id', function (d, i) { return 'person' + personPath[0].id })
           .on('click', function (d, i) {
-            const context = this
-            touchend(context)
+            if (clickTrue) {
+              const context = this
+              touchend(context)
+            }
           }) // comment when running on touch display
           .on('touchstart', touchstart)
           .on('touchend', touchend)
@@ -618,8 +620,13 @@ socket.on('connectTouchResult', function (data) {
       }
 
       function touchend (d, i, myInfo) {
-        var context = this
-        if (!d.hasOwnProperty('name')) context = d
+        var context
+        try {
+          if (!d.hasOwnProperty('name')) context = d
+        } catch (error) {
+          context = this
+        }
+
         var touchedElement = d3.select(context)
         var idTouched
 
