@@ -4,13 +4,11 @@ var d3, io, localStorage
 
 var socket = io('http://192.168.178.28:8100/')
 var whichside = 'left' // 'right'
-var clickTrue = true // set to false for touch display
+var clickTrue = false // set to false for touch display
 
+socket.emit('connectTouch', { device: whichside })
 
-// socket.emit('connectTouch', { device: whichside })
-
-// socket.on('connectTouchResult', function (data) {
-
+socket.on('connectTouchResult', function (data) {
   // Load Genealogy Datass
   d3.json('/data/genealogy-data.json', function (data) {
     var persons = data
@@ -621,7 +619,7 @@ var clickTrue = true // set to false for touch display
 
       function touchend (d, i, myInfo) {
         var context = this
-        if (!d.hasOwnProperty("name")) context = d
+        if (!d.hasOwnProperty('name')) context = d
         var touchedElement = d3.select(context)
         var idTouched
 
@@ -673,11 +671,11 @@ var clickTrue = true // set to false for touch display
         switch (whichLanguage) {
           case 'DE':
             desc = person.desc
-            break;
-        
+            break
+
           default:
             desc = person.descen
-            break;
+            break
         }
         infoDesc.append('p').text(desc)
 
@@ -713,34 +711,33 @@ var clickTrue = true // set to false for touch display
         })
       }
 
-      
       // switch language
       var languagediv = d3.select('#language')
-        .on('click', function() { if (clickTrue) languageToggle() } ) // comment when running on touch display
+        .on('click', function () { if (clickTrue) languageToggle() }) // comment when running on touch display
         .on('touchstart', languageToggleStart)
         .on('touchend', languageToggle)
 
-      function languageToggle(){
+      function languageToggle () {
         switch (whichLanguage) {
           case 'DE':
             whichLanguage = 'EN'
-            break;
-        
+            break
+
           default:
             whichLanguage = 'DE'
-            break;
+            break
         }
         localStorage.setItem('language', whichLanguage)
 
         setLanguage(whichLanguage)
       }
 
-      function languageToggleStart(){
+      function languageToggleStart () {
         // todo highlight languagediv
-        
+
       }
 
-      function setLanguage(language){
+      function setLanguage (language) {
         // reload Person
         var personToShow = JSON.parse(localStorage.getItem('person'))
         showInformation(personToShow)
@@ -750,41 +747,41 @@ var clickTrue = true // set to false for touch display
 
         var languageDiv = d3.select('#language')
         languageDiv.selectAll('*').remove()
-        
+
         switch (language) {
           case 'DE':
             welcome.text('Willkommen')
             languageDiv.append('p').text('DE')
-            break;
-        
+            break
+
           default:
             welcome.text('Welcome')
             languageDiv.append('p').text('EN')
-            break;
+            break
         }
       }
 
       // resetView
       d3.select('#reset')
-        .on('click', function() { if (clickTrue) resetView() } ) // comment when running on touch display
+        .on('click', function () { if (clickTrue) resetView() }) // comment when running on touch display
         .on('touchstart', resetViewStart)
         .on('touchend', resetView)
-      
-      function resetView (){
+
+      function resetView () {
         touchend(persons[0], 0, 1)
       }
 
-      function resetViewStart (){
+      function resetViewStart () {
         // Todo Highlight
       }
 
       var isHelpOn = true
       // helpOverlay
       var helpOverlay = d3.select('#helpOverlay')
-        .on('click', function() { if (clickTrue) toggleHelp() } ) // comment when running on touch display
+        .on('click', function () { if (clickTrue) toggleHelp() }) // comment when running on touch display
         .on('touchend', toggleHelp)
       d3.select('#help')
-        .on('click', function() { if (clickTrue) toggleHelp() } ) // comment when running on touch display
+        .on('click', function () { if (clickTrue) toggleHelp() }) // comment when running on touch display
         .on('touchstart', toggleHelpStart)
         .on('touchend', toggleHelp)
 
@@ -802,16 +799,10 @@ var clickTrue = true // set to false for touch display
 
       }
 
-
-
-
-
-
       // first time setup
       // show Leopold
       resetView()
       // set language to German
-      
     })
   })
-//})
+})
