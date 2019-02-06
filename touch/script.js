@@ -4,7 +4,8 @@ var d3, io, localStorage
 
 var socket = io('http://192.168.178.28:8100/')
 var whichside = 'left' // 'right'
-// localStorage.setItem('language', 'DE')
+var clickTrue = true // set to false for touch display
+
 
 // socket.emit('connectTouch', { device: whichside })
 
@@ -46,7 +47,6 @@ var whichside = 'left' // 'right'
         .range([0, svgWidth]) // min and max of svg
 
       var whichLanguage = localStorage.getItem('language')
-      var whichperson //= JSON.parse(localStorage.getItem('person'))
 
       var personArray = []
       var personInfoArray = []
@@ -487,7 +487,7 @@ var whichside = 'left' // 'right'
             myPathToDraw = []
           }
         })
-        console.log(myPersonToDraw)
+        // console.log(myPersonToDraw)
         personArrayToDraw.push(myPersonToDraw)
       })
 
@@ -495,7 +495,10 @@ var whichside = 'left' // 'right'
         var firstGroups = chartGroup.append('g')
           .attr('class', function (d, i) { return 'firstLevelGroup' + i })
           .attr('id', function (d, i) { return 'person' + personPath[0].id })
-          // .on('click', touchend) // comment when running on touch display
+          .on('click', function (d, i) {
+            const context = this
+            touchend(context)
+          }) // comment when running on touch display
           .on('touchstart', touchstart)
           .on('touchend', touchend)
 
@@ -557,7 +560,6 @@ var whichside = 'left' // 'right'
         .attr('stroke-width', '1')
         .attr('stroke-dasharray', '10,10')
         .attr('d', function (d) {
-          // console.log(d)
           return line(d)
         })
 
@@ -570,7 +572,7 @@ var whichside = 'left' // 'right'
         .attr('x', function (d) { return d.x })
         .attr('y', function (d) { return d.y })
         .attr('fill', 'white')
-        // .on('click', touchend) // comment when running on touch display
+        .on('click', function (d, i) { if (clickTrue) touchend(d, i) }) // comment when running on touch display
         .on('touchstart', touchstart)
         .on('touchend', touchend)
 
@@ -618,7 +620,9 @@ var whichside = 'left' // 'right'
       }
 
       function touchend (d, i, myInfo) {
-        var touchedElement = d3.select(this)
+        var context = this
+        if (!d.hasOwnProperty("name")) context = d
+        var touchedElement = d3.select(context)
         var idTouched
 
         try {
@@ -712,8 +716,7 @@ var whichside = 'left' // 'right'
       
       // switch language
       var languagediv = d3.select('#language')
-        //.addEventListener('click', languageToggle)
-        // .on('click', languageToggle) // comment when running on touch display
+        .on('click', function() { if (clickTrue) languageToggle() } ) // comment when running on touch display
         .on('touchstart', languageToggleStart)
         .on('touchend', languageToggle)
 
@@ -761,11 +764,52 @@ var whichside = 'left' // 'right'
         }
       }
 
+      // resetView
+      d3.select('#reset')
+        .on('click', function() { if (clickTrue) resetView() } ) // comment when running on touch display
+        .on('touchstart', resetViewStart)
+        .on('touchend', resetView)
+      
+      function resetView (){
+        touchend(persons[0], 0, 1)
+      }
+
+      function resetViewStart (){
+        // Todo Highlight
+      }
+
+      var isHelpOn = true
+      // helpOverlay
+      var helpOverlay = d3.select('#helpOverlay')
+        .on('click', function() { if (clickTrue) toggleHelp() } ) // comment when running on touch display
+        .on('touchend', toggleHelp)
+      d3.select('#help')
+        .on('click', function() { if (clickTrue) toggleHelp() } ) // comment when running on touch display
+        .on('touchstart', toggleHelpStart)
+        .on('touchend', toggleHelp)
+
+      function toggleHelp () {
+        if (isHelpOn) {
+          helpOverlay.style('display', 'none')
+          isHelpOn = false
+        } else {
+          helpOverlay.style('display', 'block')
+          isHelpOn = true
+        }
+      }
+
+      function toggleHelpStart () {
+
+      }
+
+
+
+
 
 
       // first time setup
       // show Leopold
-      touchend(persons[0], 0, 1)
+      resetView()
       // set language to German
       
     })
