@@ -725,6 +725,7 @@ socket.on('connectTouchResult', function (data) {
         .on('touchend', languageToggle)
 
       function languageToggle () {
+        languagediv.style('opacity', 1)
         switch (whichLanguage) {
           case 'DE':
             whichLanguage = 'EN'
@@ -741,7 +742,7 @@ socket.on('connectTouchResult', function (data) {
 
       function languageToggleStart () {
         // todo highlight languagediv
-
+        languagediv.style('opacity', 0.5)
       }
 
       function setLanguage (language) {
