@@ -30,7 +30,7 @@ socket.on('connectTouchResult', function (data) {
       d3.select('#chart').attr('style', 'height: ' + div2Height + 'px')
 
       // set svg size
-      var svgHeight = 2800
+      var svgHeight = 3750
       var svgWidth = 6000
       // Determines how far the scroll bar should be from the top
       var scrollOffset = 0
