@@ -592,9 +592,9 @@ socket.on('connectTouchResult', function (data) {
             .attr('x', person.diedx - 5)
             .attr('y', function () {
               if (person.marriagey) {
-                return person.marriagey - 34
+                return person.marriagey - strokeWidth + 8
               } else {
-                return person.y - 34
+                return person.y - strokeWidth + 8
               }
             })
         }
