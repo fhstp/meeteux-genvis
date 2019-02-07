@@ -4,11 +4,11 @@ var d3, io, localStorage
 
 var socket = io('http://192.168.178.28:8100/')
 var whichside = 'left' // 'right'
-var clickTrue = true // set to false for touch display
+var clickTrue = false // set to false for touch display
 
-// socket.emit('connectTouch', { device: whichside })
+socket.emit('connectTouch', { device: whichside })
 
-// socket.on('connectTouchResult', function (data) {
+socket.on('connectTouchResult', function (data) {
   // Load Genealogy Datass
   d3.json('/data/genealogy-data.json', function (data) {
     var persons = data
@@ -48,15 +48,14 @@ var clickTrue = true // set to false for touch display
 
       var personArray = []
       var personInfoArray = []
-      var iconsToDraw = []
       var itterator = 0
       var marriageCount = 1
 
-      var strokeWidth = 40
+      var strokeWidth = 50
       var startY = strokeWidth
       var marriageXDiff = strokeWidth / 2
       var marriageYDiff = strokeWidth / 3
-      var yDiff = 2 * strokeWidth
+      var yDiff = 2.2 * strokeWidth
 
       var childArray = []
       var showChildArray = []
@@ -397,7 +396,6 @@ var clickTrue = true // set to false for touch display
           return line(d)
         })
 
-
       // prepare personArray for drawing
       // go through personArray and split path information
       var personArrayToDraw = []
@@ -571,13 +569,12 @@ var clickTrue = true // set to false for touch display
         .enter()
         .append('text')
         .text(function (d) { return d.name })
-        .attr('x', function (d) { return d.x })
+        .attr('x', function (d) { return d.bornx })
         .attr('y', function (d) { return d.y })
         .attr('fill', 'white')
         .on('click', function (d, i) { if (clickTrue) touchend(d, i) }) // comment when running on touch display
         .on('touchstart', touchstart)
         .on('touchend', touchend)
-
 
       personInfoArray.forEach((person, index) => {
         if (person.bornx) {
@@ -586,8 +583,7 @@ var clickTrue = true // set to false for touch display
             .attr('width', 15)
             .attr('height', 15)
             .attr('x', person.bornx - 7)
-            .attr('y', person.y - 37)
-
+            .attr('y', person.y - strokeWidth + 6)
         }
         if (person.diedx) {
           chartGroup.append('image')
@@ -595,11 +591,10 @@ var clickTrue = true // set to false for touch display
             .attr('width', 10)
             .attr('height', 10)
             .attr('x', person.diedx - 5)
-            .attr('y', function() {
-              if(person.marriagey) {
+            .attr('y', function () {
+              if (person.marriagey) {
                 return person.marriagey - 34
-              }
-              else {
+              } else {
                 return person.y - 34
               }
             })
@@ -621,20 +616,18 @@ var clickTrue = true // set to false for touch display
         .attr('class', 'childIcons')
 
       childrenIconsGroup.append('image')
-        .attr('xlink:href', function (d) { 
-          if (d[0].gender == 'woman')
+        .attr('xlink:href', function (d) {
+          if (d[0].gender === 'woman') {
             return 'img/icon/pacifier-female.svg'
-          else
+          } else {
             return 'img/icon/pacifier-male.svg'
-          })
+          }
+        })
         .attr('class', function (d) { return 'childId' + d[0].id })
         .attr('width', 50)
         .attr('height', 50)
         .attr('x', function (d) { return d[0].x - 25 })
         .attr('y', function (d) { return d[0].y - 25 })
-        /*.attr('cx', function (d) { return d[0].x })
-        .attr('cy', function (d) { return d[0].y })
-        .attr('r', 20)*/
 
       var axisGroup = svg.append('g')
         .attr('class', 'x axis')
@@ -855,6 +848,7 @@ var clickTrue = true // set to false for touch display
         .on('touchend', toggleHelp)
 
       function toggleHelp () {
+        console.log(isHelpOn)
         helpButton.style('opacity', 1)
         if (isHelpOn) {
           helpOverlay.style('display', 'none')
@@ -875,4 +869,4 @@ var clickTrue = true // set to false for touch display
       // set language to German
     })
   })
-// })
+})
