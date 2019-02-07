@@ -450,10 +450,17 @@ socket.on('connectTouchResult', function (data) {
           } else if (item.bornGuessed === false) {
             // do nothing
           } else if (item.diedGuessed === true) {
-            myPathToDraw.push({
-              x: personItem[index - 1].x,
-              y: personItem[index - 1].y
-            })
+            if (isMarried) {
+              myPathToDraw.push({
+                x: personItem[index - 1].x + 20,
+                y: personItem[index - 1].y
+              })
+            } else {
+              myPathToDraw.push({
+                x: personItem[index - 1].x,
+                y: personItem[index - 1].y
+              })
+            }
             myPathToDraw.push({
               x: item.x,
               y: item.y
