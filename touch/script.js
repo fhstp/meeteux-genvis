@@ -112,7 +112,7 @@ socket.on('connectTouchResult', function (data) {
           getFatherById(person.father)
           var fatherY = getFatherY(father)
           showChildArray.push([{ x: whichX(person.born), y: fatherY + 26, gender: person.gender, id: person.id },
-            { x: whichX(person.born), y: startY }])
+            { x: whichX(person.born), y: startY - strokeWidth + 10 }])
         }
 
         switch (type) {
