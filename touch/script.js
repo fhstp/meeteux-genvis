@@ -360,7 +360,7 @@ socket.on('connectTouchResult', function (data) {
           return d.x
         })
         .y(function (d, i) { return d.y })
-        .curve(d3.curveLinear) // generates a path element which is a line
+        .curve(d3.curveBasis) // generates a path element which is a line
 
       var chartGroup = svg.append('g')
         .attr('class', 'group')
@@ -407,14 +407,14 @@ socket.on('connectTouchResult', function (data) {
               y: personItem[index - 1].y
             })
             myPathToDraw.push({
-              x: item.x,
+              x: item.x - 20,
               y: item.y
             })
             myPersonToDraw.push(myPathToDraw)
             myPathToDraw = []
 
             myPathToDraw.push({
-              x: item.x - 10,
+              x: item.x - 22,
               y: item.y,
               marriageGuessed: item.marriageGuessed
             })
@@ -427,7 +427,7 @@ socket.on('connectTouchResult', function (data) {
               y: personItem[index + 1].y
             })
             myPathToDraw.push({
-              x: personItem[index + 1].x + 10,
+              x: personItem[index + 1].x + 22,
               y: personItem[index + 1].y
             })
             myPersonToDraw.push(myPathToDraw)
@@ -474,10 +474,18 @@ socket.on('connectTouchResult', function (data) {
             myPersonToDraw[0].diedGuessed = true
             myPathToDraw = []
           } else {
-            myPathToDraw.push({
-              x: personItem[index - 1].x,
-              y: personItem[index - 1].y
-            })
+            if (isMarried) {
+              myPathToDraw.push({
+                x: personItem[index - 1].x + 20,
+                y: personItem[index - 1].y
+              })
+            } else {
+              myPathToDraw.push({
+                x: personItem[index - 1].x,
+                y: personItem[index - 1].y
+              })
+            }
+            
             myPathToDraw.push({
               x: item.x,
               y: item.y
