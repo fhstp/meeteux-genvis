@@ -4,11 +4,11 @@ var d3, io, localStorage
 
 var socket = io('http://192.168.178.28:8100/')
 var whichside = 'left' // 'right'
-var clickTrue = false // set to false for touch display
+var clickTrue = true // set to false for touch display
 
-socket.emit('connectTouch', { device: whichside })
+// socket.emit('connectTouch', { device: whichside })
 
-socket.on('connectTouchResult', function (data) {
+// socket.on('connectTouchResult', function (data) {
   // Load Genealogy Datass
   d3.json('/data/genealogy-data.json', function (data) {
     var persons = data
@@ -31,7 +31,7 @@ socket.on('connectTouchResult', function (data) {
 
       // set svg size
       var svgHeight = 2800
-      var svgWidth = 2000
+      var svgWidth = 6000
       // Determines how far the scroll bar should be from the top
       var scrollOffset = 0
 
@@ -48,6 +48,7 @@ socket.on('connectTouchResult', function (data) {
 
       var personArray = []
       var personInfoArray = []
+      var iconsToDraw = []
       var itterator = 0
       var marriageCount = 1
 
@@ -122,7 +123,7 @@ socket.on('connectTouchResult', function (data) {
           isChild = false
           getFatherById(person.father)
           var fatherY = getFatherY(father)
-          showChildArray.push([{ x: whichX(person.born), y: fatherY + 26 },
+          showChildArray.push([{ x: whichX(person.born), y: fatherY + 26, gender: person.gender, id: person.id },
             { x: whichX(person.born), y: startY }])
         }
 
@@ -155,7 +156,7 @@ socket.on('connectTouchResult', function (data) {
               { x: whichX(person.died), y: marriageY, diedGuessed: person.diedGuessed }
             ]
 
-            setPersonInfoArray(itterator, person, startY)
+            setPersonInfoArray(itterator, person, startY, marriageY)
 
             startY += yDiff
             itterator++
@@ -177,7 +178,7 @@ socket.on('connectTouchResult', function (data) {
               { x: whichX(person.died), y: marriageY, diedGuessed: person.diedGuessed }
             ]
 
-            setPersonInfoArray(itterator, person, startY)
+            setPersonInfoArray(itterator, person, startY, marriageY)
             startY += yDiff
             itterator++
             break
@@ -228,7 +229,7 @@ socket.on('connectTouchResult', function (data) {
         return fatherY
       }
 
-      function setPersonInfoArray (itterartor, person, startY) {
+      function setPersonInfoArray (itterartor, person, startY, endY) {
         personInfoArray[itterator] = {
           name: person.name,
           gender: person.gender,
@@ -236,10 +237,13 @@ socket.on('connectTouchResult', function (data) {
           descen: person.descen,
           img: person.img,
           id: person.id,
-          x: whichX(person.born),
-          y: startY,
           coa: person.coa,
-          title: person.title
+          title: person.title,
+          bornx: whichX(person.born),
+          diedx: whichX(person.died),
+          y: startY,
+          marriagex: whichX(person.marriage),
+          marriagey: endY
         }
       }
 
@@ -379,6 +383,21 @@ socket.on('connectTouchResult', function (data) {
         .attr('class', 'group')
         .attr('transform', 'translate(0,0)')
 
+      // draw children connections
+      var childrenConnectionGroup = chartGroup.selectAll('g.childconnector')
+        .data(showChildArray)
+        .enter().append('g')
+        .attr('class', 'childconnector')
+
+      childrenConnectionGroup.append('path')
+        .attr('fill', 'none')
+        .attr('stroke-width', '1')
+        .attr('stroke-dasharray', '1 3')
+        .attr('d', function (d) {
+          return line(d)
+        })
+
+
       // prepare personArray for drawing
       // go through personArray and split path information
       var personArrayToDraw = []
@@ -489,6 +508,7 @@ socket.on('connectTouchResult', function (data) {
         personArrayToDraw.push(myPersonToDraw)
       })
 
+      // draw person pathes
       personArrayToDraw.forEach((personPath, index) => {
         var firstGroups = chartGroup.append('g')
           .attr('class', function (d, i) { return 'firstLevelGroup' + i })
@@ -545,25 +565,7 @@ socket.on('connectTouchResult', function (data) {
         }
       })
 
-      var thirdGroup = chartGroup.selectAll('g.third')
-        .data(showChildArray)
-        .enter().append('g')
-        .attr('class', 'third')
-
-      thirdGroup.append('circle')
-        .attr('cx', function (d) { return d[0].x })
-        .attr('cy', function (d) { return d[0].y })
-        .attr('r', 5)
-
-      thirdGroup.append('path')
-        .attr('fill', 'none')
-        .attr('stroke-width', '1')
-        .attr('stroke-dasharray', '10,10')
-        .attr('d', function (d) {
-          return line(d)
-        })
-
-      // Adds names to
+      // // draw names on person pathes
       chartGroup.selectAll('text')
         .data(personInfoArray)
         .enter()
@@ -575,6 +577,64 @@ socket.on('connectTouchResult', function (data) {
         .on('click', function (d, i) { if (clickTrue) touchend(d, i) }) // comment when running on touch display
         .on('touchstart', touchstart)
         .on('touchend', touchend)
+
+
+      personInfoArray.forEach((person, index) => {
+        if (person.bornx) {
+          chartGroup.append('image')
+            .attr('xlink:href', 'img/icon/star.svg')
+            .attr('width', 15)
+            .attr('height', 15)
+            .attr('x', person.bornx - 7)
+            .attr('y', person.y - 37)
+
+        }
+        if (person.diedx) {
+          chartGroup.append('image')
+            .attr('xlink:href', 'img/icon/cross.svg')
+            .attr('width', 10)
+            .attr('height', 10)
+            .attr('x', person.diedx - 5)
+            .attr('y', function() {
+              if(person.marriagey) {
+                return person.marriagey - 34
+              }
+              else {
+                return person.y - 34
+              }
+            })
+        }
+
+        if (person.marriagex) {
+          chartGroup.append('image')
+            .attr('xlink:href', 'img/icon/marriage.svg')
+            .attr('width', 15)
+            .attr('height', 15)
+            .attr('x', person.marriagex - 7)
+            .attr('y', person.marriagey - 35)
+        }
+      })
+
+      var childrenIconsGroup = chartGroup.selectAll('g.childIcons')
+        .data(showChildArray)
+        .enter().append('g')
+        .attr('class', 'childIcons')
+
+      childrenIconsGroup.append('image')
+        .attr('xlink:href', function (d) { 
+          if (d[0].gender == 'woman')
+            return 'img/icon/pacifier-female.svg'
+          else
+            return 'img/icon/pacifier-male.svg'
+          })
+        .attr('class', function (d) { return 'childId' + d[0].id })
+        .attr('width', 50)
+        .attr('height', 50)
+        .attr('x', function (d) { return d[0].x - 25 })
+        .attr('y', function (d) { return d[0].y - 25 })
+        /*.attr('cx', function (d) { return d[0].x })
+        .attr('cy', function (d) { return d[0].y })
+        .attr('r', 20)*/
 
       var axisGroup = svg.append('g')
         .attr('class', 'x axis')
@@ -815,4 +875,4 @@ socket.on('connectTouchResult', function (data) {
       // set language to German
     })
   })
-})
+// })

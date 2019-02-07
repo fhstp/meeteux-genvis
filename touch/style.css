@@ -239,10 +239,14 @@ path.woman{
     height: 150px;
 }
 
-.third path{
+.childconnector path{
     stroke: grey;
 }
 
-.third circle{
+.childIcons circle{
     fill: grey;
+}
+
+.childIcons image{
+    filter: invert(.5) sepia(1);
 }
