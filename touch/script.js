@@ -3,8 +3,8 @@
 var d3, io, localStorage
 
 var socket = io('http://192.168.178.28:8100/')
-var whichside = 'left' // 'right'
-var clickTrue = false // set to false for touch display
+var whichside = 'right' // 'right'
+var clickTrue = true // set to false for touch display
 
 socket.emit('connectTouch', { device: whichside })
 
@@ -53,7 +53,7 @@ socket.on('connectTouchResult', function (data) {
 
       var strokeWidth = 50
       var startY = strokeWidth
-      var marriageXDiff = strokeWidth / 2
+      var marriageXDiff = strokeWidth
       var marriageYDiff = strokeWidth / 3
       var yDiff = 2.2 * strokeWidth
 
@@ -71,8 +71,6 @@ socket.on('connectTouchResult', function (data) {
 
       function isMarried (person) {
         if (typeof person.marriages !== 'undefined') {
-          // console.log('ist verheiratet');
-          // console.log(person.name);
           if (typeof person.marriages[0].children !== 'undefined') {
             // isFather = true
             // console.log('Father');
@@ -82,13 +80,9 @@ socket.on('connectTouchResult', function (data) {
           pushInArray(person, 'married')
 
           person.marriages.forEach((marriage) => {
-            // console.log('verheiratet mit');
-            // console.log(marriage.spouse.name);
-
             pushInArray(marriage.spouse, 'spouse')
 
             if (typeof marriage.children !== 'undefined') {
-              // console.log('hat Kinder')
               childArray.push(marriage)
             } else {
               // console.log('keine Kinder')
@@ -97,12 +91,9 @@ socket.on('connectTouchResult', function (data) {
 
           childArray.forEach(spouse => {
             childArray = []
-            // console.log('childArray is cleared')
 
             spouse.children.forEach(child => {
               isChild = true
-              // console.log('Kind')
-              // console.log(child.name + ' ' + child.born + ' ' + whichX(child.born))
               isMarried(child)
             })
           })
@@ -113,8 +104,6 @@ socket.on('connectTouchResult', function (data) {
       }
 
       function pushInArray (person, type) {
-        // console.log('pushinarray')
-        // console.log(person)
         // x1 - x-Child  y1 - middle of Father/Mother y3
         // x2 - x-Child  y2 - y1 child
         if (isChild) {
@@ -128,24 +117,19 @@ socket.on('connectTouchResult', function (data) {
 
         switch (type) {
           case 'child':
-            // console.log('child')
             personArray[itterator] = [
               { x: whichX(person.born), y: startY, gender: person.gender, id: person.id, bornGuessed: person.bornGuessed },
               { x: whichX(person.died), y: startY, diedGuessed: person.diedGuessed }
             ]
             setPersonInfoArray(itterator, person, startY)
 
-            // console.log('in nicht verheiratet')
-            // console.log(person.name)
             startY += yDiff
             itterator++
             break
 
           case 'spouse':
-            // console.log('spouse')
-
             var marriageX1 = whichX(person.marriage) - marriageXDiff
-            var marriageX2 = whichX(person.marriage) + marriageXDiff
+            var marriageX2 = whichX(person.marriage)
             var marriageY = startY - marriageYDiff - yDiff * (marriageCount - 1)
 
             personArray[itterator] = [
@@ -165,7 +149,7 @@ socket.on('connectTouchResult', function (data) {
           default:
             // console.log('default')
             marriageX1 = whichX(person.marriages[marriageCount - 1].spouse.marriage) - marriageXDiff
-            marriageX2 = whichX(person.marriages[marriageCount - 1].spouse.marriage) + marriageXDiff
+            marriageX2 = whichX(person.marriages[marriageCount - 1].spouse.marriage)
             marriageY = startY + marriageYDiff
 
             fatherArray.push({ y: marriageY, id: person.id })
@@ -606,7 +590,7 @@ socket.on('connectTouchResult', function (data) {
             .attr('width', 15)
             .attr('height', 15)
             .attr('x', person.marriagex - 7)
-            .attr('y', person.marriagey - 35)
+            .attr('y', person.marriagey - strokeWidth + 5 )
         }
       })
 
