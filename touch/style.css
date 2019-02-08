@@ -219,24 +219,14 @@ path.woman{
 }
 
 .coa{
-    width: 45%;
-    margin-left: 2.5%;
+    width: 20%;
+    display: table-cell;
+    vertical-align: middle;
+    padding-right: 5%;
 }
 
 .coa img{
-    width: 70px;
-}
-/*
-.coa.single{
-    margin: auto;
-}*/
-
-.coa.double, .coa.triple{
-    float: left;
-}
-
-.coa.triple{
-    height: 150px;
+    width: 100%;
 }
 
 .childconnector path{

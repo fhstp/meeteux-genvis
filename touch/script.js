@@ -6,9 +6,9 @@ var socket = io('http://192.168.178.28:8100/')
 var whichside = 'right' // 'right'
 var clickTrue = true // set to false for touch display
 
-socket.emit('connectTouch', { device: whichside })
+// socket.emit('connectTouch', { device: whichside })
 
-socket.on('connectTouchResult', function (data) {
+// socket.on('connectTouchResult', function (data) {
   // Load Genealogy Datass
   d3.json('/data/genealogy-data.json', function (data) {
     var persons = data
@@ -31,7 +31,7 @@ socket.on('connectTouchResult', function (data) {
 
       // set svg size
       var svgHeight = 3750
-      var svgWidth = 6000
+      var svgWidth = 6500
       // Determines how far the scroll bar should be from the top
       var scrollOffset = 0
 
@@ -69,7 +69,7 @@ socket.on('connectTouchResult', function (data) {
         isMarried(person)
       })
 
-      function isMarried (person) {
+      function isMarried(person) {
         if (typeof person.marriages !== 'undefined') {
           if (typeof person.marriages[0].children !== 'undefined') {
             // isFather = true
@@ -103,7 +103,7 @@ socket.on('connectTouchResult', function (data) {
         }
       }
 
-      function pushInArray (person, type) {
+      function pushInArray(person, type) {
         // x1 - x-Child  y1 - middle of Father/Mother y3
         // x2 - x-Child  y2 - y1 child
         if (isChild) {
@@ -112,7 +112,7 @@ socket.on('connectTouchResult', function (data) {
           getFatherById(person.father)
           var fatherY = getFatherY(father)
           showChildArray.push([{ x: whichX(person.born), y: fatherY + 26, gender: person.gender, id: person.id },
-            { x: whichX(person.born), y: startY - strokeWidth + 10 }])
+          { x: whichX(person.born), y: startY - strokeWidth + 10 }])
         }
 
         switch (type) {
@@ -170,7 +170,7 @@ socket.on('connectTouchResult', function (data) {
       var father
       var myId
 
-      function getFatherById (myIdF) {
+      function getFatherById(myIdF) {
         myId = myIdF
         // console.log('search ' + myId)
         persons.forEach(person => {
@@ -178,7 +178,7 @@ socket.on('connectTouchResult', function (data) {
         })
       }
 
-      function getFatherByIdRecursive (person) {
+      function getFatherByIdRecursive(person) {
         if (person.id === myId) {
           // console.log('id found')
           // console.log(person)
@@ -201,7 +201,7 @@ socket.on('connectTouchResult', function (data) {
         }
       }
 
-      function getFatherY (fatherSample) {
+      function getFatherY(fatherSample) {
         // console.log(fatherSample)
         var fatherY = ''
         fatherArray.forEach(father => {
@@ -212,7 +212,7 @@ socket.on('connectTouchResult', function (data) {
         return fatherY
       }
 
-      function setPersonInfoArray (itterartor, person, startY, endY) {
+      function setPersonInfoArray(itterartor, person, startY, endY) {
         personInfoArray[itterator] = {
           name: person.name,
           gender: person.gender,
@@ -370,7 +370,9 @@ socket.on('connectTouchResult', function (data) {
       var childrenConnectionGroup = chartGroup.selectAll('g.childconnector')
         .data(showChildArray)
         .enter().append('g')
-        .attr('class', 'childconnector')
+        .attr('class', function (d) {
+          return 'childconnector childconnector' + d[0].id
+        })
 
       childrenConnectionGroup.append('path')
         .attr('fill', 'none')
@@ -492,7 +494,7 @@ socket.on('connectTouchResult', function (data) {
                 y: personItem[index - 1].y
               })
             }
-            
+
             myPathToDraw.push({
               x: item.x,
               y: item.y
@@ -605,7 +607,7 @@ socket.on('connectTouchResult', function (data) {
             .attr('width', 15)
             .attr('height', 15)
             .attr('x', person.marriagex - 7)
-            .attr('y', person.marriagey - strokeWidth + 5 )
+            .attr('y', person.marriagey - strokeWidth + 5)
         }
       })
 
@@ -626,7 +628,27 @@ socket.on('connectTouchResult', function (data) {
         .attr('width', 50)
         .attr('height', 50)
         .attr('x', function (d) { return d[0].x - 25 })
-        .attr('y', function (d) { return d[0].y - 25 })
+        .attr('y', function (d) { return d[0].y - 25 + 10 })
+        .on('click', function (d, i) { if (clickTrue) childTouched(d, i) }) // comment when running on touch display
+        .on('touchstart', childTouchedStart)
+        .on('touchend', childTouched)
+
+      function childTouched (d, i) {
+        console.log('child')
+        console.log(d)
+
+        var connectorClass = 'childconnector' + d[0].id
+        console.log(connectorClass)
+        // highlight connection
+
+
+        // select person
+
+      }
+
+      function childTouchedStart (d, i) {
+        // todo highlight icon
+      }
 
       var axisGroup = svg.append('g')
         .attr('class', 'x axis')
@@ -661,7 +683,7 @@ socket.on('connectTouchResult', function (data) {
         }
       })
 
-      function touchstart (d, i) {
+      function touchstart(d, i) {
         try {
           d3.select('#person' + d.id).classed('selected', true)
           d3.select('#person' + d.id).classed('sel', false)
@@ -671,7 +693,7 @@ socket.on('connectTouchResult', function (data) {
         }
       }
 
-      function touchend (d, i, myInfo) {
+      function touchend(d, i, myInfo) {
         var context
         try {
           if (!d.hasOwnProperty('name')) context = d
@@ -709,9 +731,9 @@ socket.on('connectTouchResult', function (data) {
 
       var infoImage = d3.select('#image')
       var infoDesc = d3.select('#description')
-      var infoCoat = d3.select('#codeofarms')
+      var infoCoat = d3.select('#coatofarms')
 
-      function showInformation (person) {
+      function showInformation(person) {
         console.log('showInformation')
         console.log(person)
 
@@ -744,7 +766,7 @@ socket.on('connectTouchResult', function (data) {
 
         // Shows coat of arms
         infoCoat.selectAll('div.coa').remove()
-        person.coa.forEach(coaItem => {
+        person.coa.forEach((coaItem, index) => {
           var coatOfArmsItem
           coatOfArms.forEach(coa => {
             if (coa.id === coaItem) {
@@ -754,8 +776,25 @@ socket.on('connectTouchResult', function (data) {
 
           var div = infoCoat.append('div')
           div.append('img').attr('src', 'img/coatofarms/' + coatOfArmsItem.img + '.png')
-          div.append('h2').text(coatOfArmsItem.name)
+          div.attr('class', 'coa')
+          // div.append('h2').text(coatOfArmsItem.name)
+          console.log(person.coa.length + " " + index)
+          if (person.coa.length == 1 && index == 0){
+            infoCoat.append('div').attr('class', 'coa')
+            infoCoat.append('div').attr('class', 'coa')
+            infoCoat.append('div').attr('class', 'coa')
+          }
 
+          if (person.coa.length == 2 && index == 1){
+            infoCoat.append('div').attr('class', 'coa')
+            infoCoat.append('div').attr('class', 'coa')
+          }
+
+          if (person.coa.length == 3 && index == 2){
+            infoCoat.append('div').attr('class', 'coa')
+          }
+
+          /*
           switch (person.coa.length) {
             case 1:
               div.attr('class', 'coa single')
@@ -766,7 +805,7 @@ socket.on('connectTouchResult', function (data) {
             default:
               div.attr('class', 'coa triple')
               break
-          }
+          }*/
         })
       }
 
@@ -776,7 +815,7 @@ socket.on('connectTouchResult', function (data) {
         .on('touchstart', languageToggleStart)
         .on('touchend', languageToggle)
 
-      function languageToggle () {
+      function languageToggle() {
         languagediv.style('opacity', 1)
         switch (whichLanguage) {
           case 'DE':
@@ -792,12 +831,12 @@ socket.on('connectTouchResult', function (data) {
         setLanguage(whichLanguage)
       }
 
-      function languageToggleStart () {
+      function languageToggleStart() {
         // todo highlight languagediv
         languagediv.style('opacity', 0.5)
       }
 
-      function setLanguage (language) {
+      function setLanguage(language) {
         // reload Person
         var personToShow = JSON.parse(localStorage.getItem('person'))
         showInformation(personToShow)
@@ -827,12 +866,12 @@ socket.on('connectTouchResult', function (data) {
         .on('touchstart', resetViewStart)
         .on('touchend', resetView)
 
-      function resetView () {
+      function resetView() {
         resetButton.style('opacity', 1)
         touchend(persons[0], 0, 1)
       }
 
-      function resetViewStart () {
+      function resetViewStart() {
         resetButton.style('opacity', 0.5)
       }
 
@@ -846,7 +885,7 @@ socket.on('connectTouchResult', function (data) {
         .on('touchstart', toggleHelpStart)
         .on('touchend', toggleHelp)
 
-      function toggleHelp () {
+      function toggleHelp() {
         console.log(isHelpOn)
         helpButton.style('opacity', 1)
         if (isHelpOn) {
@@ -858,7 +897,7 @@ socket.on('connectTouchResult', function (data) {
         }
       }
 
-      function toggleHelpStart () {
+      function toggleHelpStart() {
         helpButton.style('opacity', 0.5)
       }
 
@@ -868,4 +907,4 @@ socket.on('connectTouchResult', function (data) {
       // set language to German
     })
   })
-})
+// })
