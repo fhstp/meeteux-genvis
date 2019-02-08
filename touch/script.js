@@ -6,6 +6,18 @@ var socket = io('http://192.168.178.28:8100/')
 var whichside = 'right' // 'right'
 var clickTrue = true // set to false for touch display
 
+d3.selection.prototype.dblTap = function (callback) {
+  var last = 0
+  return this.each(function () {
+    d3.select(this).on('touchstart', function (e) {
+      if ((d3.event.timeStamp - last) < 500) {
+        return callback(e)
+      }
+      last = d3.event.timeStamp
+    })
+  })
+}
+
 // socket.emit('connectTouch', { device: whichside })
 
 // socket.on('connectTouchResult', function (data) {
@@ -619,7 +631,10 @@ var clickTrue = true // set to false for touch display
         .on('click', function (d, i) { if (clickTrue) childTouched(d, i, this) }) // comment when running on touch display
         .on('touchstart', childTouchedStart)
         .on('touchend', childTouched)
-        .on('dblclick',function(d){ if (clickTrue) scrollToPerson(d) });
+        .on('dblclick',function(d){ if (clickTrue) scrollToPerson(d) })
+        .dblTap(function() {
+          alert("Double tap!");
+        })
 
       function childTouched (d, i, context) {
         resetHighlighting()
@@ -715,14 +730,6 @@ var clickTrue = true // set to false for touch display
        }
       }
 
-      function scrollLeftTween(scrollLeft) {
-        return function() {
-          var i = d3.interpolateNumber(elementToScroll.scrollLeft, scrollLeft)
-          return function(t) { elementToScroll.scrollLeft = i(t) }
-       }
-      }
-
-
       function touchstart(d, i) {
         try {
           d3.select('#person' + d.id).classed('selected', true)
@@ -755,7 +762,6 @@ var clickTrue = true // set to false for touch display
         }
 
         getPersonToShow(idTouched)
-        
       }
 
       function getPersonToShow (idTouched) {
@@ -818,7 +824,13 @@ var clickTrue = true // set to false for touch display
           })
 
           var div = infoCoat.append('div')
-          div.append('img').attr('src', 'img/coatofarms/' + coatOfArmsItem.img + '.png')
+          div.append('img')
+            .attr('src', 'img/coatofarms/' + coatOfArmsItem.img + '.png')
+            .attr('class', 'coa' + coatOfArmsItem.id)
+            .on('click', function (d) { if (clickTrue) coaTouched(d, this) }) // comment when running on touch display
+            .on('touchstart', coaTouchedStart)
+            .on('touchend', coaTouched)
+
           div.attr('class', 'coa')
           // div.append('h2').text(coatOfArmsItem.name)
 
@@ -838,6 +850,76 @@ var clickTrue = true // set to false for touch display
             infoCoat.append('div').attr('class', 'coa')
           }
         })
+      }
+
+      var coaOverlay = d3.select('#coaOverlay')
+        .on('click', function () { if (clickTrue) hideCoa() }) // comment when running on touch display
+        .on('touchend', hideCoa)
+
+      function coaTouched (d, context) {
+        coaOverlay.style('display', 'block')
+
+        var myContext, coatOfArmsItem
+        try {
+          myContext = context
+        } catch (error) {
+          myContext = this
+        }
+
+        var myElement = d3.select(myContext)
+          .style('opacity', 1)
+
+        // TODO: show coa information in coaOverlay
+        var idTouched = myElement.attr('class')
+        var res = idTouched.split('coa')
+        idTouched = parseInt(res[1])
+
+        // get coa item
+        coatOfArms.forEach(coa => {
+          if (coa.id === idTouched) {
+            coatOfArmsItem = coa
+          }
+        })
+
+        // 17 and 32
+
+        coaOverlay.selectAll('*').remove()
+        var coaOverlayInfo = coaOverlay.append('div').attr('class', 'coa-overlay-info')
+        var coaTable = coaOverlayInfo.append('div').attr('class', 'coa-table')
+        var coaImg = coaTable.append('div').attr('class', 'coa-col1')
+        coaImg.append('img').attr('src', function(){
+          return 'img/coatofarms/' + coatOfArmsItem.img + '.png'
+        })
+        var coaTitle = coaTable.append('div').attr('class', 'coa-title coa-col1')
+
+        var whichName, whichDesc
+        if(whichLanguage === 'DE') {
+          whichName = coatOfArmsItem.name
+          whichDesc = coatOfArmsItem.desc
+        } else {
+          whichName = coatOfArmsItem.nameen
+          whichDesc = coatOfArmsItem.descen
+        }
+        // if 3 names than 3rd is an empty one
+        // if 6 check 2nd are two names
+        // if 32 check 4rd are two names
+        // if 17 and 3 
+        whichName.forEach((coaName, index) => {
+          if (whichName.length === 3 && index ===  2 && coatOfArmsItem.id !== 17){
+            coaTitle.append('p').attr('class','coa-col2')
+          } 
+          coaTitle.append('p').attr('class','coa-col2').text(coaName)
+        });
+
+        coaOverlayInfo.append('p').text(whichDesc)
+      }
+
+      function coaTouchedStart (d) {
+        d3.select(this).style('opacity', 0.5)
+      }
+
+      function hideCoa () {
+        coaOverlay.style('display', 'none')
       }
 
       // switch language
@@ -874,6 +956,8 @@ var clickTrue = true // set to false for touch display
 
         var welcome = d3.select('#welcome')
         welcome.selectAll('*').remove()
+        var coaTitle = d3.select('#coatofarmstitle')
+        coaTitle.selectAll('*').remove()
 
         var languageDiv = d3.select('#language')
         languageDiv.selectAll('*').remove()
@@ -881,11 +965,13 @@ var clickTrue = true // set to false for touch display
         switch (language) {
           case 'DE':
             welcome.text('Willkommen')
+            coaTitle.text('Zugehörige Wappen')
             languageDiv.append('p').text('DE')
             break
 
           default:
             welcome.text('Welcome')
+            coaTitle.text('Associated Coats of Arms')
             languageDiv.append('p').text('EN')
             break
         }
@@ -935,10 +1021,16 @@ var clickTrue = true // set to false for touch display
         helpButton.style('opacity', 0.5)
       }
 
+      function setupFirstTime() {
+        // show Leopold (id = 1)
+        resetView()
+        // set language to German
+        whichLanguage = 'DE'
+        localStorage.setItem('language', whichLanguage)
+      }
+
       // first time setup
-      // show Leopold (id = 1)
-      resetView()
-      // set language to German
+      setupFirstTime()
     })
   })
 // })
