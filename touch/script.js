@@ -64,15 +64,12 @@ var clickTrue = true // set to false for touch display
       var fatherArray = []
 
       persons.forEach((person) => {
-        // console.log(person);
-        // console.log(person.name + ' ' + person.born + ' ' + whichX(person.born));
         isMarried(person)
       })
 
       function isMarried(person) {
         if (typeof person.marriages !== 'undefined') {
           if (typeof person.marriages[0].children !== 'undefined') {
-            // isFather = true
             // console.log('Father');
           }
 
@@ -180,8 +177,6 @@ var clickTrue = true // set to false for touch display
 
       function getFatherByIdRecursive(person) {
         if (person.id === myId) {
-          // console.log('id found')
-          // console.log(person)
           father = person
         }
         if (typeof person.marriages !== 'undefined') {
@@ -189,8 +184,6 @@ var clickTrue = true // set to false for touch display
             if (typeof marriage.children !== 'undefined') {
               marriage.children.forEach(child => {
                 if (child.id === myId) {
-                  // console.log('id found')
-                  // console.log(child)
                   father = child
                 } else {
                   getFatherByIdRecursive(child)
@@ -202,7 +195,6 @@ var clickTrue = true // set to false for touch display
       }
 
       function getFatherY(fatherSample) {
-        // console.log(fatherSample)
         var fatherY = ''
         fatherArray.forEach(father => {
           if (father.id === fatherSample.id) {
@@ -396,7 +388,6 @@ var clickTrue = true // set to false for touch display
           gender: personItem[0].gender
         })
         personItem.forEach((item, index) => {
-          // console.log(item)
           var myPathToDraw = []
 
           if (isMarried && index === 1) {
@@ -500,7 +491,6 @@ var clickTrue = true // set to false for touch display
             myPathToDraw = []
           }
         })
-        // console.log(myPersonToDraw)
         personArrayToDraw.push(myPersonToDraw)
       })
 
@@ -621,28 +611,60 @@ var clickTrue = true // set to false for touch display
             return 'img/icon/pacifier-male.svg'
           }
         })
-        .attr('class', function (d) { return 'childId' + d[0].id })
+        .attr('class', function (d) { return 'childId' + d[0].id + ' child' + d[0].gender})
         .attr('width', 50)
         .attr('height', 50)
         .attr('x', function (d) { return d[0].x - 25 })
         .attr('y', function (d) { return d[0].y - 25 + 5 })
-        .on('click', function (d, i) { if (clickTrue) childTouched(d, i) }) // comment when running on touch display
+        .on('click', function (d, i) { if (clickTrue) childTouched(d, i, this) }) // comment when running on touch display
         .on('touchstart', childTouchedStart)
         .on('touchend', childTouched)
 
-      function childTouched (d, i) {
+      function childTouched (d, i, context) {
+        resetHighlighting()
+
+        var myContext
+        try {
+          myContext = context
+        } catch (error) {
+          myContext = this
+        }
+
+        d3.select(myContext).attr('xlink:href', function (d) {
+          if (d[0].gender === 'woman') {
+            return 'img/icon/pacifier-female-highlight.svg'
+          } else {
+            return 'img/icon/pacifier-male-highlight.svg'
+          }
+        })
+
+        // reset highlight of childconnectors
+        d3.selectAll('.childconnector').classed('selected', false)
+
         // highlight connection
         var connectorClass = 'childconnector' + d[0].id
-        d3.selectAll('.childconnector').classed('selected', false)
         d3.select('.' + connectorClass).classed('selected', true)
 
         // select person
-        touchend(d[0], i)
+        getPersonToShow(d[0].id)
       }
 
       function childTouchedStart (d, i) {
         // todo highlight icon
+        d3.select(this).attr('opacity', 0.5)
       }
+
+      function resetHighlighting () {
+        // reset highlight of childconnectors
+        d3.selectAll('.childconnector').classed('selected', false)
+
+        // reset highlight of child-buttons
+        d3.selectAll('.childman')
+          .attr('xlink:href', 'img/icon/pacifier-male.svg')
+        d3.selectAll('.childwoman')
+          .attr('xlink:href', 'img/icon/pacifier-female.svg')
+      } 
+      
 
       var axisGroup = svg.append('g')
         .attr('class', 'x axis')
@@ -687,7 +709,9 @@ var clickTrue = true // set to false for touch display
         }
       }
 
-      function touchend(d, i, myInfo) {
+      function touchend(d, i) {
+        resetHighlighting()
+
         var context
         try {
           if (!d.hasOwnProperty('name')) context = d
@@ -703,13 +727,14 @@ var clickTrue = true // set to false for touch display
           var res = idTouched.split('person')
           idTouched = parseInt(res[1])
         } catch (error) {
-          if (myInfo === 1) {
-            idTouched = 1
-          } else {
             idTouched = d.id
-          }
         }
 
+        getPersonToShow(idTouched)
+        
+      }
+
+      function getPersonToShow (idTouched) {
         personInfoArray.forEach(person => {
           if (person.id === idTouched) {
             d3.selectAll('g').classed('sel', false)
@@ -850,7 +875,7 @@ var clickTrue = true // set to false for touch display
 
       function resetView() {
         resetButton.style('opacity', 1)
-        touchend(persons[0], 0, 1)
+        getPersonToShow(1)
       }
 
       function resetViewStart() {
@@ -868,7 +893,6 @@ var clickTrue = true // set to false for touch display
         .on('touchend', toggleHelp)
 
       function toggleHelp() {
-        console.log(isHelpOn)
         helpButton.style('opacity', 1)
         if (isHelpOn) {
           helpOverlay.style('display', 'none')
@@ -884,7 +908,7 @@ var clickTrue = true // set to false for touch display
       }
 
       // first time setup
-      // show Leopold
+      // show Leopold (id = 1)
       resetView()
       // set language to German
     })
