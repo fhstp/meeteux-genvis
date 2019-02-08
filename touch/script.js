@@ -30,7 +30,7 @@ var clickTrue = true // set to false for touch display
       d3.select('#chart').attr('style', 'height: ' + div2Height + 'px')
 
       // set svg size
-      var svgHeight = 3750
+      var svgHeight = 3000
       var svgWidth = 6500
       // Determines how far the scroll bar should be from the top
       var scrollOffset = 0
@@ -51,8 +51,8 @@ var clickTrue = true // set to false for touch display
       var itterator = 0
       var marriageCount = 1
 
-      var strokeWidth = 50
-      var startY = strokeWidth
+      var strokeWidth = 40
+      var startY = strokeWidth + 20
       var marriageXDiff = strokeWidth
       var marriageYDiff = strokeWidth / 3
       var yDiff = 2.2 * strokeWidth
@@ -584,7 +584,7 @@ var clickTrue = true // set to false for touch display
             .attr('width', 15)
             .attr('height', 15)
             .attr('x', person.bornx - 7)
-            .attr('y', person.y - strokeWidth + 6)
+            .attr('y', person.y - strokeWidth + 3)
         }
         if (person.diedx) {
           chartGroup.append('image')
@@ -594,9 +594,9 @@ var clickTrue = true // set to false for touch display
             .attr('x', person.diedx - 5)
             .attr('y', function () {
               if (person.marriagey) {
-                return person.marriagey - strokeWidth + 8
+                return person.marriagey - strokeWidth + 5
               } else {
-                return person.y - strokeWidth + 8
+                return person.y - strokeWidth + 5
               }
             })
         }
@@ -607,7 +607,7 @@ var clickTrue = true // set to false for touch display
             .attr('width', 15)
             .attr('height', 15)
             .attr('x', person.marriagex - 7)
-            .attr('y', person.marriagey - strokeWidth + 5)
+            .attr('y', person.marriagey - strokeWidth + 2)
         }
       })
 
@@ -628,7 +628,7 @@ var clickTrue = true // set to false for touch display
         .attr('width', 50)
         .attr('height', 50)
         .attr('x', function (d) { return d[0].x - 25 })
-        .attr('y', function (d) { return d[0].y - 25 + 10 })
+        .attr('y', function (d) { return d[0].y - 25 + 5 })
         .on('click', function (d, i) { if (clickTrue) childTouched(d, i) }) // comment when running on touch display
         .on('touchstart', childTouchedStart)
         .on('touchend', childTouched)
