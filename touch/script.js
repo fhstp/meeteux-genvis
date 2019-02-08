@@ -619,6 +619,7 @@ var clickTrue = true // set to false for touch display
         .on('click', function (d, i) { if (clickTrue) childTouched(d, i, this) }) // comment when running on touch display
         .on('touchstart', childTouchedStart)
         .on('touchend', childTouched)
+        .on('dblclick',function(d){ if (clickTrue) scrollToPerson(d) });
 
       function childTouched (d, i, context) {
         resetHighlighting()
@@ -698,6 +699,29 @@ var clickTrue = true // set to false for touch display
             .attr('transform', `translate(0, ${scrollPos})`)
         }
       })
+
+      // scroll to selected child via child-button
+      var divToScroll = d3.select('#chart')
+      function scrollToPerson (d) {
+        var scrollheight = d[1].y - 20    
+        divToScroll.transition().duration(3000)
+          .tween('uniquetweenname', scrollTopTween(scrollheight))
+      }
+
+      function scrollTopTween(scrollTop) {
+        return function() {
+          var i = d3.interpolateNumber(elementToScroll.scrollTop, scrollTop)
+          return function(t) { elementToScroll.scrollTop = i(t) }
+       }
+      }
+
+      function scrollLeftTween(scrollLeft) {
+        return function() {
+          var i = d3.interpolateNumber(elementToScroll.scrollLeft, scrollLeft)
+          return function(t) { elementToScroll.scrollLeft = i(t) }
+       }
+      }
+
 
       function touchstart(d, i) {
         try {
@@ -874,8 +898,12 @@ var clickTrue = true // set to false for touch display
         .on('touchend', resetView)
 
       function resetView() {
+        resetHighlighting()
         resetButton.style('opacity', 1)
         getPersonToShow(1)
+
+        // set div#chart to top 0, left 0
+        elementToScroll.scrollTo(0,0)
       }
 
       function resetViewStart() {
