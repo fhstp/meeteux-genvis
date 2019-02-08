@@ -230,7 +230,20 @@ path.woman{
 }
 
 .childconnector path{
+    fill: none;
     stroke: grey;
+    stroke-width: 1;
+    stroke-dasharray: 1 3;
+}
+
+.childconnector.selected.man path{
+    stroke: rgb(0, 121, 162);
+    stroke-dasharray: 0;
+}
+
+.childconnector.selected.woman path{
+    stroke: rgb(216, 0, 36);
+    stroke-dasharray: 0;
 }
 
 .childIcons circle{

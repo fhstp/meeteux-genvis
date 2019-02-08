@@ -371,13 +371,10 @@ var clickTrue = true // set to false for touch display
         .data(showChildArray)
         .enter().append('g')
         .attr('class', function (d) {
-          return 'childconnector childconnector' + d[0].id
+          return 'childconnector childconnector' + d[0].id + ' ' + d[0].gender
         })
 
       childrenConnectionGroup.append('path')
-        .attr('fill', 'none')
-        .attr('stroke-width', '1')
-        .attr('stroke-dasharray', '1 3')
         .attr('d', function (d) {
           return line(d)
         })
@@ -634,16 +631,13 @@ var clickTrue = true // set to false for touch display
         .on('touchend', childTouched)
 
       function childTouched (d, i) {
-        console.log('child')
-        console.log(d)
-
-        var connectorClass = 'childconnector' + d[0].id
-        console.log(connectorClass)
         // highlight connection
-
+        var connectorClass = 'childconnector' + d[0].id
+        d3.selectAll('.childconnector').classed('selected', false)
+        d3.select('.' + connectorClass).classed('selected', true)
 
         // select person
-
+        touchend(d[0], i)
       }
 
       function childTouchedStart (d, i) {
@@ -778,7 +772,8 @@ var clickTrue = true // set to false for touch display
           div.append('img').attr('src', 'img/coatofarms/' + coatOfArmsItem.img + '.png')
           div.attr('class', 'coa')
           // div.append('h2').text(coatOfArmsItem.name)
-          console.log(person.coa.length + " " + index)
+
+          // add empty divs to get 4 divs
           if (person.coa.length == 1 && index == 0){
             infoCoat.append('div').attr('class', 'coa')
             infoCoat.append('div').attr('class', 'coa')
@@ -793,19 +788,6 @@ var clickTrue = true // set to false for touch display
           if (person.coa.length == 3 && index == 2){
             infoCoat.append('div').attr('class', 'coa')
           }
-
-          /*
-          switch (person.coa.length) {
-            case 1:
-              div.attr('class', 'coa single')
-              break
-            case 2:
-              div.attr('class', 'coa double')
-              break
-            default:
-              div.attr('class', 'coa triple')
-              break
-          }*/
         })
       }
 
