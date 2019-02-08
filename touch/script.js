@@ -1022,7 +1022,7 @@ d3.selection.prototype.dblTap = function (callback) {
       }
 
       function setupFirstTime() {
-        // show Leopold (id = 1)
+        // reset view to Leopold (id = 1)
         resetView()
         // set language to German
         whichLanguage = 'DE'
