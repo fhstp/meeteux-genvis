@@ -1,0 +1,348 @@
+[{
+    "id" : 1,
+    "template" : 8,
+    "spouse" : [{
+        "id" : 6,
+        "children" : [{
+            "id" : 3
+        },{
+            "id" : 7
+        },{
+            "id" : 32
+        },{
+            "id" : 34
+        },{
+            "id" : 35
+        },{
+            "id" : 36
+        },{
+            "id" : 37
+        },{
+            "id" : 38
+        },{
+            "id" : 39
+        },{
+            "id" : 40
+        },{
+            "id" : 0,
+            "name" : "7 jung verstorben | 7 short-lived",
+            "img" : "nn-neutral"
+        }]
+    }]
+},{
+    "id" : 6,
+    "template" : 8,
+    "spouse" : [{
+        "id" : 1,
+        "children" : [{
+            "id" : 3
+        },{
+            "id" : 7
+        },{
+            "id" : 32
+        },{
+            "id" : 34
+        },{
+            "id" : 35
+        },{
+            "id" : 36
+        },{
+            "id" : 37
+        },{
+            "id" : 38
+        },{
+            "id" : 39
+        },{
+            "id" : 40
+        },{
+            "id" : 0,
+            "name" : "7 jung verstorben | 7 short-lived",
+            "img" : "nn-neutral"
+        }]
+    }]
+},{
+    "id" : 3,
+    "template" : 3,
+    "spouse" : [{
+        "id" : 0,
+        "name" : "Adelheid",
+        "img" : "nn-female"
+    },{
+        "id" : 0,
+        "name" : "Sophie",
+        "img" : "KNB_BST-F-55"
+    }]
+},{
+    "id" : 7,
+    "template" : 7,
+    "spouse" : [{
+        "id" : 8,
+        "children" : [{
+            "id" : 9
+        }]
+    },{
+        "id" : 10,
+        "children" : [{
+            "id" : 11
+        },{
+            "id" : 12
+        },{
+            "id" : 29
+        }]
+    }]
+},{
+    "id" : 8,
+    "template" : 4,
+    "spouse" : [{
+        "id" : 7,
+        "children" : [{
+            "id" : 9
+        }]
+    }]
+},{
+    "id" : 10,
+    "template" : 6,
+    "spouse" : [{
+        "id" : 7,
+        "children" : [{
+            "id" : 11
+        },{
+            "id" : 12
+        },{
+            "id" : 29
+        }]
+    }]
+},{
+    "id" : 9,
+    "template" : 2,
+    "spouse" : [{
+        "id" : 0,
+        "name" : "Heinrich Lgf. von Steffling",
+        "img" : "nn-male"
+    }]
+},{
+    "id" : 11,
+    "template" : 3,
+    "spouse" : [{
+        "id" : 0,
+        "name" : "Kg. Stephan III. von Ungarn",
+        "img" : "nn-male"
+    },{
+        "id" : 0,
+        "name" : "Hg. Hermann v. Kärnten",
+        "img" : "nn-male"
+    }]
+},{
+    "id" : 12,
+    "template" : 6,
+    "spouse" : [{
+        "id" : 13,
+        "children" : [{
+            "id" : 14
+        },{
+            "id" : 15
+        },{
+            "id" : 28
+        }]
+    }]
+},{
+    "id" : 13,
+    "template" : 6,
+    "spouse" : [{
+        "id" : 12,
+        "children" : [{
+            "id" : 14
+        },{
+            "id" : 15
+        },{
+            "id" : 28
+        }]
+    }]
+},{
+    "id" : 14,
+    "template" : 1
+},{
+    "id" : 15,
+    "template" : 5,
+    "spouse" : [{
+        "id" : 16,
+        "children" : [{
+            "id" : 17
+        },{
+            "id" : 18
+        },{
+            "id" : 19
+        },{
+            "id" : 20
+        },{
+            "id" : 23
+        },{
+            "id" : 26
+        },{
+            "id" : 27
+        }]
+    }]
+},{
+    "id" : 16,
+    "template" : 5,
+    "spouse" : [{
+        "id" : 15,
+        "children" : [{
+            "id" : 17
+        },{
+            "id" : 18
+        },{
+            "id" : 19
+        },{
+            "id" : 20
+        },{
+            "id" : 23
+        },{
+            "id" : 26
+        },{
+            "id" : 27
+        }]
+    }]
+},{
+    "id" : 17,
+    "template" : 3,
+    "spouse" : [{
+        "id" : 0,
+        "name" : "Kg. Heinr. VII.",
+        "img" : "nn-male"
+    },{
+        "id" : 0,
+        "name" : "Kg. Przemysl (Ottokar II.)",
+        "img" : "nn-male"
+    }]
+},{
+    "id" : 18,
+    "template" : 2,
+    "spouse" : [{
+        "id" : 0,
+        "name" : "Hg. Albrecht v. Sachsen",
+        "img" : "nn-male"
+    }]
+},{
+    "id" : 19,
+    "template" : 1
+},{
+    "id" : 20,
+    "template" : 4,
+    "spouse" : [{
+        "id" : 0,
+        "name" : "Agnes",
+        "img" : "KNB_BST-F-68",
+        "children" : [{
+            "id" : 0,
+            "name" : "Gertrud",
+            "img" : "KNB_BST-F-69"
+        }]
+    }]
+},{
+    "id" : 23,
+    "template" : 3,
+    "spouse" : [{
+        "id" : 24
+    },{
+        "id" : 25
+    }]
+},{
+    "id" : 24,
+    "template" : 2,
+    "spouse" : [{
+        "id" : 23
+    }]
+},{
+    "id" : 25,
+    "template" : 2,
+    "spouse" : [{
+        "id" : 23
+    }]
+},{
+    "id" : 26,
+    "template" : 2,
+    "spouse" : [{
+        "id" : 0,
+        "name" : "Mgf. Heinrich v. Meißen",
+        "img" : "nn-male"
+    }]
+},{
+    "id" : 27,
+    "template" : 2,
+    "spouse" : [{
+        "id" : 0,
+        "name" : "Lgf. Heinrich Raspe v. Thüringen",
+        "img" : "nn-male"
+    }]
+},{
+    "id" : 28,
+    "template" : 1
+},{
+    "id" : 29,
+    "template" : 4,
+    "spouse" : [{
+        "id" : 0,
+        "name" : "Richza",
+        "img" : "KNB_BST-F-62",
+        "children" : [{
+            "id" : 0,
+            "name" : "Heinrich d. J.",
+            "img" : "KNB_BST-22"
+        }]
+    }]
+},{
+    "id" : 32,
+    "template" : 2,
+    "spouse" : [{
+        "id" : 0,
+        "name" : "Maria",
+        "img" : "KNB_BST-F-59"
+    }]
+},{
+    "id" : 34,
+    "template" : 2,
+    "spouse" : [{
+        "id" : 0,
+        "name" : "Heinrich III.",
+        "img" : "nn-male"
+    }]
+},{
+    "id" : 35,
+    "template" : 2,
+    "spouse" : [{
+        "id" : 0,
+        "name" : "Hg. Wladislaw v. Polen-Schlesien",
+        "img" : "nn-male"
+    }]
+},{
+    "id" : 36,
+    "template" : 1
+},{
+    "id" : 37,
+    "template" : 1
+},{
+    "id" : 38,
+    "template" : 2,
+    "spouse" : [{
+        "id" : 0,
+        "name" : "Gf. Hermann II. v. Winzenburg",
+        "img" : "nn-male"
+    }]
+},{
+    "id" : 39,
+    "template" : 2,
+    "spouse" : [{
+        "id" : 0,
+        "name" : "Kg. Vladislav II. von Böhmen",
+        "img" : "nn-male"
+    }]
+},{
+    "id" : 40,
+    "template" : 2,
+    "spouse" : [{
+        "id" : 0,
+        "name" : "Mgf. Wilhelm v. Montferrat",
+        "img" : "nn-male"
+    }]
+}]

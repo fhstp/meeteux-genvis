@@ -1,5 +1,5 @@
 body{
-    background: url("img/reprodcution-v0-4-1080.png") black;
+    background: url("img/reprodcution-back-1080.png") black;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -7,13 +7,27 @@ body{
     width: 1920px;
     margin: 0;
     box-sizing: border-box;
+    font: 'Open Sans';
+}
+
+h1, h2 {
+    font-family: 'Vollkorn';
+    margin: 0;
+    padding: 0;
+}
+
+p {
+    font-family: 'Open Sans';
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
 }
 
 #box{
     display: table;
-    width: 1292px;
+    width: 1406px;
     height: 100%;
-    margin: 0 314px;
+    margin: 0 257px;
 }
 
 .col{
@@ -22,14 +36,19 @@ body{
 }
 
 .col:nth-child(1) {
-    width: 445px;
+    width: 488px;
 }
 .col:nth-child(2) {
-    width: 395px;
+    width: 430px;
     background: transparent;
 }
 .col:nth-child(3) {
-    width: 452px;
+    width: 488px;
+}
+
+#userLeft, #userRight{
+    position: absolute;
+    z-index: 100;
 }
 
 .map{
@@ -37,27 +56,45 @@ body{
 }
 
 .info{
-    height: 150px;
-    margin: 50px 10px;
+    z-index: 30;
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    padding-top: 50px;
 }
+
+#userLeft .info{
+    padding-left: 20px;
+}
+
+#userRight .info{
+    margin-left: -50px;
+}
+
 .banner{
     border: 2px solid black;
     height: 100px;
     float: left;
-    width: 250px;
-    margin-top: 30px;
+    width: 300px;
+    margin-top: 40px;
+    box-sizing: border-box;
 }
 
-.left .banner h1, .left .banner p{
-    padding-left:20px;
+.left .banner h1{
+    padding-left: 10px;
 }
 
-.right .banner h1, .right .banner p{
-    padding-left: 70px;
+.banner h1{
+    padding-top: 10px;
+}
+
+.right .banner h1{
+    padding-left: 90px;
 }
 
 .right .banner{
-    margin-left: 180px;
+    position: absolute;
+    margin-left: 220px;
 }
 
 .info h1{
@@ -74,11 +111,55 @@ body{
 }
 
 .right img{
-    margin-left: -358px;
+    position: absolute;
+    margin-left: 120px;
+}
+
+img.circle{
+    width: 216px;
+    position: absolute;
+}
+
+.left img.circle{
+    margin-left: -199px;
+    margin-top: -28px;
+}
+
+.right img.circle{
+    position: absolute;
+    margin-top: -23px;
+    margin-left: 88px;
+}
+
+.left .banner p{
+    padding-left: 32px;
+}
+
+.right .banner p{
+    padding-left: 112px;
+}
+
+img.born{
+    width: 7px;
+    margin-left: 20px;
+    margin-top: 3px;
+}
+
+img.died{
+    width: 6px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.right img.born, .right img.died{
+    margin-left: 100px;
 }
 
 .children{
     height: 385px;
+    position: absolute;
+    margin-top: 250px;
+    width: 100%;
 }
 
 #relativeLeft img, #relativeRight img{
@@ -86,5 +167,151 @@ body{
 }
 
 .corner{
-    width: 48px;
+    position: absolute;
+    z-index: 20;
+    width: 50px;
+}
+
+.vertical{
+    position: absolute;
+    z-index: 10;
+    width: 51px;
+}
+
+.horizontal{
+    position: absolute;
+    z-index: 10;
+    height: 52px;
+}
+
+div.relation{
+    clear: both;
+    width: 100%;
+}
+
+div.spouse{
+    width: 130px;
+    height: 130px;
+    float: left;
+    margin-left: 20px;
+}
+
+#userRight div.spouse{
+    float: right;
+    margin-right: 15px;
+}
+
+#userRight div.child{
+    float: right;
+    margin-right: 10px;
+}
+
+img.spouse{
+    width: 130px;
+    height: 130px;
+    position: absolute;
+    z-index: 10;
+}
+
+.spouse img.circle{
+    width: 161px;
+    margin-top: -15px;
+    margin-left: -17px;
+    z-index: 20;
+}
+
+.relation2{
+    position: absolute;
+    margin-top: 180px;
+}
+
+.spouse h2{
+    position: absolute;
+    background: rgba(255,255,255,0.5);
+    width: 103px;
+    font-size: 15px;
+    height: 45px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+    z-index: 30;
+}
+
+div.child{
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+img.child{
+    width: 100%;
+}
+
+.child img.circle{
+    width: 135px;
+    margin-left: -120px;
+    margin-top: -9px;
+}
+
+.template8 div.child{
+    width: 80px;
+    margin-top: 30px;
+}
+
+
+
+.template8 .child img.circle{
+    width: 109px;
+    margin-left: -97px;
+    margin-top: -7px;
+}
+
+
+
+
+
+.child h2{
+    position: relative;
+    top: -51px;
+    left: 1px;
+    background: rgba(255,255,255,0.5);
+    width: 87px;
+    font-size: 10px;
+    height: 38px;
+    padding-left: 5px;
+    padding-right: 5px;
+    text-align: center;
+}
+
+.marriage{
+    position: absolute;
+    width: 250px;
+    margin-top: -80px;
+    margin-left: 70px;
+    z-index: 1;
+}
+
+#userRight .marriage {
+    margin-left: -230px;
+    margin-top: -70px;
+}
+
+.children p{
+    position: absolute;
+    margin-left: 160px;
+    margin-top: 50px;
+}
+
+#userRight .children p{
+    margin-left: -200px;
+}
+
+.template1 p{
+    margin-left: 20px;
+}
+
+#userRight .template1 p{
+    margin-left: 95px;
 }
