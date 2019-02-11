@@ -3,8 +3,8 @@
 var d3, io, localStorage
 
 var socket = io('http://192.168.178.28:8100/')
-var whichside = 'right' // 'right'
-var clickTrue = true // set to false for touch display
+var whichside = 'left' // 'right'
+var clickTrue = false // set to false for touch display
 
 d3.selection.prototype.dblTap = function (callback) {
   var last = 0
