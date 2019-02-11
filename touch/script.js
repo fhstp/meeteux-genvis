@@ -1033,12 +1033,24 @@ socket.on('connectTouchResult', function (data) {
       }
 
       socket.on('userJoined', function (user) {
-        myLocalUser = user
         localStorage.setItem('localUser', myLocalUser)
         isGodUser = true
-        console.log(myLocalUser)
+        console.log('god user joined')
+        console.log(user)
 
-        // TODO: show username and set language
+        var myUser = { 'name': user.name,
+          'language': '' }
+
+        switch (user.contentLanguageId) {
+          case 1:
+            myUser.language = 'DE'
+            break
+          default:
+            myUser.language = 'EN'
+            break
+        }
+
+        setupUser(user)
       })
 
       socket.on('userLeft', function () {
@@ -1046,7 +1058,19 @@ socket.on('connectTouchResult', function (data) {
         localStorage.setItem('localUser', 0)
         isGodUser = false
 
-        // TODO: update username to Guest
+        var myUser = { 'name': '?',
+          'language': '' }
+
+        switch (whichLanguage) {
+          case 'DE':
+            myUser.language = 'DE'
+            break
+
+          default:
+            myUser.language = 'EN'
+            break
+        }
+        setupUser(myUser)
       })
 
       function sendLocalUserToGod () {
