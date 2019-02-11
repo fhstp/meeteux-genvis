@@ -1,12 +1,13 @@
 'use strict'
 
-var d3, io, localStorage
+var d3, io, localStorage, interactionTimeout
 
 var socket = io('http://192.168.178.28:8100/')
 var whichside = 'left' // 'right'
 var clickTrue = false // set to false for touch display
 var myLocalUser
 var isGodUser = false
+var isLocalUser = false
 
 d3.selection.prototype.dblTap = function (callback) {
   var last = 0
@@ -642,6 +643,7 @@ socket.on('connectTouchResult', function (data) {
 
       function childTouched (d, i, context) {
         resetHighlighting()
+        sendLocalUserToGod()
 
         var myContext
         if (context !== 0) {
@@ -740,7 +742,7 @@ socket.on('connectTouchResult', function (data) {
 
       function touchend (d, i) {
         resetHighlighting()
-        isLocalUser()
+        sendLocalUserToGod()
 
         var context
         try {
@@ -856,6 +858,7 @@ socket.on('connectTouchResult', function (data) {
         .on('touchend', hideCoa)
 
       function coaTouched (d, context) {
+        sendLocalUserToGod()
         coaOverlay.style('display', 'block')
 
         var myContext, coatOfArmsItem
@@ -927,6 +930,7 @@ socket.on('connectTouchResult', function (data) {
         .on('touchend', languageToggle)
 
       function languageToggle () {
+        sendLocalUserToGod()
         languagediv.style('opacity', 1)
         switch (whichLanguage) {
           case 'DE':
@@ -1005,6 +1009,7 @@ socket.on('connectTouchResult', function (data) {
         .on('touchend', toggleHelp)
 
       function toggleHelp () {
+        sendLocalUserToGod()
         helpButton.style('opacity', 1)
         if (isHelpOn) {
           helpOverlay.style('display', 'none')
@@ -1044,15 +1049,49 @@ socket.on('connectTouchResult', function (data) {
         // TODO: update username to Guest
       })
 
-      function isLocalUser () {
-        if (!isGodUser) {
-          
+      function sendLocalUserToGod () {
+        if (!isGodUser && !isLocalUser) {
+          console.log('local user join')
+          socket.emit('localUserJoined', { device: whichside })
+          isLocalUser = true
+          var myUser = { 'name': '',
+            'language': '' }
+
+          switch (whichLanguage) {
+            case 'DE':
+              myUser.name = 'Gast'
+              myUser.language = 'DE'
+              break
+
+            default:
+              myUser.name = 'Guest'
+              myUser.language = 'EN'
+              break
+          }
+          setupUser(myUser)
         }
+
+        setTimer()
       }
 
-      // TODO: when somebodytaps on the screen without a device is connected
-      // socket.emit('localUserJoined', { device: whichside })
-     // socket.emit('localUserLeft', { device: whichside })
+      function setTimer () {
+        clearTimeout(interactionTimeout)
+        interactionTimeout = window.setTimeout(clearLocalUser, 60000)
+      }
+
+      function clearLocalUser () {
+        if (isLocalUser) {
+          console.log('local user left')
+          socket.emit('localUserLeft', { device: whichside })
+          isLocalUser = false
+        }
+        // TODO: something with the screen alert or helpscreen
+      }
+
+      function setupUser (user) {
+        d3.select('#username').text(user.name)
+        setLanguage(user.language)
+      }
 
       // first time setup
       setupFirstTime()
