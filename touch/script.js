@@ -5,6 +5,8 @@ var d3, io, localStorage
 var socket = io('http://192.168.178.28:8100/')
 var whichside = 'left' // 'right'
 var clickTrue = false // set to false for touch display
+var myLocalUser
+var isGodUser = false
 
 d3.selection.prototype.dblTap = function (callback) {
   var last = 0
@@ -18,16 +20,17 @@ d3.selection.prototype.dblTap = function (callback) {
   })
 }
 
-// socket.emit('connectTouch', { device: whichside })
+socket.emit('connectTouch', { device: whichside })
 
-// socket.on('connectTouchResult', function (data) {
+socket.on('connectTouchResult', function (data) {
+  console.log(data)
   // Load Genealogy Datass
-  d3.json('/data/genealogy-data.json', function (data) {
-    var persons = data
+  d3.json('/data/genealogy-data.json', function (data1) {
+    var persons = data1
 
     // load Coat of Arms Data
-    d3.json('/data/coat-of-arms.json', function (data) {
-      var coatOfArms = data
+    d3.json('/data/coat-of-arms.json', function (data2) {
+      var coatOfArms = data2
 
       // var interpolateTypes = [d3.curveLinear, d3.curveNatural, d3.curveStep, d3.curveBasis, d3.curveBundle, d3.curveCardinal];
       var stringDates = ['1060', '1280']
@@ -79,7 +82,7 @@ d3.selection.prototype.dblTap = function (callback) {
         isMarried(person)
       })
 
-      function isMarried(person) {
+      function isMarried (person) {
         if (typeof person.marriages !== 'undefined') {
           if (typeof person.marriages[0].children !== 'undefined') {
             // console.log('Father');
@@ -112,7 +115,7 @@ d3.selection.prototype.dblTap = function (callback) {
         }
       }
 
-      function pushInArray(person, type) {
+      function pushInArray (person, type) {
         // x1 - x-Child  y1 - middle of Father/Mother y3
         // x2 - x-Child  y2 - y1 child
         if (isChild) {
@@ -121,7 +124,7 @@ d3.selection.prototype.dblTap = function (callback) {
           getFatherById(person.father)
           var fatherY = getFatherY(father)
           showChildArray.push([{ x: whichX(person.born), y: fatherY + 26, gender: person.gender, id: person.id },
-          { x: whichX(person.born), y: startY - strokeWidth + 10 }])
+            { x: whichX(person.born), y: startY - strokeWidth + 10 }])
         }
 
         switch (type) {
@@ -179,7 +182,7 @@ d3.selection.prototype.dblTap = function (callback) {
       var father
       var myId
 
-      function getFatherById(myIdF) {
+      function getFatherById (myIdF) {
         myId = myIdF
         // console.log('search ' + myId)
         persons.forEach(person => {
@@ -187,7 +190,7 @@ d3.selection.prototype.dblTap = function (callback) {
         })
       }
 
-      function getFatherByIdRecursive(person) {
+      function getFatherByIdRecursive (person) {
         if (person.id === myId) {
           father = person
         }
@@ -206,7 +209,7 @@ d3.selection.prototype.dblTap = function (callback) {
         }
       }
 
-      function getFatherY(fatherSample) {
+      function getFatherY (fatherSample) {
         var fatherY = ''
         fatherArray.forEach(father => {
           if (father.id === fatherSample.id) {
@@ -216,7 +219,7 @@ d3.selection.prototype.dblTap = function (callback) {
         return fatherY
       }
 
-      function setPersonInfoArray(itterartor, person, startY, endY) {
+      function setPersonInfoArray (itterartor, person, startY, endY) {
         personInfoArray[itterator] = {
           name: person.name,
           gender: person.gender,
@@ -623,7 +626,7 @@ d3.selection.prototype.dblTap = function (callback) {
             return 'img/icon/pacifier-male.svg'
           }
         })
-        .attr('class', function (d) { return 'childId' + d[0].id + ' child' + d[0].gender})
+        .attr('class', function (d) { return 'childId' + d[0].id + ' child' + d[0].gender })
         .attr('width', 50)
         .attr('height', 50)
         .attr('x', function (d) { return d[0].x - 25 })
@@ -632,8 +635,8 @@ d3.selection.prototype.dblTap = function (callback) {
         .on('touchend', function (d, i) {
           childTouched(d, i, this)
         })
-        .on('dblclick', function(d){ if (clickTrue) scrollToPerson(d) })
-        .dblTap(function(d) {
+        .on('dblclick', function (d) { if (clickTrue) scrollToPerson(d) })
+        .dblTap(function (d) {
           scrollToPerson(d)
         })
 
@@ -666,7 +669,6 @@ d3.selection.prototype.dblTap = function (callback) {
         getPersonToShow(d[0].id)
       }
 
-
       function resetHighlighting () {
         // reset highlight of childconnectors
         d3.selectAll('.childconnector').classed('selected', false)
@@ -676,8 +678,7 @@ d3.selection.prototype.dblTap = function (callback) {
           .attr('xlink:href', 'img/icon/pacifier-male.svg')
         d3.selectAll('.childwoman')
           .attr('xlink:href', 'img/icon/pacifier-female.svg')
-      } 
-      
+      }
 
       var axisGroup = svg.append('g')
         .attr('class', 'x axis')
@@ -715,19 +716,19 @@ d3.selection.prototype.dblTap = function (callback) {
       // scroll to selected child via child-button
       var divToScroll = d3.select('#chart')
       function scrollToPerson (d) {
-        var scrollheight = d[1].y - 20    
+        var scrollheight = d[1].y - 20
         divToScroll.transition().duration(3000)
           .tween('uniquetweenname', scrollTopTween(scrollheight))
       }
 
-      function scrollTopTween(scrollTop) {
-        return function() {
+      function scrollTopTween (scrollTop) {
+        return function () {
           var i = d3.interpolateNumber(elementToScroll.scrollTop, scrollTop)
-          return function(t) { elementToScroll.scrollTop = i(t) }
-       }
+          return function (t) { elementToScroll.scrollTop = i(t) }
+        }
       }
 
-      function touchstart(d, i) {
+      function touchstart (d, i) {
         try {
           d3.select('#person' + d.id).classed('selected', true)
           d3.select('#person' + d.id).classed('sel', false)
@@ -737,8 +738,9 @@ d3.selection.prototype.dblTap = function (callback) {
         }
       }
 
-      function touchend(d, i) {
+      function touchend (d, i) {
         resetHighlighting()
+        isLocalUser()
 
         var context
         try {
@@ -755,7 +757,7 @@ d3.selection.prototype.dblTap = function (callback) {
           var res = idTouched.split('person')
           idTouched = parseInt(res[1])
         } catch (error) {
-            idTouched = d.id
+          idTouched = d.id
         }
 
         getPersonToShow(idTouched)
@@ -779,7 +781,7 @@ d3.selection.prototype.dblTap = function (callback) {
       var infoDesc = d3.select('#description')
       var infoCoat = d3.select('#coatofarms')
 
-      function showInformation(person) {
+      function showInformation (person) {
         console.log('showInformation')
         console.log(person)
 
@@ -832,18 +834,18 @@ d3.selection.prototype.dblTap = function (callback) {
           // div.append('h2').text(coatOfArmsItem.name)
 
           // add empty divs to get 4 divs
-          if (person.coa.length == 1 && index == 0){
+          if (person.coa.length === 1 && index === 0) {
             infoCoat.append('div').attr('class', 'coa')
             infoCoat.append('div').attr('class', 'coa')
             infoCoat.append('div').attr('class', 'coa')
           }
 
-          if (person.coa.length == 2 && index == 1){
+          if (person.coa.length === 2 && index === 1) {
             infoCoat.append('div').attr('class', 'coa')
             infoCoat.append('div').attr('class', 'coa')
           }
 
-          if (person.coa.length == 3 && index == 2){
+          if (person.coa.length === 3 && index === 2) {
             infoCoat.append('div').attr('class', 'coa')
           }
         })
@@ -883,13 +885,13 @@ d3.selection.prototype.dblTap = function (callback) {
         var coaOverlayInfo = coaOverlay.append('div').attr('class', 'coa-overlay-info')
         var coaTable = coaOverlayInfo.append('div').attr('class', 'coa-table')
         var coaImg = coaTable.append('div').attr('class', 'coa-col1')
-        coaImg.append('img').attr('src', function(){
+        coaImg.append('img').attr('src', function () {
           return 'img/coatofarms/' + coatOfArmsItem.img + '.png'
         })
         var coaTitle = coaTable.append('div').attr('class', 'coa-title coa-col1')
 
         var whichName, whichDesc
-        if(whichLanguage === 'DE') {
+        if (whichLanguage === 'DE') {
           whichName = coatOfArmsItem.name
           whichDesc = coatOfArmsItem.desc
         } else {
@@ -899,13 +901,13 @@ d3.selection.prototype.dblTap = function (callback) {
         // if 3 names than 3rd is an empty one
         // if 6 check 2nd are two names
         // if 32 check 4rd are two names
-        // if 17 and 3 
+        // if 17 and 3
         whichName.forEach((coaName, index) => {
-          if (whichName.length === 3 && index ===  2 && coatOfArmsItem.id !== 17){
+          if (whichName.length === 3 && index === 2 && coatOfArmsItem.id !== 17) {
             coaTitle.append('p').attr('class','coa-col2')
-          } 
+          }
           coaTitle.append('p').attr('class','coa-col2').text(coaName)
-        });
+        })
 
         coaOverlayInfo.append('p').text(whichDesc)
       }
@@ -924,7 +926,7 @@ d3.selection.prototype.dblTap = function (callback) {
         .on('touchstart', languageToggleStart)
         .on('touchend', languageToggle)
 
-      function languageToggle() {
+      function languageToggle () {
         languagediv.style('opacity', 1)
         switch (whichLanguage) {
           case 'DE':
@@ -940,12 +942,12 @@ d3.selection.prototype.dblTap = function (callback) {
         setLanguage(whichLanguage)
       }
 
-      function languageToggleStart() {
+      function languageToggleStart () {
         // todo highlight languagediv
         languagediv.style('opacity', 0.5)
       }
 
-      function setLanguage(language) {
+      function setLanguage (language) {
         // reload Person
         var personToShow = JSON.parse(localStorage.getItem('person'))
         showInformation(personToShow)
@@ -979,16 +981,16 @@ d3.selection.prototype.dblTap = function (callback) {
         .on('touchstart', resetViewStart)
         .on('touchend', resetView)
 
-      function resetView() {
+      function resetView () {
         resetHighlighting()
         resetButton.style('opacity', 1)
         getPersonToShow(1)
 
         // set div#chart to top 0, left 0
-        elementToScroll.scrollTo(0,0)
+        elementToScroll.scrollTo(0, 0)
       }
 
-      function resetViewStart() {
+      function resetViewStart () {
         resetButton.style('opacity', 0.5)
       }
 
@@ -1002,7 +1004,7 @@ d3.selection.prototype.dblTap = function (callback) {
         .on('touchstart', toggleHelpStart)
         .on('touchend', toggleHelp)
 
-      function toggleHelp() {
+      function toggleHelp () {
         helpButton.style('opacity', 1)
         if (isHelpOn) {
           helpOverlay.style('display', 'none')
@@ -1013,11 +1015,11 @@ d3.selection.prototype.dblTap = function (callback) {
         }
       }
 
-      function toggleHelpStart() {
+      function toggleHelpStart () {
         helpButton.style('opacity', 0.5)
       }
 
-      function setupFirstTime() {
+      function setupFirstTime () {
         // reset view to Leopold (id = 1)
         resetView()
         // set language to German
@@ -1025,8 +1027,35 @@ d3.selection.prototype.dblTap = function (callback) {
         localStorage.setItem('language', whichLanguage)
       }
 
+      socket.on('userJoined', function (user) {
+        myLocalUser = user
+        localStorage.setItem('localUser', myLocalUser)
+        isGodUser = true
+        console.log(myLocalUser)
+
+        // TODO: show username and set language
+      })
+
+      socket.on('userLeft', function () {
+        console.log('user left')
+        localStorage.setItem('localUser', 0)
+        isGodUser = false
+
+        // TODO: update username to Guest
+      })
+
+      function isLocalUser () {
+        if (!isGodUser) {
+          
+        }
+      }
+
+      // TODO: when somebodytaps on the screen without a device is connected
+      // socket.emit('localUserJoined', { device: whichside })
+     // socket.emit('localUserLeft', { device: whichside })
+
       // first time setup
       setupFirstTime()
     })
   })
-// })
+})
