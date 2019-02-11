@@ -629,20 +629,21 @@ d3.selection.prototype.dblTap = function (callback) {
         .attr('x', function (d) { return d[0].x - 25 })
         .attr('y', function (d) { return d[0].y - 25 + 5 })
         .on('click', function (d, i) { if (clickTrue) childTouched(d, i, this) }) // comment when running on touch display
-        .on('touchstart', childTouchedStart)
-        .on('touchend', childTouched)
-        .on('dblclick',function(d){ if (clickTrue) scrollToPerson(d) })
-        .dblTap(function() {
-          alert("Double tap!");
+        .on('touchend', function (d, i) {
+          childTouched(d, i, this)
+        })
+        .on('dblclick', function(d){ if (clickTrue) scrollToPerson(d) })
+        .dblTap(function(d) {
+          scrollToPerson(d)
         })
 
       function childTouched (d, i, context) {
         resetHighlighting()
 
         var myContext
-        try {
+        if (context !== 0) {
           myContext = context
-        } catch (error) {
+        } else {
           myContext = this
         }
 
@@ -665,10 +666,6 @@ d3.selection.prototype.dblTap = function (callback) {
         getPersonToShow(d[0].id)
       }
 
-      function childTouchedStart (d, i) {
-        // todo highlight icon
-        d3.select(this).attr('opacity', 0.5)
-      }
 
       function resetHighlighting () {
         // reset highlight of childconnectors
@@ -860,14 +857,13 @@ d3.selection.prototype.dblTap = function (callback) {
         coaOverlay.style('display', 'block')
 
         var myContext, coatOfArmsItem
-        try {
+        if (context !== 0) {
           myContext = context
-        } catch (error) {
+        } else {
           myContext = this
         }
 
-        var myElement = d3.select(myContext)
-          .style('opacity', 1)
+        var myElement = d3.select(myContext).style('opacity',1)
 
         // TODO: show coa information in coaOverlay
         var idTouched = myElement.attr('class')
