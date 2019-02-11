@@ -3,6 +3,14 @@ body{
     overflow: hidden;
 }
 
+h1, h2{
+    font-family: "Vollkorn";
+}
+
+p, text{
+    font-family: "Open Sans";
+}
+
 #info{
     height: 350px;
 }
