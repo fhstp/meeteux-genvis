@@ -5,10 +5,8 @@ var d3, io, localStorage, interactionTimeout, overlayTimeout
 var socket = io('http://192.168.178.28:8100/')
 var whichside = 'left' // 'right'
 var clickTrue = false // set to false for touch display
-var myLocalUser
 var isGodUser = false
 var isLocalUser = false
-var isScreensaverOn = true
 
 d3.selection.prototype.dblTap = function (callback) {
   var last = 0
@@ -1089,12 +1087,9 @@ socket.on('connectTouchResult', function (data) {
 
       function setTimer () {
         console.log('setTimer')
-        if (!isScreensaverOn) {
-          clearTimeout(interactionTimeout)
-          clearTimeout(overlayTimeout)
-          interactionTimeout = window.setTimeout(showTimerEndDialog, 30000)
-        }
-        isScreensaverOn = false
+        clearTimeout(interactionTimeout)
+        clearTimeout(overlayTimeout)
+        interactionTimeout = window.setTimeout(showTimerEndDialog, 30000)
       }
 
       var timerOverlay = d3.select('#timerOverlay')
@@ -1166,7 +1161,6 @@ socket.on('connectTouchResult', function (data) {
         timerOverlay.style('display', 'none')
         helpOverlay.style('display', 'block')
         isHelpOn = true
-        isScreensaverOn = true
         resetView()
       }
 
