@@ -1019,7 +1019,6 @@ socket.on('connectTouchResult', function (data) {
         } else {
           helpOverlay.style('display', 'block')
           isHelpOn = true
-          setTimer()
         }
       }
 
@@ -1082,7 +1081,6 @@ socket.on('connectTouchResult', function (data) {
           }
           setupUser(myUser)
         }
-
         setTimer()
       }
 
@@ -1174,6 +1172,8 @@ socket.on('connectTouchResult', function (data) {
 
       // first time setup
       setupFirstTime()
+
+      d3.select('body').on('touchstart', setTimer)
     })
   })
 })
