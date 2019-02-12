@@ -1037,7 +1037,6 @@ socket.on('connectTouchResult', function (data) {
       }
 
       socket.on('userJoined', function (user) {
-        localStorage.setItem('localUser', myLocalUser)
         isGodUser = true
         console.log('god user joined')
         console.log(user)
@@ -1055,27 +1054,12 @@ socket.on('connectTouchResult', function (data) {
         }
 
         setupUser(user)
+        setTimer()
       })
 
       socket.on('userLeft', function () {
-        console.log('user left')
-        localStorage.setItem('localUser', 0)
-        isGodUser = false
-
-        var myUser = { 'name': '?',
-          'language': '' }
-
-        switch (whichLanguage) {
-          case 'DE':
-            myUser.language = 'DE'
-            break
-
-          default:
-            myUser.language = 'EN'
-            break
-        }
-
-        setupUser(myUser)
+        console.log('god user left called')
+        clearUser(1)
       })
 
       function sendLocalUserToGod () {
@@ -1134,21 +1118,37 @@ socket.on('connectTouchResult', function (data) {
             clearInterval(timeOutTimer)
           }
         }, 1000)
-        overlayTimeout = window.setTimeout(clearUser, 15000)
+        overlayTimeout = window.setTimeout(clearUserTimeout, 15000)
       }
 
-      function clearUser () {
-        if (isLocalUser) {
-          console.log('local user left')
-          socket.emit('localUserLeft', { device: whichside })
-          isLocalUser = false
+      function clearUserTimeout () {
+        clearUser(0)
+      }
+
+      function clearUser (who) {
+        switch (who) {
+          case 1: // info from god
+            if (isGodUser) {
+              console.log('god user left')
+              isGodUser = false
+            }
+            break
+
+          default: // timer
+            if (isLocalUser) {
+              console.log('local user kicked out & send to god')
+              socket.emit('localUserLeft', { device: whichside })
+              isLocalUser = false
+            }
+
+            if (isGodUser) {
+              console.log('god user kicked & send to god')
+              socket.emit('userTimedOut', { device: whichside })
+              isGodUser = false
+            }
+            break
         }
 
-        if (isGodUser) {
-          console.log('god user left')
-          socket.emit('userTimedOut', { device: whichside })
-          isGodUser = false
-        }
         var myUser = { 'name': '?',
           'language': '' }
 
