@@ -1,6 +1,6 @@
 'use strict'
 
-var d3, io, localStorage, interactionTimeout
+var d3, io, localStorage, interactionTimeout, overlayTimeout
 
 var socket = io('http://192.168.178.28:8100/')
 var whichside = 'left' // 'right'
@@ -8,6 +8,7 @@ var clickTrue = false // set to false for touch display
 var myLocalUser
 var isGodUser = false
 var isLocalUser = false
+var isScreensaverOn = true
 
 d3.selection.prototype.dblTap = function (callback) {
   var last = 0
@@ -987,6 +988,7 @@ socket.on('connectTouchResult', function (data) {
 
       function resetView () {
         resetHighlighting()
+        hideCoa()
         resetButton.style('opacity', 1)
         getPersonToShow(1)
 
@@ -1009,14 +1011,16 @@ socket.on('connectTouchResult', function (data) {
         .on('touchend', toggleHelp)
 
       function toggleHelp () {
-        sendLocalUserToGod()
         helpButton.style('opacity', 1)
+
         if (isHelpOn) {
           helpOverlay.style('display', 'none')
           isHelpOn = false
+          sendLocalUserToGod()
         } else {
           helpOverlay.style('display', 'block')
           isHelpOn = true
+          setTimer()
         }
       }
 
@@ -1070,6 +1074,7 @@ socket.on('connectTouchResult', function (data) {
             myUser.language = 'EN'
             break
         }
+
         setupUser(myUser)
       })
 
@@ -1099,17 +1104,70 @@ socket.on('connectTouchResult', function (data) {
       }
 
       function setTimer () {
-        clearTimeout(interactionTimeout)
-        interactionTimeout = window.setTimeout(clearLocalUser, 60000)
+        console.log('setTimer')
+        if (!isScreensaverOn) {
+          clearTimeout(interactionTimeout)
+          clearTimeout(overlayTimeout)
+          interactionTimeout = window.setTimeout(showTimerEndDialog, 30000)
+        }
+        isScreensaverOn = false
       }
 
-      function clearLocalUser () {
+      var timerOverlay = d3.select('#timerOverlay')
+        .on('click', function () { if (clickTrue) timerOverlayOff() }) // comment when running on touch display
+        .on('touchend', timerOverlayOff)
+
+      function timerOverlayOff () {
+        sendLocalUserToGod()
+        timerOverlay.style('display', 'none')
+        setTimer()
+      }
+
+      function showTimerEndDialog () {
+        d3.select('#progressBar').attr('value', 0)
+        timerOverlay.style('display', 'block')
+        var timeleft = 15
+        var timeOutTimer = setInterval(function () {
+          d3.select('#progressBar').attr('value', 15 - timeleft)
+          timeleft -= 1
+          if (timeleft <= 0) {
+            clearInterval(timeOutTimer)
+          }
+        }, 1000)
+        overlayTimeout = window.setTimeout(clearUser, 15000)
+      }
+
+      function clearUser () {
         if (isLocalUser) {
           console.log('local user left')
           socket.emit('localUserLeft', { device: whichside })
           isLocalUser = false
         }
-        // TODO: something with the screen alert or helpscreen
+
+        if (isGodUser) {
+          console.log('god user left')
+          socket.emit('userTimedOut', { device: whichside })
+          isGodUser = false
+        }
+        var myUser = { 'name': '?',
+          'language': '' }
+
+        switch (whichLanguage) {
+          case 'DE':
+            myUser.language = 'DE'
+            break
+
+          default:
+            myUser.language = 'EN'
+            break
+        }
+        setupUser(myUser)
+
+        timerOverlay.style('display', 'none')
+        helpOverlay.style('display', 'block')
+        isHelpOn = true
+        isScreensaverOn = true
+        resetView()
       }
 
       function setupUser (user) {

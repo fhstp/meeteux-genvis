@@ -99,7 +99,7 @@ p, text{
     display: none;
 }
 
-.coa-overlay-info{
+.coa-overlay-info, .timer-overlay{
     width: 500px;
     background: white;
     border: 1px solid black;
@@ -299,4 +299,8 @@ path.woman{
 
 .childIcons image{
     filter: invert(.5) sepia(1);
+}
+
+#timerOverlay{
+    display: none;
 }
