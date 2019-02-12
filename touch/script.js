@@ -1087,7 +1087,7 @@ socket.on('connectTouchResult', function (data) {
 
       function setTimer () {
         console.log('setTimer')
-        clearTimeout(interactionTimeout)
+        clearInterval(interactionTimeout)
         clearTimeout(overlayTimeout)
         interactionTimeout = window.setTimeout(showTimerEndDialog, 30000)
       }
@@ -1126,6 +1126,8 @@ socket.on('connectTouchResult', function (data) {
             if (isGodUser) {
               console.log('god user left')
               isGodUser = false
+              clearInterval(interactionTimeout)
+              clearTimeout(overlayTimeout)
             }
             break
 
