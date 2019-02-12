@@ -940,7 +940,6 @@ socket.on('connectTouchResult', function (data) {
             whichLanguage = 'DE'
             break
         }
-        localStorage.setItem('language', whichLanguage)
 
         setLanguage(whichLanguage)
       }
@@ -951,15 +950,13 @@ socket.on('connectTouchResult', function (data) {
       }
 
       function setLanguage (language) {
-        // reload Person
-        var personToShow = JSON.parse(localStorage.getItem('person'))
-        showInformation(personToShow)
+        localStorage.setItem('language', language)
+        whichLanguage = language
 
         var welcome = d3.select('#welcome')
         welcome.selectAll('*').remove()
         var coaTitle = d3.select('#coatofarmstitle')
         coaTitle.selectAll('*').remove()
-
         var languageDiv = d3.select('#language')
         languageDiv.selectAll('*').remove()
 
@@ -976,6 +973,10 @@ socket.on('connectTouchResult', function (data) {
             languageDiv.append('p').text('EN')
             break
         }
+
+        // reload Person
+        var personToShow = JSON.parse(localStorage.getItem('person'))
+        showInformation(personToShow)
       }
 
       // resetView
@@ -1032,18 +1033,18 @@ socket.on('connectTouchResult', function (data) {
         // set language to German
         whichLanguage = 'DE'
         localStorage.setItem('language', whichLanguage)
+        // socket.emit('userTimedOut', { device: whichside })
       }
 
       socket.on('userJoined', function (user) {
         isGodUser = true
         console.log('god user joined')
-        console.log(user)
 
         var myUser = { 'name': user.name,
           'language': '' }
 
         switch (user.contentLanguageId) {
-          case 1:
+          case 2:
             myUser.language = 'DE'
             break
           default:
@@ -1051,7 +1052,7 @@ socket.on('connectTouchResult', function (data) {
             break
         }
 
-        setupUser(user)
+        setupUser(myUser)
         setTimer()
       })
 
