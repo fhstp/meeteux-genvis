@@ -1,5 +1,5 @@
 [{
-    "name": "Leopold III., 'der Heilige'",
+    "name": "Leopold III., „der Heilige“",
     "title" : "Markgraf von Österreich",
     "titleen": "Margrave of Austria",
     "id" : 1,
@@ -30,7 +30,7 @@
             "husband" : 1
         },
         "children": [{
-            "name": "Adalbert, 'der Andächtige'",
+            "name": "Adalbert, „der Andächtige“",
             "title" : "Vogt von Klosterneuburg",
             "born": 1106,
             "bornGuessed" : true,
@@ -39,17 +39,17 @@
             "gender": "man",
             "father" : 1, 
             "id" : 3,
-            "desc" : "Nach neueren Erkenntnissen war Adalbert der erstgeborene Sohn Leopold III. aus der Ehe mit Agnes von Waiblingen. Er verwaltete die Vogteien Klosterneuburgs und wurde deshalb ‚der Andächtige‘ genannt. In erster Ehe heiratete er Adelheid von Perg und in zweiter Ehe Sophie von Ungarn. Das Medaillon zeigt ihn zusammen mit seinem Schwager im Kampf gegen einen ungarischen Aufständischen.",
+            "desc" : "Nach neueren Erkenntnissen war Adalbert der erstgeborene Sohn Leopold III. aus der Ehe mit Agnes von Waiblingen. Er verwaltete die Vogteien Klosterneuburgs und wurde deshalb „der Andächtige“ genannt. In erster Ehe heiratete er Adelheid von Perg und in zweiter Ehe Sophie von Ungarn. Das Medaillon zeigt ihn zusammen mit seinem Schwager im Kampf gegen einen ungarischen Aufständischen.",
             "img" : "KNB_BST-14",
             "coa" : [1]
         },{
-            "name": "Heinrich II. 'Jasomirgott'",
+            "name": "Heinrich II. „Jasomirgott“",
             "title" : "Herzog von Österreich",
             "born": 1107,
             "bornGuessed" : true,
             "died": 1177,
             "diedGuessed" : false,
-            "marriageGuessed": true,
+            "marriageGuessed": false,
             "gender": "man",
             "father" : 1,
             "id" : 7,
@@ -118,7 +118,7 @@
                     "img" : "KNB_BST-F-58",
                     "coa" : [1, 2]
                 },{
-                    "name": "Leopold V., 'der Tugendreiche'",
+                    "name": "Leopold V., „der Tugendreiche“",
                     "title" : "Herzog von Österreich und Steiermark",
                     "born": 1157,
                     "bornGuessed" : false,
@@ -143,13 +143,13 @@
                             "marriage": 1174,
                             "marriageGuessed": false,
                             "id" : 13,
-                            "desc" : "Helena, die Tochter des ungarischen Königs Géza II. († 1162), war Leopold V. bereits als er noch ein Kind war, versprochen worden. Die Heirat mit dem Babenberger-Herzog fand 1174 statt. Am Stammbaum ist Helena – aufgrund ihrer edlen Herkunft – mit den königlichen Insignien ausgestattet, in kostbares Gewand gehüllt sowie mit Perlenschmuck versehen. Bestattet ist sie vermutlich in Stift Heiligenkreuz, wo auch ihr Ehemann bestattet wurde.",
+                            "desc" : "Helena, die Tochter des ungarischen Königs Géza II. († 1162), war Leopold V., bereits als er noch ein Kind war, versprochen worden. Die Heirat mit dem Babenberger-Herzog fand 1174 statt. Am Stammbaum ist Helena – aufgrund ihrer edlen Herkunft – mit den königlichen Insignien ausgestattet, in kostbares Gewand gehüllt sowie mit Perlenschmuck versehen. Bestattet ist sie vermutlich in Stift Heiligenkreuz, wo auch ihr Ehemann bestattet wurde.",
                             "img" : "KNB_BST-F-60",
                             "coa" : [2, 11, 12],
                             "husband" : 12
                         },
                         "children": [{
-                            "name": "Friedrich I., 'der Christliche'",
+                            "name": "Friedrich I., „der Christliche“",
                             "title" : "Herzog von Österreich",
                             "born": 1175,
                             "bornGuessed" : true,
@@ -158,11 +158,11 @@
                             "gender": "man",
                             "id" : 14,
                             "father" : 12,
-                            "desc" : "Friedrich I. war der erstgeborene Sohn von Leopold V. und Helena von Ungarn. Nach dem Tod seines Vaters folgte ihm Friedrich I. 1194 als Herzog von Österreich nach, regierte aber nur bis 1198, da er während der Heimreise aus dem Heiligen Land, nach der Teilnahme am Kreuzzug Kaiser Heinrichs VI., seinen Tod fand. Das Medaillon zeigt die Seereise Friedrichs und die  Überführung seines Leichnams.    ",
+                            "desc" : "Friedrich I. war der erstgeborene Sohn von Leopold V. und Helena von Ungarn. Nach dem Tod seines Vaters folgte ihm Friedrich I. 1194 als Herzog von Österreich nach, regierte aber nur bis 1198, da er während der Heimreise aus dem Heiligen Land, nach der Teilnahme am Kreuzzug Kaiser Heinrichs VI., seinen Tod fand. Das Medaillon zeigt die Seereise Friedrichs und die  Überführung seines Leichnams.",
                             "img": "KNB_BST-23",
                             "coa" : [11]
                         },{
-                            "name": "Leopold VI., 'der Ehrenreiche'",
+                            "name": "Leopold VI., „der Ehrenreiche“",
                             "title" : "Herzog von Steiermark und Österreich",
                             "born": 1176,
                             "bornGuessed" : false,
@@ -187,25 +187,12 @@
                                     "marriage": 1203,
                                     "marriageGuessed": true,
                                     "id" : 16,
-                                    "desc" : "Theodora Angelas Vater namens Isaak Komnenos entstammte dem Adel von Byzanz, war ein mächtiger Mann am byzantinischen Hof und äußerst gebildet. Theodora war wohl in Konstantinopel erzogen worden. Jener bedeutenden und (bevölkerungs-)reichen Stadt, die 1203 von den Venezianer geplündert wurde. Im selben Jahr 1203 fand fernab in Wien, die Vermählung Leopolds VI. mit  Theodora Angela statt. Der Minnesänger Ulrich von Liechtenstein preist die Herzogin, die selbst als Sängerin auftrat, in seinem „Frauendienst“. In der Annalistik heißt es, dass sie 1246 aufgrund zerbrochenen Herzens starb, da neben ihrem Sohn Friedrich II. sieben oder acht weitere Kinder vor ihr selbst den Tod fanden. Am Stammbaum ist sie als Verweis auf ihre edle Herkunft mit den kaiserlichen Insignien ausgestattet. ",
+                                    "desc" : "Theodora Angelas Vater namens Isaak Komnenos entstammte dem Adel von Byzanz, war ein mächtiger Mann am byzantinischen Hof und äußerst gebildet. Theodora war wohl in Konstantinopel erzogen worden. Jener bedeutenden und (bevölkerungs-)reichen Stadt, die 1203 von den Venezianer geplündert wurde. Im selben Jahr 1203 fand fernab in Wien, die Vermählung Leopolds VI. mit  Theodora Angela statt. Der Minnesänger Ulrich von Liechtenstein preist die Herzogin, die selbst als Sängerin auftrat, in seinem „Frauendienst“. In der Annalistik heißt es, dass sie 1246 aufgrund zerbrochenen Herzens starb, da neben ihrem Sohn Friedrich II. sieben oder acht weitere Kinder vor ihr selbst den Tod fanden. Am Stammbaum ist sie als Verweis auf ihre edle Herkunft mit den kaiserlichen Insignien ausgestattet.",
                                     "img" : "KNB_BST-F-63",
                                     "coa" : [11, 14, 16],
                                     "husband" : 15
                                 },
                                 "children": [{
-                                    "name": "Margarete von Österreich",
-                                    "title" : "röm. dt. Königin, danach Königin von Böhmen",
-                                    "born": 1209,
-                                    "bornGuessed" : true,
-                                    "died": 1266,
-                                    "diedGuessed" : false,
-                                    "gender": "woman",
-                                    "id" : 17,
-                                    "father" : 15,
-                                    "desc" : "Margarethe von Österreich war eine Tochter von Leopold VI. und Theodora Angela. Sie war in erster Ehe mit dem Sohn Kaiser Friedrichs II., König Heinrich VII. († 1242) verheiratet. 1227 wurde sie in Aachen als einzige Frau aus dem Geschlecht der Babenberger zur röm. dt. Königin gekrönt. Ihr Gemahl starb 1235. In zweiter Ehe war sie seit 1252 mit König Ottokar II. Přemysl († 1278) verheiratet, die jedoch 1262 geschieden wurde. Margarethe wurde neben ihrem Vater im Stift Lilienfeld begraben. Am Stammbaum wird sie mit den königlichen Insignien versehen, als betagte Frau gezeigt.",
-                                    "img" : "KNB_BST-F-64",
-                                    "coa" : [17]
-                                },{
                                     "name": "Agnes von Österreich",
                                     "title" : "Herzogin von Sachsen-Wittenberg",
                                     "born": 1206,
@@ -219,7 +206,7 @@
                                     "img" : "KNB_BST-F-65",
                                     "coa" : [11, 18]
                                 },{
-                                    "name": "Leopold, 'das Kind'",
+                                    "name": "Leopold, „das Kind“",
                                     "title" : "Herzogssohn von Österreich",
                                     "born": 1207,
                                     "bornGuessed" : true,
@@ -228,11 +215,11 @@
                                     "gender": "man",
                                     "id" : 19,
                                     "father" : 15,
-                                    "desc" : "Leopold soll der älteste Sohn Leopolds VI. und Theodora Angela gewesen sein. Er wuchs in Klosterneuburg, dem Herrschaftssitz seines Vaters  auf und wurde dort unterrichtet. Mit neun Jahren starb er als er versuchte einen Baum zu erklettern und dabei abstürzte. Das Medaillon zeigt Leopold links neben einem seiner Lehrer. ",
+                                    "desc" : "Leopold soll der älteste Sohn Leopolds VI. und Theodora Angela gewesen sein. Er wuchs in Klosterneuburg, dem Herrschaftssitz seines Vaters  auf und wurde dort unterrichtet. Mit neun Jahren starb er als er versuchte einen Baum zu erklettern und dabei abstürzte. Das Medaillon zeigt Leopold links neben einem seiner Lehrer.",
                                     "img": "KNB_BST-25",
                                     "coa" : [11]
                                 },{
-                                    "name": "Heinrich, 'der Grausame'",
+                                    "name": "Heinrich, „der Grausame“",
                                     "title" : "Herzogssohn von Österreich",
                                     "born": 1208,
                                     "bornGuessed" : true,
@@ -245,7 +232,20 @@
                                     "img": "KNB_BST-26",
                                     "coa" : [11]
                                 },{
-                                    "name": "Friedrich II., 'der Streitbare'",
+                                    "name": "Margarete von Österreich",
+                                    "title" : "röm. dt. Königin, danach Königin von Böhmen",
+                                    "born": 1209,
+                                    "bornGuessed" : true,
+                                    "died": 1266,
+                                    "diedGuessed" : false,
+                                    "gender": "woman",
+                                    "id" : 17,
+                                    "father" : 15,
+                                    "desc" : "Margarethe von Österreich war eine Tochter von Leopold VI. und Theodora Angela. Sie war in erster Ehe mit dem Sohn Kaiser Friedrichs II., König Heinrich VII. († 1242) verheiratet. 1227 wurde sie in Aachen als einzige Frau aus dem Geschlecht der Babenberger zur röm. dt. Königin gekrönt. Ihr Gemahl starb 1235. In zweiter Ehe war sie seit 1252 mit König Ottokar II. Přemysl († 1278) verheiratet, die jedoch 1262 geschieden wurde. Margarethe wurde neben ihrem Vater im Stift Lilienfeld begraben. Am Stammbaum wird sie mit den königlichen Insignien versehen, als betagte Frau gezeigt.",
+                                    "img" : "KNB_BST-F-64",
+                                    "coa" : [17]
+                                },{
+                                    "name": "Friedrich II., „der Streitbare“",
                                     "title" : "Herzog von Österreich und Steiermark, Herr von Krain",
                                     "born": 1210,
                                     "bornGuessed" : true,
@@ -269,6 +269,8 @@
                                             "diedGuessed" : true,
                                             "marriage": 1226,
                                             "marriageGuessed": true,
+                                            "divorce": 1228,
+                                            "divorceGuessed": true,
                                             "id" : 24,
                                             "desc" : "Die erste Frau von Friedrich II. ist möglicherweise mit Eudokia Laskarina zu identifizieren, einer byzantinischen Prinzessin. Allerdings ist die Quellenlage in dieser Frage nicht eindeutig. Jedenfalls hatte Friedrich II. keine Frau, die Gertraud hieß, wie am Stammbaum angegeben. Hier handelte es sich um eine Verwechslung Sunthayms.",
                                             "img": "KNB_BST-F-73+72",
@@ -287,7 +289,7 @@
                                             "marriage": 1229,
                                             "marriageGuessed": false,
                                             "id" : 25,
-                                            "desc" : "Agnes von Andechs-Meranie, Tochter von Herzog Otto VII. († 1234) war die zweite Gattin Friedrichs II. 1229 erfolgte die Heirat. Die Mitgift von Agnes, die sie in die Ehe einbrachte, bestand in der Herrschaft über Krain und die Windische Mark. 1243 wurde das die kinderlos gebliebene Ehe mit Friedrich II. annulliert. Zwei weitere Eheschließungen sind bekannt.",
+                                            "desc" : "Agnes von Andechs-Meranie, Tochter von Herzog Otto VII. († 1234) war die zweite Gattin Friedrichs II. 1229 erfolgte die Heirat. Die Mitgift von Agnes, die sie in die Ehe einbrachte, bestand in der Herrschaft über Krain und die Windische Mark. 1243 wurde die kinderlos gebliebene Ehe mit Friedrich II. annulliert. Zwei weitere Eheschließungen sind bekannt.",
                                             "img": "KNB_BST-F-73+72",
                                             "coa" : [25],
                                             "husband" : 23
@@ -337,8 +339,8 @@
                         }]
                     }]
                 },{
-                    "name": "Heinrich, 'der Ältere'",
-                    "title" : "'Herzog von Mödling'",
+                    "name": "Heinrich, „der Ältere“",
+                    "title" : "„Herzog von Mödling“",
                     "born": 1158,
                     "bornGuessed" : true,
                     "died": 1223,
@@ -346,13 +348,13 @@
                     "gender": "man",
                     "id" : 29,
                     "father" : 7,
-                    "desc" : "Heinrich ‚der Ältere‘ war der jüngere Sohn von Heinrich II. Jasomirgott. Sein Bruder Leopold V. folgte dem Vater als Herzog nach, während Heinrich mit verschiedenen Lehen und Rechten im Raum Mödling ausgestattet war. Auf der Burg Mödling hatte Heinrich seinen Sitz. Obwohl Mödling kein Herzogtum war, nannte sich Heinrich ‚Herzog von Mödling‘. Im Medaillon ist Heinrich zu Pferd bei einer Schlacht gegen Heere der Böhmen, Ungarn, Mähren und Sachsen zu sehen.",
+                    "desc" : "Heinrich „der Ältere“ war der jüngere Sohn von Heinrich II. Jasomirgott. Sein Bruder Leopold V. folgte dem Vater als Herzog nach, während Heinrich mit verschiedenen Lehen und Rechten im Raum Mödling ausgestattet war. Auf der Burg Mödling hatte Heinrich seinen Sitz. Obwohl Mödling kein Herzogtum war, nannte sich Heinrich ‚Herzog von Mödling‘. Im Medaillon ist Heinrich zu Pferd bei einer Schlacht gegen Heere der Böhmen, Ungarn, Mähren und Sachsen zu sehen.",
                     "img": "KNB_BST-21",
                     "coa" : [10]
                 }]
             }]
         },{
-            "name": "Leopold IV., 'der Milde'",
+            "name": "Leopold IV., „der Milde“",
             "title" : "Markgraf von Österreich, Herzog von Bayern",
             "born": 1108,
             "bornGuessed" : true,
@@ -364,19 +366,6 @@
             "desc" : "",
             "img" : "KNB_BST-15",
             "coa" : [27]
-        },{
-            "name": "Ernst, 'der Jüngling'",
-            "title" : "Markgrafensohn",
-            "born": 1111,
-            "bornGuessed" : true,
-            "died": 1141,
-            "diedGuessed" : false,
-            "gender": "man",
-            "father" : 1,
-            "id" : 41,
-            "desc" : "",
-            "img" : "KNB_BST-18",
-            "coa" : [1]
         },{
             "name": "Bertha von Österreich",
             "title" : "Burggräfin von Regensburg",
@@ -404,6 +393,19 @@
             "img" : "KNB_BST-F-46",
             "coa" : [1, 30]
         },{
+            "name": "Ernst, „der Jüngling“",
+            "title" : "Markgrafensohn",
+            "born": 1111,
+            "bornGuessed" : true,
+            "died": 1141,
+            "diedGuessed" : false,
+            "gender": "man",
+            "father" : 1,
+            "id" : 41,
+            "desc" : "",
+            "img" : "KNB_BST-18",
+            "coa" : [1]
+        },{
             "name": "Otto",
             "title" : "Bischof von Freising",
             "born": 1112,
@@ -416,6 +418,19 @@
             "desc" : "",
             "img" : "KNB_BST-16",
             "coa" : [31]
+        },{
+            "name": "Jung verstorbene Töchter",
+               "title" : "Markgrafentöchter",
+               "born": 1113,
+               "bornGuessed" : true,
+               "died": 1125,
+               "diedGuessed" : true,
+               "gender": "woman",
+               "father" : 1, 
+               "id" : 42,
+               "desc" : "",
+               "img" : "nn-female",
+               "coa" : []
         },{
             "name": "Konrad",
             "title" : "Erzbischof von Salzburg",
@@ -443,19 +458,6 @@
             "img" : "KNB_BST-F-48",
             "coa" : [1, 33]
         },{
-            "name": "Gertrud von Österreich",
-            "title" : "Herzogin von Böhmen",
-            "born": 1118,
-            "bornGuessed" : true,
-            "died": 1150,
-            "diedGuessed" : false,
-            "gender": "woman",
-            "father" : 1, 
-            "id" : 39,
-            "desc" : "",
-            "img" : "KNB_BST-F-47",
-            "coa" : [1, 28]
-        },{
             "name": "Judith von Österreich",
             "title" : "",
             "born": 1117,
@@ -469,18 +471,18 @@
             "img" : "KNB_BST-F-49",
             "coa" : [1, 34]
         },{
-         "name": "Jung verstorbene Töchter",
-            "title" : "Markgrafentöchter",
-            "born": 1113,
+            "name": "Gertrud von Österreich",
+            "title" : "Herzogin von Böhmen",
+            "born": 1118,
             "bornGuessed" : true,
-            "died": 1125,
-            "diedGuessed" : true,
+            "died": 1150,
+            "diedGuessed" : false,
             "gender": "woman",
             "father" : 1, 
-            "id" : 42,
+            "id" : 39,
             "desc" : "",
-            "img" : "nn-female",
-            "coa" : []
-    }]
+            "img" : "KNB_BST-F-47",
+            "coa" : [1, 28]
+        }]
     }]
 }]
