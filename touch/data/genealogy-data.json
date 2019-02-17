@@ -1,5 +1,5 @@
 [{
-    "name": "Leopold III., 'der Heilige' (13)",
+    "name": "Leopold III., 'der Heilige'",
     "title" : "Markgraf von Österreich",
     "titleen": "Margrave of Austria",
     "id" : 1,
@@ -14,7 +14,7 @@
     "coa" : [1],
     "marriages": [{
         "spouse": {
-            "name": "Agnes von Waiblingen(44)",
+            "name": "Agnes von Waiblingen",
             "title" : "Markgräfin von Österreich",
             "gender": "woman",
             "born": 1072,
@@ -30,7 +30,7 @@
             "husband" : 1
         },
         "children": [{
-            "name": "Adalbert (14), 'der Andächtige'",
+            "name": "Adalbert, 'der Andächtige'",
             "title" : "Vogt von Klosterneuburg",
             "born": 1106,
             "bornGuessed" : true,
@@ -43,7 +43,7 @@
             "img" : "KNB_BST-14",
             "coa" : [1]
         },{
-            "name": "Heinrich II. 'Jasomirgott' (19)",
+            "name": "Heinrich II. 'Jasomirgott'",
             "title" : "Herzog von Österreich",
             "born": 1107,
             "bornGuessed" : true,
@@ -58,7 +58,7 @@
             "coa" : [6],
             "marriages": [{
                 "spouse": {
-                    "name": "Gertrud von Süpplingenburg (56)",
+                    "name": "Gertrud von Süpplingenburg",
                     "title" : "Markgräfin von Österreich",
                     "born": 1115,
                     "bornGuessed" : false,
@@ -74,7 +74,7 @@
                     "husband" : 7
                 },
                 "children": [{
-                    "name": "Richardis (N)",
+                    "name": "Richardis",
                     "title" : "ich bin ein Titel",
                     "born": 1143,
                     "bornGuessed" : false,
@@ -84,11 +84,12 @@
                     "father" : 7,
                     "id" : 9,
                     "desc" : "",
-                    "coa" : [1]
+                    "coa" : [1],
+                    "img" : "nn-female"
                 }]
             },{
                 "spouse": {
-                    "name": "Theodora Komnena (57)",
+                    "name": "Theodora Komnena",
                     "title" : "Herzogin von Österreich",
                     "born": 1134,
                     "bornGuessed" : true,
@@ -104,7 +105,7 @@
                     "husband" : 7
                 },
                 "children": [{
-                    "name": "Agnes von Österreich(58)",
+                    "name": "Agnes von Österreich",
                     "title" : "Königin von Ungarn, Herzogin von Kärnten",
                     "born": 1151,
                     "bornGuessed" : true,
@@ -117,7 +118,7 @@
                     "img" : "KNB_BST-F-58",
                     "coa" : [1, 2]
                 },{
-                    "name": "Leopold V., 'der Tugendreiche' (20)",
+                    "name": "Leopold V., 'der Tugendreiche'",
                     "title" : "Herzog von Österreich und Steiermark",
                     "born": 1157,
                     "bornGuessed" : false,
@@ -132,7 +133,7 @@
                     "coa" : [9],
                     "marriages": [{
                         "spouse": {
-                            "name": "Helena von Ungarn (60)",
+                            "name": "Helena von Ungarn",
                             "title" : "Herzogin von Österreich und der Steiermark",
                             "gender": "woman",
                             "born" : 1158,
@@ -148,7 +149,7 @@
                             "husband" : 12
                         },
                         "children": [{
-                            "name": "Friedrich I., 'der Christliche' (23)",
+                            "name": "Friedrich I., 'der Christliche'",
                             "title" : "Herzog von Österreich",
                             "born": 1175,
                             "bornGuessed" : true,
@@ -161,7 +162,7 @@
                             "img": "KNB_BST-23",
                             "coa" : [11]
                         },{
-                            "name": "Leopold VI., 'der Ehrenreiche' (24)",
+                            "name": "Leopold VI., 'der Ehrenreiche'",
                             "title" : "Herzog von Steiermark und Österreich",
                             "born": 1176,
                             "bornGuessed" : false,
@@ -176,7 +177,7 @@
                             "coa" : [13],
                             "marriages": [{
                                 "spouse": {
-                                    "name": "Theodora Angela(63)",
+                                    "name": "Theodora Angela",
                                     "title" : "Herzogin von Österreich",
                                     "born": 1185,
                                     "bornGuessed" : true,
@@ -192,7 +193,7 @@
                                     "husband" : 15
                                 },
                                 "children": [{
-                                    "name": "Margarete von Österreich (64)",
+                                    "name": "Margarete von Österreich",
                                     "title" : "röm. dt. Königin, danach Königin von Böhmen",
                                     "born": 1209,
                                     "bornGuessed" : true,
@@ -205,7 +206,7 @@
                                     "img" : "KNB_BST-F-64",
                                     "coa" : [17]
                                 },{
-                                    "name": "Agnes von Österreich (65)",
+                                    "name": "Agnes von Österreich",
                                     "title" : "Herzogin von Sachsen-Wittenberg",
                                     "born": 1206,
                                     "bornGuessed" : true,
@@ -218,7 +219,7 @@
                                     "img" : "KNB_BST-F-65",
                                     "coa" : [11, 18]
                                 },{
-                                    "name": "Leopold, 'das Kind' (25)",
+                                    "name": "Leopold, 'das Kind'",
                                     "title" : "Herzogssohn von Österreich",
                                     "born": 1207,
                                     "bornGuessed" : true,
@@ -231,7 +232,7 @@
                                     "img": "KNB_BST-25",
                                     "coa" : [11]
                                 },{
-                                    "name": "Heinrich, 'der Grausame' (26)",
+                                    "name": "Heinrich, 'der Grausame'",
                                     "title" : "Herzogssohn von Österreich",
                                     "born": 1208,
                                     "bornGuessed" : true,
@@ -244,7 +245,7 @@
                                     "img": "KNB_BST-26",
                                     "coa" : [11]
                                 },{
-                                    "name": "Friedrich II., 'der Streitbare' (27)",
+                                    "name": "Friedrich II., 'der Streitbare'",
                                     "title" : "Herzog von Österreich und Steiermark, Herr von Krain",
                                     "born": 1210,
                                     "bornGuessed" : true,
@@ -259,7 +260,7 @@
                                     "coa" : [19],
                                     "marriages" : [{
                                         "spouse" : {
-                                            "name" : "Eudokia Laskarina (?) (73l)",
+                                            "name" : "Eudokia Laskarina (?)",
                                             "title" : "Herzogin von Österreich und Steiermark",
                                             "gender" : "woman",
                                             "born" : 1210,
@@ -276,7 +277,7 @@
                                         }
                                     },{
                                         "spouse" : {
-                                            "name" : "Agnes von  Andechs-Meranien (72r)",
+                                            "name" : "Agnes von  Andechs-Meranien",
                                             "title" : "Herzogin von Österreich und Steiermark, Herrin von Krain, spätere Herzogin von Kärnten",
                                             "gender" : "woman",
                                             "born": 1215,
@@ -293,7 +294,7 @@
                                         }
                                     }]
                                 },{
-                                    "name": "Konstanze (66)",
+                                    "name": "Konstanze",
                                     "title" : "Tochter Leopold VI.",
                                     "born": 1211,
                                     "bornGuessed" : true,
@@ -306,7 +307,7 @@
                                     "img" : "KNB_BST-F-66",
                                     "coa" : [11, 20]
                                 },{
-                                    "name": "Gertrud von Österreich (67)",
+                                    "name": "Gertrud von Österreich",
                                     "title" : "Landgräfin von Thüringen",
                                     "born" : 1212,
                                     "bornGuessed" : true,
@@ -321,7 +322,7 @@
                                 }]
                             }]
                         },{
-                            "name": "Agnes von Österreich (61V)",
+                            "name": "Agnes von Österreich",
                             "title" : "Herzogstochter",
                             "gender": "woman",
                             "born": 1177,
@@ -336,7 +337,7 @@
                         }]
                     }]
                 },{
-                    "name": "Heinrich, 'der Ältere' (21)",
+                    "name": "Heinrich, 'der Ältere'",
                     "title" : "'Herzog von Mödling'",
                     "born": 1158,
                     "bornGuessed" : true,
@@ -351,7 +352,7 @@
                 }]
             }]
         },{
-            "name": "Leopold IV., 'der Milde' (15)",
+            "name": "Leopold IV., 'der Milde'",
             "title" : "Markgraf von Österreich, Herzog von Bayern",
             "born": 1108,
             "bornGuessed" : true,
@@ -364,7 +365,7 @@
             "img" : "KNB_BST-15",
             "coa" : [27]
         },{
-            "name": "Ernst, 'der Jüngling' (15)",
+            "name": "Ernst, 'der Jüngling'",
             "title" : "Markgrafensohn",
             "born": 1111,
             "bornGuessed" : true,
@@ -374,10 +375,10 @@
             "father" : 1,
             "id" : 41,
             "desc" : "",
-            "img" : "X",
-            "coa" : []
+            "img" : "KNB_BST-18",
+            "coa" : [1]
         },{
-            "name": "Bertha von Österreich (45)",
+            "name": "Bertha von Österreich",
             "title" : "Burggräfin von Regensburg",
             "born": 1109,
             "bornGuessed" : true,
@@ -390,7 +391,7 @@
             "img" : "KNB_BST-F-45",
             "coa" : [1, 29]
         },{
-            "name": "Agnes von Österreich(46)",
+            "name": "Agnes von Österreich",
             "title" : "Herzogin von Polen-Schlesien",
             "born": 1110,
             "bornGuessed" : true,
@@ -403,7 +404,7 @@
             "img" : "KNB_BST-F-46",
             "coa" : [1, 30]
         },{
-            "name": "Otto (16)",
+            "name": "Otto",
             "title" : "Bischof von Freising",
             "born": 1112,
             "bornGuessed" : true,
@@ -416,7 +417,7 @@
             "img" : "KNB_BST-16",
             "coa" : [31]
         },{
-            "name": "Konrad (17)",
+            "name": "Konrad",
             "title" : "Erzbischof von Salzburg",
             "born": 1115,
             "bornGuessed" : true,
@@ -429,7 +430,7 @@
             "img" : "KNB_BST-17",
             "coa" : [32]
         },{
-            "name": "Elisabeth von Österreich (48)",
+            "name": "Elisabeth von Österreich",
             "title" : "",
             "born": 1116,
             "bornGuessed" : true,
@@ -442,7 +443,7 @@
             "img" : "KNB_BST-F-48",
             "coa" : [1, 33]
         },{
-            "name": "Gertrud von Österreich(47)",
+            "name": "Gertrud von Österreich",
             "title" : "Herzogin von Böhmen",
             "born": 1118,
             "bornGuessed" : true,
@@ -455,7 +456,7 @@
             "img" : "KNB_BST-F-47",
             "coa" : [1, 28]
         },{
-            "name": "Judith von Österreich (49)",
+            "name": "Judith von Österreich",
             "title" : "",
             "born": 1117,
             "bornGuessed" : true,
@@ -478,7 +479,7 @@
             "father" : 1, 
             "id" : 42,
             "desc" : "",
-            "img" : "X",
+            "img" : "nn-female",
             "coa" : []
     }]
     }]
