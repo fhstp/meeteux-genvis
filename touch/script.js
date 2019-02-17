@@ -2,11 +2,11 @@
 
 var d3, io, localStorage, interactionTimeout, overlayTimeout
 
-var socket = io('http://192.168.178.28:8100/')
-var whichside = 'left' // 'right'
-var clickTrue = false // set to false for touch display
-var isGodUser = false
 var isLocalUser = false
+var isGodUser = false
+// var socket = io('http://192.168.178.28:8100/')
+var socket = io('http://localhost:8181/')
+var whichside = 'left' // 'right'
 
 d3.selection.prototype.dblTap = function (callback) {
   var last = 0
@@ -23,7 +23,7 @@ d3.selection.prototype.dblTap = function (callback) {
 socket.emit('connectTouch', { device: whichside })
 
 socket.on('connectTouchResult', function (data) {
-  console.log(data)
+  console.log('connection: ' + data)
   // Load Genealogy Datass
   d3.json('/data/genealogy-data.json', function (data1) {
     var persons = data1
