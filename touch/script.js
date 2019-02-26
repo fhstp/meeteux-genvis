@@ -2,11 +2,12 @@
 
 var d3, io, localStorage, interactionTimeout, overlayTimeout
 
-var socket = io('http://192.168.178.28:8100/')
-var whichside = 'left' // 'right'
-var clickTrue = false // set to false for touch display
-var isGodUser = false
 var isLocalUser = false
+var isGodUser = false
+// var socket = io('http://192.168.178.28:8100/')
+var socket = io('http://localhost:8181/')
+var whichside = 'left' // 'right'
+var clickTrue = true
 
 d3.selection.prototype.dblTap = function (callback) {
   var last = 0
@@ -23,7 +24,7 @@ d3.selection.prototype.dblTap = function (callback) {
 socket.emit('connectTouch', { device: whichside })
 
 socket.on('connectTouchResult', function (data) {
-  console.log(data)
+  console.log('connection: ' + data)
   // Load Genealogy Datass
   d3.json('/data/genealogy-data.json', function (data1) {
     var persons = data1
@@ -45,7 +46,7 @@ socket.on('connectTouchResult', function (data) {
       d3.select('#chart').attr('style', 'height: ' + div2Height + 'px')
 
       // set svg size
-      var svgHeight = 3000
+      var svgHeight = 3100
       var svgWidth = 6500
       // Determines how far the scroll bar should be from the top
       var scrollOffset = 0
@@ -147,9 +148,20 @@ socket.on('connectTouchResult', function (data) {
             personArray[itterator] = [
               { x: whichX(person.born), y: startY, gender: person.gender, id: person.id, bornGuessed: person.bornGuessed }, // born
               { x: marriageX1, y: startY, marriageGuessed: person.marriageGuessed }, // marriage 1
-              { x: marriageX2, y: marriageY }, // marriage 2
-              { x: whichX(person.died), y: marriageY, diedGuessed: person.diedGuessed }
+              { x: marriageX2, y: marriageY } // marriage 2
             ]
+
+            if (typeof person.divorce !== 'undefined') {
+              var divorceX1 = whichX(person.divorce)
+              var divorceX2 = whichX(person.divorce) + marriageXDiff
+              var divorceY = startY + marriageYDiff + strokeWidth
+
+              personArray[itterator].push({ x: divorceX1, y: marriageY, divorceGuessed: person.divorceGuessed })
+              personArray[itterator].push({ x: divorceX2, y: divorceY })
+              personArray[itterator].push({ x: whichX(person.died), y: divorceY, diedGuessed: person.diedGuessed })
+            } else {
+              personArray[itterator].push({ x: whichX(person.died), y: marriageY, diedGuessed: person.diedGuessed })
+            }
 
             setPersonInfoArray(itterator, person, startY, marriageY)
 
@@ -394,8 +406,12 @@ socket.on('connectTouchResult', function (data) {
       personArray.forEach((personItem) => {
         var myPersonToDraw = []
         var isMarried = false
+        var isDivorce = false
         if (personItem.length === 4) {
           isMarried = true
+        }
+        if (personItem.length === 6) {
+          isDivorce = true
         }
 
         myPersonToDraw.push({
@@ -404,8 +420,7 @@ socket.on('connectTouchResult', function (data) {
         })
         personItem.forEach((item, index) => {
           var myPathToDraw = []
-
-          if (isMarried && index === 1) {
+          if ((isMarried && index === 1) || (isDivorce && index === 1)) {
             myPersonToDraw[0].marriageGuessed = item.marriageGuessed
             myPathToDraw.push({
               x: personItem[index - 1].x,
@@ -437,7 +452,7 @@ socket.on('connectTouchResult', function (data) {
             })
             myPersonToDraw.push(myPathToDraw)
             myPathToDraw = []
-          } else if (isMarried && index === 2) {
+          } else if ((isMarried && index === 2) || (isDivorce && index === 2)) {
             // do nothing
           } else if (item.bornGuessed === true) {
             myPathToDraw.push({
@@ -454,8 +469,42 @@ socket.on('connectTouchResult', function (data) {
             myPathToDraw = []
           } else if (item.bornGuessed === false) {
             // do nothing
+          } else if (item.divorceGuessed === true) {
+            myPersonToDraw[0].divorceGuessed = item.divorceGuessed
+            myPathToDraw.push({
+              x: personItem[index - 1].x + 20,
+              y: personItem[index - 1].y
+            })
+            myPathToDraw.push({
+              x: item.x - 20,
+              y: item.y
+            })
+            myPersonToDraw.push(myPathToDraw)
+            myPathToDraw = []
+
+            myPathToDraw.push({
+              x: item.x - 22,
+              y: item.y,
+              marriageGuessed: item.divorceGuessed
+            })
+            myPathToDraw.push({
+              x: item.x,
+              y: item.y
+            })
+            myPathToDraw.push({
+              x: personItem[index + 1].x,
+              y: personItem[index + 1].y
+            })
+            myPathToDraw.push({
+              x: personItem[index + 1].x + 22,
+              y: personItem[index + 1].y
+            })
+            myPersonToDraw.push(myPathToDraw)
+            myPathToDraw = []
+          } else if (isDivorce && index === 4) {
+            // do nothing
           } else if (item.diedGuessed === true) {
-            if (isMarried) {
+            if (isMarried || isDivorce) {
               myPathToDraw.push({
                 x: personItem[index - 1].x + 20,
                 y: personItem[index - 1].y
@@ -497,7 +546,6 @@ socket.on('connectTouchResult', function (data) {
                 y: personItem[index - 1].y
               })
             }
-
             myPathToDraw.push({
               x: item.x,
               y: item.y
