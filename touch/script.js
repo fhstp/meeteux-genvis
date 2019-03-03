@@ -1010,6 +1010,8 @@ socket.on('connectTouchResult', function (data) {
         welcome.selectAll('*').remove()
         var coaTitle = d3.select('#coatofarmstitle')
         coaTitle.selectAll('*').remove()
+        var coaDesc = d3.select('#coatofarmsdesc')
+        coaDesc.selectAll('*').remove()
         var languageDiv = d3.select('#language')
         languageDiv.selectAll('*').remove()
 
@@ -1017,12 +1019,14 @@ socket.on('connectTouchResult', function (data) {
           case 'DE':
             welcome.text('Willkommen')
             coaTitle.text('Zugehörige Wappen')
+            coaDesc.text('Deutscher Text zu COA')
             languageDiv.append('p').text('DE')
             break
 
           default:
             welcome.text('Welcome')
             coaTitle.text('Associated Coats of Arms')
+            coaDesc.text('English text for COA')
             languageDiv.append('p').text('EN')
             break
         }
