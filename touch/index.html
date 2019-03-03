@@ -35,9 +35,62 @@
     </div>
 
     <div id="helpOverlay" class="overlay">
-        <p>Das wird der Helpscreen</p>
+        <div class="help-coa">
+            <img src="img/help/icon-01.png">
+            <p class="de">Tippe auf ein Wappen, um mehr darüber zu erfahren.</p>
+            <p class="en">Tap on a coat of arms to find out more.</p>
+        </div>
+        
+        <div class="help-vis">
+            <div class="help-vis-general">
+                <p class="de">Die Visualisierung stellt die Lebenspfade der Babenberger Blutlinie ab Leopold III.</p>
+                <p class="en">The visualization shows the life paths of the Babenberg bloodline starting with Leopold III.</p>
+                <div class="help-vis-general1">
+                    <img src="img/help/icon-03.png">
+                    <img src="img/help/icon-04.png">
+                    <p class="de">Scrolle horizontal und vertikal, um alle Nachkommen von Leopold III. zu erkunden.</p>
+                    <p class="en">Scroll horizontally and vertically to explore all relatives of Leopold III.</p>
+                </div>
+                <div class="help-vis-general2">
+                    <img src="img/help/icon-01.png">
+                    <p class="de">Tippe auf einen Lebenspfad, um die Person zu selektieren und auf der Projektion anzuzeigen.</p>
+                    <p class="en">Tap on a life path to select the person and to display him or her on the projection.</p>
+                </div>
+            </div>
+            <div class="help-vis-detail1">
+                <img src="img/help/vis1.png">
+                <p class="de">Rot wird für eine weibliche und blau für eine männliche Person verwendet.</p>
+                <p class="en">Red is used for a male and blue for a male person.</p>
+                <p class="de"><img class="star" src="img/icon/star.svg"> Der Stern symbolisiert das Geburtsjahr. Ist das Geburtsjahr nicht genau bekannt beginnt der Lebenspfad der Person mit einem Verlauf von weiß.</p>
+                <p class="en"><img class="star" src="img/icon/star.svg"> The star symbolizes the year of birth. If the year of birth is not known exactly, the person's life path begins with white gradient.</p>
+                <p class="de"><img class="pacifier" src="img/icon/pacifier-male.svg"> Der Schnuller symbolisiert die Geburt eines Nachkommen.</p>
+                <p class="en"><img class="pacifier" src="img/icon/pacifier-male.svg"> The pacifier symbolizes the birth of a descendant.</p>
+                <div class="touch">
+                    <img src="img/help/icon-01.png">
+                    <p class="de">Tippe auf den Schnuller, um den Nachkommen zu selektieren.</p>
+                    <p class="en">Tap the pacifier to select the descendant.</p>
+                </div>
+                <div class="touch">
+                    <img src="img/help/icon-02.png">
+                    <p class="de">Tippe doppelt auf den Schnuller, um direkt zum Nachkommen zu scrollen.</p>
+                    <p class="en">Double tap the pacifier to scroll directly to the descendant.</p>
+                </div>
+            </div>
+            <div class="help-vis-detail2">
+                <img src="img/help/vis2.png">
+                <p class="de"><img class="cross" src="img/icon/cross.svg"> Das Kreuz symbolisiert das Todesjahr. Ist das Todesjahr nicht genau bekannt, endet der Lebenspfad der Person mit einem Verlauf nach weiß.</p>
+                <p class="en"><img class="cross" src="img/icon/cross.svg"> The cross symbolizes the year of death. If the year of death is not known exactly, the person's life path ends with a white gradient.</p>
+                <p class="de"><img class="marriage" src="img/icon/marriage.svg"> Die Ringe symbolisiern das Hochzeitsjahr. Ist das Hochzeitsjahr nicht genau bekannt wird der Pfad der weiblichen Person mit einem Verlauf nach weiß unterbrochen. Auf diesem Bildausschnitt ist zunächst eine Heirat mit anschließender Scheidung sowie eine weitere Heirat zu sehen.</p>
+                <p class="en"><img class="marriage" src="img/icon/marriage.svg"> The rings symbolize the wedding year. If the wedding year is not known exactly, the path of the female person is interrupted with a white gradient. This picture shows a marriage followed by a divorce and another marriage.</p>
+            </div>
+            <div class="help-close">
+                    <img src="img/help/icon-01.png">
+                    <p class="de">Tippe in den grauen Bereich, um mit der Exploration der Visualisierung zu beginnen.</p>
+                    <p class="en">Tap in the gray area to start exploring the visualization.</p>
+                </div>
+        </div>
     </div>
-
+        
     <div id="coaOverlay" class="overlay">
         <div class="coa-overlay-info">
             <div class="coa-table">
@@ -53,7 +106,6 @@
             </div>
             <p class="coa-desc">TEXT TEXT TEXT</p>
         </div>
-        
     </div>
 
     <div id="timerOverlay" class="overlay">
@@ -62,6 +114,7 @@
             <progress value="0" max ="13" id="progressBar"></progress>
         </div>
     </div>
+    
     
     <script type="text/javascript" src="d3.v4.js"></script>
     <script type="text/javascript" src="socket.js"></script>

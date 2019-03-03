@@ -8,6 +8,8 @@ var isGodUser = false
 var socket = io('http://localhost:8181/')
 var whichside = 'left' // 'right'
 var clickTrue = true
+var setTimerTime = 30 // 30 seconds after each touch interaction
+var setTimeEnd = 15 // 15 seconds for last call
 
 d3.selection.prototype.dblTap = function (callback) {
   var last = 0
@@ -735,8 +737,9 @@ socket.on('connectTouchResult', function (data) {
         .attr('class', 'x axis')
         .attr('transform', 'translate(0,0)')
         .call(d3.axisBottom(x)
-        .ticks(100)
-        .tickFormat(d3.timeFormat('%Y')))
+          .ticks(100)
+          .tickFormat(d3.timeFormat('%Y'))
+        )
 
       // This is just to show you that the parseDate funciton returns a very long stirng. What firefox and chrome took was only the last 3 digits which resolve to :00
       // console.log('stringdates: ', parseDate(stringDates[0]), d3.extent(stringDates, function (d) { return parseDate(d) }))
@@ -927,7 +930,7 @@ socket.on('connectTouchResult', function (data) {
           myContext = this
         }
 
-        var myElement = d3.select(myContext).style('opacity',1)
+        var myElement = d3.select(myContext).style('opacity', 1)
 
         var idTouched = myElement.attr('class')
         var res = idTouched.split('coa')
@@ -963,9 +966,9 @@ socket.on('connectTouchResult', function (data) {
         // if 17 and 3
         whichName.forEach((coaName, index) => {
           if (whichName.length === 3 && index === 2 && coatOfArmsItem.id !== 17) {
-            coaTitle.append('p').attr('class','coa-col2')
+            coaTitle.append('p').attr('class', 'coa-col2')
           }
-          coaTitle.append('p').attr('class','coa-col2').text(coaName)
+          coaTitle.append('p').attr('class', 'coa-col2').text(coaName)
         })
 
         coaOverlayInfo.append('p').text(whichDesc)
@@ -1025,6 +1028,8 @@ socket.on('connectTouchResult', function (data) {
             coaTitle.text('Zugehörige Wappen')
             coaDesc.text('Deutscher Text zu COA')
             languageDiv.append('p').text('DE')
+            d3.selectAll('p.de').style('display', 'block')
+            d3.selectAll('p.en').style('display', 'none')
             break
 
           default:
@@ -1032,6 +1037,8 @@ socket.on('connectTouchResult', function (data) {
             coaTitle.text('Associated Coats of Arms')
             coaDesc.text('English text for COA')
             languageDiv.append('p').text('EN')
+            d3.selectAll('p.en').style('display', 'block')
+            d3.selectAll('p.de').style('display', 'none')
             break
         }
 
@@ -1149,7 +1156,7 @@ socket.on('connectTouchResult', function (data) {
         console.log('setTimer')
         clearInterval(interactionTimeout)
         clearTimeout(overlayTimeout)
-        interactionTimeout = window.setTimeout(showTimerEndDialog, 30000)
+        interactionTimeout = window.setTimeout(showTimerEndDialog, setTimerTime * 1000)
       }
 
       var timerOverlay = d3.select('#timerOverlay')
@@ -1165,15 +1172,18 @@ socket.on('connectTouchResult', function (data) {
       function showTimerEndDialog () {
         d3.select('#progressBar').attr('value', 0)
         timerOverlay.style('display', 'block')
+
         var timeleft = 15
+
         var timeOutTimer = setInterval(function () {
-          d3.select('#progressBar').attr('value', 15 - timeleft)
+          d3.select('#progressBar').attr('value', setTimeEnd - timeleft)
           timeleft -= 1
           if (timeleft <= 0) {
             clearInterval(timeOutTimer)
           }
-        }, 1000)
-        overlayTimeout = window.setTimeout(clearUserTimeout, 15000)
+        }, 1000) // update progress bar every second
+
+        overlayTimeout = window.setTimeout(clearUserTimeout, setTimeEnd * 1000)
       }
 
       function clearUserTimeout () {

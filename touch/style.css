@@ -91,14 +91,111 @@ p, text{
     display: block;
 }
 
+.overlay-text{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
 #helpOverlay{
     color: white;
+}
+#helpOverlay p{
+    font-size: 13pt;
+}
+
+.help-coa{
+    margin-left: 1150px;
+    margin-top: 150px;
+    width: 200px;
+    text-align: center;
+}
+.help-coa p{
+    margin-top: 0;
+}
+
+.help-vis{
+    margin-top: 80px;
+}
+
+.help-vis-general{
+    width: 500px;
+    margin-left: 20px;
+    float: left;
+}
+.help-vis-general1{
+    width: 250px;
+    text-align: center;
+    float: left;
+}
+.help-vis-general2{
+    width: 210px;
+    text-align: center;
+    float: left;
+    margin-left: 20px;
+}
+.help-vis-general1 p, .help-vis-general2 p, .help-vis-detail1 p{
+    margin-top: 0;
+    margin-bottom: 0.5em;
+}
+
+.help-vis-detail1{
+    float: left;
+    width: 350px;
+    margin-left: 90px;
+}
+.help-vis-detail1 img, .help-vis-detail2 img{
+    width: 100%;
+}
+.help-vis-detail1 img.star{
+    width: 10px;
+}
+.help-vis-detail1 img.pacifier{
+    width: 25px;
+}
+.help-vis-detail1 .touch{
+    width: 150px;
+    text-align: center;
+    float: left;
+}
+.help-vis-detail1 .touch img{
+    width: auto;
+}
+
+.help-vis-detail2{
+    float: left;
+    width: 670px;
+    margin-left: 90px;
+}
+.help-vis-detail2 img.cross{
+    width: 8px;
+}
+.help-vis-detail2 img.marriage{
+    width: 14px;
+}
+
+.help-vis-general, .help-vis-detail1, .help-vis-detail2{
+    border: 2px solid white;
+    padding: 20px;
+}
+
+.help-close{
+    float: left;
+    margin-left: 90px;
+    margin-top: 20px;
+    width: 200px;
+    text-align: center;
+}
+p.en{
+    display: none;
 }
 
 #coaOverlay{
     display: none;
+    width: 100%;
 }
-
 .coa-overlay-info, .timer-overlay{
     width: 500px;
     background: white;
@@ -267,14 +364,14 @@ path.woman{
 
 #image{
     padding-top: 30px;
-    padding-left: 30px;
+    padding-left: 40px;
 }
 
 #image .circle{
-    position: relative;
-    top: -190px;
-    width: 100%;
-    left: -31px;
+    position: absolute;
+    top: 0px;
+    width: 17%;
+    left: 5px;
 }
 
 .coa{
@@ -315,4 +412,5 @@ path.woman{
 
 #timerOverlay{
     display: none;
+    width: 100%;
 }
