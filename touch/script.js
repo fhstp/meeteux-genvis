@@ -643,7 +643,9 @@ socket.on('connectTouchResult', function (data) {
             .attr('height', 10)
             .attr('x', person.diedx - 5)
             .attr('y', function () {
-              if (person.marriagey) {
+              if (person.id === 24) { // 1. spouse of Friedrich II. > divorce
+                return person.marriagey + strokeWidth - 7
+              } else if (person.marriagey) {
                 return person.marriagey - strokeWidth + 5
               } else {
                 return person.y - strokeWidth + 5
@@ -677,8 +679,8 @@ socket.on('connectTouchResult', function (data) {
         .attr('class', function (d) { return 'childId' + d[0].id + ' child' + d[0].gender })
         .attr('width', 38)
         .attr('height', 38)
-        .attr('x', function (d) { return d[0].x - 25 })
-        .attr('y', function (d) { return d[0].y - 7 })
+        .attr('x', function (d) { return d[0].x - 18 })
+        .attr('y', function (d) { return d[0].y - 8 })
         .on('click', function (d, i) { if (clickTrue) childTouched(d, i, this) }) // comment when running on touch display
         .on('touchend', function (d, i) {
           childTouched(d, i, this)
