@@ -124,7 +124,7 @@ socket.on('connectTouchResult', function (data) {
           isChild = false
           getFatherById(person.father)
           var fatherY = getFatherY(father)
-          showChildArray.push([{ x: whichX(person.born), y: fatherY + 26, gender: person.gender, id: person.id },
+          showChildArray.push([{ x: whichX(person.born), y: fatherY + 50, gender: person.gender, id: person.id },
             { x: whichX(person.born), y: startY - strokeWidth + 10 }])
         }
 
@@ -678,7 +678,7 @@ socket.on('connectTouchResult', function (data) {
         .attr('width', 38)
         .attr('height', 38)
         .attr('x', function (d) { return d[0].x - 25 })
-        .attr('y', function (d) { return d[0].y + 16.5 })
+        .attr('y', function (d) { return d[0].y - 7 })
         .on('click', function (d, i) { if (clickTrue) childTouched(d, i, this) }) // comment when running on touch display
         .on('touchend', function (d, i) {
           childTouched(d, i, this)
