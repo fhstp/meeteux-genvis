@@ -47,7 +47,7 @@ socket.on('connectTouchResult', function (data) {
 
       // set svg size
       var svgHeight = 3100
-      var svgWidth = 6500
+      var svgWidth = 8000
       // Determines how far the scroll bar should be from the top
       var scrollOffset = 0
 
@@ -675,10 +675,10 @@ socket.on('connectTouchResult', function (data) {
           }
         })
         .attr('class', function (d) { return 'childId' + d[0].id + ' child' + d[0].gender })
-        .attr('width', 50)
-        .attr('height', 50)
+        .attr('width', 38)
+        .attr('height', 38)
         .attr('x', function (d) { return d[0].x - 25 })
-        .attr('y', function (d) { return d[0].y - 25 + 5 })
+        .attr('y', function (d) { return d[0].y + 16.5 })
         .on('click', function (d, i) { if (clickTrue) childTouched(d, i, this) }) // comment when running on touch display
         .on('touchend', function (d, i) {
           childTouched(d, i, this)
@@ -732,7 +732,9 @@ socket.on('connectTouchResult', function (data) {
       var axisGroup = svg.append('g')
         .attr('class', 'x axis')
         .attr('transform', 'translate(0,0)')
-        .call(d3.axisBottom(x).tickFormat(d3.timeFormat('%Y')))
+        .call(d3.axisBottom(x)
+        .ticks(100)
+        .tickFormat(d3.timeFormat('%Y')))
 
       // This is just to show you that the parseDate funciton returns a very long stirng. What firefox and chrome took was only the last 3 digits which resolve to :00
       // console.log('stringdates: ', parseDate(stringDates[0]), d3.extent(stringDates, function (d) { return parseDate(d) }))
