@@ -837,6 +837,11 @@ socket.on('connectTouchResult', function (data) {
         // send person to projection
         socket.emit('sendDataToProjection', { data: person.id })
 
+        // Check if id == 23 > unlock coa special item
+        if (person.id === 23 && isGodUser) {
+          socket.emit('unlockCoaMantle', { 'device': whichside })
+        }
+
         // shows text information
         infoDesc.select('h1').remove()
         infoDesc.select('h2').remove()
@@ -860,6 +865,9 @@ socket.on('connectTouchResult', function (data) {
         // Shows cirular image
         infoImage.select('img').remove()
         infoImage.append('img').attr('src', 'img/' + person.img + '.png')
+        infoImage.append('img')
+          .attr('class', 'circle')
+          .attr('src', 'img/connection/circle-flower-p.png')
 
         // Shows coat of arms
         infoCoat.selectAll('div.coa').remove()
@@ -917,7 +925,6 @@ socket.on('connectTouchResult', function (data) {
 
         var myElement = d3.select(myContext).style('opacity',1)
 
-        // TODO: show coa information in coaOverlay
         var idTouched = myElement.attr('class')
         var res = idTouched.split('coa')
         idTouched = parseInt(res[1])
@@ -928,8 +935,6 @@ socket.on('connectTouchResult', function (data) {
             coatOfArmsItem = coa
           }
         })
-
-        // 17 and 32
 
         coaOverlay.selectAll('*').remove()
         var coaOverlayInfo = coaOverlay.append('div').attr('class', 'coa-overlay-info')
@@ -993,7 +998,7 @@ socket.on('connectTouchResult', function (data) {
       }
 
       function languageToggleStart () {
-        // todo highlight languagediv
+        // highlight languagediv
         languagediv.style('opacity', 0.5)
       }
 

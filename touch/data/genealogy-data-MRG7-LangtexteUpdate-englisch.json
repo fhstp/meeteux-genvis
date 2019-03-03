@@ -1,8 +1,6 @@
 [{
-    "name": "Leopold III., „der Heilige“",
-    "nameen" : "",
+    "name": "Leopold III., 'der Heilige' (13)",
     "title" : "Markgraf von Österreich",
-    "titleen" : "",
     "id" : 1,
     "born": 1073,
     "bornGuessed" : false,
@@ -11,12 +9,44 @@
     "diedGuessed" : false,
     "gender": "man",
     "desc" : "Leopold III. war der Sohn von Leopold II., Markgraf von Österreich. Er war verheiratet mit Agnes von Waiblingen, Tochter des Salier-Kaisers Heinrich IV. Mit ihr hatte er elf namentlich bekannte Kinder. Fünf weitere Töchter und zwei Söhne sollen im jungen Alter verstorben sein. Leopold folgte seinem Vater als Markgraf von Österreich nach und regierte das Land von 1095 bis zu seinem Tod im Jahr 1136. Es entwickelte sich eine Wallfahrt am Grab des frommen Markgrafen. 1485 wurde er in Rom heiliggesprochen. Das Medaillon zeigt den Heiligen und zwei seiner Söhne vor seinen Gründungen Klein-Mariazell, Stift Klosterneuburg und Stift Heiligenkreuz.",
-    "descen" : "Leopold III was the son of Leopold II and was married to Agnes of Waiblingen, daughter of the Salier Emperor Henry IV. She gave him eighteen children. Five daughters and two sons are said to have not reached adulthood. Leopold succeeded his father as Margrave of Austria in 1095. He died in 1136 at Klosterneuburg Monastery. Pilgrims visited the tomb of the pious Margrave. In 1485 he was canonized in Rome. The medallion depicts him with two sons in front of his three foundations, Klein-Mariazell Monastery, Klosterneuburg Monastery and Heiligenkreuz Abbey.",
+    "descen" : "Leopold III was the son of Leopold II and was married to Agnes of Waiblingen, daughter of the Salier Emperor Henry IV. She gave him eighteen children. Five daughters and two sons are said to have not reached adulthood. Leopold succeeded his father as Margrave of Austria in 1095. He died in 1136 at Klosterneuburg Monastery. Pilgrims visited the tomb of the pious Margrave. In 1485 he was canonized in Rome. The medallion depicts him with two sons in front of his three foundations, Klein-Mariazell Monastery, Klosterneuburg Monastery and Heiligenkreuz Abbey. ",
     "img" : "KNB_BST-13",
     "coa" : [1],
     "marriages": [{
         "spouse": {
-            "name": "Agnes von Waiblingen",
+            "name": "? v. Perg (N)",
+            "title" : "ich bin ein Titel",
+            "gender": "woman",
+            "born": 1073,
+            "bornGuessed" : true,
+            "died": 1105,
+            "diedGuessed" : false,
+            "marriage": 1100,
+            "marriageGuessed": true,
+            "id" : 2,
+            "desc" : "",
+            "img" : "nn-woman",
+            "coa" : [1],
+            "husband" : 1
+        },
+        "children": [{
+            "name": "Adalbert (14), 'der Andächtige'",
+            "title" : "Vogt von Klosterneuburg",
+            "born": 1106,
+            "bornGuessed" : true,
+            "died": 1138,
+            "diedGuessed" : true,
+            "gender": "man",
+            "father" : 1, 
+            "id" : 3,
+            "desc" : "Nach neueren Erkenntnissen war Adalbert der erstgeborene Sohn von Leopold III. aus der Ehe mit Agnes von Waiblingen. Er verwaltete die Vogteien Klosterneuburgs. In erster Ehe heiratete er Adelheid und in zweiter Ehe Sophie von Ungarn. Adalbert hatte keine Kinder. Das Medaillon zeigt ihn zusammen mit seinem Schwager, dem ungarischen König Béla II. († 1141) im Kampf gegen einen ungarischen Aufständischen.",
+            "descen" : "According to recent findings Adalbert was the firstborn son of Leopold III and Agnes of Waiblingen. He was Reeve of Klosterneuburg Monastery. He first married Adelheid and secondly Hedwig of Hungary, but had no children. The medallion depicts him together with his brother-in-law, the Hungarian King Béla II († 1141) in the fight against a Hungarian insurgent.",
+            "img" : "KNB_BST-14",
+            "coa" : [1]
+        }]
+    },{
+        "spouse": {
+            "name": "Agnes von Waiblingen(44)",
             "title" : "Markgräfin von Österreich",
             "gender": "woman",
             "born": 1072,
@@ -33,37 +63,23 @@
             "husband" : 1
         },
         "children": [{
-            "name": "Adalbert, „der Andächtige“",
-            "title" : "Vogt von Klosterneuburg",
-            "born": 1106,
-            "bornGuessed" : true,
-            "died": 1138,
-            "diedGuessed" : true,
-            "gender": "man",
-            "father" : 1, 
-            "id" : 3,
-            "desc" : "Nach neueren Erkenntnissen war Adalbert der erstgeborene Sohn von Leopold III. aus der Ehe mit Agnes von Waiblingen. Er verwaltete die Vogteien Klosterneuburgs. In erster Ehe heiratete er Adelheid und in zweiter Ehe Sophie von Ungarn. Adalbert hatte keine Kinder. Das Medaillon zeigt ihn zusammen mit seinem Schwager, dem ungarischen König Béla II. († 1141) im Kampf gegen einen ungarischen Aufständischen.",
-            "descen" : "According to recent findings Adalbert was the firstborn son of Leopold III and Agnes of Waiblingen. He was Reeve of Klosterneuburg Monastery. He first married Adelheid and secondly Hedwig of Hungary, but had no children. The medallion depicts him together with his brother-in-law, the Hungarian King Béla II († 1141) in the fight against a Hungarian insurgent.",
-            "img" : "KNB_BST-14",
-            "coa" : [1]
-        },{
-            "name": "Heinrich II. „Jasomirgott“",
+            "name": "Heinrich II., 'Jasomirgott' (19)",
             "title" : "Herzog von Österreich",
             "born": 1107,
             "bornGuessed" : true,
             "died": 1177,
             "diedGuessed" : false,
-            "marriageGuessed": false,
+            "marriageGuessed": true,
             "gender": "man",
             "father" : 1,
             "id" : 7,
-            "desc" : "Heinrich II. gilt als der zweitgeborene Sohn von Leopold III. und Agnes von Waiblingen. Aus seiner ersten Ehe mit Gertrud von Süpplingenburg entstammte eine Tochter. Seine zweite Ehefrau, Theodora Komnena gebar eine Tochter und zwei Söhne. Heinrich II. war Pfalzgraf bei Rhein und Herzog von Bayern. 1145 verlegte er seine Residenz nach Wien und war seit 1156 erster Herzog von Österreich. Er starb in Melk und wurde im Schottenkloster Wien, seiner Stiftung, beigesetzt. Das Medaillon zeigt ihn als Teilnehmer des Zweiten Kreuzzuges bei seiner Fahrt ins Heilige Land.",
-            "descen" : "Henry II is said to have been the second-born son of Leopold III and Agnes of Waiblingen. He had one daughter with his first wife Gertrude of Süpplingenburg. His second wife, Theodora Komnena gave birth to a daughter and two sons. Henry II was Palatine at the Rhine and Duke of Bavaria. In 1145 he moved his residence to Vienna and became the the first Duke of Austria in 1156. He died in Melk and was buried at the Schottenstift in Vienna, his foundation. The medallion depicts him as a participant of the Second Crusade on his trip to the Holy Land.",
+            "desc" : "Heinrich II. gilt als der zweitgeborene Sohn von Leopold III. und Agnes von Waiblingen. Aus seiner ersten Ehe mit Gertrud von Süpplingenburg entstammte eine Tochter. Seine zweite Ehefrau, Theodora Komnena gebar eine Tochter und zwei Söhne. Heinrich II. war Pfalzgraf bei Rhein und Herzog von Bayern. 1145 verlegte er seine Residenz nach Wien und war seit 1156 erster Herzog von Österreich. Er starb in Melk und wurde im Schottenkloster Wien, seiner Stiftung, beigesetzt. Das Medaillon zeigt ihn als Teilnehmer des Zweiten Kreuzzuges bei seiner Fahrt ins Heilige Land. ",
+            "descen" : "Henry II is said to have been the second-born son of Leopold III and Agnes of Waiblingen. He had one daughter with his first wife Gertrude of Süpplingenburg. His second wife, Theodora Komnena gave birth to a daughter and two sons. Henry II was Palatine at the Rhine and Duke of Bavaria. In 1145 he moved his residence to Vienna and became the the first Duke of Austria in 1156. He died in Melk and was buried at the Schottenstift in Vienna, his foundation. The medallion depicts him as a participant of the Second Crusade on his trip to the Holy Land.", 
             "img": "KNB_BST-19",
             "coa" : [6],
             "marriages": [{
                 "spouse": {
-                    "name": "Gertrud von Süpplingenburg",
+                    "name": "Gertrud von Süpplingenburg (56)",
                     "title" : "Markgräfin von Österreich",
                     "born": 1115,
                     "bornGuessed" : false,
@@ -74,14 +90,14 @@
                     "marriageGuessed": false,
                     "id" : 8,
                     "desc" : "Gertrud von Süpplingenburg, die Tochter von Kaiser Lothar III. († 1137), war in zweiter Ehe mit Heinrich II. verheiratet. Für Heinrich II. war es dessen erste Ehe. Gertrud starb bereits im ersten Ehejahr bei der Geburt der Tochter Richardis. Am Stammbaum ist sie gemeinsam mit der zweiten Frau Heinrichs II. dargestellt. Bei Gertrud handelt es sich um die Fürstin auf der linken Seite. Sie trägt die kaiserliche Bügelkrone und hält ein Szepter in der Hand. ",
-                    "descen": "Gertrude of Süpplingenburg, the daughter of Emperor Lothair III († 1137), was married to Henry II „Jasomirgott“. It was Gertrudes second marriage. Gertrude died in the first year of her marriage after giving birth to Richardis. On the family tree she is shown together with the second wife of Henry II. Gertrude, the person on the left side, wears the imperial crown and holds a scepter in her hand.",
+                    "descen": "Gertrude of Süpplingenburg, the daughter of Emperor Lothair III († 1137), was married to Henry II ‚Jasomirgott‘. It was Gertrudes second marriage. Gertrude died in the first year of her marriage after giving birth to Richardis. On the family tree she is shown together with the second wife of Henry II. Gertrude, the person on the left side, wears the imperial crown and holds a scepter in her hand.",
                     "img" : "KNB_BST-F-56+57",
                     "coa" : [7],
                     "husband" : 7
                 },
                 "children": [{
-                    "name": "Richardis",
-                    "title" : "„Gräfin von Waltersdorf“",
+                    "name": "Richardis (N)",
+                    "title" : "'Gräfin von Waltersdorf'",
                     "born": 1143,
                     "bornGuessed" : false,
                     "died": 1200,
@@ -91,12 +107,11 @@
                     "id" : 9,
                     "desc" : "Richardis von Österreich entstammt der kurzen Ehe von Heinrich II. und Gertrud von Süpplingenburg. Sie war mit Heinrich von Steffling († um 1190) verheiratet und hatte mit ihm einen Sohn. Sie hielt sich am Ende ihres Lebens in Waltersdorf auf und ist im Stift Heiligenkreuz begraben. Am Babenberger-Stammbaum ist sie nicht dargestellt, da ihre Existenz nicht bekannt war.",
                     "descen": "Richardis of Austria was the daughter of Henry II and Gertrude of Süpplingenburg. She was married to Henry of Steffling († 1190) and had a son with him. At the end of her life, she stayed in Waltersdorf and was buried at Heiligenkreuz Abbey. She is not represented on the Babenberg family tree because her existence was unknown.",
-                    "coa" : [1],
-                    "img" : "nn-female"
+                    "coa" : [1]
                 }]
             },{
                 "spouse": {
-                    "name": "Theodora Komnena",
+                    "name": "Theodora Komnena (57)",
                     "title" : "Herzogin von Österreich",
                     "born": 1134,
                     "bornGuessed" : true,
@@ -113,7 +128,7 @@
                     "husband" : 7
                 },
                 "children": [{
-                    "name": "Agnes von Österreich",
+                    "name": "Agnes von Österreich(58)",
                     "title" : "Königin von Ungarn, Herzogin von Kärnten",
                     "born": 1151,
                     "bornGuessed" : true,
@@ -127,7 +142,7 @@
                     "img" : "KNB_BST-F-58",
                     "coa" : [1, 2]
                 },{
-                    "name": "Leopold V., „der Tugendreiche“",
+                    "name": "Leopold V., 'der Tugendreiche' (20)",
                     "title" : "Herzog von Österreich und Steiermark",
                     "born": 1157,
                     "bornGuessed" : false,
@@ -143,7 +158,7 @@
                     "coa" : [9],
                     "marriages": [{
                         "spouse": {
-                            "name": "Helena von Ungarn",
+                            "name": "Helena von Ungarn (60)",
                             "title" : "Herzogin von Österreich und der Steiermark",
                             "gender": "woman",
                             "born" : 1158,
@@ -160,7 +175,7 @@
                             "husband" : 12
                         },
                         "children": [{
-                            "name": "Friedrich I., „der Christliche“",
+                            "name": "Friedrich I., 'der Christliche' (23)",
                             "title" : "Herzog von Österreich",
                             "born": 1175,
                             "bornGuessed" : true,
@@ -169,12 +184,12 @@
                             "gender": "man",
                             "id" : 14,
                             "father" : 12,
-                            "desc" : "Friedrich I. war der erstgeborene Sohn von Leopold V. und Helena von Ungarn. Nach dem Tod seines Vaters folgte ihm Friedrich I. 1194 als Herzog von Österreich nach, regierte aber nur bis 1198, da er während der Heimreise aus dem Heiligen Land, nach der Teilnahme am Kreuzzug Kaiser Heinrichs VI., seinen Tod fand. Das Medaillon zeigt die Seereise Friedrichs und die  Überführung seines Leichnams.",
+                            "desc" : "Friedrich I. war der erstgeborene Sohn von Leopold V. und Helena von Ungarn. Nach dem Tod seines Vaters folgte ihm Friedrich I. 1194 als Herzog von Österreich nach, regierte aber nur bis 1198, da er während der Heimreise aus dem Heiligen Land, nach der Teilnahme am Kreuzzug Kaiser Heinrichs VI., seinen Tod fand. Das Medaillon zeigt die Seereise Friedrichs und die  Überführung seines Leichnams.    ",
                             "descen": "Frederick I was the firstborn son of Leopold V and Helena of Hungary. After the death of his father in 1194 he became Duke of Austria. Frederick I ruled until 1198, when he died on the way home from the Holy Land after participating in the crusade of Emperor Henry VI. The medallion depicts Frederick's sea voyage as well as the transfer of his remains.",
                             "img": "KNB_BST-23",
                             "coa" : [11]
                         },{
-                            "name": "Leopold VI., „der Ehrenreiche“",
+                            "name": "Leopold VI., 'der Ehrenreiche' (24)",
                             "title" : "Herzog von Steiermark und Österreich",
                             "born": 1176,
                             "bornGuessed" : false,
@@ -190,7 +205,7 @@
                             "coa" : [13],
                             "marriages": [{
                                 "spouse": {
-                                    "name": "Theodora Angela",
+                                    "name": "Theodora Angela(63)",
                                     "title" : "Herzogin von Österreich",
                                     "born": 1185,
                                     "bornGuessed" : true,
@@ -200,56 +215,14 @@
                                     "marriage": 1203,
                                     "marriageGuessed": true,
                                     "id" : 16,
-                                    "desc" : "Theodora Angelas Vater namens Isaak Komnenos entstammte dem Adel von Byzanz, war ein mächtiger Mann am byzantinischen Hof und äußerst gebildet. Theodora war wohl in Konstantinopel erzogen worden. Jener bedeutenden und (bevölkerungs-)reichen Stadt, die 1203 von den Venezianer geplündert wurde. Im selben Jahr 1203 fand fernab in Wien, die Vermählung Leopolds VI. mit  Theodora Angela statt. Der Minnesänger Ulrich von Liechtenstein preist die Herzogin, die selbst als Sängerin auftrat, in seinem „Frauendienst“. In der Annalistik heißt es, dass sie 1246 aufgrund zerbrochenen Herzens starb, da neben ihrem Sohn Friedrich II. sieben oder acht weitere Kinder vor ihr selbst den Tod fanden. Am Stammbaum ist sie als Verweis auf ihre edle Herkunft mit den kaiserlichen Insignien ausgestattet.",
+                                    "desc" : "Theodora Angelas Vater namens Isaak Komnenos entstammte dem Adel von Byzanz, war ein mächtiger Mann am byzantinischen Hof und äußerst gebildet. Theodora war wohl in Konstantinopel erzogen worden. Jener bedeutenden und (bevölkerungs-)reichen Stadt, die 1203 von den Venezianer geplündert wurde. Im selben Jahr 1203 fand fernab in Wien, die Vermählung Leopolds VI. mit  Theodora Angela statt. Der Minnesänger Ulrich von Liechtenstein preist die Herzogin, die selbst als Sängerin auftrat, in seinem „Frauendienst“. In der Annalistik heißt es, dass sie 1246 aufgrund zerbrochenen Herzens starb, da neben ihrem Sohn Friedrich II. sieben oder acht weitere Kinder vor ihr selbst den Tod fanden. Am Stammbaum ist sie als Verweis auf ihre edle Herkunft mit den kaiserlichen Insignien ausgestattet. ",
                                     "descen": "Theodora Angela's father Isaac Komnenos was of noble Byzantine origin, highly educated and a powerful man at the Byzantine court. Theodora had probably been educated in Constantinople. This important and (populous) city waslooted in 1203 by the Venetians. In the same year the marriage of Leopold VI and Theodora Angela took place. The tradition states that she died in 1246 due to a broken heart, because in addition to her son Frederick II, seven or eight other children were killed before her. On the family tree her noble origin is emphasized by the imperial insignia.",
                                     "img" : "KNB_BST-F-63",
                                     "coa" : [11, 14, 16],
                                     "husband" : 15
                                 },
                                 "children": [{
-                                    "name": "Agnes von Österreich",
-                                    "title" : "Herzogin von Sachsen-Wittenberg",
-                                    "born": 1206,
-                                    "bornGuessed" : true,
-                                    "died": 1226,
-                                    "diedGuessed" : false,
-                                    "gender": "woman",
-                                    "id" : 18,
-                                    "father" : 15,
-                                    "desc" : "Agnes, eie vermutlich älteste Tochter von Herzog Leopold VI. und Theodora Angela, war mit Albrecht I., Herzog von Sachsen-Wittenberg († 1261) vermählt. Das Hochzeitsfest im Jahre 1222 am alten Herzogshof von Wien wird als ein prächtiges Fest beschrieben, an dem 5000 Ritter teilgenommen haben sollen. Sie gebar drei Kinder, bis sie im Jahre 1226 den Tod erlitt.",
-                                    "descen": "Agnes was probably the oldest daughter of Duke Leopold VI and Theodora Angela. She was married to Albrecht I, Duke of Saxony-Wittenberg († 1261). The wedding took place in 1222 at the old ducal court of Vienna and was described as a splendid festivity. 5000 knights are said to have been part of it. She gave birth to three children and died in 1226.",
-                                    "img" : "KNB_BST-F-65",
-                                    "coa" : [11, 18]
-                                },{
-                                    "name": "Leopold, „das Kind“",
-                                    "title" : "Herzogssohn von Österreich",
-                                    "born": 1207,
-                                    "bornGuessed" : true,
-                                    "died": 1216,
-                                    "diedGuessed" : false,
-                                    "gender": "man",
-                                    "id" : 19,
-                                    "father" : 15,
-                                    "desc" : "Leopold soll der älteste Sohn Leopolds VI. und Theodora Angela gewesen sein. Er wuchs in Klosterneuburg, dem Herrschaftssitz seines Vaters  auf und wurde dort unterrichtet. Mit neun Jahren starb er als er versuchte einen Baum zu erklettern und dabei abstürzte. Das Medaillon zeigt Leopold links neben einem seiner Lehrer.",
-                                    "descen": "Leopold is said to have ben the eldest son of Leopold VI and Theodora Angela. He grew up in Klosterneuburg, at his father's residence and was taught there. He died at the age of nine when he fell off a tree. The medallion depicts Leopold next to his teachers on the left side.",
-                                    "img": "KNB_BST-25",
-                                    "coa" : [11]
-                                },{
-                                    "name": "Heinrich, „der Grausame“",
-                                    "title" : "Herzogssohn von Österreich",
-                                    "born": 1208,
-                                    "bornGuessed" : true,
-                                    "died": 1227,
-                                    "diedGuessed" : true,
-                                    "gender": "man",
-                                    "id" : 20,
-                                    "father" : 15,
-                                    "desc" : "Heinrich, der zweitgeborene Sohn Leopolds VI. und Theodora Angela, trat nach dem frühen Tod seines Bruders Leopold in der Erbfolge an dessen Stelle. Im Jahre 1225 heiratete er in Nürnberg Agnes, die Tochter von Hermann I., Landgraf von Thüringen. Das Medaillon zeigt ihn zu Pferd bei der Belagerung von Hainburg, als er sich gegen seinen Vater aufgelehnt hatte, sowie die Vertreibung seiner Mutter aus der Residenz in Hainburg. Mit seinem Vater versöhnte er sich wieder und starb auf einer gemeinsamen Reise im Jahre 1227/1228 in Schwaben.",
-                                    "descen": "Henry, the secondborn son of Leopold VI and Theodora Angela became claimant to the Margraviate after the early death of his older brother Leopold. In 1225 in Nuremberg he married Agnes, the daughter of Hermann I, Landgrave of Thuringia. The medallion depicts him on horseback at the siege of Hainburg. He rebelled against his father and exiled his mother from the residence in Hainburg. The dispute with his father was later reconciled. Henry died on a journey with his father in 1227 in Swabia.",
-                                    "img": "KNB_BST-26",
-                                    "coa" : [11]
-                                },{
-                                    "name": "Margarete von Österreich",
+                                    "name": "Margarete von Österreich (64)",
                                     "title" : "röm. dt. Königin, danach Königin von Böhmen",
                                     "born": 1209,
                                     "bornGuessed" : true,
@@ -263,7 +236,49 @@
                                     "img" : "KNB_BST-F-64",
                                     "coa" : [17]
                                 },{
-                                    "name": "Friedrich II., „der Streitbare“",
+                                    "name": "Agnes von Österreich (65)",
+                                    "title" : "Herzogin von Sachsen-Wittenberg",
+                                    "born": 1206,
+                                    "bornGuessed" : true,
+                                    "died": 1226,
+                                    "diedGuessed" : false,
+                                    "gender": "woman",
+                                    "id" : 18,
+                                    "father" : 15,
+                                    "desc" : "Agnes, eie vermutlich älteste Tochter von Herzog Leopold VI. und Theodora Angela, war mit Albrecht I., Herzog von Sachsen-Wittenberg († 1261) vermählt. Das Hochzeitsfest im Jahre 1222 am alten Herzogshof von Wien wird als ein prächtiges Fest beschrieben, an dem 5000 Ritter teilgenommen haben sollen. Sie gebar drei Kinder, bis sie im Jahre 1226 den Tod erlitt.",
+                                    "descen": "Agnes was probably the oldest daughter of Duke Leopold VI and Theodora Angela. She was married to Albrecht I, Duke of Saxony-Wittenberg († 1261). The wedding took place in 1222 at the old ducal court of Vienna and was described as a splendid festivity. 5000 knights are said to have been part of it. She gave birth to three children and died in 1226.",
+                                    "img" : "KNB_BST-F-65",
+                                    "coa" : [11, 18]
+                                },{
+                                    "name": "Leopold, 'das Kind' (25)",
+                                    "title" : "Herzogssohn von Österreich",
+                                    "born": 1207,
+                                    "bornGuessed" : true,
+                                    "died": 1216,
+                                    "diedGuessed" : false,
+                                    "gender": "man",
+                                    "id" : 19,
+                                    "father" : 15,
+                                    "desc" : "Leopold soll der älteste Sohn Leopolds VI. und Theodora Angela gewesen sein. Er wuchs in Klosterneuburg, dem Herrschaftssitz seines Vaters  auf und wurde dort unterrichtet. Mit neun Jahren starb er als er versuchte einen Baum zu erklettern und dabei abstürzte. Das Medaillon zeigt Leopold links neben einem seiner Lehrer. ",
+                                    "descen": "Leopold is said to have ben the eldest son of Leopold VI and Theodora Angela. He grew up in Klosterneuburg, at his father's residence and was taught there. He died at the age of nine when he fell off a tree. The medallion depicts Leopold next to his teachers on the left side.",
+                                    "img": "KNB_BST-25",
+                                    "coa" : [11]
+                                },{
+                                    "name": "Heinrich, 'der Grausame' (26)",
+                                    "title" : "Herzogssohn von Österreich",
+                                    "born": 1208,
+                                    "bornGuessed" : true,
+                                    "died": 1227,
+                                    "diedGuessed" : true,
+                                    "gender": "man",
+                                    "id" : 20,
+                                    "father" : 15,
+                                    "desc" : "Heinrich, der zweitgeborene Sohn Leopolds VI. und Theodora Angela, trat nach dem frühen Tod seines Bruders Leopold in der Erbfolge an dessen Stelle. Im Jahre 1225 heiratete er in Nürnberg Agnes, die Tochter von Hermann I., Landgraf von Thüringen. Das Medaillon zeigt ihn zu Pferd bei der Belagerung von Hainburg, als er sich gegen seinen Vater aufgelehnt hatte, sowie die Vertreibung seiner Mutter aus der Residenz in Hainburg. Mit seinem Vater versöhnte er sich wieder und starb auf einer gemeinsamen Reise im Jahre 1227/1228 in Schwaben.",
+                                    "descen": "Henry, the secondborn son of Leopold VI and Theodora Angela became claimant to the Margraviate after the early death of his older brother Leopold. In 1225 in Nuremberg he married Agnes, the daughter of Hermann I, Landgrave of Thuringia. The medallion depicts him on horseback at the siege of Hainburg. He rebelled against his father and exiled his mother from the residence in Hainburg. The dispute with his father was later reconciled. Henry died on a journey with his father in 1227 in Swabia.",
+                                    "img": "KNB_BST-26",
+                                    "coa" : [11]
+                                },{
+                                    "name": "Friedrich II., 'der Streitbare' (27)",
                                     "title" : "Herzog von Österreich und Steiermark, Herr von Krain",
                                     "born": 1210,
                                     "bornGuessed" : true,
@@ -279,7 +294,7 @@
                                     "coa" : [19],
                                     "marriages" : [{
                                         "spouse" : {
-                                            "name" : "Eudokia Laskarina (?)",
+                                            "name" : "Eudokia Laskarina (?) (73l)",
                                             "title" : "Herzogin von Österreich und Steiermark",
                                             "gender" : "woman",
                                             "born" : 1210,
@@ -288,18 +303,16 @@
                                             "diedGuessed" : true,
                                             "marriage": 1226,
                                             "marriageGuessed": true,
-                                            "divorce": 1228,
-                                            "divorceGuessed": true,
                                             "id" : 24,
-                                            "desc" : "Der drittgeborene Sohn Leopolds VI. und Theodora Angela folgte seinem Vater nach dessen Tod im Jahre 1230 als Herzog von Österreich und Steiermark nach. Nach einer kinderlosen ersten Ehe mit einer namentlich nicht bekannten Frau (vielleicht Eudokia Laskarina aus Byzanz?) die bald annulliert wurde, heiratete er in zweiter Ehe Agnes von Andechs-Meranien, womit ein Gebietszuwachs einherging. Die Herrschaft Krain ging so in den babenbergischen Einflussbereich über. Das Medaillon zeigt ihn bei der Schlacht an der Leitha, die 1246 stattfand. Friedrich II. fand damals den Tod, das Geschlecht der Babenberger starb damit im Mannesstamm aus. Seine sterblichen Überreste sind in Stift Heiligenkreuz in einem Hochgrab bestattet.",
-                                            "descen": "The thirdborn son of Leopold VI and Theodora Angela became Duke of Austria and Styria after his father's death in 1230 He first married a woman not known by name (Eudokia Laskarina from Byzantine?) and had no children with her. The marriage was soon annulled. He then married Agnes of Andechs-Merania, which resulted in an increase of the territory ruled by Frederick II. The medallion depicts him at the Battle of the Leitha river, which took place in 1246. He died in this battle and left no children. His remains are buried at Heiligenkreuz Abbey.",
+                                            "desc" : "Die erste Frau von Friedrich II. ist möglicherweise mit Eudokia Laskarina zu identifizieren, einer byzantinischen Prinzessin. Allerdings ist die Quellenlage in dieser Frage nicht eindeutig. Jedenfalls hatte Friedrich II. keine Frau, die Gertraud hieß, wie am Stammbaum angegeben. Hier handelte es sich um eine Verwechslung Sunthayms.",
+                                            "descen": "The first wife of Frederick II may be identified with Eudokia Laskarina, a Byzantine princess. However, the sources are not clear about it. She had no children with Frederick II. At any rate, Frederick II had no wife named Gertrude, as indicated on the family tree.",
                                             "img": "KNB_BST-F-73+72",
                                             "coa" : [26],
                                             "husband" : 23
                                         }
                                     },{
                                         "spouse" : {
-                                            "name" : "Agnes von  Andechs-Meranien",
+                                            "name" : "Agnes von  Andechs-Meranien (72r)",
                                             "title" : "Herzogin von Österreich und Steiermark, Herrin von Krain, spätere Herzogin von Kärnten",
                                             "gender" : "woman",
                                             "born": 1215,
@@ -317,7 +330,7 @@
                                         }
                                     }]
                                 },{
-                                    "name": "Konstanze",
+                                    "name": "Konstanze (66)",
                                     "title" : "Tochter Leopold VI.",
                                     "born": 1211,
                                     "bornGuessed" : true,
@@ -331,7 +344,7 @@
                                     "img" : "KNB_BST-F-66",
                                     "coa" : [11, 20]
                                 },{
-                                    "name": "Gertrud von Österreich",
+                                    "name": "Gertrud von Österreich (67)",
                                     "title" : "Landgräfin von Thüringen",
                                     "born" : 1212,
                                     "bornGuessed" : true,
@@ -347,7 +360,7 @@
                                 }]
                             }]
                         },{
-                            "name": "Agnes von Österreich",
+                            "name": "Agnes von Österreich (61V)",
                             "title" : "Herzogstochter",
                             "gender": "woman",
                             "born": 1177,
@@ -357,14 +370,14 @@
                             "id" : 28,
                             "father" : 12,
                             "desc" : "Auf die Geburt von Friedrich I. und Leopold VI. folgte wohl jene von Agnes als Tochter von Leopold V. und Helena. Ihr Tod ist in einem Klosterneuburger Nekrologeintrag festgehalten. Sie wird wohl früh verstorben sein.",
-                            "descen": "Agnes was probably the thirdborn child of Leopold V and Helena of Hungary. She may died at an early age.",
+                            "descen": "Agnes was probably the thirdborn child of Leopold V and Helena of Hungary. She may died at an early age. ",
                             "img" : "KNB_BST-F-61",
                             "coa" : [11, 14]
                         }]
                     }]
                 },{
-                    "name": "Heinrich, „der Ältere“",
-                    "title" : "„Herzog von Mödling“",
+                    "name": "Heinrich, 'der Ältere' (21)",
+                    "title" : "'Herzog von Mödling'",
                     "born": 1158,
                     "bornGuessed" : true,
                     "died": 1223,
@@ -372,14 +385,14 @@
                     "gender": "man",
                     "id" : 29,
                     "father" : 7,
-                    "desc" : "Heinrich „der Ältere“ war der jüngere Sohn von Heinrich II. Jasomirgott. Sein Bruder Leopold V. folgte dem Vater als Herzog nach, während Heinrich mit verschiedenen Lehen und Rechten im Raum Mödling ausgestattet war. Auf der Burg Mödling hatte Heinrich seinen Sitz. Obwohl Mödling kein Herzogtum war, nannte sich Heinrich ‚Herzog von Mödling‘. Im Medaillon ist Heinrich zu Pferd bei einer Schlacht gegen Heere der Böhmen, Ungarn, Mähren und Sachsen zu sehen.",
-                    "descen": "Henry, „the Elder“ was the younger son of Henry II ‚Jasomirgott‘. His brother Leopold V became duke, while Henry was granted various fiefs and rights in the area around Mödling. Henry had his residence at Mödling castle. Although Mödling was not a duchy, Henry was called Duke of Mödling. In the medallion he is depicted on horseback in a battle against knights of Bohemia, Hungary, Moravia and Saxony.",
+                    "desc" : "Heinrich ‚der Ältere‘ war der jüngere Sohn von Heinrich II. Jasomirgott. Sein Bruder Leopold V. folgte dem Vater als Herzog nach, während Heinrich mit verschiedenen Lehen und Rechten im Raum Mödling ausgestattet war. Auf der Burg Mödling hatte Heinrich seinen Sitz. Obwohl Mödling kein Herzogtum war, nannte sich Heinrich ‚Herzog von Mödling‘. Im Medaillon ist Heinrich zu Pferd bei einer Schlacht gegen Heere der Böhmen, Ungarn, Mähren und Sachsen zu sehen.",
+                    "descen": "Henry, ‚the Elder' was the younger son of Henry II ‚Jasomirgott‘. His brother Leopold V became duke, while Henry was granted various fiefs and rights in the area around Mödling. Henry had his residence at Mödling castle. Although Mödling was not a duchy, Henry was called Duke of Mödling. In the medallion he is depicted on horseback in a battle against knights of Bohemia, Hungary, Moravia and Saxony.",
                     "img": "KNB_BST-21",
                     "coa" : [10]
                 }]
             }]
         },{
-            "name": "Leopold IV., „der Milde“",
+            "name": "Leopold IV., 'der Milde' (15)",
             "title" : "Markgraf von Österreich, Herzog von Bayern",
             "born": 1108,
             "bornGuessed" : true,
@@ -393,7 +406,21 @@
             "img" : "KNB_BST-15",
             "coa" : [27]
         },{
-            "name": "Bertha von Österreich",
+            "name": "Ernst, 'der Jüngling' (15)",
+            "title" : "Markgrafensohn",
+            "born": 1111,
+            "bornGuessed" : true,
+            "died": 1141,
+            "diedGuessed" : false,
+            "gender": "man",
+            "father" : 1,
+            "id" : 41,
+            "desc" : "Ernst gilt als der vierte Sohn von Leopold III. und Agnes von Waiblingen. Er war nicht verheiratet und starb ohne Kinder und lag zunächst in Klosterneuburg begraben. Seine Gebeine wurden jedoch nach Stift Heiligenkreuz überführt. Das Medaillon zeigt ihn und seine Jagdgesellen auf einem weißen Ross. Im Text, der dem Babenberger-Stammbaum zugrunde liegt, steht geschrieben, dass Ernst ‚mit Jagen vnd aller waidmanschaft‘ gerne seine Zeit verbrachte.",
+            "descen" : "Ernest is said to have been the fourth son of Leopold III and Agnes of Waiblingen. He was not married, had no children and was initially buried at Klosterneuburg Monastery. His bones, however, were later transferred to Heiligenkreuz Abbey. The medallion depicts him on a white horse, accompanied by his hunting companions. In the text that underlies the Babenberg family tree, it is written that Ernest was an enthusiastic hunter.", 
+            "img" : "X",
+            "coa" : [1]
+        },{
+            "name": "Bertha von Österreich (45)",
             "title" : "Burggräfin von Regensburg",
             "born": 1109,
             "bornGuessed" : true,
@@ -402,12 +429,12 @@
             "gender": "woman",
             "father" : 1, 
             "id" : 34,
-            "desc" : "Bertha gilt als die erstgeborene Tochter von Leopold III. und Agnes von Waiblingen. Sie heiratete Heinrich III., einen Burggrafen von Regensburg († um 1150). Mit ihm hatte sie zwei oder drei Kinder. Bertha starb vermutlich in Regensburg und wurde nach einer Überlieferung des 18. Jahrhunderts im dortigen Schottenkloster, St. Jakob bestattet.",
+            "desc" : "Bertha gilt als die erstgeborene Tochter von Leopold III. und Agnes von Waiblingen. Sie heiratete Heinrich III., einen Burggrafen von Regensburg († um 1150). Mit ihm hatte sie zwei oder drei Kinder. Bertha starb vermutlich in Regensburg und wurde nach einer Überlieferung des 18. Jahrhunderts im dortigen Schottenkloster, St. Jakob bestattet. ",
             "descen": "Bertha is said to have been the firstborn daughter of Leopold III and Agnes of Waiblingen. She was married to Henry III, a burgrave of Regensburg († 1150), with him she had two or three children. Bertha probably died in Regensburg and was buried at the local Scottish monastery, St. Jacob according to a tradition of the 18th century.",
             "img" : "KNB_BST-F-45",
             "coa" : [1, 29]
         },{
-            "name": "Agnes von Österreich",
+            "name": "Agnes von Österreich(46)",
             "title" : "Herzogin von Polen-Schlesien",
             "born": 1110,
             "bornGuessed" : true,
@@ -421,21 +448,7 @@
             "img" : "KNB_BST-F-46",
             "coa" : [1, 30]
         },{
-            "name": "Ernst, „der Jüngling“",
-            "title" : "Markgrafensohn",
-            "born": 1111,
-            "bornGuessed" : true,
-            "died": 1141,
-            "diedGuessed" : false,
-            "gender": "man",
-            "father" : 1,
-            "id" : 41,
-            "desc" : "Ernst gilt als der vierte Sohn von Leopold III. und Agnes von Waiblingen. Er war nicht verheiratet und starb ohne Kinder und lag zunächst in Klosterneuburg begraben. Seine Gebeine wurden jedoch nach Stift Heiligenkreuz überführt. Das Medaillon zeigt ihn und seine Jagdgesellen auf einem weißen Ross. Im Text, der dem Babenberger-Stammbaum zugrunde liegt, steht geschrieben, dass Ernst ‚mit Jagen vnd aller waidmanschaft‘ gerne seine Zeit verbrachte.",
-            "descen" : "Ernest is said to have been the fourth son of Leopold III and Agnes of Waiblingen. He was not married, had no children and was initially buried at Klosterneuburg Monastery. His bones, however, were later transferred to Heiligenkreuz Abbey. The medallion depicts him on a white horse, accompanied by his hunting companions. In the text that underlies the Babenberg family tree, it is written that Ernest was an enthusiastic hunter.",
-            "img" : "KNB_BST-18",
-            "coa" : [1]
-        },{
-            "name": "Otto",
+            "name": "Otto (16)",
             "title" : "Bischof von Freising",
             "born": 1112,
             "bornGuessed" : true,
@@ -449,22 +462,8 @@
             "img" : "KNB_BST-16",
             "coa" : [31]
         },{
-            "name": "Jung verstorbene Töchter",
-               "title" : "Markgrafentöchter",
-               "born": 1113,
-               "bornGuessed" : true,
-               "died": 1125,
-               "diedGuessed" : true,
-               "gender": "woman",
-               "father" : 1, 
-               "id" : 42,
-               "desc" : "Nach der Klosterneuburger Tradition heißt es, dass Leopold III. und Agnes von Waiblingen unter den Kindern fünf Töchter und zwei Söhne jung verstarben. Ob und wenn, in welchem Jahr sie geboren wurden oder wie sie genannt wurden, lässt sich heute nicht mehr klären.",
-               "descen": "According to the Klosterneuburg tradition, it is said that among the children of Leopold III and Agnes of Waiblingen five daughters and two sons died at young age. We do not know their names, nor their year of birth.",
-               "img" : "nn-female",
-               "coa" : []
-        },{
-            "name": "Konrad",
-            "title" : "Erzbischof von Salzburg",
+            "name": "Konrad (17)",
+            "title" : "Bischof von Passau, Erzbischof von Salzburg",
             "born": 1115,
             "bornGuessed" : true,
             "died": 1168,
@@ -477,8 +476,8 @@
             "img" : "KNB_BST-17",
             "coa" : [32]
         },{
-            "name": "Elisabeth von Österreich",
-            "title" : "",
+            "name": "Elisabeth von Österreich (48)",
+            "title" : "Gräfin von Winzenburg",
             "born": 1116,
             "bornGuessed" : true,
             "died": 1143,
@@ -487,12 +486,26 @@
             "father" : 1, 
             "id" : 38,
             "desc" : "Elisabeth war eine Tochter von Leopold III. und Agnes von Waiblingen. Sie war mit Graf Hermann II. von Winzenburg († 1152) verheiratet. Ihr Mann galt als ein besonders reicher Fürst von Sachsen. Die Ehe wurde vermutlich annulliert. Es ist nicht bekannt, wann und wo Elisabeth verstorben ist, das Todesjahr 1143 ist nicht gesichert.",
-            "descen": "Elisabeth was a daughter of Leopold III and Agnes of Waiblingen. She was married to Hermann II, Count of Winzenburg († 1152). Her husband was regarded as a particularly rich count of Saxony. The marriage was probably annulled. It is not known when and where Elisabeth died. 1143, the common stated year of her death is not confirmed.",
+            "descen": "Elisabeth was a daughter of Leopold III and Agnes of Waiblingen. She was married to Hermann II, Count of Winzenburg († 1152). Her husband was regarded as a particularly rich count of Saxony. The marriage was probably annulled. It is not known when and where Elisabeth died. 1143, the common stated year of her death is not confirmed. ",
             "img" : "KNB_BST-F-48",
             "coa" : [1, 33]
         },{
-            "name": "Judith von Österreich",
-            "title" : "",
+            "name": "Gertrud von Österreich(47)",
+            "title" : "Herzogin von Böhmen",
+            "born": 1118,
+            "bornGuessed" : true,
+            "died": 1150,
+            "diedGuessed" : false,
+            "gender": "woman",
+            "father" : 1, 
+            "id" : 39,
+            "desc" : "Gertrud war eine Tochter von Leopold III. und Agnes von Waiblingen. Sie war mit Vladislav II., Herzog von Böhmen († 1174) verheiratet und hatte mit ihm zwei Söhne und eine Tochter. Gertrud wurde vermutlich in ihrer Stiftung, dem Frauenkloster Doxan bestattet. Am Stammbaum ist sie mit einer Krone dargestellt, da ihr Gatte Vladislav II. zum König gekrönt wurde.",
+            "descen": "Gertrude was a daughter of Leopold III and Agnes of Waiblingen. She was married to Vladislav II, Duke of Bohemia († 1174), with him she had two sons and a daughter. Gertrud was probably buried at her foundation, the Doxan convent. On the family tree she is depicted with a crown, as her husband Vladislav II was king of bohemia. ",
+            "img" : "KNB_BST-F-47",
+            "coa" : [1, 28]
+        },{
+            "name": "Judith von Österreich (49)",
+            "title" : "Markgräfin von Montferrat",
             "born": 1117,
             "bornGuessed" : true,
             "died": 1191,
@@ -505,19 +518,19 @@
             "img" : "KNB_BST-F-49",
             "coa" : [1, 34]
         },{
-            "name": "Gertrud von Österreich",
-            "title" : "Herzogin von Böhmen",
-            "born": 1118,
+         "name": "Jung verstorbene Kinder",
+            "title" : "Markgrafentöchter und -söhne",
+            "born": 1113,
             "bornGuessed" : true,
-            "died": 1150,
-            "diedGuessed" : false,
+            "died": 1125,
+            "diedGuessed" : true,
             "gender": "woman",
             "father" : 1, 
-            "id" : 39,
-            "desc" : "Gertrud war eine Tochter von Leopold III. und Agnes von Waiblingen. Sie war mit Vladislav II., Herzog von Böhmen († 1174) verheiratet und hatte mit ihm zwei Söhne und eine Tochter. Gertrud wurde vermutlich in ihrer Stiftung, dem Frauenkloster Doxan bestattet. Am Stammbaum ist sie mit einer Krone dargestellt, da ihr Gatte Vladislav II. zum König gekrönt wurde.",
-            "descen": "Gertrude was a daughter of Leopold III and Agnes of Waiblingen. She was married to Vladislav II, Duke of Bohemia († 1174), with him she had two sons and a daughter. Gertrud was probably buried at her foundation, the Doxan convent. On the family tree she is depicted with a crown, as her husband Vladislav II was king of bohemia.",
-            "img" : "KNB_BST-F-47",
-            "coa" : [1, 28]
-        }]
+            "id" : 42,
+            "desc" : "Nach der Klosterneuburger Tradition heißt es, dass Leopold III. und Agnes von Waiblingen unter den Kindern fünf Töchter und zwei Söhne jung verstarben. Ob und wenn, in welchem Jahr sie geboren wurden oder wie sie genannt wurden, lässt sich heute nicht mehr klären.",
+            "descen": "According to the Klosterneuburg tradition, it is said that among the children of Leopold III and Agnes of Waiblingen five daughters and two sons died at young age. We do not know their names, nor their year of birth.", 
+            "img" : "X",
+            "coa" : [1]
+    }]
     }]
 }]

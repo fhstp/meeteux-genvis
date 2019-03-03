@@ -265,6 +265,18 @@ path.woman{
     width: 80%;
 }
 
+#image{
+    padding-top: 30px;
+    padding-left: 30px;
+}
+
+#image .circle{
+    position: relative;
+    top: -190px;
+    width: 100%;
+    left: -31px;
+}
+
 .coa{
     width: 20%;
     display: table-cell;
