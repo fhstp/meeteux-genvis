@@ -863,7 +863,7 @@ socket.on('connectTouchResult', function (data) {
         infoDesc.append('p').text(desc)
 
         // Shows cirular image
-        infoImage.select('img').remove()
+        infoImage.selectAll('*').remove()
         infoImage.append('img').attr('src', 'img/' + person.img + '.png')
         infoImage.append('img')
           .attr('class', 'circle')
