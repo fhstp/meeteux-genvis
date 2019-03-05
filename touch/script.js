@@ -878,41 +878,43 @@ socket.on('connectTouchResult', function (data) {
 
         // Shows coat of arms
         infoCoat.selectAll('div.coa').remove()
-        person.coa.forEach((coaItem, index) => {
-          var coatOfArmsItem
-          coatOfArms.forEach(coa => {
-            if (coa.id === coaItem) {
-              coatOfArmsItem = coa
+        if (person.coa.length > 0) {
+          person.coa.forEach((coaItem, index) => {
+            var coatOfArmsItem
+            coatOfArms.forEach(coa => {
+              if (coa.id === coaItem) {
+                coatOfArmsItem = coa
+              }
+            })
+
+            var div = infoCoat.append('div')
+            div.append('img')
+              .attr('src', 'img/coatofarms/' + coatOfArmsItem.img + '.png')
+              .attr('class', 'coa' + coatOfArmsItem.id)
+              .on('click', function (d) { if (clickTrue) coaTouched(d, this) }) // comment when running on touch display
+              .on('touchstart', coaTouchedStart)
+              .on('touchend', coaTouched)
+
+            div.attr('class', 'coa')
+            // div.append('h2').text(coatOfArmsItem.name)
+
+            // add empty divs to get 4 divs
+            if (person.coa.length === 1 && index === 0) {
+              infoCoat.append('div').attr('class', 'coa')
+              infoCoat.append('div').attr('class', 'coa')
+              infoCoat.append('div').attr('class', 'coa')
+            }
+
+            if (person.coa.length === 2 && index === 1) {
+              infoCoat.append('div').attr('class', 'coa')
+              infoCoat.append('div').attr('class', 'coa')
+            }
+
+            if (person.coa.length === 3 && index === 2) {
+              infoCoat.append('div').attr('class', 'coa')
             }
           })
-
-          var div = infoCoat.append('div')
-          div.append('img')
-            .attr('src', 'img/coatofarms/' + coatOfArmsItem.img + '.png')
-            .attr('class', 'coa' + coatOfArmsItem.id)
-            .on('click', function (d) { if (clickTrue) coaTouched(d, this) }) // comment when running on touch display
-            .on('touchstart', coaTouchedStart)
-            .on('touchend', coaTouched)
-
-          div.attr('class', 'coa')
-          // div.append('h2').text(coatOfArmsItem.name)
-
-          // add empty divs to get 4 divs
-          if (person.coa.length === 1 && index === 0) {
-            infoCoat.append('div').attr('class', 'coa')
-            infoCoat.append('div').attr('class', 'coa')
-            infoCoat.append('div').attr('class', 'coa')
-          }
-
-          if (person.coa.length === 2 && index === 1) {
-            infoCoat.append('div').attr('class', 'coa')
-            infoCoat.append('div').attr('class', 'coa')
-          }
-
-          if (person.coa.length === 3 && index === 2) {
-            infoCoat.append('div').attr('class', 'coa')
-          }
-        })
+        }
       }
 
       var coaOverlay = d3.select('#coaOverlay')
@@ -1025,8 +1027,8 @@ socket.on('connectTouchResult', function (data) {
         switch (language) {
           case 'DE':
             welcome.text('Willkommen')
-            coaTitle.text('Zugehörige Wappen')
-            coaDesc.text('Deutscher Text zu COA')
+            coaTitle.text('Wappen am Babenberger-Stammbaum')
+            coaDesc.text('Am Babenberger-Stammbaum sind den Familienmitgliedern Wappen zugeordnet, die Herkunft, Status und/oder den Anspruch auf Gebiete repräsentieren.')
             languageDiv.append('p').text('DE')
             d3.selectAll('p.de').style('display', 'block')
             d3.selectAll('p.en').style('display', 'none')
@@ -1034,7 +1036,7 @@ socket.on('connectTouchResult', function (data) {
 
           default:
             welcome.text('Welcome')
-            coaTitle.text('Associated Coats of Arms')
+            coaTitle.text('The coat of arms depicted on the Babenberg family tree represent origin, status of the family members and/or claims of certain territories.')
             coaDesc.text('English text for COA')
             languageDiv.append('p').text('EN')
             d3.selectAll('p.en').style('display', 'block')

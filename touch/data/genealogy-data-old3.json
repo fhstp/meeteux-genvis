@@ -10,7 +10,7 @@
     "died": 1136,
     "diedGuessed" : false,
     "gender": "man",
-    "desc" : "Leopold III. war der Sohn Leopolds II., des Markgrafen von Österreich. Er war mit Agnes von Waiblingen, Tochter des Salier-Kaisers Heinrich IV., verheiratet. Mit ihr hatte er elf namentlich bekannte Kinder. Fünf weitere Töchter und zwei Söhne sollen im jungen Alter verstorben sein. Leopold folgte seinem Vater als Markgraf von Österreich nach und regierte das Land von 1095 bis zu seinem Tod im Jahr 1136. Es entwickelte sich eine Wallfahrt am Grab des frommen Markgrafen. 1485 wurde er in Rom heiliggesprochen. Das Rundbild zeigt den Heiligen und zwei seiner Söhne vor seinen Gründungen Stift Klein-Mariazell, Stift Klosterneuburg und Stift Heiligenkreuz.",
+    "desc" : "Leopold III. war der Sohn Leopolds II., des Markgrafen von Österreich. Er war mit Agnes von Waiblingen, Tochter des Salier-Kaisers Heinrich IV., verheiratet. Mit ihr hatte er elf namentlich bekannte Kinder. Fünf weitere Töchter und zwei Söhne sollen im jungen Alter verstorben sein. Leopold folgte seinem Vater als Markgraf von Österreich nach und regierte das Land von 1095 bis zu seinem Tod im Jahr 1136. Es entwickelte sich eine Wallfahrt am Grab des frommen Markgrafen. 1485 wurde er in Rom heiliggesprochen. Das Rundbild zeigt den Heiligen und zwei seiner Söhne vor seinen Gründungen Klein-Mariazell, Stift Klosterneuburg und Stift Heiligenkreuz.",
     "descen" : "Leopold III was the son of Leopold II and was married to Agnes of Waiblingen, daughter of the Salien Emperor Henry IV. We know the names of 11 of their children, another five daughters and two sons are said to have not reached adulthood. Leopold succeeded his father as Margrave of Austria in 1095. He died in 1136 and was buried at Klosterneuburg Monastery. Pilgrims visited the tomb of the pious Margrave. In 1485 he was canonized in Rome. The medallion depicts him together with two sons in front of his three foundations, Klein-Mariazell Monastery, Klosterneuburg Monastery and Heiligenkreuz Abbey.",
     "img" : "KNB_BST-13",
     "coa" : [1],
@@ -49,10 +49,10 @@
             "desc" : "Nach neueren Erkenntnissen war Adalbert der erstgeborene Sohn Leopolds III. aus der Ehe mit Agnes von Waiblingen. Er verwaltete die Vogteien Klosterneuburgs. In erster Ehe heiratete er Adelheid und in zweiter Ehe Sophie (Hedwig?) von Ungarn. Adalbert hatte keine Kinder. Das Rundbild zeigt ihn zusammen mit seinem Schwager, dem ungarischen König Béla II. († 1141), im Kampf gegen einen ungarischen Aufständischen.",
             "descen" : "According to recent findings, Adalbert was the first-born son of Leopold III and Agnes of Waiblingen. He was Reeve of Klosterneuburg Monastery. He first married Adelheid and later on Sophia (Hedwig?) of Hungary, but he had no children. The medallion depicts him together with his brother-in-law, the Hungarian King Béla II († 1141) in the fight against a Hungarian insurgent.",
             "img" : "KNB_BST-14",
-            "coa" : [41]
+            "coa" : [1]
         },{
             "name": "Heinrich II. Jasomirgott",
-            "nameen": "Henry II Jasomirgott",
+            "nameen": "Henry II 'Jasomirgott'",
             "title" : "Herzog von Österreich",
             "titleen": "Duke of Austria",
             "born": 1107,
@@ -101,6 +101,7 @@
                     "id" : 9,
                     "desc" : "Richardis von Österreich entstammt der kurzen Ehe von Heinrich II. Jasomirgott und Gertrud von Süpplingenburg. Sie war mit Heinrich von Steffling († um 1190) verheiratet und hatte einen Sohn mit ihm. Sie hielt sich am Ende ihres Lebens in Waltersdorf auf und ist im Stift Heiligenkreuz begraben. Am Babenberger-Stammbaum ist sie nicht dargestellt, da ihre zur Zeit der Erstellung der Babenberger-Genealogie noch niemand von ihr wusste.",
                     "descen": "Richardis of Austria was the daughter of Henry II Jasomirgott and Gertrude of Süpplingenburg. She was married to Henry of Steffling († 1190) and had a son with him. She spent the last of her years in Waltersdorf and was eventually buried at Heiligenkreuz Abbey. She is not represented on the Babenberg family tree because at the time of its creation, nobody knew of her existence.",
+                    "coa" : [],
                     "img" : "nn-female"
                 }]
             },{
@@ -454,7 +455,7 @@
             "desc" : "Bertha gilt als die erstgeborene Tochter Leopolds III. und Agnes‘ von Waiblingen. Sie heiratete Heinrich III., einen Burggrafen von Regensburg († um 1150). Mit ihm hatte sie zwei oder drei Kinder. Bertha starb vermutlich in Regensburg und wurde nach einer Überlieferung des 18. Jahrhunderts im dortigen Schottenkloster, St. Jakob, bestattet. ",
             "descen": "Bertha is said to have been the first-born daughter of Leopold III and Agnes of Waiblingen. She was married to Henry III, a burgrave of Regensburg († 1150), with whom she had two or three children. Bertha probably died in Regensburg and was buried at the local Scottish anney, St. Jacob, according to a tradition of the 18th century.",
             "img" : "KNB_BST-F-45",
-            "coa" : [43, 29]
+            "coa" : [1, 29]
         },{
             "name": "Agnes von Österreich",
             "nameen": "Agnes of Austria",
@@ -470,7 +471,7 @@
             "desc" : "Agnes gilt als die zweitälteste Tochter von Leopolds III. und Agnes‘ von Waiblingen. Sie war mit Władysław II., Herzog von Schlesien-Polen († 1159), vermählt. Die Herzogin gebar ihm vier Söhne und eine Tochter. Sie starb vermutlich nicht lange nach ihrem Mann und ist im Kloster Pforte an der Saale bestattet.",
             "descen": "Agnes is said to have been the second oldest daughter of Leopold III and Agnes of Waiblingen. She was married to Władysław II, Duke of Silesia-Poland († 1159). They had four sons and a daughter. She probably did not die long after her husband and was buried at Pforta Monastery, in nowadays Saxony-Anhalt.",
             "img" : "KNB_BST-F-46",
-            "coa" : [43, 30]
+            "coa" : [1, 30]
         },{
             "name": "Ernst der Jüngling",
             "nameen": "Ernest 'the youth'",
@@ -486,7 +487,7 @@
             "desc" : "Ernst gilt als der vierte Sohn Leopolds III. und Agnes‘ von Waiblingen. Er war nicht verheiratet, starb ohne Kinder und lag zunächst in Klosterneuburg begraben. Seine Gebeine wurden jedoch nach Stift Heiligenkreuz überführt. Das Rundbild zeigt ihn auf einem weißen Ross, von Jagdgesellen begleitet. Im Text, der dem Babenberger-Stammbaum zugrunde liegt, steht geschrieben, dass Ernst „mit Jagen vnd aller waidmanschaft“ gerne seine Zeit verbrachte.",
             "descen" : "Ernest is said to have been the fourth son of Leopold III and Agnes of Waiblingen. He was not married, had no children and was initially buried at Klosterneuburg Monastery. His bones, however, were later transferred to Heiligenkreuz Abbey. The medallion depicts him on a white horse, accompanied by his hunting companions. In the text that underlies the Babenberg family tree it is written that Ernest was an enthusiastic hunter.",
             "img" : "KNB_BST-18",
-            "coa" : [41]
+            "coa" : [1]
         },{
             "name": "Otto von Freising",
             "nameen": "Otto of Freising",
@@ -518,7 +519,7 @@
                "desc" : "Nach der Klosterneuburger Tradition heißt es, dass fünf der Töchter und zwei der Söhne Leopolds III. und Agnes‘ von Waiblingen jung verstarben. Ob und in welchem Jahr sie geboren wurden oder wie sie genannt wurden, lässt sich heute nicht mehr klären.",
                "descen": "According to the Klosterneuburg tradition, it is said that among the children of Leopold III and Agnes of Waiblingen five daughters and two sons died at an early age. We do not know their names, nor their year of birth.",
                "img" : "nn-female",
-               "coa" : [44]
+               "coa" : [1]
         },{
             "name": "Konrad II.",
             "nameen": "Konrad II",
@@ -550,7 +551,7 @@
             "desc" : "Elisabeth war eine Tochter Leopolds III. und Agnes‘ von Waiblingen. Sie war mit Graf Hermann II. von Winzenburg († 1152) verheiratet. Ihr Mann galt als ein besonders reicher Fürst von Sachsen. Die Ehe wurde vermutlich annulliert. Es ist nicht bekannt, wann und wo Elisabeth verstorben ist, das Todesjahr 1143 ist nicht gesichert.",
             "descen": "Elisabeth was a daughter of Leopold III and Agnes of Waiblingen. She was married to Hermann II, Count of Winzenburg († 1152). Her husband was regarded as a particularly rich count of Saxony. The marriage was probably annulled. It is not known when and where Elisabeth died. 1143, the commonly stated year of her death, is unconfirmed.",
             "img" : "KNB_BST-F-48",
-            "coa" : [43, 33]
+            "coa" : [1, 33]
         },{
             "name": "Judith von Österreich",
             "nameen": "Judith of Austria",
@@ -566,7 +567,7 @@
             "desc" : "Judith war eine Tochter Leopolds III. und Agnes‘ von Waiblingen. Sie war mit Markgraf Wilhelm V. von Montferrat († 1191) verheiratet und hatte fünf Söhne und zwei Töchter mit ihm. Vermutlich liegt sie im Kloster Santa Maria in Lucedio im heutigen Piemont begraben.",
             "descen": "Judith was a daughter of Leopold III and Agnes of Waiblingen. She was married to William V, Margrave of Montferrat († 1191), with whom she had five sons and two daughters. Judith was probably buried at the monastery of Santa Maria in Lucedio in today's Piedmont.",
             "img" : "KNB_BST-F-49",
-            "coa" : [43, 34]
+            "coa" : [1, 34]
         },{
             "name": "Gertrud von Österreich",
             "nameen": "Gertrude of Austria",
