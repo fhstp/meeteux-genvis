@@ -101,6 +101,7 @@ p, text{
 
 #helpOverlay{
     color: white;
+    background-color: rgba(0,0,0,0.7);
 }
 #helpOverlay p{
     font-size: 13pt;
