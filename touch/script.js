@@ -623,7 +623,7 @@ socket.on('connectTouchResult', function (data) {
         .append('text')
         .text(function (d) { return d.name })
         .attr('x', function (d) { return d.bornx + 10 })
-        .attr('y', function (d) { return d.y + 10 })
+        .attr('y', function (d) { return d.y + 5 })
         .attr('fill', 'white')
         .on('click', function (d, i) { if (clickTrue) touchend(d, i) }) // comment when running on touch display
         .on('touchstart', touchstart)
