@@ -5,6 +5,7 @@ body{
 
 h1, h2{
     font-family: "Vollkorn";
+    margin-top: 0;
 }
 
 p, text{
