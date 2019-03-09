@@ -1036,8 +1036,8 @@ socket.on('connectTouchResult', function (data) {
 
           default:
             welcome.text('Welcome')
-            coaTitle.text('Coat of arms on the Babenberg family tree')
-            coaDesc.text('The coat of arms depicted on the Babenberg family tree represent origin, status of the family members and/or claims of certain territories.')
+            coaTitle.text('Coats of arms on the Babenberg family tree')
+            coaDesc.text('The coats of arms depicted on the Babenberg family tree represent the origin and status of the family members and/or claims of certain territories.')
             languageDiv.append('p').text('EN')
             d3.selectAll('p.en').style('display', 'block')
             d3.selectAll('p.de').style('display', 'none')
