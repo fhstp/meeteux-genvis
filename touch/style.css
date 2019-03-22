@@ -492,5 +492,5 @@ button:active, button:hover{
 }
 .x.axis text{
     font-size: 10pt;
-    color: rgb(100,100,100);
+    fill: rgb(100,100,100);
 }

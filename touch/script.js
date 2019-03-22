@@ -71,7 +71,7 @@ socket.on('connectTouchResult', function (data) {
       var marriageCount = 1
 
       var strokeWidth = 40
-      var startY = strokeWidth + 30
+      var startY = strokeWidth + 40
       var marriageXDiff = strokeWidth
       var marriageYDiff = strokeWidth / 3
       var yDiff = 2.2 * strokeWidth
@@ -376,6 +376,22 @@ socket.on('connectTouchResult', function (data) {
       marriageWomanGuessedHighlightGradient.append('stop')
         .attr('class', 'stop-right')
         .attr('offset', '0.85')
+      var axisGradient = svgDefs.append('linearGradient')
+        .attr('id', 'axisGradient')
+        .attr('x1', '0%')
+        .attr('y1', '0%')
+        .attr('x2', '0%')
+        .attr('y2', '100%')
+      axisGradient.append('stop')
+        .attr('offset', '0%')
+        .attr('style', 'stop-color:rgb(255,255,255); stop-opacity:1')
+        axisGradient.append('stop')
+        .attr('offset', '50%')
+        .attr('style', 'stop-color:rgb(255,255,255); stop-opacity:1')
+      axisGradient.append('stop')
+        .attr('offset', '100%')
+        .attr('style', 'stop-color:rgb(255,255,255); stop-opacity:0')
+        
 
       var line = d3.line()
         .x(function (d, i) {
@@ -737,10 +753,18 @@ socket.on('connectTouchResult', function (data) {
       var axisGroup = svg.append('g')
         .attr('class', 'x axis')
         .attr('transform', 'translate(0,0)')
-        .call(d3.axisBottom(x)
+      
+      axisGroup.append('rect')
+        .attr('class', 'back')
+        .attr('fill', 'url(#axisGradient)')
+        .attr('width', svgWidth)
+        .attr('height', '60px')
+      
+      axisGroup.call(d3.axisBottom(x)
           .ticks(100)
           .tickFormat(d3.timeFormat('%Y'))
         )
+      
       d3.selectAll("g.x.axis g.tick line")
         .attr("y2", function(d){
         if ( d.getFullYear() % 10 === 0) // if it's an even multiple of 10% Vielfaches von 10
