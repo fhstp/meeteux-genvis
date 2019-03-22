@@ -1024,6 +1024,10 @@ socket.on('connectTouchResult', function (data) {
         coaDesc.selectAll('*').remove()
         var languageDiv = d3.select('#language')
         languageDiv.selectAll('*').remove()
+        var yesButton = d3.select('#logout-yes')
+        yesButton.selectAll('*').remove()
+        var noButton = d3.select('#logout-no')
+        noButton.selectAll('*').remove()
 
         switch (language) {
           case 'DE':
@@ -1033,6 +1037,10 @@ socket.on('connectTouchResult', function (data) {
             languageDiv.append('p').text('DE')
             d3.selectAll('p.de').style('display', 'block')
             d3.selectAll('p.en').style('display', 'none')
+            d3.selectAll('h1.de').style('display', 'block')
+            d3.selectAll('h1.en').style('display', 'none')
+            yesButton.text('Ja')
+            noButton.text('Nein')
             break
 
           default:
@@ -1042,6 +1050,10 @@ socket.on('connectTouchResult', function (data) {
             languageDiv.append('p').text('EN')
             d3.selectAll('p.en').style('display', 'block')
             d3.selectAll('p.de').style('display', 'none')
+            d3.selectAll('h1.en').style('display', 'block')
+            d3.selectAll('h1.de').style('display', 'none')
+            yesButton.text('Yes')
+            noButton.text('No')
             break
         }
 
@@ -1146,16 +1158,14 @@ socket.on('connectTouchResult', function (data) {
         setTimer()
       })
 
-      var logoutButton = d3.select('#username')
+      d3.select('#username')
         .on('click', function () { if (clickTrue) logoutStart() })
         .on('touchend', logoutStart)
 
       var logoutOverlay = d3.select('#logoutOverlay')
-      d3.select('.logout-yes')
-        .on('click', function () { if (clickTrue) logout(true) })
+      d3.select('#logout-yes').on('click', function () { if (clickTrue) logout(true) })
         .on('touchend', function () { logoutStart(true) })
-      d3.select('.logout-no')
-        .on('click', function () { if (clickTrue) logout(false) })
+      d3.select('#logout-no').on('click', function () { if (clickTrue) logout(false) })
         .on('touchend', function () { logoutStart(false) })
 
       function logoutStart () {
