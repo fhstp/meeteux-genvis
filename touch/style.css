@@ -201,7 +201,7 @@ p, text{
     width: 200px;
     text-align: center;
 }
-p.en, h1.en{
+p.en, h1.en, button.en{
     display: none;
 }
 
@@ -209,7 +209,7 @@ p.en, h1.en{
     display: none;
     width: 100%;
 }
-.coa-overlay-info, .timer-overlay{
+.coa-overlay-info, .timer-overlay, .logout-overlay{
     width: 500px;
     background: white;
     border: 1px solid black;
@@ -423,7 +423,7 @@ path.woman{
     filter: invert(.5) sepia(1);
 }
 
-#timerOverlay{
+#timerOverlay, #logoutOverlay{
     display: none;
     width: 100%;
 }
@@ -447,4 +447,35 @@ path.woman{
     box-sizing: border-box;
     padding: 50px;
     padding-top: 10em;
+}
+
+h1#username{
+    background: url('img/icon/logout.svg') no-repeat;
+    margin-left: 15px;
+    padding-left: 45px;
+    background-size: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+    padding-top: 6px;
+}
+
+button{
+    border: 1px solid black;
+    background: white;
+    font-family: 'Open Sans';
+    width: 70px;
+    height: 40px;
+    font-size: 13pt;
+    margin-right: 40px;
+}
+
+button:active, button:hover{
+    background: rgba(0,0,0,0.2);
+    color: black;
+}
+
+.logout-overlay div{
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 10px;
 }

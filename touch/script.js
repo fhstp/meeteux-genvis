@@ -26,8 +26,8 @@ d3.selection.prototype.dblTap = function (callback) {
 
 socket.emit('connectTouch', { device: whichside })
 
-// socket.on('connectTouchResult', function (data) {
-  // console.log('connection: ' + data)
+socket.on('connectTouchResult', function (data) {
+  console.log('connection: ' + data)
   // Load Genealogy Datass
   d3.json('/data/genealogy-data.json', function (data1) {
     var persons = data1
@@ -1146,6 +1146,31 @@ socket.emit('connectTouch', { device: whichside })
         setTimer()
       })
 
+      var logoutButton = d3.select('#username')
+        .on('click', function () { if (clickTrue) logoutStart() })
+        .on('touchend', logoutStart)
+
+      var logoutOverlay = d3.select('#logoutOverlay')
+      d3.select('.logout-yes')
+        .on('click', function () { if (clickTrue) logout(true) })
+        .on('touchend', function () { logoutStart(true) })
+      d3.select('.logout-no')
+        .on('click', function () { if (clickTrue) logout(false) })
+        .on('touchend', function () { logoutStart(false) })
+
+      function logoutStart () {
+        logoutOverlay.style('display', 'block')
+      } 
+
+      function logout (proceedLogout) {
+        if (proceedLogout) {
+          clearUser(2)
+        }
+
+        // hide logoutOverlay
+        logoutOverlay.style('display', 'none')
+      } 
+
       socket.on('userLeft', function () {
         console.log('god user left called')
         clearUser(1)
@@ -1270,4 +1295,4 @@ socket.emit('connectTouch', { device: whichside })
       d3.select('body').on('touchstart', setTimer)
     })
   })
-//})
+})
