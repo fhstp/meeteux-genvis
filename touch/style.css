@@ -479,3 +479,18 @@ button:active, button:hover{
     margin-top: 30px;
     margin-bottom: 10px;
 }
+
+/* x axis */
+
+.x.axis path, .x.axis g.tick line{
+    stroke: rgb(100,100,100);
+    stroke-width: 8px;
+}
+
+.x.axis g.tick line{
+    stroke-width: 3px;
+}
+.x.axis text{
+    font-size: 10pt;
+    color: rgb(100,100,100);
+}

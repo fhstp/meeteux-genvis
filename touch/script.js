@@ -71,7 +71,7 @@ socket.on('connectTouchResult', function (data) {
       var marriageCount = 1
 
       var strokeWidth = 40
-      var startY = strokeWidth + 20
+      var startY = strokeWidth + 30
       var marriageXDiff = strokeWidth
       var marriageYDiff = strokeWidth / 3
       var yDiff = 2.2 * strokeWidth
@@ -741,6 +741,15 @@ socket.on('connectTouchResult', function (data) {
           .ticks(100)
           .tickFormat(d3.timeFormat('%Y'))
         )
+      d3.selectAll("g.x.axis g.tick line")
+        .attr("y2", function(d){
+        if ( d.getFullYear() % 10 === 0) // if it's an even multiple of 10% Vielfaches von 10
+            return 13;
+        else
+            return 10;
+      });
+      d3.selectAll("g.x.axis g.tick text")
+        .attr("y", 18);
 
       // This is just to show you that the parseDate funciton returns a very long stirng. What firefox and chrome took was only the last 3 digits which resolve to :00
       // console.log('stringdates: ', parseDate(stringDates[0]), d3.extent(stringDates, function (d) { return parseDate(d) }))
