@@ -32,7 +32,6 @@ p, text{
 }
 
 #navigation{
-    /*height: 10px;*/
     width: 250px;
     background: white;
     border: 1px solid grey;
@@ -41,6 +40,7 @@ p, text{
     left: 20px;
     padding-bottom: 20px;
     padding-left: 20px;
+    padding-top: 25px;
 }
 
 #navigation h1{
