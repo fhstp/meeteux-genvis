@@ -435,7 +435,16 @@ path.woman{
 }
 
 .start{
-    margin: 10em auto;
-    width: 450px;
+    width: 100%;
+    height: 100vh;
+}
+
+#start-de, #start-en{
+    float: left;
+    width: 50%;
     text-align: center;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 50px;
+    padding-top: 10em;
 }

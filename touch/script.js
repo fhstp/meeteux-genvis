@@ -10,6 +10,7 @@ var whichside = 'left' // 'right'
 var clickTrue = true
 var setTimerTime = 30 // 30 seconds after each touch interaction
 var setTimeEnd = 15 // 15 seconds for last call
+var isStartOn = true
 
 d3.selection.prototype.dblTap = function (callback) {
   var last = 0
@@ -1096,14 +1097,18 @@ socket.emit('connectTouch', { device: whichside })
       }
 
       var startOverlay = d3.select('#startOverlay')
-        .on('click', function () { if (clickTrue) toggleStart() })
-        .on('touchend', toggleStart)
-      var isStartOn = true
+      d3.select('#start-de')
+        .on('click', function () { if (clickTrue) toggleStart('DE') })
+        .on('touchend', function () { toggleStart('DE') })
+      d3.select('#start-en')
+        .on('click', function () { if (clickTrue) toggleStart('EN') })
+        .on('touchend', function () { toggleStart('EN') })
 
-      function toggleStart () {
+      function toggleStart (language) {
         if (isStartOn) {
           startOverlay.style('display', 'none')
           isStartOn = false
+          setLanguage(language)
           sendLocalUserToGod()
         } else {
           startOverlay.style('display', 'block')
