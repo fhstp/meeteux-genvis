@@ -763,6 +763,7 @@ socket.on('connectTouchResult', function (data) {
       axisGroup.call(d3.axisBottom(x)
           .ticks(100)
           .tickFormat(d3.timeFormat('%Y'))
+          .tickSize(0)
         )
       
       d3.selectAll("g.x.axis g.tick line")
