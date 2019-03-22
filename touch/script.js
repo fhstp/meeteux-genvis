@@ -25,8 +25,8 @@ d3.selection.prototype.dblTap = function (callback) {
 
 socket.emit('connectTouch', { device: whichside })
 
-socket.on('connectTouchResult', function (data) {
-  console.log('connection: ' + data)
+// socket.on('connectTouchResult', function (data) {
+  // console.log('connection: ' + data)
   // Load Genealogy Datass
   d3.json('/data/genealogy-data.json', function (data1) {
     var persons = data1
@@ -1069,7 +1069,7 @@ socket.on('connectTouchResult', function (data) {
         resetButton.style('opacity', 0.5)
       }
 
-      var isHelpOn = true
+      var isHelpOn = false
       // helpOverlay
       var helpOverlay = d3.select('#helpOverlay')
         .on('click', function () { if (clickTrue) toggleHelp() }) // comment when running on touch display
@@ -1085,7 +1085,6 @@ socket.on('connectTouchResult', function (data) {
         if (isHelpOn) {
           helpOverlay.style('display', 'none')
           isHelpOn = false
-          sendLocalUserToGod()
         } else {
           helpOverlay.style('display', 'block')
           isHelpOn = true
@@ -1094,6 +1093,22 @@ socket.on('connectTouchResult', function (data) {
 
       function toggleHelpStart () {
         helpButton.style('opacity', 0.5)
+      }
+
+      var startOverlay = d3.select('#startOverlay')
+        .on('click', function () { if (clickTrue) toggleStart() })
+        .on('touchend', toggleStart)
+      var isStartOn = true
+
+      function toggleStart () {
+        if (isStartOn) {
+          startOverlay.style('display', 'none')
+          isStartOn = false
+          sendLocalUserToGod()
+        } else {
+          startOverlay.style('display', 'block')
+          isStartOn = true
+        }
       }
 
       function setupFirstTime () {
@@ -1121,6 +1136,7 @@ socket.on('connectTouchResult', function (data) {
             break
         }
 
+        toggleStart()
         setupUser(myUser)
         setTimer()
       })
@@ -1233,8 +1249,8 @@ socket.on('connectTouchResult', function (data) {
         setupUser(myUser)
 
         timerOverlay.style('display', 'none')
-        helpOverlay.style('display', 'block')
-        isHelpOn = true
+        startOverlay.style('display', 'block')
+        isStartOn = true
         resetView()
       }
 
@@ -1249,4 +1265,4 @@ socket.on('connectTouchResult', function (data) {
       d3.select('body').on('touchstart', setTimer)
     })
   })
-})
+//})

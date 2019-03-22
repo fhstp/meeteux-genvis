@@ -1,3 +1,12 @@
+@font-face {
+    font-family: 'Open Sans';
+    src: url("/font/OpenSans-Regular.ttf");
+}
+@font-face {
+    font-family: 'Vollkorn';
+    src: url("/fonts/Vollkorn-Bold.ttf");
+}
+
 body{
     margin: 0;
     overflow: hidden;
@@ -104,6 +113,7 @@ p, text{
 #helpOverlay{
     color: white;
     background-color: rgba(0,0,0,0.7);
+    display: none;
 }
 #helpOverlay p{
     font-size: 13pt;
@@ -191,7 +201,7 @@ p, text{
     width: 200px;
     text-align: center;
 }
-p.en{
+p.en, h1.en{
     display: none;
 }
 
@@ -416,4 +426,16 @@ path.woman{
 #timerOverlay{
     display: none;
     width: 100%;
+}
+
+#startOverlay{
+    width: 100%;
+    color: white;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.start{
+    margin: 10em auto;
+    width: 450px;
+    text-align: center;
 }
