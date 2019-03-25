@@ -445,8 +445,8 @@ path.woman{
     text-align: center;
     height: 100%;
     box-sizing: border-box;
-    padding: 50px;
-    padding-top: 10em;
+    padding: 200px;
+    padding-top: 25em;
 }
 
 h1#username{
