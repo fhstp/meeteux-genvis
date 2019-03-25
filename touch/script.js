@@ -1150,6 +1150,11 @@ socket.on('connectTouchResult', function (data) {
         .on('click', function () { if (clickTrue) toggleStart('EN') })
         .on('touchend', function () { toggleStart('EN') })
 
+      function startViewOff() {
+        startOverlay.style('display', 'none')
+        isStartOn = false
+      }
+
       function toggleStart (language) {
         if (isStartOn) {
           startOverlay.style('display', 'none')
@@ -1187,7 +1192,7 @@ socket.on('connectTouchResult', function (data) {
             break
         }
 
-        toggleStart()
+        startViewOff()
         setupUser(myUser)
         setTimer()
       })
