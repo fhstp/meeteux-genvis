@@ -1288,8 +1288,8 @@ socket.on('connectTouchResult', function (data) {
             if (isGodUser) {
               console.log('god user left')
               isGodUser = false
-              clearInterval(interactionTimeout)
-              clearTimeout(overlayTimeout)
+              // clearInterval(interactionTimeout)
+              // clearTimeout(overlayTimeout)
             }
             break
 
@@ -1306,6 +1306,9 @@ socket.on('connectTouchResult', function (data) {
               isGodUser = false
             }
             break
+          
+            clearInterval(interactionTimeout)
+            clearTimeout(overlayTimeout)
         }
 
         var myUser = { 'name': '?',
