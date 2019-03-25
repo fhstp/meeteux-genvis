@@ -1198,9 +1198,9 @@ socket.on('connectTouchResult', function (data) {
 
       var logoutOverlay = d3.select('#logoutOverlay')
       d3.select('#logout-yes').on('click', function () { if (clickTrue) logout(true) })
-        .on('touchend', function () { logoutStart(true) })
+        .on('touchend', function () { logout(true) })
       d3.select('#logout-no').on('click', function () { if (clickTrue) logout(false) })
-        .on('touchend', function () { logoutStart(false) })
+        .on('touchend', function () { logout(false) })
 
       function logoutStart () {
         logoutOverlay.style('display', 'block')
