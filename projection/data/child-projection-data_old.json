@@ -73,7 +73,7 @@
         "img" : "nn-female"
     },{
         "id" : 0,
-        "name" : "Sophie (Hedwig?) von Ungarn",
+        "name" : "Sophie",
         "img" : "KNB_BST-F-55"
     }]
 },{
@@ -121,7 +121,7 @@
     "template" : 2,
     "spouse" : [{
         "id" : 0,
-        "name" : "Lgf. Heinrich von Steffling",
+        "name" : "Heinrich Lgf. von Steffling",
         "img" : "nn-male"
     }]
 },{
@@ -133,7 +133,7 @@
         "img" : "nn-male"
     },{
         "id" : 0,
-        "name" : "Hg. Hermann II. v. Kärnten",
+        "name" : "Hg. Hermann v. Kärnten",
         "img" : "nn-male"
     }]
 },{
@@ -212,11 +212,11 @@
     "template" : 3,
     "spouse" : [{
         "id" : 0,
-        "name" : "Kg. Heinrich VII.",
+        "name" : "Kg. Heinr. VII.",
         "img" : "nn-male"
     },{
         "id" : 0,
-        "name" : "Kg. Ottokar II. Přemysl",
+        "name" : "Kg. Przemysl (Ottokar II.)",
         "img" : "nn-male"
     }]
 },{
@@ -224,7 +224,7 @@
     "template" : 2,
     "spouse" : [{
         "id" : 0,
-        "name" : "Hg. Albrecht I. v. Sachsen-Wittenberg",
+        "name" : "Hg. Albrecht v. Sachsen",
         "img" : "nn-male"
     }]
 },{
@@ -287,7 +287,7 @@
     "template" : 4,
     "spouse" : [{
         "id" : 0,
-        "name" : "Richza von Böhmen",
+        "name" : "Richza",
         "img" : "KNB_BST-F-62",
         "children" : [{
             "id" : 0,
@@ -300,7 +300,7 @@
     "template" : 2,
     "spouse" : [{
         "id" : 0,
-        "name" : "Maria von Böhmen",
+        "name" : "Maria",
         "img" : "KNB_BST-F-59"
     }]
 },{
@@ -308,7 +308,7 @@
     "template" : 2,
     "spouse" : [{
         "id" : 0,
-        "name" : "Bg. Heinrich III. v. Regensburg",
+        "name" : "Heinrich III.",
         "img" : "nn-male"
     }]
 },{
@@ -316,7 +316,7 @@
     "template" : 2,
     "spouse" : [{
         "id" : 0,
-        "name" : "Hg. Władysław II. v. Schlesien-Polen",
+        "name" : "Hg. Wladislaw v. Polen-Schlesien",
         "img" : "nn-male"
     }]
 },{
@@ -346,7 +346,7 @@
     "template" : 2,
     "spouse" : [{
         "id" : 0,
-        "name" : "Mgf. Wilhelm V. v. Montferrat",
+        "name" : "Mgf. Wilhelm v. Montferrat",
         "img" : "nn-male"
     }]
 },{

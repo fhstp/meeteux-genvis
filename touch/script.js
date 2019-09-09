@@ -8,7 +8,7 @@ var isGodUser = false
 var socket = io('http://localhost:8181/')
 var whichside = 'left' // 'right'
 var clickTrue = true
-var setTimerTime = 30 // 30 seconds after each touch interaction
+var setTimerTime = 30000 // 30 seconds after each touch interaction
 var setTimeEnd = 15 // 15 seconds for last call
 var isStartOn = true
 
@@ -26,8 +26,8 @@ d3.selection.prototype.dblTap = function (callback) {
 
 socket.emit('connectTouch', { device: whichside })
 
-socket.on('connectTouchResult', function (data) {
-  console.log('connection: ' + data)
+// socket.on('connectTouchResult', function (data) {
+  // console.log('connection: ' + data)
   // Load Genealogy Datass
   d3.json('/data/genealogy-data.json', function (data1) {
     var persons = data1
@@ -1346,4 +1346,4 @@ socket.on('connectTouchResult', function (data) {
       d3.select('body').on('touchstart', setTimer)
     })
   })
-})
+// })

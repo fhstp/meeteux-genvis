@@ -54,12 +54,20 @@ d3.json('data/genealogy-data.json', function (data) {
 
       // waiting for websocket call from client with side and personid
       var side = 'left'
-      var personId = 37
-
+      var personId = 1
+      var transitionDuration = 3000
+      /*
+      socket.on('updateProjection', function (data) {
+        console.log('data in')
+        console.log(data)
+        showData(data.device, data.data)
+      })
+      */
       showData(side, personId)
-      showData('right', 37)
+      showData('right', 1)
 
       function showData (whichSide, whichPersonId) {
+        console.log('hallo')
         getPersonById(whichPersonId)
 
         var printedRelative
@@ -104,7 +112,13 @@ d3.json('data/genealogy-data.json', function (data) {
             break
         }
 
-        myDiv.selectAll('*').remove()
+        // remove everything which is in the divs
+        myDiv.selectAll('*')
+          .style('opacity', 1).transition().duration(transitionDuration).style('opacity', 0)
+          .remove()
+        myConnection.selectAll('*')
+          .style('opacity', 1).transition().duration(transitionDuration).style('opacity', 0)
+          .remove()
 
         switch (printedRelative.relation) {
           case 'father':
@@ -113,108 +127,48 @@ d3.json('data/genealogy-data.json', function (data) {
               console.log('same side')
               switch (printedRelative.position) {
                 case 1:
+                  // Adalbert left
                   myPositions = printedPosFather[printedRelative.position - 1]
 
-                  // TODO: open end right for horizontal shorts
                   myConnection.append('img')
-                    .attr('src', '/img/connection/horizontal-short.png')
-                    .attr('class', 'horizontal')
-                    .style('top', myPositions.y - 20 + 'px')
-                    .style('left', myPositions.x + marginLeft - 165 + 'px')
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/corner-tl.png')
-                    .attr('class', 'corner')
-                    .style('top', myPositions.y + 'px')
-                    .style('left', myPositions.x + marginLeft - 170 + 'px')
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/vertical-medium.png')
-                    .attr('class', 'vertical')
-                    .style('top', myPositions.y + 20 + 'px')
-                    .style('left', myPositions.x + marginLeft - 189 + 'px')
-                    .style('width', '49px')
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/corner-br.png')
-                    .attr('class', 'corner')
-                    .style('top', myPositions.y + 260 + 'px')
-                    .style('left', myPositions.x + marginLeft - 205.5 + 'px')
+                    .attr('src', '/img/connection/left_child/left_child1.png')
+                    .attr('class', 'liane')
+                    .style('top', myPositions.y + 0 + 'px')
+                    .style('left', myPositions.x + marginLeft - 245 + 'px')
+                    .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                   break
                 case 2:
+                  // Richardis
                   myPositions = printedPosFather[printedRelative.position - 1]
 
-                  // TODO: open end right for horizontal short
                   myConnection.append('img')
-                    .attr('src', '/img/connection/horizontal-short.png')
-                    .attr('class', 'horizontal')
-                    .style('top', myPositions.y - 20 + 'px')
-                    .style('left', myPositions.x + marginLeft - 160 + 'px')
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/corner-tl.png')
-                    .attr('class', 'corner')
-                    .style('top', myPositions.y + 'px')
-                    .style('left', myPositions.x + marginLeft - 171 + 'px')
-                  // TODO: shorter vertical short
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/vertical-short.png')
-                    .attr('class', 'vertical')
-                    .style('top', myPositions.y + 8 + 'px')
-                    .style('left', myPositions.x + marginLeft - 190 + 'px')
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/corner-br.png')
-                    .attr('class', 'corner')
-                    .style('top', myPositions.y + 50 + 'px')
-                    .style('left', myPositions.x + marginLeft - 205 + 'px')
+                    .attr('src', '/img/connection/left_child/left_child2.png')
+                    .attr('class', 'liane')
+                    .style('top', myPositions.y - 10 + 'px')
+                    .style('left', myPositions.x + marginLeft - 235 + 'px')
+                    .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                   break
                 case 3:
+                  // Friedrich I.
                   myPositions = printedPosFather[printedRelative.position - 1]
 
-                  // TODO: open end right for horizontal short
                   myConnection.append('img')
-                    .attr('src', '/img/connection/horizontal-short.png')
-                    .attr('class', 'horizontal')
-                    .style('top', myPositions.y - 20 + 'px')
-                    .style('left', myPositions.x + marginLeft - 155 + 'px')
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/corner-bl.png')
-                    .attr('class', 'corner')
-                    .style('top', myPositions.y - 36 + 'px')
-                    .style('left', myPositions.x + marginLeft - 170 + 'px')
-                  // TODO: shorter vertical short
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/vertical-short.png')
-                    .attr('class', 'vertical')
-                    .style('top', myPositions.y - 118 + 'px')
-                    .style('left', myPositions.x + marginLeft - 189 + 'px')
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/corner-tr.png')
-                    .attr('class', 'corner')
+                    .attr('src', '/img/connection/left_child/left_child3.png')
+                    .attr('class', 'liane')
                     .style('top', myPositions.y - 120 + 'px')
-                    .style('left', myPositions.x + marginLeft - 205 + 'px')
+                    .style('left', myPositions.x + marginLeft - 250 + 'px')
+                    .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                   break
                 case 4:
+                  // Agnes
                   myPositions = printedPosFather[printedRelative.position - 1]
 
-                  // TODO: open end right for horizontal short
                   myConnection.append('img')
-                    .attr('src', '/img/connection/horizontal-short.png')
-                    .attr('class', 'horizontal')
-                    .style('top', myPositions.y - 20 + 'px')
-                    .style('left', myPositions.x + marginLeft - 150 + 'px')
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/corner-bl.png')
-                    .attr('class', 'corner')
-                    .style('top', myPositions.y - 36 + 'px')
-                    .style('left', myPositions.x + marginLeft - 170 + 'px')
-                  // TODO: longer vertical medium
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/vertical-medium.png')
-                    .attr('class', 'vertical')
-                    .style('top', myPositions.y - 320 + 'px')
-                    .style('left', myPositions.x + marginLeft - 190 + 'px')
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/corner-tr.png')
-                    .attr('class', 'corner')
-                    .style('top', myPositions.y - 340 + 'px')
-                    .style('left', myPositions.x + marginLeft - 206 + 'px')
+                    .attr('src', '/img/connection/left_child/left_child4.png')
+                    .attr('class', 'liane')
+                    .style('top', myPositions.y - 330 + 'px')
+                    .style('left', myPositions.x + marginLeft - 245 + 'px')
+                    .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                   break
               }
             } else {
@@ -222,106 +176,47 @@ d3.json('data/genealogy-data.json', function (data) {
               console.log('other side')
               switch (printedRelative.position) {
                 case 1:
+                  // Adalbert
                   myPositions = printedPosFather[printedRelative.position - 1]
-                  // TODO: open end left for horizontal medium
                   myConnection.append('img')
-                    .attr('src', '/img/connection/horizontal-medium.png')
-                    .attr('class', 'horizontal')
-                    .style('top', myPositions.y - 20 + 'px')
-                    .style('left', myPositions.x + marginLeft + 35 + 'px')
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/corner-tr.png')
-                    .attr('class', 'corner')
-                    .style('top', myPositions.y + 'px')
-                    .style('left', myPositions.x + marginLeft + 275 + 'px')
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/vertical-medium.png')
-                    .attr('class', 'vertical')
-                    .style('top', myPositions.y + 15 + 'px')
-                    .style('left', myPositions.x + marginLeft + 291 + 'px')
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/corner-bl.png')
-                    .attr('class', 'corner')
-                    .style('top', myPositions.y + 260 + 'px')
-                    .style('left', myPositions.x + marginLeft + 311 + 'px')
+                    .attr('src', '/img/connection/right_child/right_child1.png')
+                    .attr('class', 'liane')
+                    .style('top', myPositions.y - 0 + 'px')
+                    .style('left', myPositions.x + marginLeft - 60 + 'px')
+                    .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                   break
                 case 2:
+                  // Richardis
                   myPositions = printedPosFather[printedRelative.position - 1]
-
-                  // TODO: open end left for horizontal medium & longer horizontal medium
                   myConnection.append('img')
-                    .attr('src', '/img/connection/horizontal-medium.png')
-                    .attr('class', 'horizontal')
-                    .style('top', myPositions.y - 20 + 'px')
-                    .style('left', myPositions.x + marginLeft + 20 + 'px')
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/corner-tr.png')
-                    .attr('class', 'corner')
-                    .style('top', myPositions.y - 0 + 'px')
-                    .style('left', myPositions.x + marginLeft + 275 + 'px')
-                  // TODO: shorter vertical short
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/vertical-short.png')
-                    .attr('class', 'vertical')
-                    .style('top', myPositions.y + 0 + 'px')
-                    .style('left', myPositions.x + marginLeft + 290 + 'px')
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/corner-bl.png')
-                    .attr('class', 'corner')
-                    .style('top', myPositions.y + 50 + 'px')
-                    .style('left', myPositions.x + marginLeft + 310 + 'px')
+                    .attr('src', '/img/connection/right_child/right_child2.png')
+                    .attr('class', 'liane')
+                    .style('top', myPositions.y - 10 + 'px')
+                    .style('left', myPositions.x + marginLeft - 60 + 'px')
+                    .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                   break
                 case 3:
+                  // Friedrich I.
                   myPositions = printedPosFather[printedRelative.position - 1]
 
-                  // TODO open end left for horizontal medium, longer horizontal medium
                   myConnection.append('img')
-                    .attr('src', '/img/connection/horizontal-medium.png')
-                    .attr('class', 'horizontal')
-                    .style('top', myPositions.y - 20 + 'px')
-                    .style('left', myPositions.x + marginLeft + 60 + 'px')
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/corner-br.png')
-                    .attr('class', 'corner')
-                    .style('top', myPositions.y - 35 + 'px')
-                    .style('left', myPositions.x + marginLeft + 275 + 'px')
-                  // shorter vertical short
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/vertical-short.png')
-                    .attr('class', 'vertical')
-                    .style('top', myPositions.y - 130 + 'px')
-                    .style('left', myPositions.x + marginLeft + 291 + 'px')
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/corner-tl.png')
-                    .attr('class', 'corner')
-                    .style('top', myPositions.y - 120 + 'px')
-                    .style('left', myPositions.x + marginLeft + 310 + 'px')
+                    .attr('src', '/img/connection/right_child/right_child3.png')
+                    .attr('class', 'liane')
+                    .style('top', myPositions.y - 113 + 'px')
+                    .style('left', myPositions.x + marginLeft - 55 + 'px')
+                    .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                   break
                 case 4:
+                  // Agnes
                   myPositions = printedPosFather[printedRelative.position - 1]
 
                   // TODO: open end left for horizontal medium & longer horizontal medium
                   myConnection.append('img')
-                    .attr('src', '/img/connection/horizontal-medium.png')
-                    .attr('class', 'horizontal')
-                    .style('top', myPositions.y - 20 + 'px')
-                    .style('left', myPositions.x + marginLeft + 50 + 'px')
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/corner-br.png')
-                    .attr('class', 'corner')
-                    .style('top', myPositions.y - 35 + 'px')
-                    .style('left', myPositions.x + marginLeft + 275 + 'px')
-                  // TODO: longer vertical medium
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/vertical-medium.png')
-                    .attr('class', 'vertical')
-                    .style('top', myPositions.y - 360 + 'px')
-                    .style('left', myPositions.x + marginLeft + 290 + 'px')
-                  myConnection.append('img')
-                    .attr('src', '/img/connection/corner-tl.png')
-                    .attr('class', 'corner')
-                    .style('top', myPositions.y - 340 + 'px')
-                    .style('left', myPositions.x + marginLeft + 310 + 'px')
+                    .attr('src', '/img/connection/right_child/right_child4.png')
+                    .attr('class', 'liane')
+                    .style('top', myPositions.y - 326 + 'px')
+                    .style('left', myPositions.x + marginLeft - 50 + 'px')
+                    .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                   break
               }
             }
@@ -337,92 +232,60 @@ d3.json('data/genealogy-data.json', function (data) {
                   console.log('show connection on left side')
                   switch (printedRelative.position) {
                     case 1:
+                      // Leopold III. left
                       myPositions = printedPosLeft[printedRelative.position - 1]
 
                       myConnection.append('img')
-                        .attr('src', '/img/connection/vertical-long.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y + 20 + 'px')
+                        .attr('src', '/img/connection/left/left1.png')
+                        .attr('class', 'liane')
+                        .style('top', myPositions.y + 0 + 'px')
                         .style('left', myPositions.x + marginLeft - 61 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y + 'px')
-                        .style('left', myPositions.x + marginLeft - 45 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-br.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y + 365 + 'px')
-                        .style('left', myPositions.x + marginLeft - 79 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                     case 2:
+                      // Heinrich II.
                       myPositions = printedPosLeft[printedRelative.position - 1]
 
                       myConnection.append('img')
-                        .attr('src', '/img/connection/vertical-short.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y + 32 + 'px')
-                        .style('left', myPositions.x + marginLeft - 66 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y + 'px')
-                        .style('left', myPositions.x + marginLeft - 47 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-br.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y + 150 + 'px')
-                        .style('left', myPositions.x + marginLeft - 82 + 'px')
+                        .attr('src', '/img/connection/left/left2.png')
+                        .attr('class', 'liane')
+                        .style('top', myPositions.y - 10 + 'px')
+                        .style('left', myPositions.x + marginLeft - 61 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                     case 3:
+                      // Leopold V
                       myPositions = printedPosLeft[printedRelative.position - 1]
 
                       // TODO: open end for horizontal short
                       myConnection.append('img')
-                        .attr('src', '/img/connection/horizontal-short.png')
-                        .attr('class', 'horizontal')
-                        .style('top', myPositions.y - 20 + 'px')
-                        .style('left', myPositions.x + marginLeft - 125 + 'px')
+                        .attr('src', '/img/connection/left/left3.png')
+                        .attr('class', 'liane')
+                        .style('top', myPositions.y - 30 + 'px')
+                        .style('left', myPositions.x + marginLeft - 61 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                     case 4:
+                      // Leopold VI.
                       myPositions = printedPosLeft[printedRelative.position - 1]
 
                       myConnection.append('img')
-                        .attr('src', '/img/connection/corner-bl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 30 + 'px')
-                        .style('left', myPositions.x + marginLeft - 48 + 'px')
-
-                      // TODO: longer vertical short
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/vertical-short.png')
-                        .attr('class', 'vertical')
+                        .attr('src', '/img/connection/left/left4.png')
+                        .attr('class', 'liane')
                         .style('top', myPositions.y - 250 + 'px')
-                        .style('left', myPositions.x + marginLeft - 67 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tr.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 240 + 'px')
-                        .style('left', myPositions.x + marginLeft - 83 + 'px')
+                        .style('left', myPositions.x + marginLeft - 57 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                     case 5:
+                      // Friedrich II.
                       myPositions = printedPosLeft[printedRelative.position - 1]
 
                       myConnection.append('img')
-                        .attr('src', '/img/connection/corner-bl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 30 + 'px')
-                        .style('left', myPositions.x + marginLeft - 46 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/vertical-long.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y - 402 + 'px')
-                        .style('left', myPositions.x + marginLeft - 62 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tr.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 440 + 'px')
-                        .style('left', myPositions.x + marginLeft - 81 + 'px')
+                        .attr('src', '/img/connection/left/left5.png')
+                        .attr('class', 'liane')
+                        .style('top', myPositions.y - 450 + 'px')
+                        .style('left', myPositions.x + marginLeft - 52 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                   }
 
@@ -431,93 +294,59 @@ d3.json('data/genealogy-data.json', function (data) {
                   console.log('show connection default')
                   switch (printedRelative.position) {
                     case 1:
+                      // Agnes
                       myPositions = printedPosRight[printedRelative.position - 1]
 
                       myConnection.append('img')
-                        .attr('src', '/img/connection/vertical-long.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y + 20 + 'px')
-                        .style('left', myPositions.x + marginLeft + 17 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tr.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y + 'px')
-                        .style('left', myPositions.x + marginLeft - 2 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-bl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y + 365 + 'px')
-                        .style('left', myPositions.x + marginLeft + 33 + 'px')
+                        .attr('src', '/img/connection/right/right1.png')
+                        .attr('class', 'liane')
+                        .style('top', myPositions.y + 10 + 'px')
+                        .style('left', myPositions.x + marginLeft - 83 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                     case 2:
+                      // Gertrud
                       myPositions = printedPosRight[printedRelative.position - 1]
 
-                      // TODO: longer vertical short
                       myConnection.append('img')
-                        .attr('src', '/img/connection/vertical-short.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y + 15 + 'px')
-                        .style('left', myPositions.x + marginLeft + 11 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tr.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 20 + 'px')
-                        .style('left', myPositions.x + marginLeft - 5 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-bl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y + 150 + 'px')
-                        .style('left', myPositions.x + marginLeft + 30 + 'px')
+                        .attr('src', '/img/connection/right/right2.png')
+                        .attr('class', 'liane')
+                        .style('top', myPositions.y + 0 + 'px')
+                        .style('left', myPositions.x + marginLeft - 83 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                     case 3:
+                      // Helena
                       myPositions = printedPosRight[printedRelative.position - 1]
 
-                      // TODO: open end left for horizontal short
                       myConnection.append('img')
-                        .attr('src', '/img/connection/horizontal-short.png')
-                        .attr('class', 'horizontal')
-                        .style('top', myPositions.y - 25 + 'px')
-                        .style('left', myPositions.x + marginLeft - 10 + 'px')
+                        .attr('src', '/img/connection/right/right3.png')
+                        .attr('class', 'liane')
+                        .style('top', myPositions.y - 10 + 'px')
+                        .style('left', myPositions.x + marginLeft - 78 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                     case 4:
+                      // Theodora
                       myPositions = printedPosRight[printedRelative.position - 1]
 
                       myConnection.append('img')
-                        .attr('src', '/img/connection/corner-br.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 40 + 'px')
-                        .style('left', myPositions.x + marginLeft - 5 + 'px')
-
-                      // TODO: longer vertical short
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/vertical-short.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y - 250 + 'px')
-                        .style('left', myPositions.x + marginLeft + 11 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tl.png')
-                        .attr('class', 'corner')
+                        .attr('src', '/img/connection/right/right4.png')
+                        .attr('class', 'liane')
                         .style('top', myPositions.y - 240 + 'px')
-                        .style('left', myPositions.x + marginLeft + 30 + 'px')
+                        .style('left', myPositions.x + marginLeft - 80 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                     case 5:
+                      // Eudokia
                       myPositions = printedPosRight[printedRelative.position - 1]
 
                       myConnection.append('img')
-                        .attr('src', '/img/connection/corner-br.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 40 + 'px')
-                        .style('left', myPositions.x + marginLeft - 8 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/vertical-long.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y - 412 + 'px')
-                        .style('left', myPositions.x + marginLeft + 11 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tl.png')
-                        .attr('class', 'corner')
+                        .attr('src', '/img/connection/right/right5.png')
+                        .attr('class', 'liane')
                         .style('top', myPositions.y - 440 + 'px')
-                        .style('left', myPositions.x + marginLeft + 27 + 'px')
+                        .style('left', myPositions.x + marginLeft - 80 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                   }
                   break
@@ -530,157 +359,59 @@ d3.json('data/genealogy-data.json', function (data) {
                   console.log('show connection on left side')
                   switch (printedRelative.position) {
                     case 1:
+                      // Agnes
                       myPositions = printedPosLeftOther[printedRelative.position - 1]
 
                       myConnection.append('img')
-                        .attr('src', '/img/connection/corner-br.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 5 + 'px')
-                        .style('left', myPositions.x + marginLeft - 40 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/horizontal-long.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y + 13 + 'px')
-                        .style('left', myPositions.x + marginLeft - 430 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y + 32 + 'px')
-                        .style('left', myPositions.x + marginLeft - 370 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/vertical-long.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y + 40 + 'px')
-                        .style('left', myPositions.x + marginLeft - 386 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-br.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y + 280 + 'px')
-                        .style('left', myPositions.x + marginLeft - 403 + 'px')
+                        .attr('src', '/img/connection/left_opposite/left_opposite1.png')
+                        .attr('class', 'liane')
+                        .style('top', myPositions.y - 15 + 'px')
+                        .style('left', myPositions.x + marginLeft - 380 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                     case 2:
+                      // Gertrud
                       myPositions = printedPosLeftOther[printedRelative.position - 1]
 
-                      // TODO: longer corner-br on top
                       myConnection.append('img')
-                        .attr('src', '/img/connection/corner-br.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 5 + 'px')
-                        .style('left', myPositions.x + marginLeft - 40 + 'px')
-                      // TODO: longer horizontal-medium
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/horizontal-medium.png')
-                        .attr('class', 'horizontal')
-                        .style('top', myPositions.y + 10 + 'px')
-                        .style('left', myPositions.x + marginLeft - 350 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y + 29 + 'px')
-                        .style('left', myPositions.x + marginLeft - 370 + 'px')
-                      /* myConnection.append('img')
-                        .attr('src', '/img/connection/vertical-long.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y + 40 + 'px')
-                        .style('left', myPositions.x + marginLeft - 386 + 'px') */
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-br.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y + 70 + 'px')
-                        .style('left', myPositions.x + marginLeft - 405 + 'px')
+                        .attr('src', '/img/connection/left_opposite/left_opposite2.png')
+                        .attr('class', 'liane')
+                        .style('top', myPositions.y - 20 + 'px')
+                        .style('left', myPositions.x + marginLeft - 380 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                     case 3:
+                      // Helena
                       myPositions = printedPosLeftOther[printedRelative.position - 1]
 
-                      // TODO: longer corner-br on top
                       myConnection.append('img')
-                        .attr('src', '/img/connection/corner-br.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 9 + 'px')
-                        .style('left', myPositions.x + marginLeft - 40 + 'px')
-                      // TODO: longer horizontal-medium
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/horizontal-medium.png')
-                        .attr('class', 'horizontal')
-                        .style('top', myPositions.y + 6 + 'px')
-                        .style('left', myPositions.x + marginLeft - 330 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-bl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 10 + 'px')
-                        .style('left', myPositions.x + marginLeft - 370 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/vertical-short.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y - 98 + 'px')
-                        .style('left', myPositions.x + marginLeft - 389 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tr.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 100 + 'px')
-                        .style('left', myPositions.x + marginLeft - 405 + 'px')
+                        .attr('src', '/img/connection/left_opposite/left_opposite3.png')
+                        .attr('class', 'liane')
+                        .style('top', myPositions.y - 90 + 'px')
+                        .style('left', myPositions.x + marginLeft - 380 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                     case 4:
+                      // Theodora
                       myPositions = printedPosLeftOther[printedRelative.position - 1]
 
                       myConnection.append('img')
-                        .attr('src', '/img/connection/corner-br.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 9 + 'px')
-                        .style('left', myPositions.x + marginLeft - 40 + 'px')
-                      // TODO: longer horizontal medium
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/horizontal-medium.png')
-                        .attr('class', 'horizontal')
-                        .style('top', myPositions.y + 6 + 'px')
-                        .style('left', myPositions.x + marginLeft - 430 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-bl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 10 + 'px')
-                        .style('left', myPositions.x + marginLeft - 370 + 'px')
-                      // TODO: longer vertical medium
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/vertical-medium.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y - 320 + 'px')
-                        .style('left', myPositions.x + marginLeft - 389 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tr.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 320 + 'px')
-                        .style('left', myPositions.x + marginLeft - 405 + 'px')
+                        .attr('src', '/img/connection/left_opposite/left_opposite4.png')
+                        .attr('class', 'liane')
+                        .style('top', myPositions.y - 315 + 'px')
+                        .style('left', myPositions.x + marginLeft - 380 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                     case 5:
+                      // Eudokia
                       myPositions = printedPosLeftOther[printedRelative.position - 1]
 
-                      // TODO: shorter corner-tr bottom
                       myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tr.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 15 + 'px')
-                        .style('left', myPositions.x + marginLeft - 40 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/horizontal-medium.png')
-                        .attr('class', 'horizontal')
-                        .style('top', myPositions.y - 35 + 'px')
+                        .attr('src', '/img/connection/left_opposite/left_opposite5.png')
+                        .attr('class', 'liane')
+                        .style('top', myPositions.y - 366 + 'px')
                         .style('left', myPositions.x + marginLeft - 380 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-bl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 51 + 'px')
-                        .style('left', myPositions.x + marginLeft - 370 + 'px')
-                      // TODO: longer vertical medium
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/vertical-medium.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y - 325 + 'px')
-                        .style('left', myPositions.x + marginLeft - 390 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tr.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 360 + 'px')
-                        .style('left', myPositions.x + marginLeft - 406 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                   }
                   break
@@ -690,158 +421,56 @@ d3.json('data/genealogy-data.json', function (data) {
                     case 1:
                       myPositions = printedPosRightOther[printedRelative.position - 1]
 
+                      // Leopold III
                       myConnection.append('img')
-                        .attr('src', '/img/connection/corner-bl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 25 + 'px')
-                        .style('left', myPositions.x + marginLeft + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/horizontal-long.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y - 12 + 'px')
-                        .style('left', myPositions.x + marginLeft - 0 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tr.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y + 6 + 'px')
-                        .style('left', myPositions.x + marginLeft + 330 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/verticalv.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y + 20 + 'px')
-                        .style('left', myPositions.x + marginLeft + 348 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-bl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y + 280 + 'px')
-                        .style('left', myPositions.x + marginLeft + 364 + 'px')
+                        .attr('src', '/img/connection/right_opposite/right_opposite1.png')
+                        .attr('class', 'liane')
+                        .style('top', myPositions.y - 5 + 'px')
+                        .style('left', myPositions.x + marginLeft - 2 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                     case 2:
                       myPositions = printedPosRightOther[printedRelative.position - 1]
 
-                      // TODO: shorten top of corner-bl 
+                      // Heinrich II.
                       myConnection.append('img')
-                        .attr('src', '/img/connection/corner-bl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 25 + 'px')
-                        .style('left', myPositions.x + marginLeft + 'px')
-                      // TODO: longer medium
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/horizontal-medium.png')
-                        .attr('class', 'horizontal')
-                        .style('top', myPositions.y - 9 + 'px')
-                        .style('left', myPositions.x + marginLeft + 80 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tr.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y + 11 + 'px')
-                        .style('left', myPositions.x + marginLeft + 330 + 'px')
-                      // TODO: shorter short
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/vertical-short.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y + 0 + 'px')
-                        .style('left', myPositions.x + marginLeft + 346 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-bl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y + 70 + 'px')
-                        .style('left', myPositions.x + marginLeft + 365 + 'px')
+                        .attr('src', '/img/connection/right_opposite/right_opposite2.png')
+                        .attr('class', 'liane')
+                        .style('top', myPositions.y - 5 + 'px')
+                        .style('left', myPositions.x + marginLeft + 0 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                     case 3:
+                      // Leopold V.
                       myPositions = printedPosRightOther[printedRelative.position - 1]
-
-                      // TODO: shorter corner-bl on top
                       myConnection.append('img')
-                        .attr('src', '/img/connection/corner-bl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 25 + 'px')
-                        .style('left', myPositions.x + marginLeft + 'px')
-                      // TODO: longer horizontal medium
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/horizontal-medium.png')
-                        .attr('class', 'horizontal')
-                        .style('top', myPositions.y - 9 + 'px')
-                        .style('left', myPositions.x + marginLeft + 100 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-br.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 24 + 'px')
-                        .style('left', myPositions.x + marginLeft + 330 + 'px')
-
-                      // TODO: shorter vertical short
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/vertical-short.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y - 90 + 'px')
-                        .style('left', myPositions.x + marginLeft + 346 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 100 + 'px')
-                        .style('left', myPositions.x + marginLeft + 365 + 'px')
+                        .attr('src', '/img/connection/right_opposite/right_opposite3.png')
+                        .attr('class', 'liane')
+                        .style('top', myPositions.y - 60 + 'px')
+                        .style('left', myPositions.x + marginLeft + 0 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                     case 4:
+                    // Leopold VI.
                       myPositions = printedPosRightOther[printedRelative.position - 1]
 
-                      // TODO: shorter corner-bl on top
                       myConnection.append('img')
-                        .attr('src', '/img/connection/corner-bl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 25 + 'px')
-                        .style('left', myPositions.x + marginLeft + 'px')
-                      // TODO: longer horizontal medium
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/horizontal-medium.png')
-                        .attr('class', 'horizontal')
-                        .style('top', myPositions.y - 9 + 'px')
-                        .style('left', myPositions.x + marginLeft + 90 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-br.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 24 + 'px')
-                        .style('left', myPositions.x + marginLeft + 330 + 'px')
-                      // TODO: longer vertical medium
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/vertical-medium.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y - 310 + 'px')
-                        .style('left', myPositions.x + marginLeft + 345 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 320 + 'px')
-                        .style('left', myPositions.x + marginLeft + 364 + 'px')
+                        .attr('src', '/img/connection/right_opposite/right_opposite4.png')
+                        .attr('class', 'liane')
+                        .style('top', myPositions.y - 295 + 'px')
+                        .style('left', myPositions.x + marginLeft + 10 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                     case 5:
+                      // Friedrich II.
                       myPositions = printedPosRightOther[printedRelative.position - 1]
 
                       myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 40 + 'px')
-                        .style('left', myPositions.x + marginLeft + 'px')
-                      // TODO: longer horizontal medium
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/horizontal-medium.png')
-                        .attr('class', 'horizontal')
-                        .style('top', myPositions.y - 59 + 'px')
-                        .style('left', myPositions.x + marginLeft + 80 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-br.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 74 + 'px')
-                        .style('left', myPositions.x + marginLeft + 330 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/vertical-medium.png')
-                        .attr('class', 'vertical')
-                        .style('top', myPositions.y - 320 + 'px')
-                        .style('left', myPositions.x + marginLeft + 346 + 'px')
-                      myConnection.append('img')
-                        .attr('src', '/img/connection/corner-tl.png')
-                        .attr('class', 'corner')
-                        .style('top', myPositions.y - 360 + 'px')
-                        .style('left', myPositions.x + marginLeft + 366 + 'px')
+                        .attr('src', '/img/connection/right_opposite/right_opposite5.png')
+                        .attr('class', 'liane')
+                        .style('top', myPositions.y - 350 + 'px')
+                        .style('left', myPositions.x + marginLeft + 0 + 'px')
+                        .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                       break
                   }
                   break
@@ -855,21 +484,48 @@ d3.json('data/genealogy-data.json', function (data) {
         var info = myDiv.append('div').attr('class', 'info ' + whichSide)
         var children = myDiv.append('div').attr('class', 'children')
 
-        var infoDiv = info.append('div').attr('class', 'banner')
+        var infoDiv = info.append('div')
+
+        infoDiv.attr('class', 'banner')
+          .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
+
         infoDiv.append('h1').text(myPerson.name)
+          .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
 
         var bornDiv = infoDiv.append('div')
         bornDiv.append('img').attr('src', 'img/icon/star.svg').attr('class', 'born')
+          .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
         bornDiv.append('p').text(getTimeString(myPerson, 'born'))
+          .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
 
         var diedDiv = infoDiv.append('div')
         diedDiv.append('img').attr('src', 'img/icon/cross.svg').attr('class', 'died')
+          .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
         diedDiv.append('p').text(getTimeString(myPerson, 'died'))
+          .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
 
         info.append('img').attr('src', '/img/' + myPerson.img + '.png')
+          .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
         info.append('img')
           .attr('src', '/img/connection/circle-flower-p.png')
           .attr('class', 'circle')
+          .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
+
+        // if death until 1156 than map1156, if death > 1156 than map1246
+        // side left or right
+        var mapToShow
+        if (myPerson.died <= 1156) {
+          mapToShow = 'map1156'
+        } else {
+          mapToShow = 'map1246'
+        }
+
+        map.append('h1').text('Politischer Machtbereich der Babenberger | Political power of the Babenberg')
+          .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
+        map.append('img')
+          .attr('src', '/img/maps/' + mapToShow + whichSide + '.png') // todo add side
+          .attr('class', 'mapimg')
+          .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
 
         showRelations(children, myPerson, whichSide)
       }
@@ -917,6 +573,9 @@ d3.json('data/genealogy-data.json', function (data) {
             timeString += '~ '
           }
           timeString += myPerson.born
+          if (myPerson.bornGuessed) {
+            timeString += ' ?'
+          }
         } else {
           if (myPerson.diedGuessed) {
             timeString += '~ '
@@ -937,7 +596,9 @@ d3.json('data/genealogy-data.json', function (data) {
         var div = children.append('div').attr('class', 'template' + childItem.template)
         if (typeof childItem.spouse !== 'undefined') {
           childItem.spouse.forEach((spouse, index) => {
-            var divRelation = div.append('div').attr('class', 'relation relation' + (index + 1))
+            var divRelation = div.append('div')
+            divRelation.attr('class', 'relation relation' + (index + 1))
+              .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
 
             var spouseImg, spouseName
             if (spouse.id === 0) {
@@ -954,10 +615,12 @@ d3.json('data/genealogy-data.json', function (data) {
               divSpouse.append('img')
                 .attr('src', '/img/connection/marriage-left.png')
                 .attr('class', 'marriage')
+                .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
             } else {
               divSpouse.append('img')
                 .attr('src', '/img/connection/marriage.png')
                 .attr('class', 'marriage')
+                .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
             }
 
             divSpouse.append('img')
@@ -965,13 +628,23 @@ d3.json('data/genealogy-data.json', function (data) {
                 return 'img/' + spouseImg + '.png'
               })
               .attr('class', 'spouse spouse' + (index + 1))
+              .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
             divSpouse.append('img')
               .attr('src', '/img/connection/circle-1.png')
               .attr('class', 'circle')
+              .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
             divSpouse.append('h2')
               .text(spouseName)
+              .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
 
             if (typeof spouse.children !== 'undefined') {
+              var childappend = divRelation
+              if (childItem.template === 8 || childItem.template === 7 || childItem.template === 6 || childItem.template === 5) {
+                childappend = divRelation.append('div')
+                childappend.attr('class', 'children' + childItem.template)
+                  .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
+              }
+
               spouse.children.forEach((child, index) => {
                 var childImg
                 var childName
@@ -984,26 +657,32 @@ d3.json('data/genealogy-data.json', function (data) {
                   childName = myPerson.name
                 }
 
-                var divChild = divRelation.append('div').attr('class', 'child')
+                var divChild = childappend.append('div').attr('class', 'child')
                 divChild.append('img')
                   .attr('src', function () {
                     return 'img/' + childImg + '.png'
                   })
                   .attr('class', 'child child' + (index + 1))
+                  .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
+
                 divChild.append('img')
                   .attr('src', '/img/connection/circle-2.png')
                   .attr('class', 'circle')
+                  .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
                 divChild.append('h2')
                   .text(childName)
+                  .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
               })
             } else {
               divSpouse.append('p')
                 .text('keine Kinder | no children')
+                .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
             }
           })
         } else {
           div.append('p')
             .text('nicht verheiratet, keine Kinder | not married, no children')
+            .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
         }
       }
     })
