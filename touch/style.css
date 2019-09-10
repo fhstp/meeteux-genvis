@@ -512,3 +512,21 @@ button:active, button:hover{
     font-size: 10pt;
     fill: rgb(100,100,100);
 }
+
+/* projection hint */
+#projection-hint{
+    display: none;
+    position: absolute;
+    top: 60vh;
+    left: 35vw;
+    width: 30vw;
+    text-align: center;
+}
+
+#projection-hint p{
+    margin: 0 auto;
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    padding: 2vh 2vw;
+    box-sizing: border-box;
+}

@@ -11,6 +11,7 @@ var clickTrue = true
 var setTimerTime = 30000 // 30 seconds after each touch interaction
 var setTimeEnd = 15 // 15 seconds for last call
 var isStartOn = true
+var howManySelections = 0
 
 d3.selection.prototype.dblTap = function (callback) {
   var last = 0
@@ -866,6 +867,28 @@ socket.emit('connectTouch', { device: whichside })
             showInformation(person)
           }
         })
+
+        if (howManySelections > 0 && howManySelections < 4){
+          console.log("showTimerProjectionOn")
+          d3.select('#projection-hint').style("display", "block")
+          .style('opacity', 0).transition().duration(2000).style('opacity', 1)
+        
+          window.setTimeout(showTimerProjectionHint, 5000)
+          howManySelections++
+          console.log(howManySelections)
+        } else {
+          howManySelections++
+          console.log(howManySelections)
+        }
+        
+        
+        
+      }
+
+      function showTimerProjectionHint(){
+        console.log("showTimerProjection")
+        d3.select('#projection-hint')
+          .style('opacity', 1).transition().duration(2000).style('opacity', 0)
       }
 
       var infoImage = d3.select('#image')
@@ -1317,6 +1340,7 @@ socket.emit('connectTouch', { device: whichside })
         }
         clearInterval(interactionTimeout)
         clearTimeout(overlayTimeout)
+        howManySelections = 0
 
         var myUser = { 'name': '?',
           'language': '' }
