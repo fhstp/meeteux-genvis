@@ -443,10 +443,28 @@ path.woman{
     float: left;
     width: 50%;
     text-align: center;
-    height: 100%;
+    height: 50%;
     box-sizing: border-box;
-    padding: 200px;
-    padding-top: 25em;
+    padding: 150px;
+    padding-top: 16em;
+    padding-bottom: 5em;
+}
+
+#start h1{
+    font-size: 3em;
+}
+#start p{
+    font-size: 1.3em;
+}
+
+.button{
+    width: 100%;
+    height: 50%;
+    text-align: center;
+}
+
+.button img{
+    width: 200px;
 }
 
 h1#username{

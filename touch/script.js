@@ -1143,12 +1143,15 @@ socket.emit('connectTouch', { device: whichside })
       }
 
       var startOverlay = d3.select('#startOverlay')
-      d3.select('#start-de')
+      d3.select('#start')
         .on('click', function () { if (clickTrue) toggleStart('DE') })
         .on('touchend', function () { toggleStart('DE') })
-      d3.select('#start-en')
+      
+    /*  d3.select('#start-en')
         .on('click', function () { if (clickTrue) toggleStart('EN') })
-        .on('touchend', function () { toggleStart('EN') })
+        .on('touchend', function () { toggleStart('EN') })*/
+
+      
 
       function startViewOff() {
         startOverlay.style('display', 'none')
