@@ -868,27 +868,26 @@ socket.emit('connectTouch', { device: whichside })
           }
         })
 
+        var hinttimer
         if (howManySelections > 0 && howManySelections < 4){
           console.log("showTimerProjectionOn")
           d3.select('#projection-hint').style("display", "block")
-          .style('opacity', 0).transition().duration(2000).style('opacity', 1)
+            .style('opacity', 0).transition().duration(1000).style('opacity', 1)
         
-          window.setTimeout(showTimerProjectionHint, 5000)
+          hinttimer = window.setTimeout(showTimerProjectionHint, 5000)
           howManySelections++
           console.log(howManySelections)
         } else {
           howManySelections++
           console.log(howManySelections)
         }
-        
-        
-        
+
       }
 
       function showTimerProjectionHint(){
         console.log("showTimerProjection")
         d3.select('#projection-hint')
-          .style('opacity', 1).transition().duration(2000).style('opacity', 0)
+          .style('opacity', 1).transition().duration(1000).style('opacity', 0)
       }
 
       var infoImage = d3.select('#image')
@@ -1279,7 +1278,7 @@ socket.emit('connectTouch', { device: whichside })
         console.log('setTimer')
         clearInterval(interactionTimeout)
         clearTimeout(overlayTimeout)
-        interactionTimeout = window.setTimeout(showTimerEndDialog, setTimerTime * 1000)
+        interactionTimeout = window.setTimeout(showTimerEndDialog, setTimerTime)
       }
 
       var timerOverlay = d3.select('#timerOverlay')
@@ -1293,6 +1292,7 @@ socket.emit('connectTouch', { device: whichside })
       }
 
       function showTimerEndDialog () {
+        console.log("show Timer end dialog")
         d3.select('#progressBar').attr('value', 0)
         timerOverlay.style('display', 'block')
 
