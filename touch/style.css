@@ -517,10 +517,11 @@ button:active, button:hover{
 #projection-hint{
     display: none;
     position: absolute;
-    top: 60vh;
+    top: 25.9vh;
     left: 35vw;
     width: 30vw;
     text-align: center;
+    box-shadow: 0 0 2em rgba(0,0,0,0.7);
 }
 
 #projection-hint p{
