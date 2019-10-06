@@ -897,10 +897,12 @@ socket.emit('connectTouch', { device: whichside })
       function showInformation (person, first) {
         console.log('showInformation')
         console.log(person)
-
+        console.log(first)
         if(!first){
           // send person to projection
           socket.emit('sendDataToProjection', { data: person.id })
+        }else{
+          socket.emit('showStartscreen', { data: 'empty' })
         }
 
         // Check if id == 23 > unlock coa special item
@@ -1127,6 +1129,8 @@ socket.emit('connectTouch', { device: whichside })
         .on('touchend', resetView)
 
       function resetView (first) {
+        console.log('reset')
+        console.log(first)
         resetHighlighting()
         hideCoa()
         resetButton.style('opacity', 1)
@@ -1195,6 +1199,7 @@ socket.emit('connectTouch', { device: whichside })
       }
 
       function setupFirstTime () {
+        console.log("first time")
         // reset view to Leopold (id = 1)
         resetView(true)
 
@@ -1203,7 +1208,6 @@ socket.emit('connectTouch', { device: whichside })
         whichLanguage = 'DE'
         localStorage.setItem('language', whichLanguage)
 
-        socket.emit('sendDataToProjection', { data: person.id })
         // socket.emit('userTimedOut', { device: whichside })
       }
 
@@ -1365,7 +1369,7 @@ socket.emit('connectTouch', { device: whichside })
         timerOverlay.style('display', 'none')
         startOverlay.style('display', 'block')
         isStartOn = true
-        resetView()
+        resetView(true)
       }
 
       function setupUser (user) {
