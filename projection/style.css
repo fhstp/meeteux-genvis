@@ -445,3 +445,26 @@ img.child{
 .template3 .relation2{
     margin-top: 220px;
 }
+
+.start{
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 350px;
+}
+
+.start .en, .start hr{
+    margin-top: 20px;
+}
+
+.start span{
+    display: block;
+}
+
+.start p{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.start h1{
+    margin-bottom: 5px;
+}
