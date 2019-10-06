@@ -855,7 +855,7 @@ socket.emit('connectTouch', { device: whichside })
         getPersonToShow(idTouched)
       }
 
-      function getPersonToShow (idTouched) {
+      function getPersonToShow (idTouched, first) {
         personInfoArray.forEach(person => {
           if (person.id === idTouched) {
             d3.selectAll('g').classed('sel', false)
@@ -864,7 +864,7 @@ socket.emit('connectTouch', { device: whichside })
             d3.select('#person' + person.id).classed('sel', true)
 
             localStorage.setItem('person', JSON.stringify(person))
-            showInformation(person)
+            showInformation(person, first)
           }
         })
 
@@ -894,12 +894,14 @@ socket.emit('connectTouch', { device: whichside })
       var infoDesc = d3.select('#description')
       var infoCoat = d3.select('#coatofarms')
 
-      function showInformation (person) {
+      function showInformation (person, first) {
         console.log('showInformation')
         console.log(person)
 
-        // send person to projection
-        socket.emit('sendDataToProjection', { data: person.id })
+        if(!first){
+          // send person to projection
+          socket.emit('sendDataToProjection', { data: person.id })
+        }
 
         // Check if id == 23 > unlock coa special item
         if (person.id === 23 && isGodUser) {
@@ -1124,11 +1126,11 @@ socket.emit('connectTouch', { device: whichside })
         .on('touchstart', resetViewStart)
         .on('touchend', resetView)
 
-      function resetView () {
+      function resetView (first) {
         resetHighlighting()
         hideCoa()
         resetButton.style('opacity', 1)
-        getPersonToShow(1)
+        getPersonToShow(1, first)
 
         // set div#chart to top 0, left 0
         elementToScroll.scrollTo(0, 0)
@@ -1194,10 +1196,14 @@ socket.emit('connectTouch', { device: whichside })
 
       function setupFirstTime () {
         // reset view to Leopold (id = 1)
-        resetView()
+        resetView(true)
+
+        
         // set language to German
         whichLanguage = 'DE'
         localStorage.setItem('language', whichLanguage)
+
+        socket.emit('sendDataToProjection', { data: person.id })
         // socket.emit('userTimedOut', { device: whichside })
       }
 
