@@ -63,8 +63,61 @@ d3.json('data/genealogy-data.json', function (data) {
         showData(data.device, data.data)
       })
       */
-      showData(side, personId)
-      showData('right', 1)
+
+      /*
+      socket.on('showStartscreen', function (data) {
+        console.log('startscreen in')
+        console.log(data)
+        showStart(data.device)
+      })
+      */
+
+      showStart(side)
+      showStart('right')
+
+      function showStart (whichSide) {
+        var myDiv
+
+        switch (whichSide) {
+          case 'left':
+            console.log('left')
+            myDiv = d3.select('#userLeft')
+            break
+          default:
+            console.log('right')
+            myDiv = d3.select('#userRight')
+            break
+        }
+
+        myDiv.selectAll('*')
+          .style('opacity', 1).transition().duration(transitionDuration).style('opacity', 0)
+          .remove()
+
+        var startScreen = myDiv.append('div').attr('class', 'start')
+
+        startScreen.append('h1').text('Stammbaum der Babenberger')
+          .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
+        startScreen.append('p').text('Erkunde die Hauptlinie der Babenberger beginnend mit Leopold III.')
+          .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
+        startScreen.append('p').text('Berühre eines der Touchdisplays vor der Projektion, um zu beginnen.')
+          .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
+
+        startScreen.append('hr')
+          .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
+
+        var h1 = startScreen.append('h1').attr('class', 'en')
+        h1.append('span').text('Babenberg')
+          .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
+        h1.append('span').text('Family Tree')
+          .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
+        startScreen.append('p').text('Explore the main lineage of the Babenberg family, starting with Leopold III.')
+          .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
+        startScreen.append('p').text('Touch one of the touch displays infront of the projection to start.')
+          .style('opacity', 0).transition().duration(transitionDuration).style('opacity', 1)
+      }
+
+      // showData(side, personId)
+      // showData('right', 1)
 
       function showData (whichSide, whichPersonId) {
         console.log('hallo')
